@@ -59,56 +59,7 @@
 		B13B319A15D0C876003A4E89 /* neutral_to_inactive_glow_frames_04.png in Resources */ = {isa = PBXBuildFile; fileRef = B13B313D15D0C876003A4E89 /* neutral_to_inactive_glow_frames_04.png */; };
 		B13B319B15D0C876003A4E89 /* neutral_to_inactive_glow_frames_05.png in Resources */ = {isa = PBXBuildFile; fileRef = B13B313E15D0C876003A4E89 /* neutral_to_inactive_glow_frames_05.png */; };
 		B13B319C15D0C876003A4E89 /* neutral_to_inactive_glow_frames_06.png in Resources */ = {isa = PBXBuildFile; fileRef = B13B313F15D0C876003A4E89 /* neutral_to_inactive_glow_frames_06.png */; };
-		B13B319D15D0C876003A4E89 /* epato_game_concepts_board_mock_up_001.ai in Resources */ = {isa = PBXBuildFile; fileRef = B13B314015D0C876003A4E89 /* epato_game_concepts_board_mock_up_001.ai */; };
-		B13B319E15D0C876003A4E89 /* epato_game_concepts_board_mock_up_001_02.png in Resources */ = {isa = PBXBuildFile; fileRef = B13B314115D0C876003A4E89 /* epato_game_concepts_board_mock_up_001_02.png */; };
-		B13B319F15D0C876003A4E89 /* epato_game_concepts_board_mock_up_001_1.png in Resources */ = {isa = PBXBuildFile; fileRef = B13B314215D0C876003A4E89 /* epato_game_concepts_board_mock_up_001_1.png */; };
-		B13B31A015D0C876003A4E89 /* epato_game_concepts_board_mock_up_001_breakdown.png .png in Resources */ = {isa = PBXBuildFile; fileRef = B13B314315D0C876003A4E89 /* epato_game_concepts_board_mock_up_001_breakdown.png .png */; };
-		B13B31A115D0C876003A4E89 /* epato_game_concepts_board_mock_up_001_complete_infographic.png in Resources */ = {isa = PBXBuildFile; fileRef = B13B314415D0C876003A4E89 /* epato_game_concepts_board_mock_up_001_complete_infographic.png */; };
-		B13B31A215D0C876003A4E89 /* epato_game_concepts_board_mock_up_002.ai in Resources */ = {isa = PBXBuildFile; fileRef = B13B314515D0C876003A4E89 /* epato_game_concepts_board_mock_up_002.ai */; };
-		B13B31A315D0C876003A4E89 /* epato_game_concepts_board_modules_cell_a.png in Resources */ = {isa = PBXBuildFile; fileRef = B13B314615D0C876003A4E89 /* epato_game_concepts_board_modules_cell_a.png */; };
-		B13B31A415D0C876003A4E89 /* epato_game_concepts_board_modules_cell_a1.png in Resources */ = {isa = PBXBuildFile; fileRef = B13B314715D0C876003A4E89 /* epato_game_concepts_board_modules_cell_a1.png */; };
-		B13B31A515D0C876003A4E89 /* epato_game_concepts_board_modules_cell_b.png in Resources */ = {isa = PBXBuildFile; fileRef = B13B314815D0C876003A4E89 /* epato_game_concepts_board_modules_cell_b.png */; };
-		B13B31A615D0C876003A4E89 /* epato_game_concepts_board_modules_cell_b1.png in Resources */ = {isa = PBXBuildFile; fileRef = B13B314915D0C876003A4E89 /* epato_game_concepts_board_modules_cell_b1.png */; };
-		B13B31A715D0C876003A4E89 /* epato_game_concepts_board_modules_cell_c.png in Resources */ = {isa = PBXBuildFile; fileRef = B13B314A15D0C876003A4E89 /* epato_game_concepts_board_modules_cell_c.png */; };
-		B13B31A815D0C876003A4E89 /* epato_game_concepts_board_modules_cell_c1.png in Resources */ = {isa = PBXBuildFile; fileRef = B13B314B15D0C876003A4E89 /* epato_game_concepts_board_modules_cell_c1.png */; };
-		B13B31A915D0C876003A4E89 /* epato_game_concepts_board_modules_cell_d.png in Resources */ = {isa = PBXBuildFile; fileRef = B13B314C15D0C876003A4E89 /* epato_game_concepts_board_modules_cell_d.png */; };
-		B13B31AA15D0C876003A4E89 /* epato_game_concepts_board_modules_cell_d1.png in Resources */ = {isa = PBXBuildFile; fileRef = B13B314D15D0C876003A4E89 /* epato_game_concepts_board_modules_cell_d1.png */; };
-		B13B31AB15D0C876003A4E89 /* epato_game_concepts_board_modules_cell_e.png in Resources */ = {isa = PBXBuildFile; fileRef = B13B314E15D0C876003A4E89 /* epato_game_concepts_board_modules_cell_e.png */; };
-		B13B31AC15D0C876003A4E89 /* epato_game_concepts_board_modules_cell_e1.png in Resources */ = {isa = PBXBuildFile; fileRef = B13B314F15D0C876003A4E89 /* epato_game_concepts_board_modules_cell_e1.png */; };
-		B13B31AD15D0C876003A4E89 /* epato_game_concepts_board_modules_cell_f.png in Resources */ = {isa = PBXBuildFile; fileRef = B13B315015D0C876003A4E89 /* epato_game_concepts_board_modules_cell_f.png */; };
-		B13B31AE15D0C876003A4E89 /* epato_game_concepts_board_modules_cell_f_layers.psd in Resources */ = {isa = PBXBuildFile; fileRef = B13B315115D0C876003A4E89 /* epato_game_concepts_board_modules_cell_f_layers.psd */; };
-		B13B31AF15D0C876003A4E89 /* epato_game_concepts_boards_modules_01.png in Resources */ = {isa = PBXBuildFile; fileRef = B13B315215D0C876003A4E89 /* epato_game_concepts_boards_modules_01.png */; };
-		B13B31B015D0C876003A4E89 /* epato_game_concepts_boards_modules_02.png in Resources */ = {isa = PBXBuildFile; fileRef = B13B315315D0C876003A4E89 /* epato_game_concepts_boards_modules_02.png */; };
-		B13B31B115D0C876003A4E89 /* epato_game_concepts_button_concept.png in Resources */ = {isa = PBXBuildFile; fileRef = B13B315415D0C876003A4E89 /* epato_game_concepts_button_concept.png */; };
-		B13B31B215D0C876003A4E89 /* epato_game_concepts_button_concept_01.png in Resources */ = {isa = PBXBuildFile; fileRef = B13B315515D0C876003A4E89 /* epato_game_concepts_button_concept_01.png */; };
-		B13B31B315D0C876003A4E89 /* epato_game_concepts_button_concept_02.png in Resources */ = {isa = PBXBuildFile; fileRef = B13B315615D0C876003A4E89 /* epato_game_concepts_button_concept_02.png */; };
-		B13B31B415D0C876003A4E89 /* epato_game_concepts_button_concept_blank.png in Resources */ = {isa = PBXBuildFile; fileRef = B13B315715D0C876003A4E89 /* epato_game_concepts_button_concept_blank.png */; };
-		B13B31B515D0C876003A4E89 /* epato_game_concepts_tile_modules.ai in Resources */ = {isa = PBXBuildFile; fileRef = B13B315815D0C876003A4E89 /* epato_game_concepts_tile_modules.ai */; };
-		B13B31B615D0C876003A4E89 /* epato_new_game_minimal_tiles.ai in Resources */ = {isa = PBXBuildFile; fileRef = B13B315915D0C876003A4E89 /* epato_new_game_minimal_tiles.ai */; };
-		B13B31B715D0C876003A4E89 /* epato_new_game_minimal_tiles_7-24-2012.png in Resources */ = {isa = PBXBuildFile; fileRef = B13B315A15D0C876003A4E89 /* epato_new_game_minimal_tiles_7-24-2012.png */; };
-		B13B31B815D0C876003A4E89 /* epato_ssi_game_concepts_001.png in Resources */ = {isa = PBXBuildFile; fileRef = B13B315B15D0C876003A4E89 /* epato_ssi_game_concepts_001.png */; };
-		B13B31B915D0C876003A4E89 /* epato_ssi_game_concepts_001.psd in Resources */ = {isa = PBXBuildFile; fileRef = B13B315C15D0C876003A4E89 /* epato_ssi_game_concepts_001.psd */; };
-		B13B31BA15D0C876003A4E89 /* epato_ssi_game_concepts_001b.png in Resources */ = {isa = PBXBuildFile; fileRef = B13B315D15D0C876003A4E89 /* epato_ssi_game_concepts_001b.png */; };
-		B13B31BB15D0C876003A4E89 /* epato_ssi_game_concepts_001c.png in Resources */ = {isa = PBXBuildFile; fileRef = B13B315E15D0C876003A4E89 /* epato_ssi_game_concepts_001c.png */; };
-		B13B31BC15D0C876003A4E89 /* epato_ssi_game_concepts_002.png in Resources */ = {isa = PBXBuildFile; fileRef = B13B315F15D0C876003A4E89 /* epato_ssi_game_concepts_002.png */; };
-		B13B31BD15D0C876003A4E89 /* epato_ssi_game_concepts_003.png in Resources */ = {isa = PBXBuildFile; fileRef = B13B316015D0C876003A4E89 /* epato_ssi_game_concepts_003.png */; };
-		B13B31BE15D0C876003A4E89 /* epato_ssi_game_concepts_004.png in Resources */ = {isa = PBXBuildFile; fileRef = B13B316115D0C876003A4E89 /* epato_ssi_game_concepts_004.png */; };
-		B13B31BF15D0C876003A4E89 /* epato_ssi_game_concepts_004b.png in Resources */ = {isa = PBXBuildFile; fileRef = B13B316215D0C876003A4E89 /* epato_ssi_game_concepts_004b.png */; };
-		B13B31C015D0C876003A4E89 /* epato_ssi_game_concepts_004b.psd in Resources */ = {isa = PBXBuildFile; fileRef = B13B316315D0C876003A4E89 /* epato_ssi_game_concepts_004b.psd */; };
-		B13B31C115D0C876003A4E89 /* epato_ssi_game_concepts_005.png in Resources */ = {isa = PBXBuildFile; fileRef = B13B316415D0C876003A4E89 /* epato_ssi_game_concepts_005.png */; };
-		B13B31C215D0C876003A4E89 /* epato_ssi_game_concepts_005b.png in Resources */ = {isa = PBXBuildFile; fileRef = B13B316515D0C876003A4E89 /* epato_ssi_game_concepts_005b.png */; };
-		B13B31C315D0C876003A4E89 /* epato_ssi_game_concepts_005c.png in Resources */ = {isa = PBXBuildFile; fileRef = B13B316615D0C876003A4E89 /* epato_ssi_game_concepts_005c.png */; };
-		B13B31C415D0C876003A4E89 /* epato_ssi_game_concepts_005c.psd in Resources */ = {isa = PBXBuildFile; fileRef = B13B316715D0C876003A4E89 /* epato_ssi_game_concepts_005c.psd */; };
-		B13B31C515D0C876003A4E89 /* epato_ssi_game_concepts_005e.png in Resources */ = {isa = PBXBuildFile; fileRef = B13B316815D0C876003A4E89 /* epato_ssi_game_concepts_005e.png */; };
-		B13B31C615D0C876003A4E89 /* epato_ssi_game_concepts_006.png in Resources */ = {isa = PBXBuildFile; fileRef = B13B316915D0C876003A4E89 /* epato_ssi_game_concepts_006.png */; };
-		B13B31C715D0C876003A4E89 /* game board mock up.ai in Resources */ = {isa = PBXBuildFile; fileRef = B13B316A15D0C876003A4E89 /* game board mock up.ai */; };
-		B13B31C815D0C876003A4E89 /* gameconcept_digital_sketch_002_ssi_epato.png in Resources */ = {isa = PBXBuildFile; fileRef = B13B316B15D0C876003A4E89 /* gameconcept_digital_sketch_002_ssi_epato.png */; };
-		B13B31C915D0C876003A4E89 /* gameconcept_digital_sketch_002_ssi_epato_BG_and_board.ai in Resources */ = {isa = PBXBuildFile; fileRef = B13B316C15D0C876003A4E89 /* gameconcept_digital_sketch_002_ssi_epato_BG_and_board.ai */; };
-		B13B31CA15D0C876003A4E89 /* gameconcept_digital_sketch_002_ssi_epato_BG_and_board.png in Resources */ = {isa = PBXBuildFile; fileRef = B13B316D15D0C876003A4E89 /* gameconcept_digital_sketch_002_ssi_epato_BG_and_board.png */; };
-		B13B31CB15D0C876003A4E89 /* gameconcept_digital_sketch_002_ssi_epato_BG_and_board_b.ai in Resources */ = {isa = PBXBuildFile; fileRef = B13B316E15D0C876003A4E89 /* gameconcept_digital_sketch_002_ssi_epato_BG_and_board_b.ai */; };
-		B13B31CC15D0C876003A4E89 /* gameconcept_digital_sketches_pieces_epato_mines.ai in Resources */ = {isa = PBXBuildFile; fileRef = B13B316F15D0C876003A4E89 /* gameconcept_digital_sketches_pieces_epato_mines.ai */; };
-		B13B31CD15D0C876003A4E89 /* gameconcept_digital_sketches_pieces_epato_mines.png in Resources */ = {isa = PBXBuildFile; fileRef = B13B317015D0C876003A4E89 /* gameconcept_digital_sketches_pieces_epato_mines.png */; };
-		B13B31CE15D0C876003A4E89 /* gameconcept_digital_sketches_pieces_epato_mines_b.ai in Resources */ = {isa = PBXBuildFile; fileRef = B13B317115D0C876003A4E89 /* gameconcept_digital_sketches_pieces_epato_mines_b.ai */; };
+		B1C7F43015DB2A25002C541D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = B1C7F42F15DB2A25002C541D /* Default.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -169,56 +120,7 @@
 		B13B313D15D0C876003A4E89 /* neutral_to_inactive_glow_frames_04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = neutral_to_inactive_glow_frames_04.png; sourceTree = "<group>"; };
 		B13B313E15D0C876003A4E89 /* neutral_to_inactive_glow_frames_05.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = neutral_to_inactive_glow_frames_05.png; sourceTree = "<group>"; };
 		B13B313F15D0C876003A4E89 /* neutral_to_inactive_glow_frames_06.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = neutral_to_inactive_glow_frames_06.png; sourceTree = "<group>"; };
-		B13B314015D0C876003A4E89 /* epato_game_concepts_board_mock_up_001.ai */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = epato_game_concepts_board_mock_up_001.ai; sourceTree = "<group>"; };
-		B13B314115D0C876003A4E89 /* epato_game_concepts_board_mock_up_001_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = epato_game_concepts_board_mock_up_001_02.png; sourceTree = "<group>"; };
-		B13B314215D0C876003A4E89 /* epato_game_concepts_board_mock_up_001_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = epato_game_concepts_board_mock_up_001_1.png; sourceTree = "<group>"; };
-		B13B314315D0C876003A4E89 /* epato_game_concepts_board_mock_up_001_breakdown.png .png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "epato_game_concepts_board_mock_up_001_breakdown.png .png"; sourceTree = "<group>"; };
-		B13B314415D0C876003A4E89 /* epato_game_concepts_board_mock_up_001_complete_infographic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = epato_game_concepts_board_mock_up_001_complete_infographic.png; sourceTree = "<group>"; };
-		B13B314515D0C876003A4E89 /* epato_game_concepts_board_mock_up_002.ai */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = epato_game_concepts_board_mock_up_002.ai; sourceTree = "<group>"; };
-		B13B314615D0C876003A4E89 /* epato_game_concepts_board_modules_cell_a.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = epato_game_concepts_board_modules_cell_a.png; sourceTree = "<group>"; };
-		B13B314715D0C876003A4E89 /* epato_game_concepts_board_modules_cell_a1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = epato_game_concepts_board_modules_cell_a1.png; sourceTree = "<group>"; };
-		B13B314815D0C876003A4E89 /* epato_game_concepts_board_modules_cell_b.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = epato_game_concepts_board_modules_cell_b.png; sourceTree = "<group>"; };
-		B13B314915D0C876003A4E89 /* epato_game_concepts_board_modules_cell_b1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = epato_game_concepts_board_modules_cell_b1.png; sourceTree = "<group>"; };
-		B13B314A15D0C876003A4E89 /* epato_game_concepts_board_modules_cell_c.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = epato_game_concepts_board_modules_cell_c.png; sourceTree = "<group>"; };
-		B13B314B15D0C876003A4E89 /* epato_game_concepts_board_modules_cell_c1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = epato_game_concepts_board_modules_cell_c1.png; sourceTree = "<group>"; };
-		B13B314C15D0C876003A4E89 /* epato_game_concepts_board_modules_cell_d.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = epato_game_concepts_board_modules_cell_d.png; sourceTree = "<group>"; };
-		B13B314D15D0C876003A4E89 /* epato_game_concepts_board_modules_cell_d1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = epato_game_concepts_board_modules_cell_d1.png; sourceTree = "<group>"; };
-		B13B314E15D0C876003A4E89 /* epato_game_concepts_board_modules_cell_e.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = epato_game_concepts_board_modules_cell_e.png; sourceTree = "<group>"; };
-		B13B314F15D0C876003A4E89 /* epato_game_concepts_board_modules_cell_e1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = epato_game_concepts_board_modules_cell_e1.png; sourceTree = "<group>"; };
-		B13B315015D0C876003A4E89 /* epato_game_concepts_board_modules_cell_f.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = epato_game_concepts_board_modules_cell_f.png; sourceTree = "<group>"; };
-		B13B315115D0C876003A4E89 /* epato_game_concepts_board_modules_cell_f_layers.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = epato_game_concepts_board_modules_cell_f_layers.psd; sourceTree = "<group>"; };
-		B13B315215D0C876003A4E89 /* epato_game_concepts_boards_modules_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = epato_game_concepts_boards_modules_01.png; sourceTree = "<group>"; };
-		B13B315315D0C876003A4E89 /* epato_game_concepts_boards_modules_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = epato_game_concepts_boards_modules_02.png; sourceTree = "<group>"; };
-		B13B315415D0C876003A4E89 /* epato_game_concepts_button_concept.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = epato_game_concepts_button_concept.png; sourceTree = "<group>"; };
-		B13B315515D0C876003A4E89 /* epato_game_concepts_button_concept_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = epato_game_concepts_button_concept_01.png; sourceTree = "<group>"; };
-		B13B315615D0C876003A4E89 /* epato_game_concepts_button_concept_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = epato_game_concepts_button_concept_02.png; sourceTree = "<group>"; };
-		B13B315715D0C876003A4E89 /* epato_game_concepts_button_concept_blank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = epato_game_concepts_button_concept_blank.png; sourceTree = "<group>"; };
-		B13B315815D0C876003A4E89 /* epato_game_concepts_tile_modules.ai */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = epato_game_concepts_tile_modules.ai; sourceTree = "<group>"; };
-		B13B315915D0C876003A4E89 /* epato_new_game_minimal_tiles.ai */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = epato_new_game_minimal_tiles.ai; sourceTree = "<group>"; };
-		B13B315A15D0C876003A4E89 /* epato_new_game_minimal_tiles_7-24-2012.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "epato_new_game_minimal_tiles_7-24-2012.png"; sourceTree = "<group>"; };
-		B13B315B15D0C876003A4E89 /* epato_ssi_game_concepts_001.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = epato_ssi_game_concepts_001.png; sourceTree = "<group>"; };
-		B13B315C15D0C876003A4E89 /* epato_ssi_game_concepts_001.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = epato_ssi_game_concepts_001.psd; sourceTree = "<group>"; };
-		B13B315D15D0C876003A4E89 /* epato_ssi_game_concepts_001b.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = epato_ssi_game_concepts_001b.png; sourceTree = "<group>"; };
-		B13B315E15D0C876003A4E89 /* epato_ssi_game_concepts_001c.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = epato_ssi_game_concepts_001c.png; sourceTree = "<group>"; };
-		B13B315F15D0C876003A4E89 /* epato_ssi_game_concepts_002.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = epato_ssi_game_concepts_002.png; sourceTree = "<group>"; };
-		B13B316015D0C876003A4E89 /* epato_ssi_game_concepts_003.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = epato_ssi_game_concepts_003.png; sourceTree = "<group>"; };
-		B13B316115D0C876003A4E89 /* epato_ssi_game_concepts_004.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = epato_ssi_game_concepts_004.png; sourceTree = "<group>"; };
-		B13B316215D0C876003A4E89 /* epato_ssi_game_concepts_004b.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = epato_ssi_game_concepts_004b.png; sourceTree = "<group>"; };
-		B13B316315D0C876003A4E89 /* epato_ssi_game_concepts_004b.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = epato_ssi_game_concepts_004b.psd; sourceTree = "<group>"; };
-		B13B316415D0C876003A4E89 /* epato_ssi_game_concepts_005.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = epato_ssi_game_concepts_005.png; sourceTree = "<group>"; };
-		B13B316515D0C876003A4E89 /* epato_ssi_game_concepts_005b.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = epato_ssi_game_concepts_005b.png; sourceTree = "<group>"; };
-		B13B316615D0C876003A4E89 /* epato_ssi_game_concepts_005c.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = epato_ssi_game_concepts_005c.png; sourceTree = "<group>"; };
-		B13B316715D0C876003A4E89 /* epato_ssi_game_concepts_005c.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = epato_ssi_game_concepts_005c.psd; sourceTree = "<group>"; };
-		B13B316815D0C876003A4E89 /* epato_ssi_game_concepts_005e.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = epato_ssi_game_concepts_005e.png; sourceTree = "<group>"; };
-		B13B316915D0C876003A4E89 /* epato_ssi_game_concepts_006.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = epato_ssi_game_concepts_006.png; sourceTree = "<group>"; };
-		B13B316A15D0C876003A4E89 /* game board mock up.ai */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "game board mock up.ai"; sourceTree = "<group>"; };
-		B13B316B15D0C876003A4E89 /* gameconcept_digital_sketch_002_ssi_epato.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gameconcept_digital_sketch_002_ssi_epato.png; sourceTree = "<group>"; };
-		B13B316C15D0C876003A4E89 /* gameconcept_digital_sketch_002_ssi_epato_BG_and_board.ai */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = gameconcept_digital_sketch_002_ssi_epato_BG_and_board.ai; sourceTree = "<group>"; };
-		B13B316D15D0C876003A4E89 /* gameconcept_digital_sketch_002_ssi_epato_BG_and_board.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gameconcept_digital_sketch_002_ssi_epato_BG_and_board.png; sourceTree = "<group>"; };
-		B13B316E15D0C876003A4E89 /* gameconcept_digital_sketch_002_ssi_epato_BG_and_board_b.ai */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = gameconcept_digital_sketch_002_ssi_epato_BG_and_board_b.ai; sourceTree = "<group>"; };
-		B13B316F15D0C876003A4E89 /* gameconcept_digital_sketches_pieces_epato_mines.ai */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = gameconcept_digital_sketches_pieces_epato_mines.ai; sourceTree = "<group>"; };
-		B13B317015D0C876003A4E89 /* gameconcept_digital_sketches_pieces_epato_mines.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gameconcept_digital_sketches_pieces_epato_mines.png; sourceTree = "<group>"; };
-		B13B317115D0C876003A4E89 /* gameconcept_digital_sketches_pieces_epato_mines_b.ai */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = gameconcept_digital_sketches_pieces_epato_mines_b.ai; sourceTree = "<group>"; };
+		B1C7F42F15DB2A25002C541D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -291,59 +193,10 @@
 		B13B311315D0C876003A4E89 /* Sayonaria Art */ = {
 			isa = PBXGroup;
 			children = (
+				B1C7F43215DB2A2F002C541D /* Splash Screen */,
 				B13B311415D0C876003A4E89 /*  .ai */,
 				B13B311515D0C876003A4E89 /* buttons isoed.psd */,
 				B13B311615D0C876003A4E89 /* cel layers */,
-				B13B314015D0C876003A4E89 /* epato_game_concepts_board_mock_up_001.ai */,
-				B13B314115D0C876003A4E89 /* epato_game_concepts_board_mock_up_001_02.png */,
-				B13B314215D0C876003A4E89 /* epato_game_concepts_board_mock_up_001_1.png */,
-				B13B314315D0C876003A4E89 /* epato_game_concepts_board_mock_up_001_breakdown.png .png */,
-				B13B314415D0C876003A4E89 /* epato_game_concepts_board_mock_up_001_complete_infographic.png */,
-				B13B314515D0C876003A4E89 /* epato_game_concepts_board_mock_up_002.ai */,
-				B13B314615D0C876003A4E89 /* epato_game_concepts_board_modules_cell_a.png */,
-				B13B314715D0C876003A4E89 /* epato_game_concepts_board_modules_cell_a1.png */,
-				B13B314815D0C876003A4E89 /* epato_game_concepts_board_modules_cell_b.png */,
-				B13B314915D0C876003A4E89 /* epato_game_concepts_board_modules_cell_b1.png */,
-				B13B314A15D0C876003A4E89 /* epato_game_concepts_board_modules_cell_c.png */,
-				B13B314B15D0C876003A4E89 /* epato_game_concepts_board_modules_cell_c1.png */,
-				B13B314C15D0C876003A4E89 /* epato_game_concepts_board_modules_cell_d.png */,
-				B13B314D15D0C876003A4E89 /* epato_game_concepts_board_modules_cell_d1.png */,
-				B13B314E15D0C876003A4E89 /* epato_game_concepts_board_modules_cell_e.png */,
-				B13B314F15D0C876003A4E89 /* epato_game_concepts_board_modules_cell_e1.png */,
-				B13B315015D0C876003A4E89 /* epato_game_concepts_board_modules_cell_f.png */,
-				B13B315115D0C876003A4E89 /* epato_game_concepts_board_modules_cell_f_layers.psd */,
-				B13B315215D0C876003A4E89 /* epato_game_concepts_boards_modules_01.png */,
-				B13B315315D0C876003A4E89 /* epato_game_concepts_boards_modules_02.png */,
-				B13B315415D0C876003A4E89 /* epato_game_concepts_button_concept.png */,
-				B13B315515D0C876003A4E89 /* epato_game_concepts_button_concept_01.png */,
-				B13B315615D0C876003A4E89 /* epato_game_concepts_button_concept_02.png */,
-				B13B315715D0C876003A4E89 /* epato_game_concepts_button_concept_blank.png */,
-				B13B315815D0C876003A4E89 /* epato_game_concepts_tile_modules.ai */,
-				B13B315915D0C876003A4E89 /* epato_new_game_minimal_tiles.ai */,
-				B13B315A15D0C876003A4E89 /* epato_new_game_minimal_tiles_7-24-2012.png */,
-				B13B315B15D0C876003A4E89 /* epato_ssi_game_concepts_001.png */,
-				B13B315C15D0C876003A4E89 /* epato_ssi_game_concepts_001.psd */,
-				B13B315D15D0C876003A4E89 /* epato_ssi_game_concepts_001b.png */,
-				B13B315E15D0C876003A4E89 /* epato_ssi_game_concepts_001c.png */,
-				B13B315F15D0C876003A4E89 /* epato_ssi_game_concepts_002.png */,
-				B13B316015D0C876003A4E89 /* epato_ssi_game_concepts_003.png */,
-				B13B316115D0C876003A4E89 /* epato_ssi_game_concepts_004.png */,
-				B13B316215D0C876003A4E89 /* epato_ssi_game_concepts_004b.png */,
-				B13B316315D0C876003A4E89 /* epato_ssi_game_concepts_004b.psd */,
-				B13B316415D0C876003A4E89 /* epato_ssi_game_concepts_005.png */,
-				B13B316515D0C876003A4E89 /* epato_ssi_game_concepts_005b.png */,
-				B13B316615D0C876003A4E89 /* epato_ssi_game_concepts_005c.png */,
-				B13B316715D0C876003A4E89 /* epato_ssi_game_concepts_005c.psd */,
-				B13B316815D0C876003A4E89 /* epato_ssi_game_concepts_005e.png */,
-				B13B316915D0C876003A4E89 /* epato_ssi_game_concepts_006.png */,
-				B13B316A15D0C876003A4E89 /* game board mock up.ai */,
-				B13B316B15D0C876003A4E89 /* gameconcept_digital_sketch_002_ssi_epato.png */,
-				B13B316C15D0C876003A4E89 /* gameconcept_digital_sketch_002_ssi_epato_BG_and_board.ai */,
-				B13B316D15D0C876003A4E89 /* gameconcept_digital_sketch_002_ssi_epato_BG_and_board.png */,
-				B13B316E15D0C876003A4E89 /* gameconcept_digital_sketch_002_ssi_epato_BG_and_board_b.ai */,
-				B13B316F15D0C876003A4E89 /* gameconcept_digital_sketches_pieces_epato_mines.ai */,
-				B13B317015D0C876003A4E89 /* gameconcept_digital_sketches_pieces_epato_mines.png */,
-				B13B317115D0C876003A4E89 /* gameconcept_digital_sketches_pieces_epato_mines_b.ai */,
 			);
 			path = "Sayonaria Art";
 			sourceTree = "<group>";
@@ -394,6 +247,14 @@
 				B13B313F15D0C876003A4E89 /* neutral_to_inactive_glow_frames_06.png */,
 			);
 			path = "cel layers";
+			sourceTree = "<group>";
+		};
+		B1C7F43215DB2A2F002C541D /* Splash Screen */ = {
+			isa = PBXGroup;
+			children = (
+				B1C7F42F15DB2A25002C541D /* Default.png */,
+			);
+			name = "Splash Screen";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -493,56 +354,7 @@
 				B13B319A15D0C876003A4E89 /* neutral_to_inactive_glow_frames_04.png in Resources */,
 				B13B319B15D0C876003A4E89 /* neutral_to_inactive_glow_frames_05.png in Resources */,
 				B13B319C15D0C876003A4E89 /* neutral_to_inactive_glow_frames_06.png in Resources */,
-				B13B319D15D0C876003A4E89 /* epato_game_concepts_board_mock_up_001.ai in Resources */,
-				B13B319E15D0C876003A4E89 /* epato_game_concepts_board_mock_up_001_02.png in Resources */,
-				B13B319F15D0C876003A4E89 /* epato_game_concepts_board_mock_up_001_1.png in Resources */,
-				B13B31A015D0C876003A4E89 /* epato_game_concepts_board_mock_up_001_breakdown.png .png in Resources */,
-				B13B31A115D0C876003A4E89 /* epato_game_concepts_board_mock_up_001_complete_infographic.png in Resources */,
-				B13B31A215D0C876003A4E89 /* epato_game_concepts_board_mock_up_002.ai in Resources */,
-				B13B31A315D0C876003A4E89 /* epato_game_concepts_board_modules_cell_a.png in Resources */,
-				B13B31A415D0C876003A4E89 /* epato_game_concepts_board_modules_cell_a1.png in Resources */,
-				B13B31A515D0C876003A4E89 /* epato_game_concepts_board_modules_cell_b.png in Resources */,
-				B13B31A615D0C876003A4E89 /* epato_game_concepts_board_modules_cell_b1.png in Resources */,
-				B13B31A715D0C876003A4E89 /* epato_game_concepts_board_modules_cell_c.png in Resources */,
-				B13B31A815D0C876003A4E89 /* epato_game_concepts_board_modules_cell_c1.png in Resources */,
-				B13B31A915D0C876003A4E89 /* epato_game_concepts_board_modules_cell_d.png in Resources */,
-				B13B31AA15D0C876003A4E89 /* epato_game_concepts_board_modules_cell_d1.png in Resources */,
-				B13B31AB15D0C876003A4E89 /* epato_game_concepts_board_modules_cell_e.png in Resources */,
-				B13B31AC15D0C876003A4E89 /* epato_game_concepts_board_modules_cell_e1.png in Resources */,
-				B13B31AD15D0C876003A4E89 /* epato_game_concepts_board_modules_cell_f.png in Resources */,
-				B13B31AE15D0C876003A4E89 /* epato_game_concepts_board_modules_cell_f_layers.psd in Resources */,
-				B13B31AF15D0C876003A4E89 /* epato_game_concepts_boards_modules_01.png in Resources */,
-				B13B31B015D0C876003A4E89 /* epato_game_concepts_boards_modules_02.png in Resources */,
-				B13B31B115D0C876003A4E89 /* epato_game_concepts_button_concept.png in Resources */,
-				B13B31B215D0C876003A4E89 /* epato_game_concepts_button_concept_01.png in Resources */,
-				B13B31B315D0C876003A4E89 /* epato_game_concepts_button_concept_02.png in Resources */,
-				B13B31B415D0C876003A4E89 /* epato_game_concepts_button_concept_blank.png in Resources */,
-				B13B31B515D0C876003A4E89 /* epato_game_concepts_tile_modules.ai in Resources */,
-				B13B31B615D0C876003A4E89 /* epato_new_game_minimal_tiles.ai in Resources */,
-				B13B31B715D0C876003A4E89 /* epato_new_game_minimal_tiles_7-24-2012.png in Resources */,
-				B13B31B815D0C876003A4E89 /* epato_ssi_game_concepts_001.png in Resources */,
-				B13B31B915D0C876003A4E89 /* epato_ssi_game_concepts_001.psd in Resources */,
-				B13B31BA15D0C876003A4E89 /* epato_ssi_game_concepts_001b.png in Resources */,
-				B13B31BB15D0C876003A4E89 /* epato_ssi_game_concepts_001c.png in Resources */,
-				B13B31BC15D0C876003A4E89 /* epato_ssi_game_concepts_002.png in Resources */,
-				B13B31BD15D0C876003A4E89 /* epato_ssi_game_concepts_003.png in Resources */,
-				B13B31BE15D0C876003A4E89 /* epato_ssi_game_concepts_004.png in Resources */,
-				B13B31BF15D0C876003A4E89 /* epato_ssi_game_concepts_004b.png in Resources */,
-				B13B31C015D0C876003A4E89 /* epato_ssi_game_concepts_004b.psd in Resources */,
-				B13B31C115D0C876003A4E89 /* epato_ssi_game_concepts_005.png in Resources */,
-				B13B31C215D0C876003A4E89 /* epato_ssi_game_concepts_005b.png in Resources */,
-				B13B31C315D0C876003A4E89 /* epato_ssi_game_concepts_005c.png in Resources */,
-				B13B31C415D0C876003A4E89 /* epato_ssi_game_concepts_005c.psd in Resources */,
-				B13B31C515D0C876003A4E89 /* epato_ssi_game_concepts_005e.png in Resources */,
-				B13B31C615D0C876003A4E89 /* epato_ssi_game_concepts_006.png in Resources */,
-				B13B31C715D0C876003A4E89 /* game board mock up.ai in Resources */,
-				B13B31C815D0C876003A4E89 /* gameconcept_digital_sketch_002_ssi_epato.png in Resources */,
-				B13B31C915D0C876003A4E89 /* gameconcept_digital_sketch_002_ssi_epato_BG_and_board.ai in Resources */,
-				B13B31CA15D0C876003A4E89 /* gameconcept_digital_sketch_002_ssi_epato_BG_and_board.png in Resources */,
-				B13B31CB15D0C876003A4E89 /* gameconcept_digital_sketch_002_ssi_epato_BG_and_board_b.ai in Resources */,
-				B13B31CC15D0C876003A4E89 /* gameconcept_digital_sketches_pieces_epato_mines.ai in Resources */,
-				B13B31CD15D0C876003A4E89 /* gameconcept_digital_sketches_pieces_epato_mines.png in Resources */,
-				B13B31CE15D0C876003A4E89 /* gameconcept_digital_sketches_pieces_epato_mines_b.ai in Resources */,
+				B1C7F43015DB2A25002C541D /* Default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -677,6 +489,7 @@
 				B13B311215D0C7BF003A4E89 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
