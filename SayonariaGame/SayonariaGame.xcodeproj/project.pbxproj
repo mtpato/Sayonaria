@@ -15,7 +15,6 @@
 		B13B310415D0C7BF003A4E89 /* SSIGameAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B13B310315D0C7BF003A4E89 /* SSIGameAppDelegate.m */; };
 		B13B310715D0C7BF003A4E89 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B13B310515D0C7BF003A4E89 /* MainStoryboard_iPhone.storyboard */; };
 		B13B310A15D0C7BF003A4E89 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B13B310815D0C7BF003A4E89 /* MainStoryboard_iPad.storyboard */; };
-		B13B310D15D0C7BF003A4E89 /* SSIGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B13B310C15D0C7BF003A4E89 /* SSIGameViewController.m */; };
 		B13B317215D0C876003A4E89 /*  .ai in Resources */ = {isa = PBXBuildFile; fileRef = B13B311415D0C876003A4E89 /*  .ai */; };
 		B13B317315D0C876003A4E89 /* buttons isoed.psd in Resources */ = {isa = PBXBuildFile; fileRef = B13B311515D0C876003A4E89 /* buttons isoed.psd */; };
 		B13B317415D0C876003A4E89 /* epato_clicked_button_game.png in Resources */ = {isa = PBXBuildFile; fileRef = B13B311715D0C876003A4E89 /* epato_clicked_button_game.png */; };
@@ -60,6 +59,9 @@
 		B13B319B15D0C876003A4E89 /* neutral_to_inactive_glow_frames_05.png in Resources */ = {isa = PBXBuildFile; fileRef = B13B313E15D0C876003A4E89 /* neutral_to_inactive_glow_frames_05.png */; };
 		B13B319C15D0C876003A4E89 /* neutral_to_inactive_glow_frames_06.png in Resources */ = {isa = PBXBuildFile; fileRef = B13B313F15D0C876003A4E89 /* neutral_to_inactive_glow_frames_06.png */; };
 		B1C7F43015DB2A25002C541D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = B1C7F42F15DB2A25002C541D /* Default.png */; };
+		B1C7F43515DB322D002C541D /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C7F43415DB322D002C541D /* LoginViewController.m */; };
+		B1C7F43815DB3CC3002C541D /* LoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C7F43715DB3CC3002C541D /* LoadingView.m */; };
+		B1C7F43F15DB47B9002C541D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1C7F43E15DB47B9002C541D /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,8 +77,6 @@
 		B13B310315D0C7BF003A4E89 /* SSIGameAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSIGameAppDelegate.m; sourceTree = "<group>"; };
 		B13B310615D0C7BF003A4E89 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		B13B310915D0C7BF003A4E89 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
-		B13B310B15D0C7BF003A4E89 /* SSIGameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSIGameViewController.h; sourceTree = "<group>"; };
-		B13B310C15D0C7BF003A4E89 /* SSIGameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSIGameViewController.m; sourceTree = "<group>"; };
 		B13B311415D0C876003A4E89 /*  .ai */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = " .ai"; sourceTree = "<group>"; };
 		B13B311515D0C876003A4E89 /* buttons isoed.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = "buttons isoed.psd"; sourceTree = "<group>"; };
 		B13B311715D0C876003A4E89 /* epato_clicked_button_game.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = epato_clicked_button_game.png; sourceTree = "<group>"; };
@@ -121,6 +121,11 @@
 		B13B313E15D0C876003A4E89 /* neutral_to_inactive_glow_frames_05.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = neutral_to_inactive_glow_frames_05.png; sourceTree = "<group>"; };
 		B13B313F15D0C876003A4E89 /* neutral_to_inactive_glow_frames_06.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = neutral_to_inactive_glow_frames_06.png; sourceTree = "<group>"; };
 		B1C7F42F15DB2A25002C541D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		B1C7F43315DB322D002C541D /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		B1C7F43415DB322D002C541D /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		B1C7F43615DB3CC3002C541D /* LoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingView.h; sourceTree = "<group>"; };
+		B1C7F43715DB3CC3002C541D /* LoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingView.m; sourceTree = "<group>"; };
+		B1C7F43E15DB47B9002C541D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +133,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1C7F43F15DB47B9002C541D /* QuartzCore.framework in Frameworks */,
 				B13B30F415D0C7BF003A4E89 /* UIKit.framework in Frameworks */,
 				B13B30F615D0C7BF003A4E89 /* Foundation.framework in Frameworks */,
 				B13B30F815D0C7BF003A4E89 /* CoreGraphics.framework in Frameworks */,
@@ -140,6 +146,9 @@
 		B13B30E415D0C7BF003A4E89 = {
 			isa = PBXGroup;
 			children = (
+				B1C7F43E15DB47B9002C541D /* QuartzCore.framework */,
+				B1C7F43615DB3CC3002C541D /* LoadingView.h */,
+				B1C7F43715DB3CC3002C541D /* LoadingView.m */,
 				B13B30F915D0C7BF003A4E89 /* SayonariaGame */,
 				B13B30F215D0C7BF003A4E89 /* Frameworks */,
 				B13B30F015D0C7BF003A4E89 /* Products */,
@@ -172,8 +181,8 @@
 				B13B310315D0C7BF003A4E89 /* SSIGameAppDelegate.m */,
 				B13B310515D0C7BF003A4E89 /* MainStoryboard_iPhone.storyboard */,
 				B13B310815D0C7BF003A4E89 /* MainStoryboard_iPad.storyboard */,
-				B13B310B15D0C7BF003A4E89 /* SSIGameViewController.h */,
-				B13B310C15D0C7BF003A4E89 /* SSIGameViewController.m */,
+				B1C7F43315DB322D002C541D /* LoginViewController.h */,
+				B1C7F43415DB322D002C541D /* LoginViewController.m */,
 				B13B30FA15D0C7BF003A4E89 /* Supporting Files */,
 			);
 			path = SayonariaGame;
@@ -367,7 +376,8 @@
 			files = (
 				B13B310015D0C7BF003A4E89 /* main.m in Sources */,
 				B13B310415D0C7BF003A4E89 /* SSIGameAppDelegate.m in Sources */,
-				B13B310D15D0C7BF003A4E89 /* SSIGameViewController.m in Sources */,
+				B1C7F43515DB322D002C541D /* LoginViewController.m in Sources */,
+				B1C7F43815DB3CC3002C541D /* LoadingView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
