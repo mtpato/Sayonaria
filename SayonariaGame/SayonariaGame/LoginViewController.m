@@ -17,6 +17,7 @@
 @synthesize outputStream = _outputStream;
 
 - (IBAction)BackgroundClicked:(id)sender {
+    NSLog(@"You resigned first responder");
     [self.UserName resignFirstResponder];
     [self.Password resignFirstResponder];
 }
@@ -51,19 +52,21 @@
 }
 
 - (void)loginToServerWithAuthkey:(NSString *)userNameAuthkey {
-    
 	NSString *loginString  = [NSString stringWithFormat:@"keyLogin:%@", userNameAuthkey];
 	NSData *data = [[NSData alloc] initWithData:[loginString dataUsingEncoding:NSASCIIStringEncoding]];
 	[self.outputStream write:[data bytes] maxLength:[data length]];
 }
-
--(IBAction)didPressLogin:(id)sender{
-    NSLog(@"You pressed login");
-    NSString *userNamePassword = [NSString stringWithFormat:@"keyLogin:%@%@%@", self.UserName.text, @",", self.Password.text];
+- (IBAction)didPressLogin:(id)sender {
+    NSString *userNamePassword = [NSString stringWithFormat:@"%@%@%@", self.UserName.text, @",", self.Password.text];
     LoadingView * loader = [LoadingView loadSpinnerIntoView:self.view];
     [self loginToServerWithPassword:userNamePassword];
     [loader removeLoader];
 }
+
+- (IBAction)didPressNewUser:(id)sender {
+    NSLog(@"You Pressed New User");
+}
+
 
 - (void)stream:(NSStream *)theStream handleEvent:(NSStreamEvent)streamEvent {
     
@@ -125,6 +128,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+        NSLog(@"WTF");
         // Custom initialization
     }
     return self;
@@ -140,7 +144,7 @@
     //check if the user has a stored username and authkey first
     //if they do, login immediately
     if(([defaults objectForKey:@"UserName"] != nil) && ([defaults objectForKey:@"AuthKey"] != nil)) {
-        NSString *userNameAuthKey = [NSString stringWithFormat:@"keyLogin:%@%@%@", [defaults objectForKey:@"UserName"], @",", [defaults objectForKey:@"AuthKey"]];
+        NSString *userNameAuthKey = [NSString stringWithFormat:@"%@%@%@", [defaults objectForKey:@"UserName"], @",", [defaults objectForKey:@"AuthKey"]];
         LoadingView * loader = [LoadingView loadSpinnerIntoView:self.view];
         [self loginToServerWithAuthkey:userNameAuthKey];
         [loader removeLoader];
