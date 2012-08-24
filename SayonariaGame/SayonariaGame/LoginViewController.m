@@ -77,6 +77,9 @@
 		case NSStreamEventOpenCompleted:
 			NSLog(@"Stream opened");
 			break;
+        case NSStreamEventHasSpaceAvailable:
+            NSLog(@"Space Available");
+            break;
 		case NSStreamEventHasBytesAvailable:
             
 			if (theStream == self.inputStream) {
