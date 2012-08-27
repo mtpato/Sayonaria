@@ -53,11 +53,9 @@
         [defaults synchronize];
         
         NSString *userNamePassword = [NSString stringWithFormat:@"%@%@%@", self.UserName.text, @",", self.Password.text];
-        LoadingView * loader = [LoadingView loadSpinnerIntoView:self.view];
+        self.loader = [LoadingView loadSpinnerIntoView:self.view];
         [self loginToServerWithPassword:userNamePassword];
-        [loader removeLoader];
     }
-    
 }
 
 //brings up the new user screen
@@ -169,9 +167,7 @@
         } else if(state == (ServerState *)TryingAuthKeyLogin) {
             NSLog(@"Logged in!");
             self.currentServerState = (ServerState *)InTabView;
-        
             [self performSegueWithIdentifier:@"showTabView" sender:nil];
-
         } else{
             NSLog(@"Server 'done' message not interpreted");
         }
