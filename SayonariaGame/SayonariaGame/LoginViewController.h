@@ -14,4 +14,18 @@
 @property (nonatomic,strong) NSOutputStream *outputStream;
 @property (nonatomic, weak) IBOutlet UITextField *UserName;
 @property (nonatomic, weak) IBOutlet UITextField *Password;
+@property (nonatomic, strong) UIAlertView *alert;
+
+-(void)sendMessageToServer: (NSString *)message;
+
+typedef enum {
+    Connecting = 0,
+    SendingGameType = 1,
+    ConnectedAwaitingLogon = 2,
+    InTabView = 3,
+    TryingAuthKeyLogin = 4,
+    InGameView = 5
+} ServerState;
+
+@property (nonatomic) ServerState *currentServerState;
 @end

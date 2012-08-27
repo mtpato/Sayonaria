@@ -26,9 +26,12 @@
 	if(!loaderView){ return nil; }
     
     //make the background of the spinner
+    loaderView.backgroundColor = [UIColor blackColor];
+    /*
     UIImageView *loaderBackground = [[UIImageView alloc] initWithImage:[loaderView addBackground]];
     loaderBackground.alpha = 0.7;
     [loaderView addSubview:loaderBackground];
+    */
     
     //create the spinning indicator//
     UIActivityIndicatorView *indicator =
