@@ -62,6 +62,7 @@
 		B1C7F43515DB322D002C541D /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C7F43415DB322D002C541D /* LoginViewController.m */; };
 		B1C7F43815DB3CC3002C541D /* LoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C7F43715DB3CC3002C541D /* LoadingView.m */; };
 		B1C7F43F15DB47B9002C541D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1C7F43E15DB47B9002C541D /* QuartzCore.framework */; };
+		B1EC2BA915EC5DFA00AC01BE /* NewUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1EC2BA815EC5DFA00AC01BE /* NewUserViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -126,6 +127,8 @@
 		B1C7F43615DB3CC3002C541D /* LoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingView.h; sourceTree = "<group>"; };
 		B1C7F43715DB3CC3002C541D /* LoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingView.m; sourceTree = "<group>"; };
 		B1C7F43E15DB47B9002C541D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		B1EC2BA715EC5DFA00AC01BE /* NewUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewUserViewController.h; sourceTree = "<group>"; };
+		B1EC2BA815EC5DFA00AC01BE /* NewUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewUserViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +184,8 @@
 				B13B310315D0C7BF003A4E89 /* SSIGameAppDelegate.m */,
 				B13B310515D0C7BF003A4E89 /* MainStoryboard_iPhone.storyboard */,
 				B13B310815D0C7BF003A4E89 /* MainStoryboard_iPad.storyboard */,
+				B1EC2BA715EC5DFA00AC01BE /* NewUserViewController.h */,
+				B1EC2BA815EC5DFA00AC01BE /* NewUserViewController.m */,
 				B1C7F43315DB322D002C541D /* LoginViewController.h */,
 				B1C7F43415DB322D002C541D /* LoginViewController.m */,
 				B13B30FA15D0C7BF003A4E89 /* Supporting Files */,
@@ -378,6 +383,7 @@
 				B13B310415D0C7BF003A4E89 /* SSIGameAppDelegate.m in Sources */,
 				B1C7F43515DB322D002C541D /* LoginViewController.m in Sources */,
 				B1C7F43815DB3CC3002C541D /* LoadingView.m in Sources */,
+				B1EC2BA915EC5DFA00AC01BE /* NewUserViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

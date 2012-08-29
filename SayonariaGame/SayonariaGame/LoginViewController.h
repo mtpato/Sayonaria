@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "LoadingView.h"
+#import "NewUserViewController.h"
 
-@interface LoginViewController : UIViewController <NSStreamDelegate>
+@interface LoginViewController : UIViewController <NSStreamDelegate,UIAlertViewDelegate,UITextFieldDelegate,NewUserViewControllerDelegate>
 @property (nonatomic,strong) NSInputStream *inputStream;
 @property (nonatomic,strong) NSOutputStream *outputStream;
 @property (nonatomic, weak) IBOutlet UITextField *UserName;

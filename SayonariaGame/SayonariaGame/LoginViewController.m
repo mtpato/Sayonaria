@@ -25,7 +25,7 @@
         _alert = [[UIAlertView alloc]
                  initWithTitle: @"Alert"
                  message: @"Alert!"
-                 delegate: nil
+                 delegate: self
                  cancelButtonTitle:@"OK"
                  otherButtonTitles:nil];
     }
@@ -60,13 +60,29 @@
 
 //brings up the new user screen
 - (IBAction)didPressNewUser:(id)sender {
-    [self sendMessageToServer:@"newUser:IanTest2,test2,test2Email@email.com"];
+}
+//remove the new user screen
+-(void)removeNewUserViewController{
+    [self dismissModalViewControllerAnimated:YES];
+}
+
+//make the return key resign first responder
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+    if([textField.text length]){
+        [textField resignFirstResponder];
+        return YES;
+    } else {
+        return NO;
+    }
 }
 
 #pragma mark - Network Initialization and Handling
 
 //Initialize the socket
 - (void)initNetworkCommunication {
+    //bring up a loader and set the server connection state
+    self.loader = [LoadingView loadSpinnerIntoView:self.view];
+    self.currentServerState = (ServerState *)Connecting;
     //create input and output stream core foundation objects
     CFReadStreamRef readStream;
     CFWriteStreamRef writeStream;
@@ -117,6 +133,15 @@
             
 		case NSStreamEventErrorOccurred:
 			NSLog(@"Can not connect to the host!");
+            self.currentServerState = nil;
+            [self.loader removeLoader];
+            self.alert = [[UIAlertView alloc]
+                          initWithTitle: @"Cannot Access Server"
+                          message: @"Error 37: There was a problem accessing the server"
+                          delegate: self
+                          cancelButtonTitle:@"OK"
+                          otherButtonTitles:nil];
+            [self.alert show];
 			break;
 			
 		case NSStreamEventEndEncountered:
@@ -147,11 +172,10 @@
         if(state == (ServerState *)Connecting){
             self.currentServerState = (ServerState *)SendingGameType;
             [self sendMessageToServer:@"tileGame"];
-        
         //if we have sent in the game type, try logging in with a pre existing auth key
         } else if(state == (ServerState *)SendingGameType){
             self.currentServerState = (ServerState *)ConnectedAwaitingLogon;
-            [self loginToServerWithAuthkey];
+            //[self loginToServerWithAuthkey];
             //remove the initial loading screen
             [self.loader removeLoader];
         //if the recieved message has an auth key, set the auth key and login
@@ -167,7 +191,7 @@
         } else if(state == (ServerState *)TryingAuthKeyLogin) {
             NSLog(@"Logged in!");
             self.currentServerState = (ServerState *)InTabView;
-            [self performSegueWithIdentifier:@"showTabView" sender:nil];
+            [self performSegueWithIdentifier:@"showTabView" sender:self];
         } else{
             NSLog(@"Server 'done' message not interpreted");
         }
@@ -179,6 +203,7 @@
             self.alert.title = @"Cannot Log In";
             self.alert.message = @"Invalid username/password";
             [self.alert show];
+            [self.loader removeLoader];
         } else if(state == (ServerState *)TryingAuthKeyLogin) {
             NSLog(@"Bad AuthKey");
             self.currentServerState = (ServerState *)ConnectedAwaitingLogon;
@@ -209,6 +234,10 @@
 	[self.outputStream write:[dataToSend bytes] maxLength:[dataToSend length]];
 }
 
+-(void)sendUserToServer:(NSString *)newUserCommand{
+    [self sendMessageToServer:newUserCommand];
+}
+
 //creates a string with the proper syntax to log in using a password. will get an authkey back
 - (void)loginToServerWithPassword:(NSString *)userNamePassword {
 	NSString *loginString  = [NSString stringWithFormat:@"login:%@", userNamePassword];
@@ -227,19 +256,31 @@
 
 #pragma mark - Initial loadup and other misc
 
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if(self.currentServerState == nil) {
+        [self initNetworkCommunication];
+    }
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.UserName.text = @"";
+    self.Password.text = @"";
+    self.UserName.delegate = self;
+    self.Password.delegate = self;
     if(self.currentServerState == nil){
-        //add a loading view until the inital server connection takes place
-        self.loader = [LoadingView loadSpinnerIntoView:self.view];
-        self.currentServerState = (ServerState *)Connecting;
+        //initialize network communications
         [self initNetworkCommunication];
     }
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    
+    if([segue.identifier isEqualToString: @"showNewUserScreen"]){
+        NewUserViewController *newUserController = (NewUserViewController *)segue.destinationViewController;
+        newUserController.delegate = self;
+        //[self presentModalViewController:newUserController animated:YES];
+    }
 }
 
 - (void)viewDidUnload
