@@ -10,5 +10,5 @@
 #import "LoginViewController.h"
 
 @interface GameTabViewController : UIViewController
-@property (nonatomic,weak) LoginViewController *networkController;
+@property (nonatomic,weak) NetworkController *networkController;
 @end

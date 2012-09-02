@@ -29,9 +29,8 @@
 {
     [super viewDidLoad];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    self.networkController = [defaults objectForKey:NETWORK_CONTROLLER_KEY];
-    NSLog(@"%@",self.networkController.currentServerState);
-//    [self.networkController sendMessageToServer:@"getGames"];
+    self.networkController = (NetworkController *) [defaults objectForKey:NETWORK_CONTROLLER_KEY];
+    [self.networkController sendMessageToServer:@"getGames"];
 }
 
 - (void)viewDidUnload

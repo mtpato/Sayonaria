@@ -12,20 +12,16 @@
 @class NetworkController;
 
 @protocol NetworkControllerDelegate <NSObject>
-
-@required
+-(void)messageRecieved:(NSString *)messageFromServer;
 -(void)putLoaderInView;
 -(void)removeLoaderFromView;
-
 @optional
--(void)segueLoginToTabBar;
 
 @end
 
 @interface NetworkController : NSObject <NSStreamDelegate,UIAlertViewDelegate>
 @property (nonatomic,strong) NSInputStream *inputStream;
 @property (nonatomic,strong) NSOutputStream *outputStream;
-@property (nonatomic, strong) UIAlertView *alert;
 @property (nonatomic, weak) id<NetworkControllerDelegate> delegate;
 
 #pragma mark - definitions of default keys
@@ -37,6 +33,7 @@
 #pragma mark - public API
 
 -(void)sendMessageToServer: (NSString *)message;
+-(void)initNetworkCommunication;
 
 #pragma mark - Typedef and property of server state
 

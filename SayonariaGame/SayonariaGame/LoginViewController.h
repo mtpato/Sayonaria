@@ -11,25 +11,17 @@
 #import "NewUserViewController.h"
 #import "NetworkController.h"
 
-@interface LoginViewController : UIViewController <NSStreamDelegate,UIAlertViewDelegate,UITextFieldDelegate,NewUserViewControllerDelegate>
-@property (nonatomic,strong) NSInputStream *inputStream;
-@property (nonatomic,strong) NSOutputStream *outputStream;
+@interface LoginViewController : UIViewController <NSStreamDelegate,UIAlertViewDelegate,UITextFieldDelegate,NewUserViewControllerDelegate,NetworkControllerDelegate>
 @property (nonatomic, weak) IBOutlet UITextField *UserName;
 @property (nonatomic, weak) IBOutlet UITextField *Password;
 @property (nonatomic, strong) UIAlertView *alert;
+@property (nonatomic,weak) NetworkController *thisNetworkController;
+@property (nonatomic) ServerState *currentServerState;
 
 #pragma mark - definitions of default keys
 
 #define NETWORK_CONTROLLER_KEY @"currentNetworkController"
 #define USER_NAME @"UserName"
 #define AUTH_KEY @"AuthKey"
-
-#pragma mark - public API
-
--(void)sendMessageToServer: (NSString *)message;
-
-#pragma mark - Typedef and property of server state
-
-@property (nonatomic) ServerState *currentServerState;
 
 @end
