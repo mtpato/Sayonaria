@@ -31,14 +31,13 @@
 
 @implementation GameScreenController
 @synthesize GameBoardView;
-@synthesize Team1Score;
-@synthesize Team2Score;
 @synthesize TotalCellsNum;
 @synthesize CellHeight;
 @synthesize CellWidth;
 @synthesize LengthCellsNum;
 @synthesize WidthCellsNum;
 @synthesize FrameDictionary;
+@synthesize PastMovesDictionary;
 @synthesize TouchTolerance;
 @synthesize Team1;
 @synthesize Team2;
@@ -48,6 +47,25 @@
 @synthesize BorderGrid;
 @synthesize NeutralTile;
 @synthesize NeutralGlow;
+
+
+
+-(void)ProcessTurn{
+    
+    
+    
+  //  GetGameState
+  //  DrawGameState
+  //  PlaceTile
+  //  GetGameState
+  //  DrawGameState
+  //  EndTurn
+    
+    
+    
+}
+
+
 
 
 -(void)ClearGameScreen{
@@ -62,8 +80,8 @@
     for(int i = 0; i < WidthCellsNum-1; i++) {
         for(int j = 0; j < LengthCellsNum-1; j++) {
     
-            int IncrementalLength=i*(CellWidth-10)*1.1;
-            int IncrementalWidth=j*(CellWidth-2)*1.1;
+            int IncrementalLength=i*(CellWidth-10)*1.06;
+            int IncrementalWidth=j*(CellWidth-2)*1.06;
             int moduloResult = i % 2;
             int WidthModifier;
             if(moduloResult==1){WidthModifier=0;} else {WidthModifier=(CellWidth-2)/2;}
@@ -132,25 +150,38 @@
 
 - (IBAction)LayTile:(UITapGestureRecognizer *)sender {
     
+    
     CGPoint location=[sender locationInView:GameBoardView];
+    
     
     for(id key in FrameDictionary)
     {
-        CGRect CurrentFrame=CGRectFromString( [FrameDictionary objectForKey:key]);
         
+        
+        CGRect CurrentFrame=CGRectFromString( [FrameDictionary objectForKey:key]);
+        NSString *frameString=NSStringFromCGRect(CurrentFrame);
         double distance = sqrt(pow(( (CurrentFrame.origin.x+CellHeight/2) - location.x), 2.0) + pow(( (CurrentFrame.origin.y+CellWidth/2) - location.y), 2.0));
         
-        if(distance<TouchTolerance){
+        
+        
+        
+        
+        if(distance<TouchTolerance && [PastMovesDictionary objectForKey:frameString]==nil){
             UIImageView *PlaceView;
             PlaceView = [[UIImageView alloc] initWithFrame:CurrentFrame];
-            if(TeamTurn==1){
-                PlaceView.image = Team1CellType;} 
+            
+            if(TeamTurn==1){PlaceView.image = Team1CellType;} 
             else if(TeamTurn==2){PlaceView.image = Team2CellType;}
-            
+        
             [GameBoardView addSubview:PlaceView];
-            
+            [PastMovesDictionary setObject:frameString forKey:frameString];
+
         }
+        
+        
     }
+  
+   
     [self UpdateGameState];
 }
 
@@ -161,8 +192,8 @@
 
 -(void)GetGamePropertiesFromTheServer
 {
-    CellHeight=40;
-    CellWidth=40;
+    CellHeight=42;
+    CellWidth=42;
     LengthCellsNum=9;
     WidthCellsNum=7;
     TotalCellsNum=LengthCellsNum*WidthCellsNum;
@@ -189,9 +220,7 @@
 
 - (void)viewDidUnload
 {
-    [self setTeam2Score:nil];
-    [self setTeam1Score:nil];
-    [self setGameBoardView:nil];
+ 
 
 }
 

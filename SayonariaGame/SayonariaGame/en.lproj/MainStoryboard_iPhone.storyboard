@@ -74,7 +74,7 @@
                     </view>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="49" y="21"/>
+            <point key="canvasLocation" x="81" y="13"/>
         </scene>
         <!--Game Screen Controller-->
         <scene sceneID="6IW-yf-3E6">
@@ -90,27 +90,13 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="eWg-BT-RkL">
-                                <rect key="frame" x="13" y="20" width="212" height="374"/>
+                                <rect key="frame" x="20" y="10" width="212" height="374"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="acN-s2-S4w" appends="YES" id="RQ4-Rg-a3O"/>
                                 </connections>
                             </scrollView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="MYk-uE-B78">
-                                <rect key="frame" x="248" y="149" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="KJN-VF-qBK">
-                                <rect key="frame" x="248" y="203" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="DCS-wB-AuL">
                                 <rect key="frame" x="78" y="403" width="72" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -140,8 +126,6 @@
                     </view>
                     <connections>
                         <outlet property="GameBoardView" destination="eWg-BT-RkL" id="qMB-c2-FAr"/>
-                        <outlet property="Team1Score" destination="MYk-uE-B78" id="EgD-As-lGM"/>
-                        <outlet property="Team2Score" destination="KJN-VF-qBK" id="zvU-fd-kyR"/>
                     </connections>
                 </viewController>
                 <tapGestureRecognizer id="acN-s2-S4w">
@@ -150,7 +134,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="457" y="21"/>
+            <point key="canvasLocation" x="433" y="13"/>
         </scene>
     </scenes>
     <resources>
@@ -163,8 +147,6 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/GameScreenController.h"/>
             <relationships>
                 <relationship kind="outlet" name="GameBoardView" candidateClass="UIScrollView"/>
-                <relationship kind="outlet" name="Team1Score" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="Team2Score" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="SSIGameViewController" superclassName="UIViewController">

@@ -13,8 +13,6 @@
 
 @property (weak, nonatomic) IBOutlet UIScrollView *GameBoardView;
 
-@property (weak, nonatomic) IBOutlet UILabel *Team1Score;
 
-@property (weak, nonatomic) IBOutlet UILabel *Team2Score;
 
 @end
