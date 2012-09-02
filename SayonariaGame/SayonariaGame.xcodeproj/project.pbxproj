@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B09A9BE715E7B69200BBCFC1 /* GameScreenController.m in Sources */ = {isa = PBXBuildFile; fileRef = B09A9BE615E7B69200BBCFC1 /* GameScreenController.m */; };
+		B09A9BE915F1783E00BBCFC1 /* 20113121517846877801.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = B09A9BE815F1783C00BBCFC1 /* 20113121517846877801.jpeg */; };
+		B09A9BEB15F2953800BBCFC1 /* 816b8630631e7b357474cb7b3330b6f1_large.png in Resources */ = {isa = PBXBuildFile; fileRef = B09A9BEA15F2953600BBCFC1 /* 816b8630631e7b357474cb7b3330b6f1_large.png */; };
 		B13B30F415D0C7BF003A4E89 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B13B30F315D0C7BF003A4E89 /* UIKit.framework */; };
 		B13B30F615D0C7BF003A4E89 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B13B30F515D0C7BF003A4E89 /* Foundation.framework */; };
 		B13B30F815D0C7BF003A4E89 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B13B30F715D0C7BF003A4E89 /* CoreGraphics.framework */; };
@@ -63,6 +66,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B09A9BE515E7B69200BBCFC1 /* GameScreenController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameScreenController.h; path = ../GameScreenController.h; sourceTree = "<group>"; };
+		B09A9BE615E7B69200BBCFC1 /* GameScreenController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameScreenController.m; path = ../GameScreenController.m; sourceTree = "<group>"; };
+		B09A9BE815F1783C00BBCFC1 /* 20113121517846877801.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 20113121517846877801.jpeg; sourceTree = "<group>"; };
+		B09A9BEA15F2953600BBCFC1 /* 816b8630631e7b357474cb7b3330b6f1_large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 816b8630631e7b357474cb7b3330b6f1_large.png; sourceTree = "<group>"; };
 		B13B30EF15D0C7BF003A4E89 /* SayonariaGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SayonariaGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B13B30F315D0C7BF003A4E89 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B13B30F515D0C7BF003A4E89 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -172,6 +179,8 @@
 				B13B310315D0C7BF003A4E89 /* SSIGameAppDelegate.m */,
 				B13B310515D0C7BF003A4E89 /* MainStoryboard_iPhone.storyboard */,
 				B13B310815D0C7BF003A4E89 /* MainStoryboard_iPad.storyboard */,
+				B09A9BE515E7B69200BBCFC1 /* GameScreenController.h */,
+				B09A9BE615E7B69200BBCFC1 /* GameScreenController.m */,
 				B13B310B15D0C7BF003A4E89 /* SSIGameViewController.h */,
 				B13B310C15D0C7BF003A4E89 /* SSIGameViewController.m */,
 				B13B30FA15D0C7BF003A4E89 /* Supporting Files */,
@@ -195,6 +204,8 @@
 			children = (
 				B1C7F43215DB2A2F002C541D /* Splash Screen */,
 				B13B311415D0C876003A4E89 /*  .ai */,
+				B09A9BEA15F2953600BBCFC1 /* 816b8630631e7b357474cb7b3330b6f1_large.png */,
+				B09A9BE815F1783C00BBCFC1 /* 20113121517846877801.jpeg */,
 				B13B311515D0C876003A4E89 /* buttons isoed.psd */,
 				B13B311615D0C876003A4E89 /* cel layers */,
 			);
@@ -355,6 +366,8 @@
 				B13B319B15D0C876003A4E89 /* neutral_to_inactive_glow_frames_05.png in Resources */,
 				B13B319C15D0C876003A4E89 /* neutral_to_inactive_glow_frames_06.png in Resources */,
 				B1C7F43015DB2A25002C541D /* Default.png in Resources */,
+				B09A9BE915F1783E00BBCFC1 /* 20113121517846877801.jpeg in Resources */,
+				B09A9BEB15F2953800BBCFC1 /* 816b8630631e7b357474cb7b3330b6f1_large.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,6 +381,7 @@
 				B13B310015D0C7BF003A4E89 /* main.m in Sources */,
 				B13B310415D0C7BF003A4E89 /* SSIGameAppDelegate.m in Sources */,
 				B13B310D15D0C7BF003A4E89 /* SSIGameViewController.m in Sources */,
+				B09A9BE715E7B69200BBCFC1 /* GameScreenController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
