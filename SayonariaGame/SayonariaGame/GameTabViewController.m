@@ -26,6 +26,12 @@
 
 -(void)messageRecieved:(NSString *)messageFromServer{
     NSLog(@"server said: %@", messageFromServer);
+    //if the server says 'done' it can be connecting, confirming the game type, etc
+    if([[messageFromServer substringToIndex:4] isEqualToString:@"done"]){
+        if([messageFromServer isEqualToString:@"done:gameCreated"]){
+            
+        }
+    }
 }
 
 #pragma mark - loading and other
@@ -45,7 +51,6 @@
     NetworkStorageTabBarController *thisTabBar = (NetworkStorageTabBarController *) self.tabBarController;
     self.thisNetworkController = thisTabBar.thisNetworkController;
     self.thisNetworkController.delegate = self;
-    [self.thisNetworkController sendMessageToServer:@"getGames"];
 }
 
 - (void)viewDidUnload
