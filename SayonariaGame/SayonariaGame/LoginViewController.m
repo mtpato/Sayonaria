@@ -175,7 +175,7 @@
         //if we have sent in the game type, try logging in with a pre existing auth key
         } else if(state == (ServerState *)SendingGameType){
             self.currentServerState = (ServerState *)ConnectedAwaitingLogon;
-            //[self loginToServerWithAuthkey];
+            [self loginToServerWithAuthkey];
             //remove the initial loading screen
             [self.loader removeLoader];
         //if the recieved message has an auth key, set the auth key and login
@@ -184,7 +184,7 @@
             if([messageFromServer length] > 4){
                 [defaults setObject:[messageFromServer substringFromIndex:5] forKey:@"AuthKey"];
                 [defaults synchronize];
-                [self loginToServerWithAuthkey];
+                [self performSegueWithIdentifier:@"showTabView" sender:self];
             } else {
                 NSLog(@"New User Created Successfully");
             }
@@ -279,7 +279,10 @@
     if([segue.identifier isEqualToString: @"showNewUserScreen"]){
         NewUserViewController *newUserController = (NewUserViewController *)segue.destinationViewController;
         newUserController.delegate = self;
-        //[self presentModalViewController:newUserController animated:YES];
+    }
+    if([segue.identifier isEqualToString: @"showTabView"]){
+        SocketContainer *sharedSockets = [SocketContainer sharedSockets];
+        sharedSockets.currentLoginController = self;
     }
 }
 

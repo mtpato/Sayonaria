@@ -7,7 +7,6 @@
 //
 
 #import "NewUserViewController.h"
-#import "LoginViewController.h"
 
 @interface NewUserViewController ()
 

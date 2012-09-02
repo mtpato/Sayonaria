@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "LoadingView.h"
 #import "NewUserViewController.h"
+#import "SocketContainer.h"
 
 @interface LoginViewController : UIViewController <NSStreamDelegate,UIAlertViewDelegate,UITextFieldDelegate,NewUserViewControllerDelegate>
 @property (nonatomic,strong) NSInputStream *inputStream;

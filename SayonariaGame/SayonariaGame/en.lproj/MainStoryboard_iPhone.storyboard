@@ -231,35 +231,65 @@
             </objects>
             <point key="canvasLocation" x="-259" y="527"/>
         </scene>
-        <!--View Controller - Item 2-->
+        <!--View Controller - News-->
+        <scene sceneID="Vxm-GT-MQX">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LUQ-tF-77d" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController title="News" id="mti-lN-ksa" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cyG-j2-YlF">
+                        <rect key="frame" x="0.0" y="20" width="320" height="411"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="News" id="bd7-ou-i9N"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="222" y="613"/>
+        </scene>
+        <!--View Controller - Options-->
+        <scene sceneID="lfB-XU-qTG">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hEU-Wj-kSh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController title="Options" id="bW0-qm-YMa" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YBV-Wu-cCN">
+                        <rect key="frame" x="0.0" y="20" width="320" height="411"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Options" id="VZ9-vd-xeK"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="222" y="1185"/>
+        </scene>
+        <!--View Controller - Store-->
         <scene sceneID="Lkk-YZ-wt6">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="awI-Rx-ULx" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="W6S-mj-1R2" sceneMemberID="viewController">
+                <viewController title="Store" id="W6S-mj-1R2" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UsF-He-JGp">
                         <rect key="frame" x="0.0" y="20" width="320" height="411"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="j6H-N0-Amt"/>
+                    <tabBarItem key="tabBarItem" title="Store" id="j6H-N0-Amt"/>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="309" y="251"/>
+            <point key="canvasLocation" x="227" y="55"/>
         </scene>
-        <!--View Controller - Item 1-->
+        <!--View Controller - Games-->
         <scene sceneID="0rv-ai-Q3f">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VTo-dW-7Mo" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="9om-ep-sOX" sceneMemberID="viewController">
+                <viewController title="Games" id="9om-ep-sOX" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pch-Ml-ynt">
                         <rect key="frame" x="0.0" y="20" width="320" height="411"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="XBk-Su-PJ6"/>
+                    <tabBarItem key="tabBarItem" title="Games" id="XBk-Su-PJ6"/>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="309" y="-314"/>
+            <point key="canvasLocation" x="227" y="-530"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Q4j-P7-u0D">
@@ -276,6 +306,8 @@
                     <connections>
                         <segue destination="9om-ep-sOX" kind="relationship" relationship="viewControllers" id="423-hQ-q2w"/>
                         <segue destination="W6S-mj-1R2" kind="relationship" relationship="viewControllers" id="aAl-PC-V2v"/>
+                        <segue destination="mti-lN-ksa" kind="relationship" relationship="viewControllers" id="7FE-Uk-Tan"/>
+                        <segue destination="bW0-qm-YMa" kind="relationship" relationship="viewControllers" id="dbs-fs-Gbe"/>
                     </connections>
                 </tabBarController>
             </objects>
@@ -306,9 +338,6 @@
         <class className="LoginViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginViewController.h"/>
             <relationships>
-                <relationship kind="action" name="BackgroundClicked:"/>
-                <relationship kind="action" name="didPressLogin:"/>
-                <relationship kind="action" name="didPressNewUser:"/>
                 <relationship kind="outlet" name="Password" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="UserName" candidateClass="UITextField"/>
             </relationships>
@@ -316,9 +345,6 @@
         <class className="NewUserViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NewUserViewController.h"/>
             <relationships>
-                <relationship kind="action" name="backgroundPressed:"/>
-                <relationship kind="action" name="cancelPressed:"/>
-                <relationship kind="action" name="createPressed:"/>
                 <relationship kind="outlet" name="confirmPassword" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="email" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="password" candidateClass="UITextField"/>
