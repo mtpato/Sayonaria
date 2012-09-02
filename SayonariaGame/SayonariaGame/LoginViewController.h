@@ -10,18 +10,14 @@
 #import "LoadingView.h"
 #import "NewUserViewController.h"
 #import "NetworkController.h"
+#import "GameTabViewController.h"
+#import "NetworkStorageTabBarController.h"
 
 @interface LoginViewController : UIViewController <NSStreamDelegate,UIAlertViewDelegate,UITextFieldDelegate,NewUserViewControllerDelegate,NetworkControllerDelegate>
-@property (nonatomic, weak) IBOutlet UITextField *UserName;
-@property (nonatomic, weak) IBOutlet UITextField *Password;
-@property (nonatomic, strong) UIAlertView *alert;
-@property (nonatomic,weak) NetworkController *thisNetworkController;
+@property (nonatomic,weak) IBOutlet UITextField *UserName;
+@property (nonatomic,weak) IBOutlet UITextField *Password;
+@property (nonatomic,weak) UIAlertView *alert;
+@property (nonatomic,strong) NetworkController *thisNetworkController;
 @property (nonatomic) ServerState *currentServerState;
-
-#pragma mark - definitions of default keys
-
-#define NETWORK_CONTROLLER_KEY @"currentNetworkController"
-#define USER_NAME @"UserName"
-#define AUTH_KEY @"AuthKey"
 
 @end

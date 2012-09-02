@@ -11,15 +11,15 @@
 
 @class NetworkController;
 
-@protocol NetworkControllerDelegate <NSObject>
+@protocol NetworkControllerDelegate
 -(void)messageRecieved:(NSString *)messageFromServer;
 -(void)putLoaderInView;
 -(void)removeLoaderFromView;
 @optional
-
+-(void)setCurrentServerStateConnecting;
 @end
 
-@interface NetworkController : NSObject <NSStreamDelegate,UIAlertViewDelegate>
+@interface NetworkController : NSObject <NSStreamDelegate>
 @property (nonatomic,strong) NSInputStream *inputStream;
 @property (nonatomic,strong) NSOutputStream *outputStream;
 @property (nonatomic, weak) id<NetworkControllerDelegate> delegate;
@@ -45,7 +45,5 @@ typedef enum {
     TryingAuthKeyLogin = 4,
     InGameView = 5
 } ServerState;
-
-@property (nonatomic) ServerState *currentServerState;
 
 @end

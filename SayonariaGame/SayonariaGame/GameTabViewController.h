@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "LoginViewController.h"
+#import "NetworkController.h"
+#import "NetworkStorageTabBarController.h"
 
-@interface GameTabViewController : UIViewController
-@property (nonatomic,weak) NetworkController *networkController;
+@interface GameTabViewController : UIViewController <NetworkControllerDelegate>
+@property (nonatomic,strong) NetworkController *thisNetworkController;
 @end

@@ -25,53 +25,9 @@
 -(void)segueLoginToTabBar{
     [self performSegueWithIdentifier:@"showTabView" sender:self];
 }
-
-#pragma mark - user interface for logon screen
-
-//if a user is on a keyboard, this will make the keyboard go away if they click off the keyboard
-- (IBAction)BackgroundClicked:(id)sender {
-    [self.UserName resignFirstResponder];
-    [self.Password resignFirstResponder];
+-(void)setCurrentServerStateConnecting{
+    self.currentServerState = (ServerState *)Connecting;
 }
-
-//Passes the user name and password typed on screen to the server for a login
-- (IBAction)didPressLogin:(id)sender {
-    if([self.UserName.text length] == 0 || [self.Password.text length] == 0){
-        self.alert.title = @"Cannot Log In";
-        self.alert.message = @"You must enter a username and password";
-        [self.alert show];
-    } else {
-        //set the user name as the default user name
-        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        [defaults setObject:self.UserName.text forKey:USER_NAME];
-        [defaults synchronize];
-        
-        NSString *userNamePassword = [NSString stringWithFormat:@"%@%@%@", self.UserName.text, @",", self.Password.text];
-        self.loader = [LoadingView loadSpinnerIntoView:self.view];
-        [self loginToServerWithPassword:userNamePassword];
-    }
-}
-
-//brings up the new user screen
-- (IBAction)didPressNewUser:(id)sender {
-}
-
-//remove the new user screen
--(void)removeNewUserViewController{
-    [self dismissModalViewControllerAnimated:YES];
-}
-
-//make the return key resign first responder
--(BOOL)textFieldShouldReturn:(UITextField *)textField{
-    if([textField.text length]){
-        [textField resignFirstResponder];
-        return YES;
-    } else {
-        return NO;
-    }
-}
-
-#pragma mark - Network Communication
 
 //figures out what to do with the message received from the server
 -(void)messageRecieved:(NSString *)messageFromServer {
@@ -124,6 +80,7 @@
             self.currentServerState = (ServerState *)ConnectedAwaitingLogon;
         }
     } else if([messageFromServer isEqualToString:@"SOCKETS CLOSED"] || [messageFromServer isEqualToString:@"CANNOT CONNECT"]){
+        self.currentServerState = nil;
         self.alert = [[UIAlertView alloc]
                       initWithTitle: @"Cannot Access Server"
                       message: @"Error 37: There was a problem accessing the server"
@@ -135,6 +92,54 @@
         NSLog(@"Unknown Server Message");
     }
 }
+
+#pragma mark - user interface for logon screen
+
+//if a user is on a keyboard, this will make the keyboard go away if they click off the keyboard
+- (IBAction)BackgroundClicked:(id)sender {
+    [self.UserName resignFirstResponder];
+    [self.Password resignFirstResponder];
+}
+
+//Passes the user name and password typed on screen to the server for a login
+- (IBAction)didPressLogin:(id)sender {
+    if([self.UserName.text length] == 0 || [self.Password.text length] == 0){
+        self.alert.title = @"Cannot Log In";
+        self.alert.message = @"You must enter a username and password";
+        [self.alert show];
+    } else {
+        //set the user name as the default user name
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setObject:self.UserName.text forKey:USER_NAME];
+        [defaults synchronize];
+        
+        NSString *userNamePassword = [NSString stringWithFormat:@"%@%@%@", self.UserName.text, @",", self.Password.text];
+        self.loader = [LoadingView loadSpinnerIntoView:self.view];
+        [self loginToServerWithPassword:userNamePassword];
+    }
+}
+
+//brings up the new user screen
+- (IBAction)didPressNewUser:(id)sender {
+}
+
+//remove the new user screen
+-(void)removeNewUserViewController{
+    [self dismissModalViewControllerAnimated:YES];
+}
+
+//make the return key resign first responder
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+    if([textField.text length]){
+        [textField resignFirstResponder];
+        return YES;
+    } else {
+        return NO;
+    }
+}
+
+#pragma mark - Network Communication
+
 
 
 -(void)sendUserToServer:(NSString *)newUserCommand{
@@ -173,13 +178,11 @@
     self.UserName.delegate = self;
     self.Password.delegate = self;
     
-    //load up defaults
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    self.thisNetworkController = [[NetworkController alloc] init];
-    self.thisNetworkController.currentServerState = nil;
-    
-    if(self.thisNetworkController.currentServerState == nil){
+    if(self.currentServerState == nil){
         //initialize network communications
+        NetworkController *tempController = [[NetworkController alloc] init];
+        self.thisNetworkController = tempController;
+        self.thisNetworkController.delegate = self;
         [self.thisNetworkController initNetworkCommunication];
     }
 }
@@ -190,8 +193,8 @@
         newUserController.delegate = self;
     }
     if([segue.identifier isEqualToString: @"showTabView"]){
-        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        [defaults setObject:self.thisNetworkController forKey:NETWORK_CONTROLLER_KEY];
+        NetworkStorageTabBarController *newController = (NetworkStorageTabBarController *) segue.destinationViewController;
+        newController.thisNetworkController = self.thisNetworkController;
     }
 }
 

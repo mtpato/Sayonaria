@@ -64,6 +64,7 @@
 		B1C7F43F15DB47B9002C541D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1C7F43E15DB47B9002C541D /* QuartzCore.framework */; };
 		B1EC2BA915EC5DFA00AC01BE /* NewUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1EC2BA815EC5DFA00AC01BE /* NewUserViewController.m */; };
 		B1EF851815F3B723006FB520 /* NetworkController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1EF851715F3B723006FB520 /* NetworkController.m */; };
+		B1EF851F15F3E851006FB520 /* NetworkStorageTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1EF851E15F3E851006FB520 /* NetworkStorageTabBarController.m */; };
 		B1F6405615F2900C00305D37 /* GameTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1F6405515F2900C00305D37 /* GameTabViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -133,6 +134,8 @@
 		B1EC2BA815EC5DFA00AC01BE /* NewUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewUserViewController.m; sourceTree = "<group>"; };
 		B1EF851615F3B723006FB520 /* NetworkController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkController.h; sourceTree = "<group>"; };
 		B1EF851715F3B723006FB520 /* NetworkController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkController.m; sourceTree = "<group>"; };
+		B1EF851D15F3E851006FB520 /* NetworkStorageTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkStorageTabBarController.h; sourceTree = "<group>"; };
+		B1EF851E15F3E851006FB520 /* NetworkStorageTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkStorageTabBarController.m; sourceTree = "<group>"; };
 		B1F6405415F2900C00305D37 /* GameTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameTabViewController.h; sourceTree = "<group>"; };
 		B1F6405515F2900C00305D37 /* GameTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameTabViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -293,6 +296,8 @@
 			children = (
 				B1F6405415F2900C00305D37 /* GameTabViewController.h */,
 				B1F6405515F2900C00305D37 /* GameTabViewController.m */,
+				B1EF851D15F3E851006FB520 /* NetworkStorageTabBarController.h */,
+				B1EF851E15F3E851006FB520 /* NetworkStorageTabBarController.m */,
 			);
 			name = TabView;
 			sourceTree = "<group>";
@@ -412,6 +417,7 @@
 				B1EC2BA915EC5DFA00AC01BE /* NewUserViewController.m in Sources */,
 				B1F6405615F2900C00305D37 /* GameTabViewController.m in Sources */,
 				B1EF851815F3B723006FB520 /* NetworkController.m in Sources */,
+				B1EF851F15F3E851006FB520 /* NetworkStorageTabBarController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

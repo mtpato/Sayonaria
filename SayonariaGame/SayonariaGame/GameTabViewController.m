@@ -9,12 +9,26 @@
 #import "GameTabViewController.h"
 
 @interface GameTabViewController ()
-
+@property (nonatomic, weak) LoadingView * loader;
 @end
 
 @implementation GameTabViewController
 
+#pragma mark - server Communications
 
+-(void)putLoaderInView{
+    self.loader = [LoadingView loadSpinnerIntoView:self.view];
+}
+
+-(void) removeLoaderFromView{
+    [self.loader removeLoader];
+}
+
+-(void)messageRecieved:(NSString *)messageFromServer{
+    NSLog(@"server said: %@", messageFromServer);
+}
+
+#pragma mark - loading and other
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,9 +42,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    self.networkController = (NetworkController *) [defaults objectForKey:NETWORK_CONTROLLER_KEY];
-    [self.networkController sendMessageToServer:@"getGames"];
+    NetworkStorageTabBarController *thisTabBar = (NetworkStorageTabBarController *) self.tabBarController;
+    self.thisNetworkController = thisTabBar.thisNetworkController;
+    self.thisNetworkController.delegate = self;
+    [self.thisNetworkController sendMessageToServer:@"getGames"];
 }
 
 - (void)viewDidUnload

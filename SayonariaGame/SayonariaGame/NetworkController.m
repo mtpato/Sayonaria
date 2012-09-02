@@ -9,7 +9,6 @@
 #import "NetworkController.h"
 
 @implementation NetworkController
-@synthesize currentServerState = _currentServerState;
 @synthesize inputStream = _inputStream;
 @synthesize outputStream = _outputStream;
 
@@ -19,7 +18,7 @@
 - (void)initNetworkCommunication {
     //bring up a loader and set the server connection state
     [self.delegate putLoaderInView];
-    self.currentServerState = (ServerState *)Connecting;
+    [self.delegate setCurrentServerStateConnecting];
     //create input and output stream core foundation objects
     CFReadStreamRef readStream;
     CFWriteStreamRef writeStream;
@@ -61,6 +60,7 @@
 						NSString *output = [[NSString alloc] initWithBytes:buffer length:len encoding:NSASCIIStringEncoding];
 						if (nil != output) {
                             output = [output substringToIndex:([output length]-1)];
+                            //NSLog(@"%@",output);
                             [self.delegate messageRecieved:output];
 						}
 					}
@@ -70,7 +70,6 @@
             
 		case NSStreamEventErrorOccurred:
 			NSLog(@"Can not connect to the host!");
-            self.currentServerState = nil;
             [self.delegate removeLoaderFromView];
             [self.delegate messageRecieved:@"CANNOT CONNECT"];
 			break;
@@ -107,6 +106,7 @@
 
 //public class method to send a message to the server
 -(void)sendMessageToServer: (NSString *)message{
+    NSLog(@"Saying To Server:%@",message);
     NSData *dataToSend = [[NSData alloc] initWithData:[[message stringByAppendingString:@"\n"] dataUsingEncoding:NSASCIIStringEncoding]];
 	[self.outputStream write:[dataToSend bytes] maxLength:[dataToSend length]];
 }
