@@ -8,7 +8,7 @@
 
 #import "SocketContainer.h"
 
-@implementation SocketContainer
+@implementation SocketContainer/*
 @synthesize currentLoginController;
 
 #pragma mark Singleton Methods
@@ -31,6 +31,6 @@
 
 - (void)dealloc {
     // Should never be called, but just here for clarity really.
-}
+}*/
 @end
 

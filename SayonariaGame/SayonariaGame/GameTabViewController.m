@@ -13,7 +13,8 @@
 @end
 
 @implementation GameTabViewController
-@synthesize tabView = _tabView;
+
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,8 +28,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.tabView = (CustomTabBar *)self.tabBarController;
-    [self.tabView.socketContainer sendMessageToServer:@"TEST"];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    self.networkController = [defaults objectForKey:NETWORK_CONTROLLER_KEY];
+    NSLog(@"%@",self.networkController.currentServerState);
+//    [self.networkController sendMessageToServer:@"getGames"];
 }
 
 - (void)viewDidUnload

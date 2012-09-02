@@ -7,9 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CustomTabBar.h"
 #import "LoginViewController.h"
 
 @interface GameTabViewController : UIViewController
-@property (nonatomic,weak) CustomTabBar *tabView;
+@property (nonatomic,weak) LoginViewController *networkController;
 @end

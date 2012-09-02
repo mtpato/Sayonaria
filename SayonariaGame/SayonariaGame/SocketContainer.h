@@ -11,11 +11,9 @@
 #import <UIKit/UIKit.h>
 #import "LoginViewController.h"
 
-@interface SocketContainer : NSObject {
-    LoginViewController *currentLoginController;
-}
+@interface SocketContainer : NSObject
 
-@property (nonatomic, strong) LoginViewController *currentLoginController;
+//@property (nonatomic, strong) LoginViewController *currentLoginController;
 
 + (id)sharedSockets;
 

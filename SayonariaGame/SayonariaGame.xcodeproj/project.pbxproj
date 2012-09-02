@@ -63,8 +63,8 @@
 		B1C7F43815DB3CC3002C541D /* LoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C7F43715DB3CC3002C541D /* LoadingView.m */; };
 		B1C7F43F15DB47B9002C541D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1C7F43E15DB47B9002C541D /* QuartzCore.framework */; };
 		B1EC2BA915EC5DFA00AC01BE /* NewUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1EC2BA815EC5DFA00AC01BE /* NewUserViewController.m */; };
+		B1EF851815F3B723006FB520 /* NetworkController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1EF851715F3B723006FB520 /* NetworkController.m */; };
 		B1F6405615F2900C00305D37 /* GameTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1F6405515F2900C00305D37 /* GameTabViewController.m */; };
-		B1F6406615F2A13000305D37 /* SocketContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = B1F6406515F2A13000305D37 /* SocketContainer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -131,10 +131,10 @@
 		B1C7F43E15DB47B9002C541D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		B1EC2BA715EC5DFA00AC01BE /* NewUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewUserViewController.h; sourceTree = "<group>"; };
 		B1EC2BA815EC5DFA00AC01BE /* NewUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewUserViewController.m; sourceTree = "<group>"; };
+		B1EF851615F3B723006FB520 /* NetworkController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkController.h; sourceTree = "<group>"; };
+		B1EF851715F3B723006FB520 /* NetworkController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkController.m; sourceTree = "<group>"; };
 		B1F6405415F2900C00305D37 /* GameTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameTabViewController.h; sourceTree = "<group>"; };
 		B1F6405515F2900C00305D37 /* GameTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameTabViewController.m; sourceTree = "<group>"; };
-		B1F6406415F2A13000305D37 /* SocketContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketContainer.h; sourceTree = "<group>"; };
-		B1F6406515F2A13000305D37 /* SocketContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketContainer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -280,10 +280,10 @@
 			children = (
 				B1EC2BA715EC5DFA00AC01BE /* NewUserViewController.h */,
 				B1EC2BA815EC5DFA00AC01BE /* NewUserViewController.m */,
-				B1F6406415F2A13000305D37 /* SocketContainer.h */,
-				B1F6406515F2A13000305D37 /* SocketContainer.m */,
 				B1C7F43315DB322D002C541D /* LoginViewController.h */,
 				B1C7F43415DB322D002C541D /* LoginViewController.m */,
+				B1EF851615F3B723006FB520 /* NetworkController.h */,
+				B1EF851715F3B723006FB520 /* NetworkController.m */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -411,7 +411,7 @@
 				B1C7F43815DB3CC3002C541D /* LoadingView.m in Sources */,
 				B1EC2BA915EC5DFA00AC01BE /* NewUserViewController.m in Sources */,
 				B1F6405615F2900C00305D37 /* GameTabViewController.m in Sources */,
-				B1F6406615F2A13000305D37 /* SocketContainer.m in Sources */,
+				B1EF851815F3B723006FB520 /* NetworkController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

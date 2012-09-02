@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "LoadingView.h"
 #import "NewUserViewController.h"
-#import "SocketContainer.h"
+#import "NetworkController.h"
 
 @interface LoginViewController : UIViewController <NSStreamDelegate,UIAlertViewDelegate,UITextFieldDelegate,NewUserViewControllerDelegate>
 @property (nonatomic,strong) NSInputStream *inputStream;
@@ -18,16 +18,18 @@
 @property (nonatomic, weak) IBOutlet UITextField *Password;
 @property (nonatomic, strong) UIAlertView *alert;
 
+#pragma mark - definitions of default keys
+
+#define NETWORK_CONTROLLER_KEY @"currentNetworkController"
+#define USER_NAME @"UserName"
+#define AUTH_KEY @"AuthKey"
+
+#pragma mark - public API
+
 -(void)sendMessageToServer: (NSString *)message;
 
-typedef enum {
-    Connecting = 0,
-    SendingGameType = 1,
-    ConnectedAwaitingLogon = 2,
-    InTabView = 3,
-    TryingAuthKeyLogin = 4,
-    InGameView = 5
-} ServerState;
+#pragma mark - Typedef and property of server state
 
 @property (nonatomic) ServerState *currentServerState;
+
 @end
