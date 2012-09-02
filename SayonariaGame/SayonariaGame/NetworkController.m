@@ -136,14 +136,14 @@
             if([messageFromServer length] > 4){
                 [defaults setObject:[messageFromServer substringFromIndex:5] forKey:AUTH_KEY];
                 [defaults synchronize];
-                [self performSegueWithIdentifier:@"showTabView" sender:self];
+                [self.delegate segueLoginToTabBar];
             } else {
                 NSLog(@"New User Created Successfully");
             }
         } else if(state == (ServerState *)TryingAuthKeyLogin) {
             NSLog(@"Logged in!");
             self.currentServerState = (ServerState *)InTabView;
-            [self performSegueWithIdentifier:@"showTabView" sender:self];
+            [self.delegate segueLoginToTabBar];
         } else{
             NSLog(@"Server 'done' message not interpreted");
         }
