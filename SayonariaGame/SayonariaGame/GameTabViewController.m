@@ -18,6 +18,7 @@
 @property (nonatomic,weak) IBOutlet UITextField *OpponentName;
 @property (nonatomic) IBOutlet UITableView *gameTableView;
 @property (nonatomic, strong) NSArray *thisUsersGames;
+@property (nonatomic, strong) NSString *createdGameOpponent;
 @end
 
 @implementation GameTabViewController
@@ -86,6 +87,7 @@
 - (IBAction)newGamePressed:(id)sender {
     NSString *messageForServer = @"newGame:";
     messageForServer = [messageForServer stringByAppendingString:self.OpponentName.text];
+    self.createdGameOpponent = self.OpponentName.text;
     [self.thisNetworkController sendMessageToServer:messageForServer];
 }
 
@@ -112,14 +114,12 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    NSLog(@"LOADING CELLS");
-    
 	static NSString *CellIdentifier = @"GameCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
 	// Extract the game informaton
     if(indexPath.row <=[self.thisUsersGames count]) {
-        NSDictionary *gameDictionary = [self.thisUsersGames objectAtIndex:(indexPath.row - 1)];
+        NSDictionary *gameDictionary = [self.thisUsersGames objectAtIndex:(indexPath.row)];
         NSString *gameID = [gameDictionary objectForKey:GAME_ID];
         NSString *opponentName = [gameDictionary objectForKey:OPPONENT_NAME];
     
@@ -129,6 +129,12 @@
     return cell;
 }
 
+- (void)tableView: (UITableView *)tableView didSelectRowAtIndexPath: (NSIndexPath *)indexPath {
+    static NSString *CellIdentifier = @"GameCell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    cell = [tableView cellForRowAtIndexPath:indexPath];
+    [self performSegueWithIdentifier:@"showGameScreen" sender:cell];
+}
 
 #pragma mark - loading and other
 
@@ -149,6 +155,8 @@
     self.thisNetworkController.delegate = self;
     
     [self putLoaderInView];
+    self.gameTableView.dataSource = self;
+    self.gameTableView.delegate = self;
     [self.gameTableView reloadData];
     [self removeLoaderFromView];
     [self.thisNetworkController sendMessageToServer:@"getGames"];
@@ -189,8 +197,17 @@
 #pragma mark - segue
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    if([sender isEqualToString:@"New Game"]){
-        
+    GameScreenViewController *newController = (GameScreenViewController *)segue.destinationViewController;
+    newController.thisNetworkController = self.thisNetworkController;
+    
+    if([sender isKindOfClass: [NSString class]]){
+        newController.opponentName = self.createdGameOpponent;
+    } else {
+        static NSString *CellIdentifier = @"GameCell";
+        UITableViewCell *cell = [self.gameTableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        cell = sender;
+        newController.opponentName = cell.textLabel.text;
+        newController.gameID = cell.detailTextLabel.text;
     }
 }
 

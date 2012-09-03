@@ -10,6 +10,9 @@
 
 @interface GameScreenViewController ()
 
+@property (nonatomic,weak) LoadingView * loader;
+@property (nonatomic) ServerState *currentServerState;
+
 @property NSInteger TotalCellsNum;
 @property NSInteger CellHeight;
 @property NSInteger CellWidth;
@@ -50,6 +53,24 @@
 @synthesize BorderGrid;
 @synthesize NeutralTile;
 @synthesize NeutralGlow;
+
+
+
+#pragma mark - server Communications and delegate methods
+
+-(void)putLoaderInView{
+    self.loader = [LoadingView loadSpinnerIntoView:self.view];
+}
+
+-(void) removeLoaderFromView{
+    [self.loader removeLoader];
+}
+
+//MESSAGES RECIEVED FROM THE SERVER WILL BE SENT HERE
+-(void)messageRecieved:(NSString *)messageFromServer{
+    NSLog(@"server said: %@", messageFromServer);
+}
+
 
 
 
@@ -129,6 +150,15 @@
 
 -(void)viewDidLoad
 {
+    //NSLog(@"%@",self.opponentName);
+    //NSLog(@"%@",self.gameID);
+    
+    //set up network communications
+    self.thisNetworkController.delegate = self;
+    
+    [self.thisNetworkController sendMessageToServer:@"getGames"];
+    
+    //do other initialization
     [self InitializeTurn];
     [self GetGamePropertiesFromTheServer];
     [self DrawGameScreen];
