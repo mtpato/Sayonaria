@@ -178,13 +178,15 @@
     self.UserName.delegate = self;
     self.Password.delegate = self;
     
+    [self performSegueWithIdentifier:@"showTabView" sender:self];
+    /*
     if(self.currentServerState == nil){
         //initialize network communications
         NetworkController *tempController = [[NetworkController alloc] init];
         self.thisNetworkController = tempController;
         self.thisNetworkController.delegate = self;
         [self.thisNetworkController initNetworkCommunication];
-    }
+    }*/
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
@@ -193,8 +195,10 @@
         newUserController.delegate = self;
     }
     if([segue.identifier isEqualToString: @"showTabView"]){
+        
+        /*
         NetworkStorageTabBarController *newController = (NetworkStorageTabBarController *) segue.destinationViewController;
-        newController.thisNetworkController = self.thisNetworkController;
+        newController.thisNetworkController = self.thisNetworkController;*/
     }
 }
 

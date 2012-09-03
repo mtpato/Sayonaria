@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B058DDB015F4091E00E56558 /* 816b8630631e7b357474cb7b3330b6f1_large.png in Resources */ = {isa = PBXBuildFile; fileRef = B058DDAF15F4091E00E56558 /* 816b8630631e7b357474cb7b3330b6f1_large.png */; };
+		B0CB261B15F505A600CFC943 /* GameScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0CB261A15F505A600CFC943 /* GameScreenViewController.m */; };
 		B13B30F415D0C7BF003A4E89 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B13B30F315D0C7BF003A4E89 /* UIKit.framework */; };
 		B13B30F615D0C7BF003A4E89 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B13B30F515D0C7BF003A4E89 /* Foundation.framework */; };
 		B13B30F815D0C7BF003A4E89 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B13B30F715D0C7BF003A4E89 /* CoreGraphics.framework */; };
@@ -69,6 +71,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B058DDAF15F4091E00E56558 /* 816b8630631e7b357474cb7b3330b6f1_large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 816b8630631e7b357474cb7b3330b6f1_large.png; sourceTree = "<group>"; };
+		B0CB261915F505A600CFC943 /* GameScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScreenViewController.h; sourceTree = "<group>"; };
+		B0CB261A15F505A600CFC943 /* GameScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameScreenViewController.m; sourceTree = "<group>"; };
 		B13B30EF15D0C7BF003A4E89 /* SayonariaGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SayonariaGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B13B30F315D0C7BF003A4E89 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B13B30F515D0C7BF003A4E89 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -193,6 +198,8 @@
 				B13B310315D0C7BF003A4E89 /* SSIGameAppDelegate.m */,
 				B13B310515D0C7BF003A4E89 /* MainStoryboard_iPhone.storyboard */,
 				B13B310815D0C7BF003A4E89 /* MainStoryboard_iPad.storyboard */,
+				B0CB261915F505A600CFC943 /* GameScreenViewController.h */,
+				B0CB261A15F505A600CFC943 /* GameScreenViewController.m */,
 				B1F6405815F2902200305D37 /* Login */,
 				B1F6405915F2903200305D37 /* TabView */,
 				B13B30FA15D0C7BF003A4E89 /* Supporting Files */,
@@ -216,6 +223,7 @@
 			children = (
 				B1C7F43215DB2A2F002C541D /* Splash Screen */,
 				B13B311415D0C876003A4E89 /*  .ai */,
+				B058DDAF15F4091E00E56558 /* 816b8630631e7b357474cb7b3330b6f1_large.png */,
 				B13B311515D0C876003A4E89 /* buttons isoed.psd */,
 				B13B311615D0C876003A4E89 /* cel layers */,
 			);
@@ -400,6 +408,7 @@
 				B13B319B15D0C876003A4E89 /* neutral_to_inactive_glow_frames_05.png in Resources */,
 				B13B319C15D0C876003A4E89 /* neutral_to_inactive_glow_frames_06.png in Resources */,
 				B1C7F43015DB2A25002C541D /* Default.png in Resources */,
+				B058DDB015F4091E00E56558 /* 816b8630631e7b357474cb7b3330b6f1_large.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,6 +427,7 @@
 				B1F6405615F2900C00305D37 /* GameTabViewController.m in Sources */,
 				B1EF851815F3B723006FB520 /* NetworkController.m in Sources */,
 				B1EF851F15F3E851006FB520 /* NetworkStorageTabBarController.m in Sources */,
+				B0CB261B15F505A600CFC943 /* GameScreenViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

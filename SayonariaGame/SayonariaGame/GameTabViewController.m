@@ -51,6 +51,7 @@
     NetworkStorageTabBarController *thisTabBar = (NetworkStorageTabBarController *) self.tabBarController;
     self.thisNetworkController = thisTabBar.thisNetworkController;
     self.thisNetworkController.delegate = self;
+    [self performSegueWithIdentifier:@"showGameScreen" sender:nil];
 }
 
 - (void)viewDidUnload
