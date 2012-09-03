@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "NetworkController.h"
 #import "NetworkStorageTabBarController.h"
+#import "GameScreenViewController.h"
 
 @interface GameTabViewController : UIViewController <NetworkControllerDelegate,UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic,strong) NetworkController *thisNetworkController;
