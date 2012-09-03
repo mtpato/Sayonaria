@@ -10,6 +10,6 @@
 #import "NetworkController.h"
 #import "NetworkStorageTabBarController.h"
 
-@interface GameTabViewController : UIViewController <NetworkControllerDelegate>
+@interface GameTabViewController : UIViewController <NetworkControllerDelegate,UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic,strong) NetworkController *thisNetworkController;
 @end
