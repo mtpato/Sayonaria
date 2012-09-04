@@ -63,7 +63,7 @@
 }
 
 -(void) removeLoaderFromView{
-    [self.loader removeLoader];
+    [self.loader removeLoader:self.view];
 }
 
 //MESSAGES RECIEVED FROM THE SERVER WILL BE SENT HERE

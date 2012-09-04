@@ -13,7 +13,6 @@
 
 
 @interface GameTabViewController ()
-@property (nonatomic,weak) LoadingView * loader;
 @property (nonatomic) ServerState *currentServerState;
 @property (nonatomic,weak) IBOutlet UITextField *OpponentName;
 @property (nonatomic) IBOutlet UITableView *gameTableView;
@@ -30,7 +29,7 @@
 }
 
 -(void) removeLoaderFromView{
-    [self.loader removeLoader];
+    [self.loader removeLoader:self.view];
 }
 
 -(void)messageRecieved:(NSString *)messageFromServer{
@@ -44,6 +43,7 @@
     if([[messageFromServer substringToIndex:5] isEqualToString:@"games"]){
         [self parseGames:[messageFromServer substringFromIndex:6]];
         [self.gameTableView reloadData];
+        //[self.loader removeLoader:self.gameTableView];
     }
 }
 
@@ -94,15 +94,8 @@
 #pragma mark - table view methods
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    
 	// Return the number of sections
 	return 1;
-}
-
-- (NSString *) tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-	
-	// Return the header at the given index
-	return @"Games";
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -116,6 +109,15 @@
     
 	static NSString *CellIdentifier = @"GameCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
+    //set up the background of the cell
+    UIView *backgroundView = [[UIView alloc] initWithFrame: cell.frame];
+    backgroundView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"epato_clicked_button_game.png"]];
+    backgroundView.alpha = 0.6;
+    cell.backgroundView = backgroundView;
+    
+    //set up the thumbnail image of the cell
+    cell.imageView.image = [UIImage imageNamed:@"816b8630631e7b357474cb7b3330b6f1_large.png"];
     
 	// Extract the game informaton
     if(indexPath.row <=[self.thisUsersGames count]) {
@@ -147,39 +149,35 @@
     return self;
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [self putLoaderInView];
+    self.tabBarController.tabBar.hidden = YES;
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    [self removeLoaderFromView];
+    self.tabBarController.tabBar.hidden = NO;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     NetworkStorageTabBarController *thisTabBar = (NetworkStorageTabBarController *) self.tabBarController;
     self.thisNetworkController = thisTabBar.thisNetworkController;
     self.thisNetworkController.delegate = self;
     
-    [self putLoaderInView];
+    UIView *backgroundView = [[UIView alloc] initWithFrame: self.gameTableView.frame];
+    backgroundView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"816b8630631e7b357474cb7b3330b6f1_large.png"]];
+    self.gameTableView.backgroundView = backgroundView;
+    
     self.gameTableView.dataSource = self;
     self.gameTableView.delegate = self;
     [self.gameTableView reloadData];
-    [self removeLoaderFromView];
-    [self.thisNetworkController sendMessageToServer:@"getGames"];
     
-    /*
-    // Initialise the queue used to download from flickr
-	dispatch_queue_t dispatchQueue = dispatch_queue_create("q_loadTopPlaces", NULL);
-	
-	// Use the download queue to asynchronously get the list of Top Places
-	dispatch_async(dispatchQueue, ^{
-		
-        [self.thisNetworkController sendMessageToServer:@"getGames"];
-		
-		// Use the main queue to refresh update the view
-		dispatch_async(dispatch_get_main_queue(), ^{
-			[self.gameTableView reloadData];
-			[self removeLoaderFromView];
-		});
-		
-	});
-	// Release the queue
-	dispatch_release(dispatchQueue);
-     */
+    //request the games list for the table
+    //self.loader = [LoadingView loadSpinnerIntoView:self.gameTableView];
+    [self.thisNetworkController sendMessageToServer:@"getGames"];
 }
 
 - (void)viewDidUnload

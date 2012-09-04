@@ -20,11 +20,9 @@
     self.loader = [LoadingView loadSpinnerIntoView:self.view];
 }
 -(void)removeLoaderFromView{
-    [self.loader removeLoader];
+    [self.loader removeLoader:self.view];
 }
--(void)segueLoginToTabBar{
-    [self performSegueWithIdentifier:@"showTabView" sender:self];
-}
+
 -(void)setCurrentServerStateConnecting{
     self.currentServerState = (ServerState *)Connecting;
 }
@@ -43,16 +41,17 @@
         if(self.currentServerState == (ServerState *)Connecting){
             self.currentServerState = (ServerState *)SendingGameType;
             [self.thisNetworkController sendMessageToServer:@"tileGame"];
-            //if we have sent in the game type, try logging in with a pre existing auth key
+        //if we have sent in the game type, try logging in with a pre existing auth key
         } else if(self.currentServerState == (ServerState *)SendingGameType){
             self.currentServerState = (ServerState *)ConnectedAwaitingLogon;
             [self loginToServerWithAuthkey];
             //remove the initial loading screen
-            [self.loader removeLoader];
+            ///////////////////////////////////////////////////////////////[self.loader removeLoader];
             //if the recieved message has an auth key, set the auth key and login
             //Otherwise a new user was created woohoo
         } else if (self.currentServerState == (ServerState *)ConnectedAwaitingLogon){
             if([messageFromServer length] > 4){
+                NSLog(@"Logged in!");
                 [defaults setObject:[messageFromServer substringFromIndex:5] forKey:AUTH_KEY];
                 [defaults synchronize];
                 [self performSegueWithIdentifier:@"showTabView" sender:self];
@@ -61,7 +60,6 @@
             }
         } else if(self.currentServerState == (ServerState *)TryingAuthKeyLogin) {
             NSLog(@"Logged in!");
-            self.currentServerState = (ServerState *)InTabView;
             [self performSegueWithIdentifier:@"showTabView" sender:self];
         } else{
             NSLog(@"Server 'done' message not interpreted");
@@ -74,9 +72,10 @@
             self.alert.title = @"Cannot Log In";
             self.alert.message = @"Invalid username/password";
             [self.alert show];
-            [self.loader removeLoader];
+            [self removeLoaderFromView];
         } else if(self.currentServerState == (ServerState *)TryingAuthKeyLogin) {
             NSLog(@"Bad AuthKey");
+            [self removeLoaderFromView];
             self.currentServerState = (ServerState *)ConnectedAwaitingLogon;
         }
     } else if([messageFromServer isEqualToString:@"SOCKETS CLOSED"] || [messageFromServer isEqualToString:@"CANNOT CONNECT"]){
@@ -178,8 +177,6 @@
     self.UserName.delegate = self;
     self.Password.delegate = self;
     
-    [self performSegueWithIdentifier:@"showTabView" sender:self];
-    
     if(self.currentServerState == nil){
         //initialize network communications
         NetworkController *tempController = [[NetworkController alloc] init];
@@ -190,11 +187,16 @@
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    self.currentServerState = (ServerState *)InTabView;
     if([segue.identifier isEqualToString: @"showNewUserScreen"]){
         NewUserViewController *newUserController = (NewUserViewController *)segue.destinationViewController;
         newUserController.delegate = self;
     }
     if([segue.identifier isEqualToString: @"showTabView"]){
+        //put the Loader into the view
+        if (self.currentServerState != (ServerState *)TryingAuthKeyLogin){
+            [self putLoaderInView];
+        }
         NetworkStorageTabBarController *newController = (NetworkStorageTabBarController *) segue.destinationViewController;
         newController.thisNetworkController = self.thisNetworkController;
     }

@@ -13,4 +13,5 @@
 
 @interface GameTabViewController : UIViewController <NetworkControllerDelegate,UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic,strong) NetworkController *thisNetworkController;
+@property (nonatomic,weak) LoadingView * loader;
 @end

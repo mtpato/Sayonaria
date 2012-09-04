@@ -27,11 +27,6 @@
     
     //make the background of the spinner
     loaderView.backgroundColor = [UIColor blackColor];
-    /*
-    UIImageView *loaderBackground = [[UIImageView alloc] initWithImage:[loaderView addBackground]];
-    loaderBackground.alpha = 0.7;
-    [loaderView addSubview:loaderBackground];
-    */
     
     //create the spinning indicator//
     UIActivityIndicatorView *indicator =
@@ -91,10 +86,10 @@
     return image;
 }
 
--(void)removeLoader {
+-(void)removeLoader:(UIView *)superView {
     CATransition *animation = [CATransition animation];
 	[animation setType:kCATransitionFade];
-	[[[self superview] layer] addAnimation:animation forKey:@"layerAnimation"];
+	[[superView layer] addAnimation:animation forKey:@"layerAnimation"];
     [super removeFromSuperview];
 }
 

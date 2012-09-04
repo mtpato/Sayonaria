@@ -12,6 +12,6 @@
 @interface LoadingView : UIView
 
 +(LoadingView *)loadSpinnerIntoView:(UIView *)superView;
--(void)removeLoader;
+-(void)removeLoader:(UIView *)superView;
 
 @end
