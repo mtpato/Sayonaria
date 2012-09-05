@@ -390,6 +390,7 @@
                     <navigationItem key="navigationItem" id="gV0-Df-Bgw"/>
                     <connections>
                         <outlet property="GameBoardView" destination="Xtb-gw-zFa" id="wdw-li-hjO"/>
+                        <outlet property="tapRecognizer" destination="z4H-K1-kOI" id="FwU-DE-ldv"/>
                     </connections>
                 </viewController>
                 <tapGestureRecognizer id="z4H-K1-kOI">
@@ -450,6 +451,7 @@
             <relationships>
                 <relationship kind="action" name="LayTile:" candidateClass="UITapGestureRecognizer"/>
                 <relationship kind="outlet" name="GameBoardView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="tapRecognizer" candidateClass="UIGestureRecognizer"/>
             </relationships>
         </class>
         <class className="GameTabViewController" superclassName="UIViewController">

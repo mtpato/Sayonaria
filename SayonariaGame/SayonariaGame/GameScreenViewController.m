@@ -13,22 +13,23 @@
 @property (nonatomic,weak) LoadingView * loader;
 @property (nonatomic) ServerState *currentServerState;
 
-@property NSInteger TotalCellsNum;
-@property NSInteger CellHeight;
-@property NSInteger CellWidth;
-@property NSInteger LengthCellsNum;
-@property NSInteger WidthCellsNum;
-@property NSMutableDictionary *FrameDictionary;
-@property NSMutableDictionary *PastMovesDictionary;
-@property CGFloat TouchTolerance;
-@property NSString *Team1;
-@property NSString *Team2;
-@property UIImage *Team1CellType;
-@property UIImage *Team2CellType;
-@property NSInteger TeamTurn;
-@property UIImageView *BorderGrid;
-@property UIImageView *NeutralTile;
-@property UIImageView *NeutralGlow;
+@property (nonatomic) NSInteger TotalCellsNum;
+@property (nonatomic) NSInteger CellHeight;
+@property (nonatomic) NSInteger CellWidth;
+@property (nonatomic) NSInteger LengthCellsNum;
+@property (nonatomic) NSInteger WidthCellsNum;
+@property (nonatomic) NSMutableDictionary *FrameDictionary;
+@property (nonatomic) NSMutableDictionary *PastMovesDictionary;
+@property (nonatomic) CGFloat TouchTolerance;
+@property (nonatomic) NSString *Team1;
+@property (nonatomic) NSString *Team2;
+@property (nonatomic) UIImage *Team1CellType;
+@property (nonatomic) UIImage *Team2CellType;
+@property (nonatomic) NSInteger TeamTurn;
+@property (nonatomic) UIImageView *BorderGrid;
+@property (nonatomic) UIImageView *NeutralTile;
+@property (nonatomic) UIImageView *NeutralGlow;
+@property (nonatomic) IBOutlet UIGestureRecognizer *tapRecognizer;
 
 @end
 
@@ -36,7 +37,7 @@
 
 
 @implementation GameScreenViewController
-@synthesize GameBoardView;
+/*@synthesize GameBoardView;
 @synthesize TotalCellsNum;
 @synthesize CellHeight;
 @synthesize CellWidth;
@@ -52,7 +53,7 @@
 @synthesize TeamTurn;
 @synthesize BorderGrid;
 @synthesize NeutralTile;
-@synthesize NeutralGlow;
+@synthesize NeutralGlow;*/
 
 
 
@@ -76,8 +77,6 @@
 
 -(void)ProcessTurn{
     
-    
-    
     //  GetGameState
     //  DrawGameState
     //  PlaceTile
@@ -85,48 +84,46 @@
     //  DrawGameState
     //  EndTurn
     
-    
-    
 }
 
 
 
 
 -(void)ClearGameScreen{
-    [[GameBoardView subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    [[self.GameBoardView subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
 }
 
 
 -(void)DrawGameScreen{
     
-    FrameDictionary= [[NSMutableDictionary alloc]initWithCapacity:TotalCellsNum];
+    self.FrameDictionary= [[NSMutableDictionary alloc]initWithCapacity:self.TotalCellsNum];
     
-    for(int i = 0; i < WidthCellsNum-1; i++) {
-        for(int j = 0; j < LengthCellsNum-1; j++) {
+    for(int i = 0; i < self.WidthCellsNum-1; i++) {
+        for(int j = 0; j < self.LengthCellsNum-1; j++) {
             
-            int IncrementalLength=i*(CellWidth-10)*1.06;
-            int IncrementalWidth=j*(CellWidth-2)*1.06;
+            int IncrementalLength=i*(self.CellWidth-10)*1.06;
+            int IncrementalWidth=j*(self.CellWidth-2)*1.06;
             int moduloResult = i % 2;
             int WidthModifier;
-            if(moduloResult==1){WidthModifier=0;} else {WidthModifier=(CellWidth-2)/2;}
+            if(moduloResult==1){WidthModifier=0;} else {WidthModifier=(self.CellWidth-2)/2;}
             IncrementalWidth=IncrementalWidth+WidthModifier;
             
-            CGRect frame = CGRectMake(IncrementalLength,IncrementalWidth,CellHeight,CellWidth);
+            CGRect frame = CGRectMake(IncrementalLength,IncrementalWidth,self.CellHeight,self.CellWidth);
             NSString *frameString=NSStringFromCGRect(frame);
-            [FrameDictionary setObject:frameString forKey:frameString];
+            [self.FrameDictionary setObject:frameString forKey:frameString];
             
-            BorderGrid=[[UIImageView alloc] initWithFrame:frame];
-            BorderGrid.image=[UIImage imageNamed:@"epato_game_concepts_board_modules_cell_f_border.png"];
-            [GameBoardView addSubview:BorderGrid];
+            self.BorderGrid=[[UIImageView alloc] initWithFrame:frame];
+            self.BorderGrid.image=[UIImage imageNamed:@"epato_game_concepts_board_modules_cell_f_border.png"];
+            [self.GameBoardView addSubview:self.BorderGrid];
             
-            NeutralTile=[[UIImageView alloc] initWithFrame:frame];
-            NeutralTile.image=[UIImage imageNamed:@"epato_game_concepts_board_modules_cell_f_border_transparency_neutral_gray.png"];
-            [GameBoardView addSubview:NeutralTile];
+            self.NeutralTile=[[UIImageView alloc] initWithFrame:frame];
+            self.NeutralTile.image=[UIImage imageNamed:@"epato_game_concepts_board_modules_cell_f_border_transparency_neutral_gray.png"];
+            [self.GameBoardView addSubview:self.NeutralTile];
             
-            NeutralGlow=[[UIImageView alloc] initWithFrame:frame];
+            self.NeutralGlow=[[UIImageView alloc] initWithFrame:frame];
             
             
-            NeutralGlow.animationImages = [NSArray arrayWithObjects:
+            self.NeutralGlow.animationImages = [NSArray arrayWithObjects:
                                            [UIImage imageNamed:@"neutral_to_inactive_glow_frames_01.png"],
                                            [UIImage imageNamed:@"neutral_to_inactive_glow_frames_02.png"],
                                            [UIImage imageNamed:@"neutral_to_inactive_glow_frames_03.png"],
@@ -136,10 +133,10 @@
                                            , nil];
             
             
-            NeutralGlow.animationDuration = 1.0;
-            NeutralGlow.animationRepeatCount = 0;
-            [NeutralGlow startAnimating];
-            [GameBoardView addSubview:NeutralGlow];
+            self.NeutralGlow.animationDuration = 1.0;
+            self.NeutralGlow.animationRepeatCount = 0;
+            [self.NeutralGlow startAnimating];
+            [self.GameBoardView addSubview:self.NeutralGlow];
         }
     }
     
@@ -156,14 +153,17 @@
     
     //set up network communications
     self.thisNetworkController.delegate = self;
+    NSLog(@"Networking Set Up");
     
     //[self.thisNetworkController sendMessageToServer:@"getGames"];
     
     //do other initialization
     [self InitializeTurn];
+    NSLog(@"Turn Initialized");
     [self GetGamePropertiesFromTheServer];
+    NSLog(@"GamePropertiesRecieved");
     [self DrawGameScreen];
-    [self removeLoaderFromView]; //ANDREW MAKE SURE THIS IS ACTUALLY THE BEST PLACE TO TAKE THE LOADER AWAY!!!
+    NSLog(@"Game Screen Drawn");
 }
 
 
@@ -171,44 +171,44 @@
 
 -(void)InitializeTurn
 {
-    TeamTurn=1;
+    self.TeamTurn=1;
 }
 
 
 
 -(void)UpdateGameState
 {
-    if(TeamTurn==1){TeamTurn=2;} else if (TeamTurn==2){TeamTurn=1;}
+    if(self.TeamTurn==1){self.TeamTurn=2;} else if (self.TeamTurn==2){self.TeamTurn=1;}
     
 }
 
 
 - (IBAction)LayTile:(UITapGestureRecognizer *)sender {
     
-    CGPoint location=[sender locationInView:GameBoardView];
+    CGPoint location=[sender locationInView:self.GameBoardView];
     
     
-    for(id key in FrameDictionary)
+    for(id key in self.FrameDictionary)
     {
         
         
-        CGRect CurrentFrame=CGRectFromString( [FrameDictionary objectForKey:key]);
+        CGRect CurrentFrame=CGRectFromString( [self.FrameDictionary objectForKey:key]);
         NSString *frameString=NSStringFromCGRect(CurrentFrame);
-        double distance = sqrt(pow(( (CurrentFrame.origin.x+CellHeight/2) - location.x), 2.0) + pow(( (CurrentFrame.origin.y+CellWidth/2) - location.y), 2.0));
+        double distance = sqrt(pow(( (CurrentFrame.origin.x+self.CellHeight/2) - location.x), 2.0) + pow(( (CurrentFrame.origin.y+self.CellWidth/2) - location.y), 2.0));
         
         
         
         
         
-        if(distance<TouchTolerance && [PastMovesDictionary objectForKey:frameString]==nil){
+        if(distance<self.TouchTolerance && [self.PastMovesDictionary objectForKey:frameString]==nil){
             UIImageView *PlaceView;
             PlaceView = [[UIImageView alloc] initWithFrame:CurrentFrame];
             
-            if(TeamTurn==1){PlaceView.image = Team1CellType;}
-            else if(TeamTurn==2){PlaceView.image = Team2CellType;}
+            if(self.TeamTurn==1){PlaceView.image = self.Team1CellType;}
+            else if(self.TeamTurn==2){PlaceView.image = self.Team2CellType;}
             
-            [GameBoardView addSubview:PlaceView];
-            [PastMovesDictionary setObject:frameString forKey:frameString];
+            [self.GameBoardView addSubview:PlaceView];
+            [self.PastMovesDictionary setObject:frameString forKey:frameString];
             
         }
         
@@ -226,33 +226,37 @@
 
 -(void)GetGamePropertiesFromTheServer
 {
-    CellHeight=42;
-    CellWidth=42;
-    LengthCellsNum=9;
-    WidthCellsNum=7;
-    TotalCellsNum=LengthCellsNum*WidthCellsNum;
-    TouchTolerance=10;
+    self.CellHeight=42;
+    self.CellWidth=42;
+    self.LengthCellsNum=9;
+    self.WidthCellsNum=7;
+    self.TotalCellsNum=self.LengthCellsNum * self.WidthCellsNum;
+    self.TouchTolerance=10;
     
-    Team1=@"Diamond";
-    Team2=@"Gold";
+    self.Team1=@"Diamond";
+    self.Team2=@"Gold";
+    		
+    if(self.Team1==@"Coal"){self.Team1CellType=[UIImage imageNamed:@"epato_new_game_minimal_tiles_coal"];}
+    if(self.Team1==@"Diamond"){self.Team1CellType=[UIImage imageNamed:@"epato_new_game_minimal_tiles_diamond.png"];}
+    if(self.Team1==@"Gold"){self.Team1CellType=[UIImage imageNamed:@"epato_new_game_minimal_tiles_gold.png"];}
+    if(self.Team1==@"Silica"){self.Team1CellType=[UIImage imageNamed:@"epato_new_game_minimal_tiles_silica.png"];}
     
-    if(Team1==@"Coal"){Team1CellType=[UIImage imageNamed:@"epato_new_game_minimal_tiles_coal"];}
-    if(Team1==@"Diamond"){Team1CellType=[UIImage imageNamed:@"epato_new_game_minimal_tiles_diamond.png"];}
-    if(Team1==@"Gold"){Team1CellType=[UIImage imageNamed:@"epato_new_game_minimal_tiles_gold.png"];}
-    if(Team1==@"Silica"){Team1CellType=[UIImage imageNamed:@"epato_new_game_minimal_tiles_silica.png"];}
     
-    
-    if(Team2==@"Coal"){Team2CellType=[UIImage imageNamed:@"epato_new_game_minimal_tiles_coal"];}
-    if(Team2==@"Diamond"){Team2CellType=[UIImage imageNamed:@"epato_new_game_minimal_tiles_diamond.png"];}
-    if(Team2==@"Gold"){Team2CellType=[UIImage imageNamed:@"epato_new_game_minimal_tiles_gold.png"];}
-    if(Team2==@"Silica"){Team2CellType=[UIImage imageNamed:@"epato_new_game_minimal_tiles_silica.png"];}
+    if(self.Team2==@"Coal"){self.Team2CellType=[UIImage imageNamed:@"epato_new_game_minimal_tiles_coal"];}
+    if(self.Team2==@"Diamond"){self.Team2CellType=[UIImage imageNamed:@"epato_new_game_minimal_tiles_diamond.png"];}
+    if(self.Team2==@"Gold"){self.Team2CellType=[UIImage imageNamed:@"epato_new_game_minimal_tiles_gold.png"];}
+    if(self.Team2==@"Silica"){self.Team2CellType=[UIImage imageNamed:@"epato_new_game_minimal_tiles_silica.png"];}
 }
 
 
 -(void)viewWillAppear:(BOOL)animated{
+    NSLog(@"GGG");
     [self putLoaderInView];
 }
 
+-(void)viewDidAppear:(BOOL)animated{
+    [self removeLoaderFromView];
+}
 
 - (void)viewDidUnload
 {
