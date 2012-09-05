@@ -37,13 +37,15 @@
     //if the server says 'done' it can be connecting, confirming the game type, etc
     if([[messageFromServer substringToIndex:4] isEqualToString:@"done"]){
         if([messageFromServer isEqualToString:@"done:gameCreated"]){
-            [self performSegueWithIdentifier:@"showGameScreen" sender:@"New Game"];
+            [self showGameScreenNotAnimated:@"New Game"];
+            //[self performSegueWithIdentifier:@"showGameScreen" sender:@"New Game"];
         }
     }
     if([[messageFromServer substringToIndex:5] isEqualToString:@"games"]){
         [self parseGames:[messageFromServer substringFromIndex:6]];
         [self.gameTableView reloadData];
-        //[self.loader removeLoader:self.gameTableView];
+        [self removeLoaderFromView];
+        if (self.tabBarController.tabBar.hidden == YES) self.tabBarController.tabBar.hidden = NO;
     }
 }
 
@@ -135,7 +137,8 @@
     static NSString *CellIdentifier = @"GameCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     cell = [tableView cellForRowAtIndexPath:indexPath];
-    [self performSegueWithIdentifier:@"showGameScreen" sender:cell];
+    [self showGameScreenNotAnimated:cell];
+    //[self performSegueWithIdentifier:@"showGameScreen" sender:cell];
 }
 
 #pragma mark - loading and other
@@ -151,33 +154,34 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [self putLoaderInView];
-    self.tabBarController.tabBar.hidden = YES;
 }
 
 -(void)viewDidAppear:(BOOL)animated{
-    [self removeLoaderFromView];
-    self.tabBarController.tabBar.hidden = NO;
-}
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    
+    //set up networking
     NetworkStorageTabBarController *thisTabBar = (NetworkStorageTabBarController *) self.tabBarController;
     self.thisNetworkController = thisTabBar.thisNetworkController;
     self.thisNetworkController.delegate = self;
     
+    //set up the background of the table
     UIView *backgroundView = [[UIView alloc] initWithFrame: self.gameTableView.frame];
     backgroundView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"816b8630631e7b357474cb7b3330b6f1_large.png"]];
     self.gameTableView.backgroundView = backgroundView;
     
+    //set up the table itself
     self.gameTableView.dataSource = self;
     self.gameTableView.delegate = self;
     [self.gameTableView reloadData];
     
     //request the games list for the table
-    //self.loader = [LoadingView loadSpinnerIntoView:self.gameTableView];
     [self.thisNetworkController sendMessageToServer:@"getGames"];
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    //the first time the view is loaded, we are probably coming from the login screen, so hide the tabbar for a smoother transition
+     self.tabBarController.tabBar.hidden = YES;
 }
 
 - (void)viewDidUnload
@@ -194,7 +198,33 @@
 
 #pragma mark - segue
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+-(void)showGameScreenNotAnimated:(id)cellOrString{
+    //put the Loader into the view
+    [self putLoaderInView];
+    
+    //create the tabBarView from the storyboard
+    GameScreenViewController *newGameScreen = [self.storyboard instantiateViewControllerWithIdentifier:@"gameScreen"];
+    
+    //transfer the networking controls
+    newGameScreen.thisNetworkController = self.thisNetworkController;
+    
+    //pass appropriate game information
+    if([cellOrString isKindOfClass: [NSString class]]){
+        newGameScreen.opponentName = self.createdGameOpponent;
+    } else {
+        static NSString *CellIdentifier = @"GameCell";
+        UITableViewCell *cell = [self.gameTableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        cell = cellOrString;
+        newGameScreen.opponentName = cell.textLabel.text;
+        newGameScreen.gameID = cell.detailTextLabel.text;
+    }
+    
+    //segue!
+    [self.navigationController pushViewController:newGameScreen animated:NO];
+    NSLog(@"WE SEGUED!");
+}
+
+/*-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     GameScreenViewController *newController = (GameScreenViewController *)segue.destinationViewController;
     newController.thisNetworkController = self.thisNetworkController;
     
@@ -207,6 +237,6 @@
         newController.opponentName = cell.textLabel.text;
         newController.gameID = cell.detailTextLabel.text;
     }
-}
+}*/
 
 @end

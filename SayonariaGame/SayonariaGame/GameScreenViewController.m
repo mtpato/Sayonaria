@@ -150,18 +150,20 @@
 
 -(void)viewDidLoad
 {
+    NSLog(@"Game Screen Loaded");
     //NSLog(@"%@",self.opponentName);
     //NSLog(@"%@",self.gameID);
     
     //set up network communications
     self.thisNetworkController.delegate = self;
     
-    [self.thisNetworkController sendMessageToServer:@"getGames"];
+    //[self.thisNetworkController sendMessageToServer:@"getGames"];
     
     //do other initialization
     [self InitializeTurn];
     [self GetGamePropertiesFromTheServer];
     [self DrawGameScreen];
+    [self removeLoaderFromView]; //ANDREW MAKE SURE THIS IS ACTUALLY THE BEST PLACE TO TAKE THE LOADER AWAY!!!
 }
 
 
@@ -247,7 +249,9 @@
 }
 
 
-
+-(void)viewWillAppear:(BOOL)animated{
+    [self putLoaderInView];
+}
 
 
 - (void)viewDidUnload

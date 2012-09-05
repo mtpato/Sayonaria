@@ -54,13 +54,15 @@
                 NSLog(@"Logged in!");
                 [defaults setObject:[messageFromServer substringFromIndex:5] forKey:AUTH_KEY];
                 [defaults synchronize];
-                [self performSegueWithIdentifier:@"showTabView" sender:self];
+                [self showTabViewNotAnimated];
+                //[self performSegueWithIdentifier:@"showTabView" sender:self];
             } else {
                 NSLog(@"New User Created Successfully");
             }
         } else if(self.currentServerState == (ServerState *)TryingAuthKeyLogin) {
             NSLog(@"Logged in!");
-            [self performSegueWithIdentifier:@"showTabView" sender:self];
+            [self showTabViewNotAnimated];
+            //[self performSegueWithIdentifier:@"showTabView" sender:self];
         } else{
             NSLog(@"Server 'done' message not interpreted");
         }
@@ -186,19 +188,26 @@
     }
 }
 
+-(void)showTabViewNotAnimated{
+    //put the Loader into the view
+    if (self.currentServerState != (ServerState *)TryingAuthKeyLogin){
+        [self putLoaderInView];}
+    
+    //create the tabBarView from the storyboard
+    NetworkStorageTabBarController *newController = [self.storyboard instantiateViewControllerWithIdentifier:@"tabBarView"];
+    
+    //transfer the networking controls
+    newController.thisNetworkController = self.thisNetworkController;
+    
+    //segue!
+    [self.navigationController pushViewController:newController animated:NO];
+}
+
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     self.currentServerState = (ServerState *)InTabView;
     if([segue.identifier isEqualToString: @"showNewUserScreen"]){
         NewUserViewController *newUserController = (NewUserViewController *)segue.destinationViewController;
         newUserController.delegate = self;
-    }
-    if([segue.identifier isEqualToString: @"showTabView"]){
-        //put the Loader into the view
-        if (self.currentServerState != (ServerState *)TryingAuthKeyLogin){
-            [self putLoaderInView];
-        }
-        NetworkStorageTabBarController *newController = (NetworkStorageTabBarController *) segue.destinationViewController;
-        newController.thisNetworkController = self.thisNetworkController;
     }
 }
 
