@@ -255,7 +255,7 @@
 }
 
 -(void)viewDidAppear:(BOOL)animated{
-    [self removeLoaderFromView];
+    [self removeLoaderFromView]; //ANDREW, DO THIS AFTER YOU HAVE FULLY INITIALIZED THE VIEW, IT WILL HIDE ALL THE DRAWING PROPERLY
 }
 
 - (void)viewDidUnload
