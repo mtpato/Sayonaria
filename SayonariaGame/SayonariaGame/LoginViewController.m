@@ -68,9 +68,7 @@
     } else if([messageFromServer isEqualToString:@"ANOTHER OUTPUT FROM THE SERVER"]) {
     } else if([messageFromServer isEqualToString:@"error"]){
         if(self.currentServerState == (ServerState *)ConnectedAwaitingLogon) {
-            self.alert.title = @"Cannot Log In";
-            self.alert.message = @"Invalid username/password";
-            [self.alert show];
+            [self cannotLoginError];
             [self removeLoaderFromView];
         } else if(self.currentServerState == (ServerState *)TryingAuthKeyLogin) {
             NSLog(@"Bad AuthKey");
@@ -92,13 +90,22 @@
 }
 
 -(void) cannotConnectError {
-    NSLog(@"Trying to show alert");
     UIAlertView *cannotConnectAlert = [[UIAlertView alloc]
                   initWithTitle: @"Cannot Access Server"
                   message: @"Error 37: There was a problem accessing the server"
                   delegate: self
                   cancelButtonTitle:@"OK"
                   otherButtonTitles:nil];
+    [cannotConnectAlert show];
+}
+
+-(void) cannotLoginError {
+    UIAlertView *cannotConnectAlert = [[UIAlertView alloc]
+                                       initWithTitle: @"Cannot Log In"
+                                       message: @"Invalid Username or Password"
+                                       delegate: self
+                                       cancelButtonTitle:@"OK"
+                                       otherButtonTitles:nil];
     [cannotConnectAlert show];
 }
 
@@ -113,9 +120,7 @@
 //Passes the user name and password typed on screen to the server for a login
 - (IBAction)didPressLogin:(id)sender {
     if([self.UserName.text length] == 0 || [self.Password.text length] == 0){
-        self.alert.title = @"Cannot Log In";
-        self.alert.message = @"You must enter a username and password";
-        [self.alert show];
+        [self cannotLoginError];
     } else {
         //set the user name as the default user name
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
