@@ -43,7 +43,8 @@ typedef enum {
     ConnectedAwaitingLogon = 2,
     InTabView = 3,
     TryingAuthKeyLogin = 4,
-    InGameView = 5
+    InGameView = 5,
+    FirstSocketFailed = 6
 } ServerState;
 
 @end

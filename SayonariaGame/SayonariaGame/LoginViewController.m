@@ -13,7 +13,6 @@
 @end
 
 @implementation LoginViewController
-@synthesize alert = _alert;
 
 #pragma mark - delegate methods
 -(void)putLoaderInView{
@@ -45,8 +44,6 @@
         } else if(self.currentServerState == (ServerState *)SendingGameType){
             self.currentServerState = (ServerState *)ConnectedAwaitingLogon;
             [self loginToServerWithAuthkey];
-            //remove the initial loading screen
-            ///////////////////////////////////////////////////////////////[self.loader removeLoader];
             //if the recieved message has an auth key, set the auth key and login
             //Otherwise a new user was created woohoo
         } else if (self.currentServerState == (ServerState *)ConnectedAwaitingLogon){
@@ -80,18 +77,29 @@
             [self removeLoaderFromView];
             self.currentServerState = (ServerState *)ConnectedAwaitingLogon;
         }
-    } else if([messageFromServer isEqualToString:@"SOCKETS CLOSED"] || [messageFromServer isEqualToString:@"CANNOT CONNECT"]){
-        self.currentServerState = nil;
-        self.alert = [[UIAlertView alloc]
-                      initWithTitle: @"Cannot Access Server"
-                      message: @"Error 37: There was a problem accessing the server"
-                      delegate: self
-                      cancelButtonTitle:@"OK"
-                      otherButtonTitles:nil];
-        [self.alert show];
-    }else {
+    } else if([messageFromServer isEqualToString:@"CANNOT CONNECT"]){
+        if (self.currentServerState == (ServerState *)FirstSocketFailed) {
+            self.currentServerState = nil;
+            [self cannotConnectError];
+        } else {
+            self.currentServerState = (ServerState *)FirstSocketFailed;
+        }
+    }else if ([messageFromServer isEqualToString:@"SOCKETS CLOSED"]){
+        [self cannotConnectError];
+    } else {
         NSLog(@"Unknown Server Message");
     }
+}
+
+-(void) cannotConnectError {
+    NSLog(@"Trying to show alert");
+    UIAlertView *cannotConnectAlert = [[UIAlertView alloc]
+                  initWithTitle: @"Cannot Access Server"
+                  message: @"Error 37: There was a problem accessing the server"
+                  delegate: self
+                  cancelButtonTitle:@"OK"
+                  otherButtonTitles:nil];
+    [cannotConnectAlert show];
 }
 
 #pragma mark - user interface for logon screen

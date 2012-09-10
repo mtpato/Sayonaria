@@ -69,7 +69,7 @@
 			break;
             
 		case NSStreamEventErrorOccurred:
-			NSLog(@"Can not connect to the host!");
+			//NSLog(@"Can not connect to the host!");
             [self.delegate removeLoaderFromView];
             [self.delegate messageRecieved:@"CANNOT CONNECT"];
 			break;
