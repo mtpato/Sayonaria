@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B058DDB015F4091E00E56558 /* 816b8630631e7b357474cb7b3330b6f1_large.png in Resources */ = {isa = PBXBuildFile; fileRef = B058DDAF15F4091E00E56558 /* 816b8630631e7b357474cb7b3330b6f1_large.png */; };
 		B0CB261B15F505A600CFC943 /* GameScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0CB261A15F505A600CFC943 /* GameScreenViewController.m */; };
 		B13B30F415D0C7BF003A4E89 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B13B30F315D0C7BF003A4E89 /* UIKit.framework */; };
 		B13B30F615D0C7BF003A4E89 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B13B30F515D0C7BF003A4E89 /* Foundation.framework */; };
@@ -17,50 +16,6 @@
 		B13B310415D0C7BF003A4E89 /* SSIGameAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B13B310315D0C7BF003A4E89 /* SSIGameAppDelegate.m */; };
 		B13B310715D0C7BF003A4E89 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B13B310515D0C7BF003A4E89 /* MainStoryboard_iPhone.storyboard */; };
 		B13B310A15D0C7BF003A4E89 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B13B310815D0C7BF003A4E89 /* MainStoryboard_iPad.storyboard */; };
-		B13B317215D0C876003A4E89 /*  .ai in Resources */ = {isa = PBXBuildFile; fileRef = B13B311415D0C876003A4E89 /*  .ai */; };
-		B13B317315D0C876003A4E89 /* buttons isoed.psd in Resources */ = {isa = PBXBuildFile; fileRef = B13B311515D0C876003A4E89 /* buttons isoed.psd */; };
-		B13B317415D0C876003A4E89 /* epato_clicked_button_game.png in Resources */ = {isa = PBXBuildFile; fileRef = B13B311715D0C876003A4E89 /* epato_clicked_button_game.png */; };
-		B13B317515D0C876003A4E89 /* epato_game_concepts_board_modules_cell_f__transparency_coal_black.png in Resources */ = {isa = PBXBuildFile; fileRef = B13B311815D0C876003A4E89 /* epato_game_concepts_board_modules_cell_f__transparency_coal_black.png */; };
-		B13B317615D0C876003A4E89 /* epato_game_concepts_board_modules_cell_f__transparency_diamond_teal.png in Resources */ = {isa = PBXBuildFile; fileRef = B13B311915D0C876003A4E89 /* epato_game_concepts_board_modules_cell_f__transparency_diamond_teal.png */; };
-		B13B317715D0C876003A4E89 /* epato_game_concepts_board_modules_cell_f__transparency_gold.psd in Resources */ = {isa = PBXBuildFile; fileRef = B13B311A15D0C876003A4E89 /* epato_game_concepts_board_modules_cell_f__transparency_gold.psd */; };
-		B13B317815D0C876003A4E89 /* epato_game_concepts_board_modules_cell_f__transparency_silica_beige.png in Resources */ = {isa = PBXBuildFile; fileRef = B13B311B15D0C876003A4E89 /* epato_game_concepts_board_modules_cell_f__transparency_silica_beige.png */; };
-		B13B317915D0C876003A4E89 /* epato_game_concepts_board_modules_cell_f__transparency_silica_beige.psd in Resources */ = {isa = PBXBuildFile; fileRef = B13B311C15D0C876003A4E89 /* epato_game_concepts_board_modules_cell_f__transparency_silica_beige.psd */; };
-		B13B317A15D0C876003A4E89 /* epato_game_concepts_board_modules_cell_f_border.png in Resources */ = {isa = PBXBuildFile; fileRef = B13B311D15D0C876003A4E89 /* epato_game_concepts_board_modules_cell_f_border.png */; };
-		B13B317B15D0C876003A4E89 /* epato_game_concepts_board_modules_cell_f_border_transparency_coal_red.png in Resources */ = {isa = PBXBuildFile; fileRef = B13B311E15D0C876003A4E89 /* epato_game_concepts_board_modules_cell_f_border_transparency_coal_red.png */; };
-		B13B317C15D0C876003A4E89 /* epato_game_concepts_board_modules_cell_f_border_transparency_neutral.png in Resources */ = {isa = PBXBuildFile; fileRef = B13B311F15D0C876003A4E89 /* epato_game_concepts_board_modules_cell_f_border_transparency_neutral.png */; };
-		B13B317D15D0C876003A4E89 /* epato_game_concepts_board_modules_cell_f_border_transparency_neutral.psd in Resources */ = {isa = PBXBuildFile; fileRef = B13B312015D0C876003A4E89 /* epato_game_concepts_board_modules_cell_f_border_transparency_neutral.psd */; };
-		B13B317E15D0C876003A4E89 /* epato_game_concepts_board_modules_cell_f_border_transparency_neutral_gray.png in Resources */ = {isa = PBXBuildFile; fileRef = B13B312115D0C876003A4E89 /* epato_game_concepts_board_modules_cell_f_border_transparency_neutral_gray.png */; };
-		B13B317F15D0C876003A4E89 /* epato_game_concepts_board_modules_cell_f_inner_edge.png in Resources */ = {isa = PBXBuildFile; fileRef = B13B312215D0C876003A4E89 /* epato_game_concepts_board_modules_cell_f_inner_edge.png */; };
-		B13B318015D0C876003A4E89 /* epato_game_concepts_board_modules_cell_f_inner_edge_gray.psd in Resources */ = {isa = PBXBuildFile; fileRef = B13B312315D0C876003A4E89 /* epato_game_concepts_board_modules_cell_f_inner_edge_gray.psd */; };
-		B13B318115D0C876003A4E89 /* epato_game_concepts_board_modules_cell_f_outer_edge.png in Resources */ = {isa = PBXBuildFile; fileRef = B13B312415D0C876003A4E89 /* epato_game_concepts_board_modules_cell_f_outer_edge.png */; };
-		B13B318215D0C876003A4E89 /* epato_game_concepts_board_modules_cell_f_transparent.png in Resources */ = {isa = PBXBuildFile; fileRef = B13B312515D0C876003A4E89 /* epato_game_concepts_board_modules_cell_f_transparent.png */; };
-		B13B318315D0C876003A4E89 /* epato_new_game_minimal_tiles_coal.png in Resources */ = {isa = PBXBuildFile; fileRef = B13B312615D0C876003A4E89 /* epato_new_game_minimal_tiles_coal.png */; };
-		B13B318415D0C876003A4E89 /* epato_new_game_minimal_tiles_coal.psd in Resources */ = {isa = PBXBuildFile; fileRef = B13B312715D0C876003A4E89 /* epato_new_game_minimal_tiles_coal.psd */; };
-		B13B318515D0C876003A4E89 /* epato_new_game_minimal_tiles_coal_face.png in Resources */ = {isa = PBXBuildFile; fileRef = B13B312815D0C876003A4E89 /* epato_new_game_minimal_tiles_coal_face.png */; };
-		B13B318615D0C876003A4E89 /* epato_new_game_minimal_tiles_coal_shadow.png in Resources */ = {isa = PBXBuildFile; fileRef = B13B312915D0C876003A4E89 /* epato_new_game_minimal_tiles_coal_shadow.png */; };
-		B13B318715D0C876003A4E89 /* epato_new_game_minimal_tiles_diamond.png in Resources */ = {isa = PBXBuildFile; fileRef = B13B312A15D0C876003A4E89 /* epato_new_game_minimal_tiles_diamond.png */; };
-		B13B318815D0C876003A4E89 /* epato_new_game_minimal_tiles_diamond.psd in Resources */ = {isa = PBXBuildFile; fileRef = B13B312B15D0C876003A4E89 /* epato_new_game_minimal_tiles_diamond.psd */; };
-		B13B318915D0C876003A4E89 /* epato_new_game_minimal_tiles_diamond_face.png in Resources */ = {isa = PBXBuildFile; fileRef = B13B312C15D0C876003A4E89 /* epato_new_game_minimal_tiles_diamond_face.png */; };
-		B13B318A15D0C876003A4E89 /* epato_new_game_minimal_tiles_diamond_shadow.png in Resources */ = {isa = PBXBuildFile; fileRef = B13B312D15D0C876003A4E89 /* epato_new_game_minimal_tiles_diamond_shadow.png */; };
-		B13B318B15D0C876003A4E89 /* epato_new_game_minimal_tiles_gold.png in Resources */ = {isa = PBXBuildFile; fileRef = B13B312E15D0C876003A4E89 /* epato_new_game_minimal_tiles_gold.png */; };
-		B13B318C15D0C876003A4E89 /* epato_new_game_minimal_tiles_gold.psd in Resources */ = {isa = PBXBuildFile; fileRef = B13B312F15D0C876003A4E89 /* epato_new_game_minimal_tiles_gold.psd */; };
-		B13B318D15D0C876003A4E89 /* epato_new_game_minimal_tiles_gold_face.png in Resources */ = {isa = PBXBuildFile; fileRef = B13B313015D0C876003A4E89 /* epato_new_game_minimal_tiles_gold_face.png */; };
-		B13B318E15D0C876003A4E89 /* epato_new_game_minimal_tiles_gold_shadow.png in Resources */ = {isa = PBXBuildFile; fileRef = B13B313115D0C876003A4E89 /* epato_new_game_minimal_tiles_gold_shadow.png */; };
-		B13B318F15D0C876003A4E89 /* epato_new_game_minimal_tiles_silica.png in Resources */ = {isa = PBXBuildFile; fileRef = B13B313215D0C876003A4E89 /* epato_new_game_minimal_tiles_silica.png */; };
-		B13B319015D0C876003A4E89 /* epato_new_game_minimal_tiles_silica.psd in Resources */ = {isa = PBXBuildFile; fileRef = B13B313315D0C876003A4E89 /* epato_new_game_minimal_tiles_silica.psd */; };
-		B13B319115D0C876003A4E89 /* epato_new_game_minimal_tiles_silica_face.png in Resources */ = {isa = PBXBuildFile; fileRef = B13B313415D0C876003A4E89 /* epato_new_game_minimal_tiles_silica_face.png */; };
-		B13B319215D0C876003A4E89 /* epato_new_game_minimal_tiles_silica_shadow.png in Resources */ = {isa = PBXBuildFile; fileRef = B13B313515D0C876003A4E89 /* epato_new_game_minimal_tiles_silica_shadow.png */; };
-		B13B319315D0C876003A4E89 /* epato_unclicked_button_game.png in Resources */ = {isa = PBXBuildFile; fileRef = B13B313615D0C876003A4E89 /* epato_unclicked_button_game.png */; };
-		B13B319415D0C876003A4E89 /* neutral_to_inactive_glow.psd in Resources */ = {isa = PBXBuildFile; fileRef = B13B313715D0C876003A4E89 /* neutral_to_inactive_glow.psd */; };
-		B13B319515D0C876003A4E89 /* neutral_to_inactive_glow_b.psd in Resources */ = {isa = PBXBuildFile; fileRef = B13B313815D0C876003A4E89 /* neutral_to_inactive_glow_b.psd */; };
-		B13B319615D0C876003A4E89 /* neutral_to_inactive_glow_frames.psd in Resources */ = {isa = PBXBuildFile; fileRef = B13B313915D0C876003A4E89 /* neutral_to_inactive_glow_frames.psd */; };
-		B13B319715D0C876003A4E89 /* neutral_to_inactive_glow_frames_01.png in Resources */ = {isa = PBXBuildFile; fileRef = B13B313A15D0C876003A4E89 /* neutral_to_inactive_glow_frames_01.png */; };
-		B13B319815D0C876003A4E89 /* neutral_to_inactive_glow_frames_02.png in Resources */ = {isa = PBXBuildFile; fileRef = B13B313B15D0C876003A4E89 /* neutral_to_inactive_glow_frames_02.png */; };
-		B13B319915D0C876003A4E89 /* neutral_to_inactive_glow_frames_03.png in Resources */ = {isa = PBXBuildFile; fileRef = B13B313C15D0C876003A4E89 /* neutral_to_inactive_glow_frames_03.png */; };
-		B13B319A15D0C876003A4E89 /* neutral_to_inactive_glow_frames_04.png in Resources */ = {isa = PBXBuildFile; fileRef = B13B313D15D0C876003A4E89 /* neutral_to_inactive_glow_frames_04.png */; };
-		B13B319B15D0C876003A4E89 /* neutral_to_inactive_glow_frames_05.png in Resources */ = {isa = PBXBuildFile; fileRef = B13B313E15D0C876003A4E89 /* neutral_to_inactive_glow_frames_05.png */; };
-		B13B319C15D0C876003A4E89 /* neutral_to_inactive_glow_frames_06.png in Resources */ = {isa = PBXBuildFile; fileRef = B13B313F15D0C876003A4E89 /* neutral_to_inactive_glow_frames_06.png */; };
-		B1C7F43015DB2A25002C541D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = B1C7F42F15DB2A25002C541D /* Default.png */; };
 		B1C7F43515DB322D002C541D /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C7F43415DB322D002C541D /* LoginViewController.m */; };
 		B1C7F43815DB3CC3002C541D /* LoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C7F43715DB3CC3002C541D /* LoadingView.m */; };
 		B1C7F43F15DB47B9002C541D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1C7F43E15DB47B9002C541D /* QuartzCore.framework */; };
@@ -71,7 +26,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		B058DDAF15F4091E00E56558 /* 816b8630631e7b357474cb7b3330b6f1_large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 816b8630631e7b357474cb7b3330b6f1_large.png; sourceTree = "<group>"; };
 		B0CB261915F505A600CFC943 /* GameScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScreenViewController.h; sourceTree = "<group>"; };
 		B0CB261A15F505A600CFC943 /* GameScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameScreenViewController.m; sourceTree = "<group>"; };
 		B13B30EF15D0C7BF003A4E89 /* SayonariaGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SayonariaGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,50 +40,6 @@
 		B13B310315D0C7BF003A4E89 /* SSIGameAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSIGameAppDelegate.m; sourceTree = "<group>"; };
 		B13B310615D0C7BF003A4E89 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		B13B310915D0C7BF003A4E89 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
-		B13B311415D0C876003A4E89 /*  .ai */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = " .ai"; sourceTree = "<group>"; };
-		B13B311515D0C876003A4E89 /* buttons isoed.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = "buttons isoed.psd"; sourceTree = "<group>"; };
-		B13B311715D0C876003A4E89 /* epato_clicked_button_game.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = epato_clicked_button_game.png; sourceTree = "<group>"; };
-		B13B311815D0C876003A4E89 /* epato_game_concepts_board_modules_cell_f__transparency_coal_black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = epato_game_concepts_board_modules_cell_f__transparency_coal_black.png; sourceTree = "<group>"; };
-		B13B311915D0C876003A4E89 /* epato_game_concepts_board_modules_cell_f__transparency_diamond_teal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = epato_game_concepts_board_modules_cell_f__transparency_diamond_teal.png; sourceTree = "<group>"; };
-		B13B311A15D0C876003A4E89 /* epato_game_concepts_board_modules_cell_f__transparency_gold.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = epato_game_concepts_board_modules_cell_f__transparency_gold.psd; sourceTree = "<group>"; };
-		B13B311B15D0C876003A4E89 /* epato_game_concepts_board_modules_cell_f__transparency_silica_beige.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = epato_game_concepts_board_modules_cell_f__transparency_silica_beige.png; sourceTree = "<group>"; };
-		B13B311C15D0C876003A4E89 /* epato_game_concepts_board_modules_cell_f__transparency_silica_beige.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = epato_game_concepts_board_modules_cell_f__transparency_silica_beige.psd; sourceTree = "<group>"; };
-		B13B311D15D0C876003A4E89 /* epato_game_concepts_board_modules_cell_f_border.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = epato_game_concepts_board_modules_cell_f_border.png; sourceTree = "<group>"; };
-		B13B311E15D0C876003A4E89 /* epato_game_concepts_board_modules_cell_f_border_transparency_coal_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = epato_game_concepts_board_modules_cell_f_border_transparency_coal_red.png; sourceTree = "<group>"; };
-		B13B311F15D0C876003A4E89 /* epato_game_concepts_board_modules_cell_f_border_transparency_neutral.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = epato_game_concepts_board_modules_cell_f_border_transparency_neutral.png; sourceTree = "<group>"; };
-		B13B312015D0C876003A4E89 /* epato_game_concepts_board_modules_cell_f_border_transparency_neutral.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = epato_game_concepts_board_modules_cell_f_border_transparency_neutral.psd; sourceTree = "<group>"; };
-		B13B312115D0C876003A4E89 /* epato_game_concepts_board_modules_cell_f_border_transparency_neutral_gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = epato_game_concepts_board_modules_cell_f_border_transparency_neutral_gray.png; sourceTree = "<group>"; };
-		B13B312215D0C876003A4E89 /* epato_game_concepts_board_modules_cell_f_inner_edge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = epato_game_concepts_board_modules_cell_f_inner_edge.png; sourceTree = "<group>"; };
-		B13B312315D0C876003A4E89 /* epato_game_concepts_board_modules_cell_f_inner_edge_gray.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = epato_game_concepts_board_modules_cell_f_inner_edge_gray.psd; sourceTree = "<group>"; };
-		B13B312415D0C876003A4E89 /* epato_game_concepts_board_modules_cell_f_outer_edge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = epato_game_concepts_board_modules_cell_f_outer_edge.png; sourceTree = "<group>"; };
-		B13B312515D0C876003A4E89 /* epato_game_concepts_board_modules_cell_f_transparent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = epato_game_concepts_board_modules_cell_f_transparent.png; sourceTree = "<group>"; };
-		B13B312615D0C876003A4E89 /* epato_new_game_minimal_tiles_coal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = epato_new_game_minimal_tiles_coal.png; sourceTree = "<group>"; };
-		B13B312715D0C876003A4E89 /* epato_new_game_minimal_tiles_coal.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = epato_new_game_minimal_tiles_coal.psd; sourceTree = "<group>"; };
-		B13B312815D0C876003A4E89 /* epato_new_game_minimal_tiles_coal_face.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = epato_new_game_minimal_tiles_coal_face.png; sourceTree = "<group>"; };
-		B13B312915D0C876003A4E89 /* epato_new_game_minimal_tiles_coal_shadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = epato_new_game_minimal_tiles_coal_shadow.png; sourceTree = "<group>"; };
-		B13B312A15D0C876003A4E89 /* epato_new_game_minimal_tiles_diamond.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = epato_new_game_minimal_tiles_diamond.png; sourceTree = "<group>"; };
-		B13B312B15D0C876003A4E89 /* epato_new_game_minimal_tiles_diamond.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = epato_new_game_minimal_tiles_diamond.psd; sourceTree = "<group>"; };
-		B13B312C15D0C876003A4E89 /* epato_new_game_minimal_tiles_diamond_face.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = epato_new_game_minimal_tiles_diamond_face.png; sourceTree = "<group>"; };
-		B13B312D15D0C876003A4E89 /* epato_new_game_minimal_tiles_diamond_shadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = epato_new_game_minimal_tiles_diamond_shadow.png; sourceTree = "<group>"; };
-		B13B312E15D0C876003A4E89 /* epato_new_game_minimal_tiles_gold.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = epato_new_game_minimal_tiles_gold.png; sourceTree = "<group>"; };
-		B13B312F15D0C876003A4E89 /* epato_new_game_minimal_tiles_gold.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = epato_new_game_minimal_tiles_gold.psd; sourceTree = "<group>"; };
-		B13B313015D0C876003A4E89 /* epato_new_game_minimal_tiles_gold_face.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = epato_new_game_minimal_tiles_gold_face.png; sourceTree = "<group>"; };
-		B13B313115D0C876003A4E89 /* epato_new_game_minimal_tiles_gold_shadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = epato_new_game_minimal_tiles_gold_shadow.png; sourceTree = "<group>"; };
-		B13B313215D0C876003A4E89 /* epato_new_game_minimal_tiles_silica.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = epato_new_game_minimal_tiles_silica.png; sourceTree = "<group>"; };
-		B13B313315D0C876003A4E89 /* epato_new_game_minimal_tiles_silica.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = epato_new_game_minimal_tiles_silica.psd; sourceTree = "<group>"; };
-		B13B313415D0C876003A4E89 /* epato_new_game_minimal_tiles_silica_face.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = epato_new_game_minimal_tiles_silica_face.png; sourceTree = "<group>"; };
-		B13B313515D0C876003A4E89 /* epato_new_game_minimal_tiles_silica_shadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = epato_new_game_minimal_tiles_silica_shadow.png; sourceTree = "<group>"; };
-		B13B313615D0C876003A4E89 /* epato_unclicked_button_game.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = epato_unclicked_button_game.png; sourceTree = "<group>"; };
-		B13B313715D0C876003A4E89 /* neutral_to_inactive_glow.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = neutral_to_inactive_glow.psd; sourceTree = "<group>"; };
-		B13B313815D0C876003A4E89 /* neutral_to_inactive_glow_b.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = neutral_to_inactive_glow_b.psd; sourceTree = "<group>"; };
-		B13B313915D0C876003A4E89 /* neutral_to_inactive_glow_frames.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = neutral_to_inactive_glow_frames.psd; sourceTree = "<group>"; };
-		B13B313A15D0C876003A4E89 /* neutral_to_inactive_glow_frames_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = neutral_to_inactive_glow_frames_01.png; sourceTree = "<group>"; };
-		B13B313B15D0C876003A4E89 /* neutral_to_inactive_glow_frames_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = neutral_to_inactive_glow_frames_02.png; sourceTree = "<group>"; };
-		B13B313C15D0C876003A4E89 /* neutral_to_inactive_glow_frames_03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = neutral_to_inactive_glow_frames_03.png; sourceTree = "<group>"; };
-		B13B313D15D0C876003A4E89 /* neutral_to_inactive_glow_frames_04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = neutral_to_inactive_glow_frames_04.png; sourceTree = "<group>"; };
-		B13B313E15D0C876003A4E89 /* neutral_to_inactive_glow_frames_05.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = neutral_to_inactive_glow_frames_05.png; sourceTree = "<group>"; };
-		B13B313F15D0C876003A4E89 /* neutral_to_inactive_glow_frames_06.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = neutral_to_inactive_glow_frames_06.png; sourceTree = "<group>"; };
-		B1C7F42F15DB2A25002C541D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		B1C7F43315DB322D002C541D /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		B1C7F43415DB322D002C541D /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		B1C7F43615DB3CC3002C541D /* LoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingView.h; sourceTree = "<group>"; };
@@ -222,66 +132,13 @@
 			isa = PBXGroup;
 			children = (
 				B1C7F43215DB2A2F002C541D /* Splash Screen */,
-				B13B311415D0C876003A4E89 /*  .ai */,
-				B058DDAF15F4091E00E56558 /* 816b8630631e7b357474cb7b3330b6f1_large.png */,
-				B13B311515D0C876003A4E89 /* buttons isoed.psd */,
-				B13B311615D0C876003A4E89 /* cel layers */,
 			);
 			path = "Sayonaria Art";
-			sourceTree = "<group>";
-		};
-		B13B311615D0C876003A4E89 /* cel layers */ = {
-			isa = PBXGroup;
-			children = (
-				B13B311715D0C876003A4E89 /* epato_clicked_button_game.png */,
-				B13B311815D0C876003A4E89 /* epato_game_concepts_board_modules_cell_f__transparency_coal_black.png */,
-				B13B311915D0C876003A4E89 /* epato_game_concepts_board_modules_cell_f__transparency_diamond_teal.png */,
-				B13B311A15D0C876003A4E89 /* epato_game_concepts_board_modules_cell_f__transparency_gold.psd */,
-				B13B311B15D0C876003A4E89 /* epato_game_concepts_board_modules_cell_f__transparency_silica_beige.png */,
-				B13B311C15D0C876003A4E89 /* epato_game_concepts_board_modules_cell_f__transparency_silica_beige.psd */,
-				B13B311D15D0C876003A4E89 /* epato_game_concepts_board_modules_cell_f_border.png */,
-				B13B311E15D0C876003A4E89 /* epato_game_concepts_board_modules_cell_f_border_transparency_coal_red.png */,
-				B13B311F15D0C876003A4E89 /* epato_game_concepts_board_modules_cell_f_border_transparency_neutral.png */,
-				B13B312015D0C876003A4E89 /* epato_game_concepts_board_modules_cell_f_border_transparency_neutral.psd */,
-				B13B312115D0C876003A4E89 /* epato_game_concepts_board_modules_cell_f_border_transparency_neutral_gray.png */,
-				B13B312215D0C876003A4E89 /* epato_game_concepts_board_modules_cell_f_inner_edge.png */,
-				B13B312315D0C876003A4E89 /* epato_game_concepts_board_modules_cell_f_inner_edge_gray.psd */,
-				B13B312415D0C876003A4E89 /* epato_game_concepts_board_modules_cell_f_outer_edge.png */,
-				B13B312515D0C876003A4E89 /* epato_game_concepts_board_modules_cell_f_transparent.png */,
-				B13B312615D0C876003A4E89 /* epato_new_game_minimal_tiles_coal.png */,
-				B13B312715D0C876003A4E89 /* epato_new_game_minimal_tiles_coal.psd */,
-				B13B312815D0C876003A4E89 /* epato_new_game_minimal_tiles_coal_face.png */,
-				B13B312915D0C876003A4E89 /* epato_new_game_minimal_tiles_coal_shadow.png */,
-				B13B312A15D0C876003A4E89 /* epato_new_game_minimal_tiles_diamond.png */,
-				B13B312B15D0C876003A4E89 /* epato_new_game_minimal_tiles_diamond.psd */,
-				B13B312C15D0C876003A4E89 /* epato_new_game_minimal_tiles_diamond_face.png */,
-				B13B312D15D0C876003A4E89 /* epato_new_game_minimal_tiles_diamond_shadow.png */,
-				B13B312E15D0C876003A4E89 /* epato_new_game_minimal_tiles_gold.png */,
-				B13B312F15D0C876003A4E89 /* epato_new_game_minimal_tiles_gold.psd */,
-				B13B313015D0C876003A4E89 /* epato_new_game_minimal_tiles_gold_face.png */,
-				B13B313115D0C876003A4E89 /* epato_new_game_minimal_tiles_gold_shadow.png */,
-				B13B313215D0C876003A4E89 /* epato_new_game_minimal_tiles_silica.png */,
-				B13B313315D0C876003A4E89 /* epato_new_game_minimal_tiles_silica.psd */,
-				B13B313415D0C876003A4E89 /* epato_new_game_minimal_tiles_silica_face.png */,
-				B13B313515D0C876003A4E89 /* epato_new_game_minimal_tiles_silica_shadow.png */,
-				B13B313615D0C876003A4E89 /* epato_unclicked_button_game.png */,
-				B13B313715D0C876003A4E89 /* neutral_to_inactive_glow.psd */,
-				B13B313815D0C876003A4E89 /* neutral_to_inactive_glow_b.psd */,
-				B13B313915D0C876003A4E89 /* neutral_to_inactive_glow_frames.psd */,
-				B13B313A15D0C876003A4E89 /* neutral_to_inactive_glow_frames_01.png */,
-				B13B313B15D0C876003A4E89 /* neutral_to_inactive_glow_frames_02.png */,
-				B13B313C15D0C876003A4E89 /* neutral_to_inactive_glow_frames_03.png */,
-				B13B313D15D0C876003A4E89 /* neutral_to_inactive_glow_frames_04.png */,
-				B13B313E15D0C876003A4E89 /* neutral_to_inactive_glow_frames_05.png */,
-				B13B313F15D0C876003A4E89 /* neutral_to_inactive_glow_frames_06.png */,
-			);
-			path = "cel layers";
 			sourceTree = "<group>";
 		};
 		B1C7F43215DB2A2F002C541D /* Splash Screen */ = {
 			isa = PBXGroup;
 			children = (
-				B1C7F42F15DB2A25002C541D /* Default.png */,
 			);
 			name = "Splash Screen";
 			sourceTree = "<group>";
@@ -364,51 +221,6 @@
 				B13B30FE15D0C7BF003A4E89 /* InfoPlist.strings in Resources */,
 				B13B310715D0C7BF003A4E89 /* MainStoryboard_iPhone.storyboard in Resources */,
 				B13B310A15D0C7BF003A4E89 /* MainStoryboard_iPad.storyboard in Resources */,
-				B13B317215D0C876003A4E89 /*  .ai in Resources */,
-				B13B317315D0C876003A4E89 /* buttons isoed.psd in Resources */,
-				B13B317415D0C876003A4E89 /* epato_clicked_button_game.png in Resources */,
-				B13B317515D0C876003A4E89 /* epato_game_concepts_board_modules_cell_f__transparency_coal_black.png in Resources */,
-				B13B317615D0C876003A4E89 /* epato_game_concepts_board_modules_cell_f__transparency_diamond_teal.png in Resources */,
-				B13B317715D0C876003A4E89 /* epato_game_concepts_board_modules_cell_f__transparency_gold.psd in Resources */,
-				B13B317815D0C876003A4E89 /* epato_game_concepts_board_modules_cell_f__transparency_silica_beige.png in Resources */,
-				B13B317915D0C876003A4E89 /* epato_game_concepts_board_modules_cell_f__transparency_silica_beige.psd in Resources */,
-				B13B317A15D0C876003A4E89 /* epato_game_concepts_board_modules_cell_f_border.png in Resources */,
-				B13B317B15D0C876003A4E89 /* epato_game_concepts_board_modules_cell_f_border_transparency_coal_red.png in Resources */,
-				B13B317C15D0C876003A4E89 /* epato_game_concepts_board_modules_cell_f_border_transparency_neutral.png in Resources */,
-				B13B317D15D0C876003A4E89 /* epato_game_concepts_board_modules_cell_f_border_transparency_neutral.psd in Resources */,
-				B13B317E15D0C876003A4E89 /* epato_game_concepts_board_modules_cell_f_border_transparency_neutral_gray.png in Resources */,
-				B13B317F15D0C876003A4E89 /* epato_game_concepts_board_modules_cell_f_inner_edge.png in Resources */,
-				B13B318015D0C876003A4E89 /* epato_game_concepts_board_modules_cell_f_inner_edge_gray.psd in Resources */,
-				B13B318115D0C876003A4E89 /* epato_game_concepts_board_modules_cell_f_outer_edge.png in Resources */,
-				B13B318215D0C876003A4E89 /* epato_game_concepts_board_modules_cell_f_transparent.png in Resources */,
-				B13B318315D0C876003A4E89 /* epato_new_game_minimal_tiles_coal.png in Resources */,
-				B13B318415D0C876003A4E89 /* epato_new_game_minimal_tiles_coal.psd in Resources */,
-				B13B318515D0C876003A4E89 /* epato_new_game_minimal_tiles_coal_face.png in Resources */,
-				B13B318615D0C876003A4E89 /* epato_new_game_minimal_tiles_coal_shadow.png in Resources */,
-				B13B318715D0C876003A4E89 /* epato_new_game_minimal_tiles_diamond.png in Resources */,
-				B13B318815D0C876003A4E89 /* epato_new_game_minimal_tiles_diamond.psd in Resources */,
-				B13B318915D0C876003A4E89 /* epato_new_game_minimal_tiles_diamond_face.png in Resources */,
-				B13B318A15D0C876003A4E89 /* epato_new_game_minimal_tiles_diamond_shadow.png in Resources */,
-				B13B318B15D0C876003A4E89 /* epato_new_game_minimal_tiles_gold.png in Resources */,
-				B13B318C15D0C876003A4E89 /* epato_new_game_minimal_tiles_gold.psd in Resources */,
-				B13B318D15D0C876003A4E89 /* epato_new_game_minimal_tiles_gold_face.png in Resources */,
-				B13B318E15D0C876003A4E89 /* epato_new_game_minimal_tiles_gold_shadow.png in Resources */,
-				B13B318F15D0C876003A4E89 /* epato_new_game_minimal_tiles_silica.png in Resources */,
-				B13B319015D0C876003A4E89 /* epato_new_game_minimal_tiles_silica.psd in Resources */,
-				B13B319115D0C876003A4E89 /* epato_new_game_minimal_tiles_silica_face.png in Resources */,
-				B13B319215D0C876003A4E89 /* epato_new_game_minimal_tiles_silica_shadow.png in Resources */,
-				B13B319315D0C876003A4E89 /* epato_unclicked_button_game.png in Resources */,
-				B13B319415D0C876003A4E89 /* neutral_to_inactive_glow.psd in Resources */,
-				B13B319515D0C876003A4E89 /* neutral_to_inactive_glow_b.psd in Resources */,
-				B13B319615D0C876003A4E89 /* neutral_to_inactive_glow_frames.psd in Resources */,
-				B13B319715D0C876003A4E89 /* neutral_to_inactive_glow_frames_01.png in Resources */,
-				B13B319815D0C876003A4E89 /* neutral_to_inactive_glow_frames_02.png in Resources */,
-				B13B319915D0C876003A4E89 /* neutral_to_inactive_glow_frames_03.png in Resources */,
-				B13B319A15D0C876003A4E89 /* neutral_to_inactive_glow_frames_04.png in Resources */,
-				B13B319B15D0C876003A4E89 /* neutral_to_inactive_glow_frames_05.png in Resources */,
-				B13B319C15D0C876003A4E89 /* neutral_to_inactive_glow_frames_06.png in Resources */,
-				B1C7F43015DB2A25002C541D /* Default.png in Resources */,
-				B058DDB015F4091E00E56558 /* 816b8630631e7b357474cb7b3330b6f1_large.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
