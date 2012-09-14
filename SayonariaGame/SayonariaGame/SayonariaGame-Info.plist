@@ -5,9 +5,22 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>${PRODUCT_NAME}</string>
+	<string>Sayonaria</string>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
+	<key>CFBundleIcons</key>
+	<dict>
+		<key>CFBundlePrimaryIcon</key>
+		<dict>
+			<key>CFBundleIconFiles</key>
+			<array>
+				<string>SayonariaIphoneIcon.png</string>
+				<string>SayonariaIphoneIcon@2x.png</string>
+				<string>SayonariaIpadIcon.png</string>
+				<string>SayonariaIpadIcon@2x.png</string>
+			</array>
+		</dict>
+	</dict>
 	<key>CFBundleIdentifier</key>
 	<string>Simply-Social-Interactive.${PRODUCT_NAME:rfc1034identifier}</string>
 	<key>CFBundleInfoDictionaryVersion</key>
@@ -26,8 +39,6 @@
 	<true/>
 	<key>UILaunchImageFile~ipad</key>
 	<string>SayonariaLaunchiPad</string>
-	<key>CFBundleIconFile</key>
-	<string>SayonariaIcon</string>
 	<key>UILaunchImageFile~iphone</key>
 	<string>SayonariaLaunchiPhone</string>
 	<key>UIMainStoryboardFile</key>
@@ -45,9 +56,6 @@
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationPortraitUpsideDown</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 </dict>
 </plist>
