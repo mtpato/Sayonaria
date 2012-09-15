@@ -45,7 +45,6 @@
         [self parseGames:[messageFromServer substringFromIndex:6]];
         [self.gameTableView reloadData];
         [self removeLoaderFromView];
-        if (self.tabBarController.tabBar.hidden == YES) self.tabBarController.tabBar.hidden = NO;
     }
 }
 
@@ -84,13 +83,21 @@
     self.thisUsersGames = [gameDictionaries copy];
 }
 
-#pragma mark - actions
+#pragma mark - actions and tab bar navigation
 
 - (IBAction)newGamePressed:(id)sender {
     NSString *messageForServer = @"newGame:";
     messageForServer = [messageForServer stringByAppendingString:self.OpponentName.text];
     self.createdGameOpponent = self.OpponentName.text;
     [self.thisNetworkController sendMessageToServer:messageForServer];
+}
+
+- (IBAction)shopPressed {
+    self.tabBarController.selectedIndex = 1;
+}
+
+- (IBAction)optionsPressed:(id)sender {
+    self.tabBarController.selectedIndex = 2;
 }
 
 #pragma mark - table view methods
@@ -164,9 +171,9 @@
     self.thisNetworkController.delegate = self;
     
     //set up the background of the table
-    UIView *backgroundView = [[UIView alloc] initWithFrame: self.gameTableView.frame];
-    backgroundView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"816b8630631e7b357474cb7b3330b6f1_large.png"]];
-    self.gameTableView.backgroundView = backgroundView;
+//    UIView *backgroundView = [[UIView alloc] initWithFrame: self.gameTableView.frame];
+//    backgroundView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"816b8630631e7b357474cb7b3330b6f1_large.png"]];
+//    self.gameTableView.backgroundView = backgroundView;
     
     //set up the table itself
     self.gameTableView.dataSource = self;
@@ -182,6 +189,7 @@
     [super viewDidLoad];
     //the first time the view is loaded, we are probably coming from the login screen, so hide the tabbar for a smoother transition
      self.tabBarController.tabBar.hidden = YES;
+    [self.gameNewButton.titleLabel setFont:[UIFont fontWithName:@"Bauhaus 93" size:20]];
 }
 
 - (void)viewDidUnload
@@ -223,20 +231,5 @@
     [self.navigationController pushViewController:newGameScreen animated:NO];
     NSLog(@"WE SEGUED!");
 }
-
-/*-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    GameScreenViewController *newController = (GameScreenViewController *)segue.destinationViewController;
-    newController.thisNetworkController = self.thisNetworkController;
-    
-    if([sender isKindOfClass: [NSString class]]){
-        newController.opponentName = self.createdGameOpponent;
-    } else {
-        static NSString *CellIdentifier = @"GameCell";
-        UITableViewCell *cell = [self.gameTableView dequeueReusableCellWithIdentifier:CellIdentifier];
-        cell = sender;
-        newController.opponentName = cell.textLabel.text;
-        newController.gameID = cell.detailTextLabel.text;
-    }
-}*/
 
 @end

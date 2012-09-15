@@ -19,6 +19,14 @@
 		B1C7F43515DB322D002C541D /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C7F43415DB322D002C541D /* LoginViewController.m */; };
 		B1C7F43815DB3CC3002C541D /* LoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C7F43715DB3CC3002C541D /* LoadingView.m */; };
 		B1C7F43F15DB47B9002C541D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1C7F43E15DB47B9002C541D /* QuartzCore.framework */; };
+		B1CEE03316050AB90057A30C /* BAUHS93.TTF in Resources */ = {isa = PBXBuildFile; fileRef = B1CEE031160504360057A30C /* BAUHS93.TTF */; };
+		B1CEE036160517110057A30C /* ShopTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1CEE035160517110057A30C /* ShopTabViewController.m */; };
+		B1CEE0391605179A0057A30C /* OptionsTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1CEE0381605179A0057A30C /* OptionsTabViewController.m */; };
+		B1CEE03B16051DD70057A30C /* BlankFancyBackIphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B1CEE03A16051DD70057A30C /* BlankFancyBackIphone@2x.png */; };
+		B1CEE03F16051E4F0057A30C /* Generic_Button_2.png in Resources */ = {isa = PBXBuildFile; fileRef = B1CEE03C16051E4F0057A30C /* Generic_Button_2.png */; };
+		B1CEE04016051E4F0057A30C /* Generic_Button_3.png in Resources */ = {isa = PBXBuildFile; fileRef = B1CEE03D16051E4F0057A30C /* Generic_Button_3.png */; };
+		B1CEE04116051E4F0057A30C /* Generic_Button_4.png in Resources */ = {isa = PBXBuildFile; fileRef = B1CEE03E16051E4F0057A30C /* Generic_Button_4.png */; };
+		B1CEE04416051E6B0057A30C /* Game_Table_Cell.png in Resources */ = {isa = PBXBuildFile; fileRef = B1CEE04316051E6B0057A30C /* Game_Table_Cell.png */; };
 		B1EC2BA915EC5DFA00AC01BE /* NewUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1EC2BA815EC5DFA00AC01BE /* NewUserViewController.m */; };
 		B1EF851815F3B723006FB520 /* NetworkController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1EF851715F3B723006FB520 /* NetworkController.m */; };
 		B1EF851F15F3E851006FB520 /* NetworkStorageTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1EF851E15F3E851006FB520 /* NetworkStorageTabBarController.m */; };
@@ -53,6 +61,10 @@
 		B1F1269B16050158000C34ED /* Options_Button.png in Resources */ = {isa = PBXBuildFile; fileRef = B1F1269716050158000C34ED /* Options_Button.png */; };
 		B1F1269C16050158000C34ED /* Shop_Button.png in Resources */ = {isa = PBXBuildFile; fileRef = B1F1269816050158000C34ED /* Shop_Button.png */; };
 		B1F1269D16050158000C34ED /* Start_Button.png in Resources */ = {isa = PBXBuildFile; fileRef = B1F1269916050158000C34ED /* Start_Button.png */; };
+		B1F126A31605017F000C34ED /* BlankBackIphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B1F1269F1605017F000C34ED /* BlankBackIphone@2x.png */; };
+		B1F126A41605017F000C34ED /* GamesBackIphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B1F126A01605017F000C34ED /* GamesBackIphone@2x.png */; };
+		B1F126A51605017F000C34ED /* OptionsBackIphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B1F126A11605017F000C34ED /* OptionsBackIphone@2x.png */; };
+		B1F126A61605017F000C34ED /* ShopBackIphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B1F126A21605017F000C34ED /* ShopBackIphone@2x.png */; };
 		B1F6405615F2900C00305D37 /* GameTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1F6405515F2900C00305D37 /* GameTabViewController.m */; };
 		B1FACDFB1602EEA600D920F9 /* SayonariaIphoneIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = B1FACDFA1602EEA600D920F9 /* SayonariaIphoneIcon.png */; };
 		B1FACDFE1602EECE00D920F9 /* SayonariaIphoneIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B1FACDFD1602EECE00D920F9 /* SayonariaIphoneIcon@2x.png */; };
@@ -80,6 +92,16 @@
 		B1C7F43615DB3CC3002C541D /* LoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingView.h; sourceTree = "<group>"; };
 		B1C7F43715DB3CC3002C541D /* LoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingView.m; sourceTree = "<group>"; };
 		B1C7F43E15DB47B9002C541D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		B1CEE031160504360057A30C /* BAUHS93.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = BAUHS93.TTF; sourceTree = "<group>"; };
+		B1CEE034160517110057A30C /* ShopTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopTabViewController.h; sourceTree = "<group>"; };
+		B1CEE035160517110057A30C /* ShopTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopTabViewController.m; sourceTree = "<group>"; };
+		B1CEE0371605179A0057A30C /* OptionsTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionsTabViewController.h; sourceTree = "<group>"; };
+		B1CEE0381605179A0057A30C /* OptionsTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionsTabViewController.m; sourceTree = "<group>"; };
+		B1CEE03A16051DD70057A30C /* BlankFancyBackIphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BlankFancyBackIphone@2x.png"; sourceTree = "<group>"; };
+		B1CEE03C16051E4F0057A30C /* Generic_Button_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Generic_Button_2.png; sourceTree = "<group>"; };
+		B1CEE03D16051E4F0057A30C /* Generic_Button_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Generic_Button_3.png; sourceTree = "<group>"; };
+		B1CEE03E16051E4F0057A30C /* Generic_Button_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Generic_Button_4.png; sourceTree = "<group>"; };
+		B1CEE04316051E6B0057A30C /* Game_Table_Cell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Game_Table_Cell.png; sourceTree = "<group>"; };
 		B1EC2BA715EC5DFA00AC01BE /* NewUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewUserViewController.h; sourceTree = "<group>"; };
 		B1EC2BA815EC5DFA00AC01BE /* NewUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewUserViewController.m; sourceTree = "<group>"; };
 		B1EF851615F3B723006FB520 /* NetworkController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkController.h; sourceTree = "<group>"; };
@@ -117,6 +139,10 @@
 		B1F1269716050158000C34ED /* Options_Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Options_Button.png; sourceTree = "<group>"; };
 		B1F1269816050158000C34ED /* Shop_Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Shop_Button.png; sourceTree = "<group>"; };
 		B1F1269916050158000C34ED /* Start_Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Start_Button.png; sourceTree = "<group>"; };
+		B1F1269F1605017F000C34ED /* BlankBackIphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BlankBackIphone@2x.png"; sourceTree = "<group>"; };
+		B1F126A01605017F000C34ED /* GamesBackIphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GamesBackIphone@2x.png"; sourceTree = "<group>"; };
+		B1F126A11605017F000C34ED /* OptionsBackIphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "OptionsBackIphone@2x.png"; sourceTree = "<group>"; };
+		B1F126A21605017F000C34ED /* ShopBackIphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ShopBackIphone@2x.png"; sourceTree = "<group>"; };
 		B1F6405415F2900C00305D37 /* GameTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameTabViewController.h; sourceTree = "<group>"; };
 		B1F6405515F2900C00305D37 /* GameTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameTabViewController.m; sourceTree = "<group>"; };
 		B1FACDFA1602EEA600D920F9 /* SayonariaIphoneIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SayonariaIphoneIcon.png; sourceTree = "<group>"; };
@@ -143,6 +169,7 @@
 		B13B30E415D0C7BF003A4E89 = {
 			isa = PBXGroup;
 			children = (
+				B1CEE031160504360057A30C /* BAUHS93.TTF */,
 				B1FACE011602EF7000D920F9 /* SayonariaIpadIcon@2x.png */,
 				B1FACDFF1602EF5E00D920F9 /* SayonariaIpadIcon.png */,
 				B1FACDFD1602EECE00D920F9 /* SayonariaIphoneIcon@2x.png */,
@@ -202,16 +229,39 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		B1CEE04216051E550057A30C /* Games_Table_Assets */ = {
+			isa = PBXGroup;
+			children = (
+				B1CEE04316051E6B0057A30C /* Game_Table_Cell.png */,
+			);
+			name = Games_Table_Assets;
+			sourceTree = "<group>";
+		};
 		B1F1269516050116000C34ED /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
 				B1F1269616050158000C34ED /* Generic_Button.png */,
+				B1CEE03C16051E4F0057A30C /* Generic_Button_2.png */,
+				B1CEE03D16051E4F0057A30C /* Generic_Button_3.png */,
+				B1CEE03E16051E4F0057A30C /* Generic_Button_4.png */,
 				B1F1269716050158000C34ED /* Options_Button.png */,
 				B1F1269816050158000C34ED /* Shop_Button.png */,
 				B1F1269916050158000C34ED /* Start_Button.png */,
 			);
 			name = Buttons;
 			path = Loader;
+			sourceTree = "<group>";
+		};
+		B1F1269E16050167000C34ED /* Backgrounds */ = {
+			isa = PBXGroup;
+			children = (
+				B1CEE03A16051DD70057A30C /* BlankFancyBackIphone@2x.png */,
+				B1F1269F1605017F000C34ED /* BlankBackIphone@2x.png */,
+				B1F126A01605017F000C34ED /* GamesBackIphone@2x.png */,
+				B1F126A11605017F000C34ED /* OptionsBackIphone@2x.png */,
+				B1F126A21605017F000C34ED /* ShopBackIphone@2x.png */,
+			);
+			name = Backgrounds;
 			sourceTree = "<group>";
 		};
 		B1F6405815F2902200305D37 /* Login */ = {
@@ -232,6 +282,10 @@
 			children = (
 				B1F6405415F2900C00305D37 /* GameTabViewController.h */,
 				B1F6405515F2900C00305D37 /* GameTabViewController.m */,
+				B1CEE034160517110057A30C /* ShopTabViewController.h */,
+				B1CEE035160517110057A30C /* ShopTabViewController.m */,
+				B1CEE0371605179A0057A30C /* OptionsTabViewController.h */,
+				B1CEE0381605179A0057A30C /* OptionsTabViewController.m */,
 				B1EF851D15F3E851006FB520 /* NetworkStorageTabBarController.h */,
 				B1EF851E15F3E851006FB520 /* NetworkStorageTabBarController.m */,
 			);
@@ -241,6 +295,8 @@
 		B1FAD0A81602F27200D920F9 /* Sayonaria_Art */ = {
 			isa = PBXGroup;
 			children = (
+				B1CEE04216051E550057A30C /* Games_Table_Assets */,
+				B1F1269E16050167000C34ED /* Backgrounds */,
 				B1F1269516050116000C34ED /* Buttons */,
 				B1FAD0A91602F27200D920F9 /* Loader */,
 			);
@@ -339,6 +395,7 @@
 				B1FACDFE1602EECE00D920F9 /* SayonariaIphoneIcon@2x.png in Resources */,
 				B1FACE001602EF5E00D920F9 /* SayonariaIpadIcon.png in Resources */,
 				B1FACE021602EF7000D920F9 /* SayonariaIpadIcon@2x.png in Resources */,
+				B1CEE03316050AB90057A30C /* BAUHS93.TTF in Resources */,
 				B1F1267A1605002B000C34ED /* loader_sayonaria_version_05_A10000.png in Resources */,
 				B1F1267B1605002B000C34ED /* loader_sayonaria_version_05_A10001.png in Resources */,
 				B1F1267C1605002B000C34ED /* loader_sayonaria_version_05_A10002.png in Resources */,
@@ -370,6 +427,15 @@
 				B1F1269B16050158000C34ED /* Options_Button.png in Resources */,
 				B1F1269C16050158000C34ED /* Shop_Button.png in Resources */,
 				B1F1269D16050158000C34ED /* Start_Button.png in Resources */,
+				B1F126A31605017F000C34ED /* BlankBackIphone@2x.png in Resources */,
+				B1F126A41605017F000C34ED /* GamesBackIphone@2x.png in Resources */,
+				B1F126A51605017F000C34ED /* OptionsBackIphone@2x.png in Resources */,
+				B1F126A61605017F000C34ED /* ShopBackIphone@2x.png in Resources */,
+				B1CEE03B16051DD70057A30C /* BlankFancyBackIphone@2x.png in Resources */,
+				B1CEE03F16051E4F0057A30C /* Generic_Button_2.png in Resources */,
+				B1CEE04016051E4F0057A30C /* Generic_Button_3.png in Resources */,
+				B1CEE04116051E4F0057A30C /* Generic_Button_4.png in Resources */,
+				B1CEE04416051E6B0057A30C /* Game_Table_Cell.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,6 +455,8 @@
 				B1EF851815F3B723006FB520 /* NetworkController.m in Sources */,
 				B1EF851F15F3E851006FB520 /* NetworkStorageTabBarController.m in Sources */,
 				B0CB261B15F505A600CFC943 /* GameScreenViewController.m in Sources */,
+				B1CEE036160517110057A30C /* ShopTabViewController.m in Sources */,
+				B1CEE0391605179A0057A30C /* OptionsTabViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

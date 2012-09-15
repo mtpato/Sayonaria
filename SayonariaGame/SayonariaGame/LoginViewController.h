@@ -16,6 +16,8 @@
 @interface LoginViewController : UIViewController <NSStreamDelegate,UIAlertViewDelegate,UITextFieldDelegate,NewUserViewControllerDelegate,NetworkControllerDelegate>
 @property (nonatomic,weak) IBOutlet UITextField *UserName;
 @property (nonatomic,weak) IBOutlet UITextField *Password;
+@property (nonatomic,weak) IBOutlet UIButton *registerButton;
+@property (nonatomic,weak) IBOutlet UIButton *loginButton;
 @property (nonatomic,strong) NetworkController *thisNetworkController;
 @property (nonatomic) ServerState *currentServerState;
 

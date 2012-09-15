@@ -43,7 +43,8 @@
         //if we have sent in the game type, try logging in with a pre existing auth key
         } else if(self.currentServerState == (ServerState *)SendingGameType){
             self.currentServerState = (ServerState *)ConnectedAwaitingLogon;
-            [self loginToServerWithAuthkey];
+            //[self loginToServerWithAuthkey];
+            [self removeLoaderFromView];
             //if the recieved message has an auth key, set the auth key and login
             //Otherwise a new user was created woohoo
         } else if (self.currentServerState == (ServerState *)ConnectedAwaitingLogon){
@@ -52,14 +53,12 @@
                 [defaults setObject:[messageFromServer substringFromIndex:5] forKey:AUTH_KEY];
                 [defaults synchronize];
                 [self showTabViewNotAnimated];
-                //[self performSegueWithIdentifier:@"showTabView" sender:self];
             } else {
                 NSLog(@"New User Created Successfully");
             }
         } else if(self.currentServerState == (ServerState *)TryingAuthKeyLogin) {
             NSLog(@"Logged in!");
             [self showTabViewNotAnimated];
-            //[self performSegueWithIdentifier:@"showTabView" sender:self];
         } else{
             NSLog(@"Server 'done' message not interpreted");
         }
@@ -191,6 +190,8 @@
     self.Password.text = @"";
     self.UserName.delegate = self;
     self.Password.delegate = self;
+    [self.registerButton.titleLabel setFont:[UIFont fontWithName:@"Bauhaus 93" size:20]];
+    [self.loginButton.titleLabel setFont:[UIFont fontWithName:@"Bauhaus 93" size:20]];
     
     if(self.currentServerState == nil){
         //initialize network communications
