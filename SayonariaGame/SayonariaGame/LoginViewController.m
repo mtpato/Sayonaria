@@ -43,8 +43,21 @@
         //if we have sent in the game type, try logging in with a pre existing auth key
         } else if(self.currentServerState == (ServerState *)SendingGameType){
             self.currentServerState = (ServerState *)ConnectedAwaitingLogon;
-            //[self loginToServerWithAuthkey];
-            [self removeLoaderFromView];
+            
+            /*****PAY ATTENTION HERE*****/
+            /*****PAY ATTENTION HERE*****/
+            /*****PAY ATTENTION HERE*****/
+            
+            [self loginToServerWithAuthkey];
+                /***** COMMENT THE BELOW LINE IN
+                AND THE ABOVE LINE OUT
+                 WHEN NEEDING THE LOGIN SCREEN*****/
+            //[self removeLoaderFromView];
+
+            /*****STOP PAYING ATTENTION HERE*****/
+            /*****STOP PAYING ATTENTION HERE*****/
+            /*****STOP PAYING ATTENTION HERE*****/
+            
             //if the recieved message has an auth key, set the auth key and login
             //Otherwise a new user was created woohoo
         } else if (self.currentServerState == (ServerState *)ConnectedAwaitingLogon){

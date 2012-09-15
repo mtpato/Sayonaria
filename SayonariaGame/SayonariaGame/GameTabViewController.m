@@ -118,15 +118,17 @@
     
 	static NSString *CellIdentifier = @"GameCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    UILabel *opponentNameLabel = (UILabel *)[cell viewWithTag:1];
+    UILabel *gameIDLabel = (UILabel *)[cell viewWithTag:2];
     
     //set up the background of the cell
-    UIView *backgroundView = [[UIView alloc] initWithFrame: cell.frame];
-    backgroundView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"epato_clicked_button_game.png"]];
-    backgroundView.alpha = 0.6;
-    cell.backgroundView = backgroundView;
+    UIImageView *cellBackground = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Game_Table_Cell.png"]];
+//    UIView *backgroundView = [[UIView alloc] initWithFrame: cell.frame];
+//    backgroundView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Game_Table_Cell.png"]];
+    cell.backgroundView = cellBackground;
     
     //set up the thumbnail image of the cell
-    cell.imageView.image = [UIImage imageNamed:@"816b8630631e7b357474cb7b3330b6f1_large.png"];
+    //cell.imageView.image = [UIImage imageNamed:@"THUMBNAILIMAGEHERE.png"];
     
 	// Extract the game informaton
     if(indexPath.row <=[self.thisUsersGames count]) {
@@ -134,8 +136,10 @@
         NSString *gameID = [gameDictionary objectForKey:GAME_ID];
         NSString *opponentName = [gameDictionary objectForKey:OPPONENT_NAME];
     
-        cell.textLabel.text = opponentName;
-        cell.detailTextLabel.text = gameID;
+        opponentNameLabel.font = [UIFont fontWithName:@"Bauhaus 93" size:30];
+        opponentNameLabel.text = opponentName;
+        gameIDLabel.font = [UIFont fontWithName:@"Bauhaus 93" size:15];
+        gameIDLabel.text = @"Some stuff about the game";
     }
     return cell;
 }
@@ -173,7 +177,7 @@
     //set up the background of the table
 //    UIView *backgroundView = [[UIView alloc] initWithFrame: self.gameTableView.frame];
 //    backgroundView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"816b8630631e7b357474cb7b3330b6f1_large.png"]];
-//    self.gameTableView.backgroundView = backgroundView;
+//    self.gameTableView.backgroundView.alpha = 0;
     
     //set up the table itself
     self.gameTableView.dataSource = self;
