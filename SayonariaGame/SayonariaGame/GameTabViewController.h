@@ -17,4 +17,5 @@
 @property (nonatomic,weak) IBOutlet UIButton *gameNewButton;
 @property (nonatomic,weak) IBOutlet UIButton *shopButton;
 @property (nonatomic,weak) IBOutlet UIButton *optionsButton;
+@property (nonatomic,weak) IBOutlet UIImageView *gamesBackground;
 @end

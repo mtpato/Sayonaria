@@ -133,7 +133,7 @@
 	// Extract the game informaton
     if(indexPath.row <=[self.thisUsersGames count]) {
         NSDictionary *gameDictionary = [self.thisUsersGames objectAtIndex:(indexPath.row)];
-        NSString *gameID = [gameDictionary objectForKey:GAME_ID];
+        //NSString *gameID = [gameDictionary objectForKey:GAME_ID];
         NSString *opponentName = [gameDictionary objectForKey:OPPONENT_NAME];
     
         opponentNameLabel.font = [UIFont fontWithName:@"Bauhaus 93" size:30];
@@ -164,6 +164,10 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated{
+        CGRect fullScreen = [[UIScreen mainScreen] bounds];
+    ((UITabBarController *)self.parentViewController).tabBar.hidden = YES;
+    [[((UITabBarController *)self.parentViewController).view.subviews objectAtIndex:0] setFrame:fullScreen];
+    
     [self putLoaderInView];
 }
 
@@ -174,16 +178,12 @@
     self.thisNetworkController = thisTabBar.thisNetworkController;
     self.thisNetworkController.delegate = self;
     
-    //set up the background of the table
-//    UIView *backgroundView = [[UIView alloc] initWithFrame: self.gameTableView.frame];
-//    backgroundView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"816b8630631e7b357474cb7b3330b6f1_large.png"]];
-//    self.gameTableView.backgroundView.alpha = 0;
     
     //set up the table itself
     self.gameTableView.dataSource = self;
     self.gameTableView.delegate = self;
     [self.gameTableView reloadData];
-    
+
     //request the games list for the table
     [self.thisNetworkController sendMessageToServer:@"getGames"];
 }
@@ -192,7 +192,17 @@
 {
     [super viewDidLoad];
     //the first time the view is loaded, we are probably coming from the login screen, so hide the tabbar for a smoother transition
-     self.tabBarController.tabBar.hidden = YES;
+    self.tabBarController.tabBar.hidden = YES;
+    
+    /*
+    UIImageView *gamesBackground = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"GamesBackIphone.png"]];
+    CGRect screenBounds =[[UIScreen mainScreen] bounds];
+    CGSize screenDimensions = screenBounds.size;
+    [gamesBackground setFrame:CGRectMake(0, 0, screenDimensions.width,screenDimensions.height)];
+    
+    [self.gamesBackground setFrame:CGRectMake(0, 0, screenDimensions.width,screenDimensions.height)];*/
+    
+    
     [self.gameNewButton.titleLabel setFont:[UIFont fontWithName:@"Bauhaus 93" size:20]];
 }
 
