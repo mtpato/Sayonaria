@@ -49,6 +49,10 @@
 		B1F126921605002B000C34ED /* loader_sayonaria_version_05_A10024.png in Resources */ = {isa = PBXBuildFile; fileRef = B1F126771605002B000C34ED /* loader_sayonaria_version_05_A10024.png */; };
 		B1F126931605002B000C34ED /* loader_sayonaria_version_05_A10025.png in Resources */ = {isa = PBXBuildFile; fileRef = B1F126781605002B000C34ED /* loader_sayonaria_version_05_A10025.png */; };
 		B1F126941605002B000C34ED /* loader_sayonaria_version_05_A10026.png in Resources */ = {isa = PBXBuildFile; fileRef = B1F126791605002B000C34ED /* loader_sayonaria_version_05_A10026.png */; };
+		B1F1269A16050158000C34ED /* Generic_Button.png in Resources */ = {isa = PBXBuildFile; fileRef = B1F1269616050158000C34ED /* Generic_Button.png */; };
+		B1F1269B16050158000C34ED /* Options_Button.png in Resources */ = {isa = PBXBuildFile; fileRef = B1F1269716050158000C34ED /* Options_Button.png */; };
+		B1F1269C16050158000C34ED /* Shop_Button.png in Resources */ = {isa = PBXBuildFile; fileRef = B1F1269816050158000C34ED /* Shop_Button.png */; };
+		B1F1269D16050158000C34ED /* Start_Button.png in Resources */ = {isa = PBXBuildFile; fileRef = B1F1269916050158000C34ED /* Start_Button.png */; };
 		B1F6405615F2900C00305D37 /* GameTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1F6405515F2900C00305D37 /* GameTabViewController.m */; };
 		B1FACDFB1602EEA600D920F9 /* SayonariaIphoneIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = B1FACDFA1602EEA600D920F9 /* SayonariaIphoneIcon.png */; };
 		B1FACDFE1602EECE00D920F9 /* SayonariaIphoneIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B1FACDFD1602EECE00D920F9 /* SayonariaIphoneIcon@2x.png */; };
@@ -109,6 +113,10 @@
 		B1F126771605002B000C34ED /* loader_sayonaria_version_05_A10024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loader_sayonaria_version_05_A10024.png; sourceTree = "<group>"; };
 		B1F126781605002B000C34ED /* loader_sayonaria_version_05_A10025.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loader_sayonaria_version_05_A10025.png; sourceTree = "<group>"; };
 		B1F126791605002B000C34ED /* loader_sayonaria_version_05_A10026.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loader_sayonaria_version_05_A10026.png; sourceTree = "<group>"; };
+		B1F1269616050158000C34ED /* Generic_Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Generic_Button.png; sourceTree = "<group>"; };
+		B1F1269716050158000C34ED /* Options_Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Options_Button.png; sourceTree = "<group>"; };
+		B1F1269816050158000C34ED /* Shop_Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Shop_Button.png; sourceTree = "<group>"; };
+		B1F1269916050158000C34ED /* Start_Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Start_Button.png; sourceTree = "<group>"; };
 		B1F6405415F2900C00305D37 /* GameTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameTabViewController.h; sourceTree = "<group>"; };
 		B1F6405515F2900C00305D37 /* GameTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameTabViewController.m; sourceTree = "<group>"; };
 		B1FACDFA1602EEA600D920F9 /* SayonariaIphoneIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SayonariaIphoneIcon.png; sourceTree = "<group>"; };
@@ -194,6 +202,18 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		B1F1269516050116000C34ED /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				B1F1269616050158000C34ED /* Generic_Button.png */,
+				B1F1269716050158000C34ED /* Options_Button.png */,
+				B1F1269816050158000C34ED /* Shop_Button.png */,
+				B1F1269916050158000C34ED /* Start_Button.png */,
+			);
+			name = Buttons;
+			path = Loader;
+			sourceTree = "<group>";
+		};
 		B1F6405815F2902200305D37 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -221,6 +241,7 @@
 		B1FAD0A81602F27200D920F9 /* Sayonaria_Art */ = {
 			isa = PBXGroup;
 			children = (
+				B1F1269516050116000C34ED /* Buttons */,
 				B1FAD0A91602F27200D920F9 /* Loader */,
 			);
 			path = Sayonaria_Art;
@@ -345,6 +366,10 @@
 				B1F126921605002B000C34ED /* loader_sayonaria_version_05_A10024.png in Resources */,
 				B1F126931605002B000C34ED /* loader_sayonaria_version_05_A10025.png in Resources */,
 				B1F126941605002B000C34ED /* loader_sayonaria_version_05_A10026.png in Resources */,
+				B1F1269A16050158000C34ED /* Generic_Button.png in Resources */,
+				B1F1269B16050158000C34ED /* Options_Button.png in Resources */,
+				B1F1269C16050158000C34ED /* Shop_Button.png in Resources */,
+				B1F1269D16050158000C34ED /* Start_Button.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
