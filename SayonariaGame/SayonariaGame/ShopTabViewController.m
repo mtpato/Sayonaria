@@ -14,6 +14,16 @@
 
 @implementation ShopTabViewController
 
+-(void)messageRecieved:(NSString *)messageFromServer{
+    
+}
+-(void)putLoaderInView{
+    
+}
+-(void)removeLoaderFromView{
+    
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];

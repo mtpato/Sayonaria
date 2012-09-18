@@ -22,15 +22,19 @@
 
 @implementation GameTabViewController
 
-#pragma mark - server Communications and delegate methods
+#pragma mark - loader methods
 
--(void)putLoaderInView{
-    self.loader = [LoadingView loadSpinnerIntoView:self.view];
+-(void)putLoaderInViewWithSplash:(BOOL)isSplash{
+    self.loader = [[LoadingView alloc] init];
+    self.loader = [self.loader loadSpinnerIntoView:self.view withSplash:isSplash withFade:NO];
 }
 
--(void) removeLoaderFromView{
+-(void)removeLoaderFromView{
     [self.loader removeLoader:self.view];
+    self.loader = nil;
 }
+
+#pragma mark - network communications
 
 -(void)messageRecieved:(NSString *)messageFromServer{
     NSLog(@"server said: %@", messageFromServer);
@@ -44,7 +48,6 @@
     if([[messageFromServer substringToIndex:5] isEqualToString:@"games"]){
         [self parseGames:[messageFromServer substringFromIndex:6]];
         [self.gameTableView reloadData];
-        [self removeLoaderFromView];
     }
 }
 
@@ -123,8 +126,6 @@
     
     //set up the background of the cell
     UIImageView *cellBackground = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Game_Table_Cell.png"]];
-//    UIView *backgroundView = [[UIView alloc] initWithFrame: cell.frame];
-//    backgroundView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Game_Table_Cell.png"]];
     cell.backgroundView = cellBackground;
     
     //set up the thumbnail image of the cell
@@ -168,16 +169,24 @@
     ((UITabBarController *)self.parentViewController).tabBar.hidden = YES;
     [[((UITabBarController *)self.parentViewController).view.subviews objectAtIndex:0] setFrame:fullScreen];
     
-    [self putLoaderInView];
-}
-
--(void)viewDidAppear:(BOOL)animated{
-
     //set up networking
     NetworkStorageTabBarController *thisTabBar = (NetworkStorageTabBarController *) self.tabBarController;
     self.thisNetworkController = thisTabBar.thisNetworkController;
     self.thisNetworkController.delegate = self;
     
+    if(self.thisNetworkController.currentServerState == (ServerState *)TryingAuthKeyLogin){
+        //put in splash screen
+        [self putLoaderInViewWithSplash:YES];
+    } else if(self.thisNetworkController.currentServerState == (ServerState *)ConnectedAwaitingLogon){
+        //put in spinner
+        [self putLoaderInViewWithSplash:NO];
+    }
+
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    //get rid of the loader if one is up
+    if(self.loader) [self removeLoaderFromView];
     
     //set up the table itself
     self.gameTableView.dataSource = self;
@@ -193,15 +202,6 @@
     [super viewDidLoad];
     //the first time the view is loaded, we are probably coming from the login screen, so hide the tabbar for a smoother transition
     self.tabBarController.tabBar.hidden = YES;
-    
-    /*
-    UIImageView *gamesBackground = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"GamesBackIphone.png"]];
-    CGRect screenBounds =[[UIScreen mainScreen] bounds];
-    CGSize screenDimensions = screenBounds.size;
-    [gamesBackground setFrame:CGRectMake(0, 0, screenDimensions.width,screenDimensions.height)];
-    
-    [self.gamesBackground setFrame:CGRectMake(0, 0, screenDimensions.width,screenDimensions.height)];*/
-    
     
     [self.gameNewButton.titleLabel setFont:[UIFont fontWithName:@"Bauhaus 93" size:20]];
 }
@@ -221,8 +221,8 @@
 #pragma mark - segue
 
 -(void)showGameScreenNotAnimated:(id)cellOrString{
-    //put the Loader into the view
-    [self putLoaderInView];
+    //put the Loader into the view? Figure this part out later
+
     
     //create the tabBarView from the storyboard
     GameScreenViewController *newGameScreen = [self.storyboard instantiateViewControllerWithIdentifier:@"gameScreen"];
@@ -243,7 +243,6 @@
     
     //segue!
     [self.navigationController pushViewController:newGameScreen animated:NO];
-    NSLog(@"WE SEGUED!");
 }
 
 @end

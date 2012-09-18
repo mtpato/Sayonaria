@@ -13,7 +13,7 @@
 
 @interface GameTabViewController : UIViewController <NetworkControllerDelegate,UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic,strong) NetworkController *thisNetworkController;
-@property (nonatomic,weak) LoadingView * loader;
+@property (nonatomic,strong) LoadingView * loader;
 @property (nonatomic,weak) IBOutlet UIButton *gameNewButton;
 @property (nonatomic,weak) IBOutlet UIButton *shopButton;
 @property (nonatomic,weak) IBOutlet UIButton *optionsButton;

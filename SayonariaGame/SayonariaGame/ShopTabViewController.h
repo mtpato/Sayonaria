@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NetworkController.h"
+#import "NetworkStorageTabBarController.h"
 
-@interface ShopTabViewController : UIViewController
+@interface ShopTabViewController : UIViewController <NetworkControllerDelegate>
 
 @end

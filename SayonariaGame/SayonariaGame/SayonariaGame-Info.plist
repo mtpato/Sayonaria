@@ -43,8 +43,10 @@
 	<true/>
 	<key>UILaunchImageFile~ipad</key>
 	<string>SayonariaLaunchiPad</string>
+	<key>UIPrerenderedIcon</key>
+	<true/>
 	<key>UILaunchImageFile~iphone</key>
-	<string>SayonariaLaunchiPhone</string>
+	<string>SplashArtIphone</string>
 	<key>UIMainStoryboardFile</key>
 	<string>MainStoryboard_iPhone</string>
 	<key>UIMainStoryboardFile~ipad</key>

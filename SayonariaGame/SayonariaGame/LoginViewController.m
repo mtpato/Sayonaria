@@ -9,21 +9,20 @@
 #import "LoginViewController.h"
 
 @interface LoginViewController()
-@property (nonatomic, weak) LoadingView * loader;
+@property (nonatomic, strong) LoadingView * loader;
 @end
 
 @implementation LoginViewController
 
-#pragma mark - delegate methods
--(void)putLoaderInView{
-    self.loader = [LoadingView loadSpinnerIntoView:self.view];
-}
--(void)removeLoaderFromView{
-    [self.loader removeLoader:self.view];
+#pragma mark - loader methods
+-(void)putLoaderInViewWithSplash:(BOOL)isSplash withFade:(BOOL)withFade{
+    self.loader = [[LoadingView alloc] init];
+    self.loader = [self.loader loadSpinnerIntoView:self.view withSplash:isSplash withFade:withFade];
 }
 
--(void)setCurrentServerStateConnecting{
-    self.currentServerState = (ServerState *)Connecting;
+-(void)removeLoaderFromView{
+    [self.loader removeLoader:self.view];
+    self.loader = nil;
 }
 
 //figures out what to do with the message received from the server
@@ -35,41 +34,20 @@
     
     //if the server says 'done' it can be connecting, confirming the game type, etc
     if([[messageFromServer substringToIndex:4] isEqualToString:@"done"]){
-        
-        //if we have JUST connected, send the game type to the server
-        if(self.currentServerState == (ServerState *)Connecting){
-            self.currentServerState = (ServerState *)SendingGameType;
-            [self.thisNetworkController sendMessageToServer:@"tileGame"];
-        //if we have sent in the game type, try logging in with a pre existing auth key
-        } else if(self.currentServerState == (ServerState *)SendingGameType){
-            self.currentServerState = (ServerState *)ConnectedAwaitingLogon;
-            
-            /*****PAY ATTENTION HERE*****/
-            /*****PAY ATTENTION HERE*****/
-            /*****PAY ATTENTION HERE*****/
-            
-            [self loginToServerWithAuthkey];
-                /***** COMMENT THE BELOW LINE IN
-                AND THE ABOVE LINE OUT
-                 WHEN NEEDING THE LOGIN SCREEN*****/
-            //[self removeLoaderFromView];
 
-            /*****STOP PAYING ATTENTION HERE*****/
-            /*****STOP PAYING ATTENTION HERE*****/
-            /*****STOP PAYING ATTENTION HERE*****/
-            
-            //if the recieved message has an auth key, set the auth key and login
-            //Otherwise a new user was created woohoo
-        } else if (self.currentServerState == (ServerState *)ConnectedAwaitingLogon){
+        if (self.thisNetworkController.currentServerState == (ServerState *)ConnectedAwaitingLogon){
+            //if we get an auth key back (done, >4 chars), the save it and log in
+            //this means we have logged in with a user/pass
             if([messageFromServer length] > 4){
                 NSLog(@"Logged in!");
                 [defaults setObject:[messageFromServer substringFromIndex:5] forKey:AUTH_KEY];
                 [defaults synchronize];
-                [self showTabViewNotAnimated];
+                [self putLoaderInViewWithSplash:NO withFade:YES];
+                //[self showTabViewNotAnimated];
             } else {
                 NSLog(@"New User Created Successfully");
             }
-        } else if(self.currentServerState == (ServerState *)TryingAuthKeyLogin) {
+        } else if(self.thisNetworkController.currentServerState == (ServerState *)TryingAuthKeyLogin) {
             NSLog(@"Logged in!");
             [self showTabViewNotAnimated];
         } else{
@@ -79,20 +57,23 @@
         //DO MORE STUFF HERE!
     } else if([messageFromServer isEqualToString:@"ANOTHER OUTPUT FROM THE SERVER"]) {
     } else if([messageFromServer isEqualToString:@"error"]){
-        if(self.currentServerState == (ServerState *)ConnectedAwaitingLogon) {
+        if(self.thisNetworkController.currentServerState == (ServerState *)ConnectedAwaitingLogon) {
             [self cannotLoginError];
-            [self removeLoaderFromView];
-        } else if(self.currentServerState == (ServerState *)TryingAuthKeyLogin) {
+            if(self.loader)[self removeLoaderFromView];
+        } else if(self.thisNetworkController.currentServerState == (ServerState *)TryingAuthKeyLogin) {
             NSLog(@"Bad AuthKey");
+            //remove splash screen or loader from view
+            
             [self removeLoaderFromView];
-            self.currentServerState = (ServerState *)ConnectedAwaitingLogon;
+            self.thisNetworkController.currentServerState = (ServerState *)ConnectedAwaitingLogon;
         }
     } else if([messageFromServer isEqualToString:@"CANNOT CONNECT"]){
-        if (self.currentServerState == (ServerState *)FirstSocketFailed) {
-            self.currentServerState = nil;
+        if (self.thisNetworkController.currentServerState == (ServerState *)FirstSocketFailed) {
+            self.thisNetworkController.currentServerState = nil;
+            if(self.loader)[self removeLoaderFromView];
             [self cannotConnectError];
         } else {
-            self.currentServerState = (ServerState *)FirstSocketFailed;
+            self.thisNetworkController.currentServerState = (ServerState *)FirstSocketFailed;
         }
     }else if ([messageFromServer isEqualToString:@"SOCKETS CLOSED"]){
         [self cannotConnectError];
@@ -140,7 +121,6 @@
         [defaults synchronize];
         
         NSString *userNamePassword = [NSString stringWithFormat:@"%@%@%@", self.UserName.text, @",", self.Password.text];
-        self.loader = [LoadingView loadSpinnerIntoView:self.view];
         [self loginToServerWithPassword:userNamePassword];
     }
 }
@@ -178,20 +158,10 @@
     [self.thisNetworkController sendMessageToServer:loginString];
 }
 
-//check if the user has a stored username and authkey. if they do, login
-- (void)loginToServerWithAuthkey {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    if(([defaults objectForKey:USER_NAME] != nil) && ([defaults objectForKey:AUTH_KEY] != nil)) {
-        self.currentServerState = (ServerState *)TryingAuthKeyLogin;
-        NSString *loginString = [NSString stringWithFormat:@"%@%@%@%@", @"keyLogin:",[defaults objectForKey:USER_NAME], @",", [defaults objectForKey:AUTH_KEY]];
-        [self.thisNetworkController sendMessageToServer:loginString];
-    }
-}
-
 #pragma mark - Initial loadup and other misc
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
-    if(self.currentServerState == nil) {
+    if(self.thisNetworkController.currentServerState == nil) {
         [self.thisNetworkController initNetworkCommunication];
     }
 }
@@ -199,27 +169,38 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.UserName.text = @"";
-    self.Password.text = @"";
     self.UserName.delegate = self;
     self.Password.delegate = self;
     [self.registerButton.titleLabel setFont:[UIFont fontWithName:@"Bauhaus 93" size:20]];
     [self.loginButton.titleLabel setFont:[UIFont fontWithName:@"Bauhaus 93" size:20]];
-    
-    if(self.currentServerState == nil){
+    NetworkController *tempController = [[NetworkController alloc] init];
+    self.thisNetworkController = tempController;
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    self.UserName.text = @"";
+    self.Password.text = @"";
+    self.thisNetworkController.delegate = self;
+    if(self.loader)[self removeLoaderFromView];
+    if(self.thisNetworkController.currentServerState == nil){
+        //put the splash image on the screen
+        [self putLoaderInViewWithSplash:YES withFade:NO];
         //initialize network communications
-        NetworkController *tempController = [[NetworkController alloc] init];
-        self.thisNetworkController = tempController;
-        self.thisNetworkController.delegate = self;
+        [self.thisNetworkController initNetworkCommunication];
+    } else if(self.thisNetworkController.currentServerState == (ServerState *)SigningOut){
+        //put the loader on the screen
+        [self putLoaderInViewWithSplash:NO withFade:NO];
+        //initialize network communications
         [self.thisNetworkController initNetworkCommunication];
     }
 }
 
+-(void)loaderIsOnScreen{
+    [self showTabViewNotAnimated];
+}
+
+
 -(void)showTabViewNotAnimated{
-    //put the Loader into the view
-    if (self.currentServerState != (ServerState *)TryingAuthKeyLogin){
-        [self putLoaderInView];}
-    
     //create the tabBarView from the storyboard
     NetworkStorageTabBarController *newController = [self.storyboard instantiateViewControllerWithIdentifier:@"tabBarView"];
     
@@ -230,12 +211,16 @@
     [self.navigationController pushViewController:newController animated:NO];
 }
 
+
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    self.currentServerState = (ServerState *)InTabView;
     if([segue.identifier isEqualToString: @"showNewUserScreen"]){
         NewUserViewController *newUserController = (NewUserViewController *)segue.destinationViewController;
         newUserController.delegate = self;
     }
+}
+
+-(void)viewDidDisappear:(BOOL)animated {
+    if(self.loader)[self removeLoaderFromView];
 }
 
 - (void)viewDidUnload

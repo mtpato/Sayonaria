@@ -11,18 +11,28 @@
 
 @class NetworkController;
 
+#pragma mark - Typedef and property of server state
+
+typedef enum {
+    Connecting = 0,
+    SendingGameType = 1,
+    ConnectedAwaitingLogon = 2,
+    InTabView = 3,
+    TryingAuthKeyLogin = 4,
+    InGameView = 5,
+    FirstSocketFailed = 6,
+    SigningOut = 7
+} ServerState;
+
 @protocol NetworkControllerDelegate
 -(void)messageRecieved:(NSString *)messageFromServer;
--(void)putLoaderInView;
--(void)removeLoaderFromView;
-@optional
--(void)setCurrentServerStateConnecting;
 @end
 
 @interface NetworkController : NSObject <NSStreamDelegate>
 @property (nonatomic,strong) NSInputStream *inputStream;
 @property (nonatomic,strong) NSOutputStream *outputStream;
-@property (nonatomic, weak) id<NetworkControllerDelegate> delegate;
+@property (nonatomic,weak) id<NetworkControllerDelegate> delegate;
+@property (nonatomic) ServerState *currentServerState;
 
 #pragma mark - definitions of default keys
 
@@ -34,17 +44,7 @@
 
 -(void)sendMessageToServer: (NSString *)message;
 -(void)initNetworkCommunication;
-
-#pragma mark - Typedef and property of server state
-
-typedef enum {
-    Connecting = 0,
-    SendingGameType = 1,
-    ConnectedAwaitingLogon = 2,
-    InTabView = 3,
-    TryingAuthKeyLogin = 4,
-    InGameView = 5,
-    FirstSocketFailed = 6
-} ServerState;
+-(void)closeNetworkCommunication;
+-(void)setCurrentServerState:(ServerState *)currentServerState;
 
 @end

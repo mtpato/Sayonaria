@@ -276,10 +276,28 @@
                                     <action selector="gamesPressed" destination="bW0-qm-YMa" eventType="touchUpInside" id="b3p-LU-2yW"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="RfR-QZ-Ivz">
+                                <rect key="frame" x="53" y="171" width="214" height="76"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Sign Out" backgroundImage="Generic_Button_4.png">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="signOutPressed" destination="bW0-qm-YMa" eventType="touchUpInside" id="tHc-VX-1gP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Options" id="VZ9-vd-xeK"/>
+                    <connections>
+                        <outlet property="signOutButton" destination="RfR-QZ-Ivz" id="VBq-Uo-bW2"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="227" y="672"/>
@@ -364,13 +382,13 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="slH-vQ-eJr">
-                                <rect key="frame" x="6" y="351" width="119" height="31"/>
+                                <rect key="frame" x="0.0" y="394" width="27" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="101" sectionHeaderHeight="22" sectionFooterHeight="22" id="pgC-MT-Vjb">
-                                <rect key="frame" x="91" y="113" width="229" height="230"/>
+                                <rect key="frame" x="91" y="113" width="229" height="273"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -409,7 +427,7 @@
                                 <sections/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="JzI-l5-Oei">
-                                <rect key="frame" x="133" y="366" width="82" height="60"/>
+                                <rect key="frame" x="116" y="394" width="102" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" image="Shop_Button.png">
@@ -424,7 +442,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="fQl-kx-WcI">
-                                <rect key="frame" x="223" y="360" width="82" height="60"/>
+                                <rect key="frame" x="217" y="394" width="97" height="81"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" backgroundImage="Options_Button.png">
@@ -441,7 +459,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Games" id="XBk-Su-PJ6"/>
+                    <tabBarItem key="tabBarItem" enabled="NO" title="Games" id="XBk-Su-PJ6"/>
                     <connections>
                         <outlet property="OpponentName" destination="slH-vQ-eJr" id="5ez-tO-KZW"/>
                         <outlet property="gameNewButton" destination="dKV-CP-jzo" id="8EE-Ub-bLO"/>
@@ -538,12 +556,66 @@
         <image name="BlankBackIphone@2x.png" width="640" height="960"/>
         <image name="GamesBackIphone@2x.png" width="640" height="960"/>
         <image name="Generic_Button.png" width="386" height="304"/>
+        <image name="Generic_Button_4.png" width="1015" height="390"/>
         <image name="OptionsBackIphone@2x.png" width="640" height="960"/>
         <image name="Options_Button.png" width="386" height="304"/>
         <image name="ShopBackIphone@2x.png" width="640" height="960"/>
         <image name="Shop_Button.png" width="386" height="304"/>
         <image name="Start_Button.png" width="437" height="318"/>
     </resources>
+    <classes>
+        <class className="GameScreenViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GameScreenViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="LayTile:" candidateClass="UITapGestureRecognizer"/>
+                <relationship kind="outlet" name="GameBoardView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="tapRecognizer" candidateClass="UIGestureRecognizer"/>
+            </relationships>
+        </class>
+        <class className="GameTabViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GameTabViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="newGamePressed:"/>
+                <relationship kind="action" name="optionsPressed:"/>
+                <relationship kind="outlet" name="OpponentName" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="gameNewButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="gameTableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="gamesBackground" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="optionsButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="shopButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="LoginViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="Password" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="UserName" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="loginButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="registerButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="NetworkStorageTabBarController" superclassName="UITabBarController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NetworkStorageTabBarController.h"/>
+        </class>
+        <class className="NewUserViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NewUserViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="confirmPassword" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="email" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="password" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="userName" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="OptionsTabViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/OptionsTabViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="signOutButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="ShopTabViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ShopTabViewController.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

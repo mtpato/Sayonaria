@@ -59,12 +59,13 @@
 
 #pragma mark - server Communications and delegate methods
 
--(void)putLoaderInView{
-    self.loader = [LoadingView loadSpinnerIntoView:self.view];
+-(void)putLoaderInViewWithSplash:(BOOL)isSplash{
+    //self.loader = [LoadingView loadSpinnerIntoView:self.view withSplash:isSplash];
 }
 
--(void) removeLoaderFromView{
+-(void)removeLoaderFromView{
     [self.loader removeLoader:self.view];
+    self.loader = nil;
 }
 
 //MESSAGES RECIEVED FROM THE SERVER WILL BE SENT HERE
@@ -250,8 +251,7 @@
 
 
 -(void)viewWillAppear:(BOOL)animated{
-    NSLog(@"GGG");
-    [self putLoaderInView];
+    [self putLoaderInViewWithSplash:NO];
 }
 
 -(void)viewDidAppear:(BOOL)animated{

@@ -14,13 +14,48 @@
 
 @implementation OptionsTabViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
+#pragma mark - Network Communication
+
+-(void)messageRecieved:(NSString *)messageFromServer{
+    NSLog(@"Server Said:%@",messageFromServer);
+    if(self.thisNetworkController.currentServerState = (ServerState *)SigningOut){
+        [self.thisNetworkController closeNetworkCommunication];
+        LoginViewController *ourRootView = [self.navigationController.viewControllers objectAtIndex:0];
+        ourRootView.thisNetworkController = self.thisNetworkController;
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        NSString *blankKey = @"BLANK";
+        [defaults setObject:blankKey forKey:AUTH_KEY];
+        [defaults synchronize];
     }
-    return self;
+}
+
+#pragma mark - Loader
+
+-(void)putLoaderInViewWithSplash:(BOOL)isSplash{
+    self.loader = [[LoadingView alloc] init];
+    self.loader.delegate = self;
+    self.loader = [self.loader loadSpinnerIntoView:self.view withSplash:isSplash withFade:YES];
+}
+
+-(void)removeLoaderFromView{
+    [self.loader removeLoader:self.view];
+    self.loader = nil;
+}
+
+
+#pragma mark - Loading the View
+
+-(void)loaderIsOnScreen{
+    [self.navigationController popToRootViewControllerAnimated:NO];
+}
+
+-(void)viewDidAppear:(BOOL)animated {
+    
+    //set up networking
+    NetworkStorageTabBarController *thisTabBar = (NetworkStorageTabBarController *) self.tabBarController;
+    self.thisNetworkController = thisTabBar.thisNetworkController;
+    self.thisNetworkController.delegate = self;
+    
 }
 
 - (void)viewDidLoad
@@ -28,17 +63,16 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.tabBarController.tabBar.hidden = YES;
+   [self.signOutButton.titleLabel setFont:[UIFont fontWithName:@"Bauhaus 93" size:20]];
 }
 
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-}
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+#pragma mark - User Interaction
+
+- (IBAction)signOutPressed {
+    [self.thisNetworkController setCurrentServerState:(ServerState *)SigningOut];
+    [self.thisNetworkController sendMessageToServer:@"signOut"];
+    [self putLoaderInViewWithSplash:NO];
 }
 
 #pragma mark - Tab Bar Navigation
@@ -51,5 +85,26 @@
     self.tabBarController.selectedIndex = 1;
 }
 
+#pragma mark - Crap I Don't Use!
+
+- (void)viewDidUnload
+{
+    [super viewDidUnload];
+    // Release any retained subviews of the main view.
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
 
 @end

@@ -9,9 +9,16 @@
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
 
+@class LoadingView;
+
+@protocol LoadingViewDelegate
+-(void)loaderIsOnScreen;
+@end
+
 @interface LoadingView : UIView
 
-+(LoadingView *)loadSpinnerIntoView:(UIView *)superView;
+-(LoadingView *)loadSpinnerIntoView:(UIView *)superView withSplash:(BOOL)isSplash withFade:(BOOL)withFade;
 -(void)removeLoader:(UIView *)superView;
+@property (nonatomic,weak) id<LoadingViewDelegate> delegate;
 
 @end

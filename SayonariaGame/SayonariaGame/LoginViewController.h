@@ -13,13 +13,12 @@
 #import "GameTabViewController.h"
 #import "NetworkStorageTabBarController.h"
 
-@interface LoginViewController : UIViewController <NSStreamDelegate,UIAlertViewDelegate,UITextFieldDelegate,NewUserViewControllerDelegate,NetworkControllerDelegate>
+@interface LoginViewController : UIViewController <NSStreamDelegate,UIAlertViewDelegate,UITextFieldDelegate,NewUserViewControllerDelegate,NetworkControllerDelegate,LoadingViewDelegate>
 @property (nonatomic,weak) IBOutlet UITextField *UserName;
 @property (nonatomic,weak) IBOutlet UITextField *Password;
 @property (nonatomic,weak) IBOutlet UIButton *registerButton;
 @property (nonatomic,weak) IBOutlet UIButton *loginButton;
 @property (nonatomic,strong) NetworkController *thisNetworkController;
-@property (nonatomic) ServerState *currentServerState;
 
 @end
 
