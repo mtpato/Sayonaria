@@ -27,7 +27,7 @@
     //create input and output stream core foundation objects
     CFReadStreamRef readStream;
     CFWriteStreamRef writeStream;
-    //create the socket: PUT THE SERVER IP HERE!!!
+    //create the socket: 98.204.99.45 is real IP
     CFStreamCreatePairWithSocketToHost(NULL, (CFStringRef)@"localhost", 4356, &readStream, &writeStream);
     //cast the CFStreams as NSStreams
     self.inputStream = (__bridge NSInputStream *)readStream;

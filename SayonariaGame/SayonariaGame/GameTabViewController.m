@@ -46,8 +46,10 @@
         }
     }
     if([[messageFromServer substringToIndex:5] isEqualToString:@"games"]){
+        if([messageFromServer isEqualToString:@"games"]){}else{
         [self parseGames:[messageFromServer substringFromIndex:6]];
         [self.gameTableView reloadData];
+        }
     }
 }
 
@@ -84,6 +86,7 @@
     
     //set the games array equal to the array we've made
     self.thisUsersGames = [gameDictionaries copy];
+    
 }
 
 #pragma mark - actions and tab bar navigation
@@ -113,6 +116,9 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 	// Return the number of rows for the given the section
     NSUInteger total = [self.thisUsersGames count];
+    if(self.thisUsersGames == nil) {
+        total = 1;
+    }
     return total;    
 }
 
@@ -130,16 +136,21 @@
     
     //set up the thumbnail image of the cell
     //cell.imageView.image = [UIImage imageNamed:@"THUMBNAILIMAGEHERE.png"];
-    
+
+    opponentNameLabel.font = [UIFont fontWithName:@"Bauhaus 93" size:20];
+    gameIDLabel.font = [UIFont fontWithName:@"Bauhaus 93" size:15];
 	// Extract the game informaton
+
+    if(self.thisUsersGames == nil){
+        opponentNameLabel.text = @"No Games!";
+        gameIDLabel.text = @"Some stuff about the game";
+    } else
     if(indexPath.row <=[self.thisUsersGames count]) {
         NSDictionary *gameDictionary = [self.thisUsersGames objectAtIndex:(indexPath.row)];
         //NSString *gameID = [gameDictionary objectForKey:GAME_ID];
         NSString *opponentName = [gameDictionary objectForKey:OPPONENT_NAME];
     
-        opponentNameLabel.font = [UIFont fontWithName:@"Bauhaus 93" size:30];
         opponentNameLabel.text = opponentName;
-        gameIDLabel.font = [UIFont fontWithName:@"Bauhaus 93" size:15];
         gameIDLabel.text = @"Some stuff about the game";
     }
     return cell;
