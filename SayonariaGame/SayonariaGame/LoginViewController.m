@@ -9,7 +9,7 @@
 #import "LoginViewController.h"
 
 @interface LoginViewController()
-@property (nonatomic, strong) LoadingView * loader;
+
 @end
 
 @implementation LoginViewController
@@ -17,6 +17,7 @@
 #pragma mark - loader methods
 -(void)putLoaderInViewWithSplash:(BOOL)isSplash withFade:(BOOL)withFade{
     self.loader = [[LoadingView alloc] init];
+    self.loader.delegate = self;
     self.loader = [self.loader loadSpinnerIntoView:self.view withSplash:isSplash withFade:withFade];
 }
 
@@ -39,16 +40,15 @@
             //if we get an auth key back (done, >4 chars), the save it and log in
             //this means we have logged in with a user/pass
             if([messageFromServer length] > 4){
-                NSLog(@"Logged in!");
+                NSLog(@"Logged in with Password!");
                 [defaults setObject:[messageFromServer substringFromIndex:5] forKey:AUTH_KEY];
                 [defaults synchronize];
                 [self putLoaderInViewWithSplash:NO withFade:YES];
-                //[self showTabViewNotAnimated];
             } else {
                 NSLog(@"New User Created Successfully");
             }
         } else if(self.thisNetworkController.currentServerState == (ServerState *)TryingAuthKeyLogin) {
-            NSLog(@"Logged in!");
+            NSLog(@"Logged in with Auth Key!");
             [self showTabViewNotAnimated];
         } else{
             NSLog(@"Server 'done' message not interpreted");
@@ -63,7 +63,6 @@
         } else if(self.thisNetworkController.currentServerState == (ServerState *)TryingAuthKeyLogin) {
             NSLog(@"Bad AuthKey");
             //remove splash screen or loader from view
-            
             [self removeLoaderFromView];
             self.thisNetworkController.currentServerState = (ServerState *)ConnectedAwaitingLogon;
         }
@@ -197,6 +196,7 @@
 
 -(void)loaderIsOnScreen{
     [self showTabViewNotAnimated];
+    NSLog(@"Delegate Called");
 }
 
 

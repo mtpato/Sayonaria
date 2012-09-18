@@ -119,7 +119,6 @@
                       forMode:NSDefaultRunLoopMode];
     self.inputStream = nil;
     self.outputStream = nil;
-    self.currentServerState = nil;
 }
 
 #pragma mark - Network Communication

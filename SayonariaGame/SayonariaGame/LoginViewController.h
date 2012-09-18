@@ -19,6 +19,7 @@
 @property (nonatomic,weak) IBOutlet UIButton *registerButton;
 @property (nonatomic,weak) IBOutlet UIButton *loginButton;
 @property (nonatomic,strong) NetworkController *thisNetworkController;
+@property (nonatomic, strong) LoadingView * loader;
 
 @end
 

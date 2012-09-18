@@ -30,8 +30,8 @@
 }
 
 -(void)removeLoaderFromView{
-    [self.loader removeLoader:self.view];
-    self.loader = nil;
+     [self.loader removeLoader:self.view];
+     self.loader = nil;
 }
 
 #pragma mark - network communications
@@ -165,7 +165,9 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated{
-        CGRect fullScreen = [[UIScreen mainScreen] bounds];
+    
+    //get rid of the blank tab bar
+    CGRect fullScreen = [[UIScreen mainScreen] bounds];
     ((UITabBarController *)self.parentViewController).tabBar.hidden = YES;
     [[((UITabBarController *)self.parentViewController).view.subviews objectAtIndex:0] setFrame:fullScreen];
     
@@ -177,9 +179,15 @@
     if(self.thisNetworkController.currentServerState == (ServerState *)TryingAuthKeyLogin){
         //put in splash screen
         [self putLoaderInViewWithSplash:YES];
+        //tell the network we are going to be in the main views
+        self.thisNetworkController.currentServerState = (ServerState *)InTabView;
     } else if(self.thisNetworkController.currentServerState == (ServerState *)ConnectedAwaitingLogon){
         //put in spinner
         [self putLoaderInViewWithSplash:NO];
+        //tell the network we are going to be in the main views
+        self.thisNetworkController.currentServerState = (ServerState *)InTabView;
+    } else if(self.thisNetworkController.currentServerState == (ServerState *)InTabView) {
+        //Do the fade from another menu screen
     }
 
 }

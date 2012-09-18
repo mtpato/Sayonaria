@@ -30,18 +30,21 @@
 }
 
 -(LoadingView *)loadSpinnerIntoView:(UIView *)superView withSplash:(BOOL)isSplash withFade:(BOOL)withFade{
-	// Create a new view with the same frame size as the superView
+
+    NSLog(@"Creating Loader...");
+    
+    // Create a new view with the same frame size as the superView
 	LoadingView *loaderView = [[LoadingView alloc] initWithFrame:superView.bounds];
 	// If something's gone wrong, abort!
 	if(!loaderView){ return nil; }
     
     int numViews = [[superView subviews] count];
+    CGRect screenBounds =[[UIScreen mainScreen] bounds];
+    CGSize screenDimensions = screenBounds.size;
     
     if(isSplash == YES){
         UIImage *loaderBackgroundImage = [UIImage imageNamed:@"SplashArtIphone@2x.png"];
         UIImageView *loaderBackground = [[UIImageView alloc] initWithImage:loaderBackgroundImage];
-        CGRect screenBounds =[[UIScreen mainScreen] bounds];
-        CGSize screenDimensions = screenBounds.size;
         //add a blank view to the screen (allows us to remove them properly)
         UIImageView *blankView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, screenDimensions.width,screenDimensions.height)];
         [superView insertSubview:blankView atIndex:numViews+1];
@@ -53,11 +56,9 @@
     //make the background of the spinner
     UIImage *loaderBackgroundImage = [UIImage imageNamed:@"BlankFancyBackIphone@2x.png"];
     UIImageView *loaderBackground = [[UIImageView alloc] initWithImage:loaderBackgroundImage];
-    CGRect screenBounds =[[UIScreen mainScreen] bounds];
-    CGSize screenDimensions = screenBounds.size;
     [loaderBackground setFrame:CGRectMake(0, 0, screenDimensions.width,screenDimensions.height)];
     loaderBackground.alpha = 0.0;
-    [superView insertSubview:loaderBackground atIndex:1];
+    [superView insertSubview:loaderBackground atIndex:numViews+1];
     
     //create the spinning indicator//
     UIImage *loaderImage = [UIImage imageNamed:@"loader_sayonaria_version_05_A10000.png"];
@@ -100,7 +101,7 @@
     UIViewAutoresizingFlexibleBottomMargin |
     UIViewAutoresizingFlexibleLeftMargin;
     // Place it in the middle of the view
-    activityImageView.frame = CGRectMake(0,0, screenDimensions.width/2.5, screenDimensions.width/2.5);
+    activityImageView.frame = CGRectMake(superView.frame.size.width/2,superView.frame.size.height/2, screenDimensions.width/2.5, screenDimensions.width/2.5);
     activityImageView.center = superView.center;
 	// Add it into the spinnerView
     [loaderView addSubview:activityImageView];
@@ -108,18 +109,22 @@
 	[activityImageView startAnimating];
     activityImageView.alpha = 0.0;
         
-    [superView insertSubview:loaderView atIndex:1];
+    [superView insertSubview:loaderView atIndex:numViews+2];
 
-    int animationDuration = 0.0;
+    NSTimeInterval animationDuration = 0.0;
     if(withFade == YES) { animationDuration = 0.75;}
-    
+        
     [UIImageView animateWithDuration:animationDuration
                               animations:^{activityImageView.alpha = 1.0;}
                               completion:^(BOOL finished){}];
 
     [UIImageView animateWithDuration:animationDuration
                               animations:^{loaderBackground.alpha = 1.0;}
-                              completion:^(BOOL finished){[self.delegate loaderIsOnScreen];}];
+                              completion:^(BOOL finished){
+                                  if (withFade == YES) {
+                                      [self.delegate loaderIsOnScreen];
+                                  }
+                              }];
 
         
     }
@@ -128,9 +133,9 @@
 }
 
 -(void)removeLoader:(UIView *)superView {
-    NSLog(@"ANYTHING");
+    NSLog(@"Removing Loader...");
     int numViews = [[superView subviews] count];
-
+    
     UIView *viewOne = [[superView subviews] objectAtIndex:numViews-1];
     UIView *viewTwo = [[superView subviews] objectAtIndex:numViews-2];
 
