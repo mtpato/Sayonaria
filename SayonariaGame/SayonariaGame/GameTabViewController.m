@@ -18,6 +18,7 @@
 @property (nonatomic) IBOutlet UITableView *gameTableView;
 @property (nonatomic, strong) NSArray *thisUsersGames;
 @property (nonatomic, strong) NSString *createdGameOpponent;
+@property (nonatomic, strong) UIImageView *fadeImage;
 @end
 
 @implementation GameTabViewController
@@ -34,6 +35,31 @@
      self.loader = nil;
 }
 
+-(void)addSmallFade:(NSUInteger)viewIndex {
+    CGRect screenBounds =[[UIScreen mainScreen] bounds];
+    CGSize screenDimensions = screenBounds.size;
+    
+    UIImage *backgroundImage = [UIImage imageNamed:@"BlankFancyBackIphone@2x.png"];
+    self.fadeImage = [[UIImageView alloc] initWithImage:backgroundImage];
+    self.fadeImage.alpha = 0.0;
+    
+    [self.fadeImage setFrame:CGRectMake(0, 0, screenDimensions.width,screenDimensions.height)];
+    
+    [self.view addSubview:self.fadeImage];
+    
+    [UIImageView animateWithDuration:0.35
+                          animations:^{self.fadeImage.alpha = 1.0;}
+                          completion:^(BOOL finished){
+                              [self removeFade:viewIndex];
+                          }];
+}
+
+-(void)removeFade:(NSUInteger)viewIndex{
+    self.tabBarController.selectedIndex = viewIndex;
+    [self.fadeImage removeFromSuperview];
+    self.fadeImage = nil;
+}
+
 #pragma mark - network communications
 
 -(void)messageRecieved:(NSString *)messageFromServer{
@@ -41,6 +67,7 @@
     //if the server says 'done' it can be connecting, confirming the game type, etc
     if([[messageFromServer substringToIndex:4] isEqualToString:@"done"]){
         if(self.thisNetworkController.currentServerState == (ServerState *)TryingAuthKeyLogin){
+            self.thisNetworkController.currentServerState = (ServerState *)InTabView;
             //request the games list for the table
             [self.thisNetworkController sendMessageToServer:@"getGames"];
         }
@@ -105,11 +132,11 @@
 }
 
 - (IBAction)shopPressed {
-    self.tabBarController.selectedIndex = 1;
+    [self addSmallFade:1];
 }
 
 - (IBAction)optionsPressed:(id)sender {
-    self.tabBarController.selectedIndex = 2;
+    [self addSmallFade:2];
 }
 
 #pragma mark - table view methods
@@ -182,7 +209,6 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated{
-    
     //get rid of the blank tab bar
     CGRect fullScreen = [[UIScreen mainScreen] bounds];
     ((UITabBarController *)self.parentViewController).tabBar.hidden = YES;
@@ -205,6 +231,17 @@
         self.thisNetworkController.currentServerState = (ServerState *)InTabView;
     } else if(self.thisNetworkController.currentServerState == (ServerState *)InTabView) {
         //Do the fade from another menu screen
+        CGRect screenBounds =[[UIScreen mainScreen] bounds];
+        CGSize screenDimensions = screenBounds.size;
+        
+        UIImage *backgroundImage = [UIImage imageNamed:@"BlankFancyBackIphone@2x.png"];
+        self.fadeImage = [[UIImageView alloc] initWithImage:backgroundImage];
+        
+        [self.fadeImage setFrame:CGRectMake(0, 0, screenDimensions.width,screenDimensions.height)];
+        [self.view addSubview:self.fadeImage];
+        [UIImageView animateWithDuration:0.35
+                              animations:^{self.fadeImage.alpha = 0.0;}
+                              completion:^(BOOL finished){}];
     }
 
 }

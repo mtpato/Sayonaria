@@ -9,7 +9,7 @@
 #import "OptionsTabViewController.h"
 
 @interface OptionsTabViewController ()
-
+@property (nonatomic, strong) UIImageView *fadeImage;
 @end
 
 @implementation OptionsTabViewController
@@ -58,6 +58,20 @@
     
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    CGRect screenBounds =[[UIScreen mainScreen] bounds];
+    CGSize screenDimensions = screenBounds.size;
+    
+    UIImage *backgroundImage = [UIImage imageNamed:@"BlankFancyBackIphone@2x.png"];
+    self.fadeImage = [[UIImageView alloc] initWithImage:backgroundImage];
+    
+    [self.fadeImage setFrame:CGRectMake(0, 0, screenDimensions.width,screenDimensions.height)];
+    [self.view addSubview:self.fadeImage];
+    [UIImageView animateWithDuration:0.35
+                          animations:^{self.fadeImage.alpha = 0.0;}
+                          completion:^(BOOL finished){}];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -78,11 +92,36 @@
 #pragma mark - Tab Bar Navigation
 
 - (IBAction)gamesPressed {
-    self.tabBarController.selectedIndex = 0;
+    [self addSmallFade:0];
 }
 
 - (IBAction)shopPressed {
-    self.tabBarController.selectedIndex = 1;
+    [self addSmallFade:1];
+}
+
+-(void)addSmallFade:(NSUInteger)viewIndex {
+    CGRect screenBounds =[[UIScreen mainScreen] bounds];
+    CGSize screenDimensions = screenBounds.size;
+    
+    UIImage *backgroundImage = [UIImage imageNamed:@"BlankFancyBackIphone@2x.png"];
+    self.fadeImage = [[UIImageView alloc] initWithImage:backgroundImage];
+    self.fadeImage.alpha = 0.0;
+    
+    [self.fadeImage setFrame:CGRectMake(0, 0, screenDimensions.width,screenDimensions.height)];
+    
+    [self.view addSubview:self.fadeImage];
+    
+    [UIImageView animateWithDuration:0.35
+                          animations:^{self.fadeImage.alpha = 1.0;}
+                          completion:^(BOOL finished){
+                              [self removeFade:viewIndex];
+                          }];
+}
+
+-(void)removeFade:(NSUInteger)viewIndex{
+    self.tabBarController.selectedIndex = viewIndex;
+    [self.fadeImage removeFromSuperview];
+    self.fadeImage = nil;
 }
 
 #pragma mark - Crap I Don't Use!

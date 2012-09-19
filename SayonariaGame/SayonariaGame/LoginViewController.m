@@ -202,8 +202,17 @@
     //create the network controller
     NetworkController *tempController = [[NetworkController alloc] init];
     self.thisNetworkController = tempController;
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(checkConn:)
+                                                 name:UIApplicationDidBecomeActiveNotification
+                                               object:nil];
+    
 }
 
+-(void)checkConn:(NSNotification *)notification {
+    [self.thisNetworkController checkConnection];
+}
 -(void)viewWillAppear:(BOOL)animated{
     self.UserName.text = @"";
     self.Password.text = @"";
