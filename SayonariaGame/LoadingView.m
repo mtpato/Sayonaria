@@ -9,9 +9,6 @@
 #import "LoadingView.h"
 
 @interface LoadingView ()
-
-
-
 @end
 
 @implementation LoadingView
@@ -34,11 +31,15 @@
     NSLog(@"Creating Loader...");
     
     // Create a new view with the same frame size as the superView
-	LoadingView *loaderView = [[LoadingView alloc] initWithFrame:superView.bounds];
+	//LoadingView *loaderView = [[LoadingView alloc] initWithFrame:superView.bounds];
+    
+    LoadingView *loaderView = [[LoadingView alloc] initWithFrame:[[UIScreen mainScreen]bounds]];
+    
+    
 	// If something's gone wrong, abort!
 	if(!loaderView){ return nil; }
     
-    int numViews = [[superView subviews] count];
+    //set up the screen dimensions
     CGRect screenBounds =[[UIScreen mainScreen] bounds];
     CGSize screenDimensions = screenBounds.size;
     
@@ -47,18 +48,17 @@
         UIImageView *loaderBackground = [[UIImageView alloc] initWithImage:loaderBackgroundImage];
         //add a blank view to the screen (allows us to remove them properly)
         UIImageView *blankView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, screenDimensions.width,screenDimensions.height)];
-        [superView insertSubview:blankView atIndex:numViews+1];
+        [loaderView insertSubview:blankView atIndex:0];
         //add the splash art to the screen
         [loaderBackground setFrame:CGRectMake(0, 0, screenDimensions.width,screenDimensions.height)];
-        [superView insertSubview:loaderBackground atIndex:numViews+2];
+        [loaderView insertSubview:loaderBackground atIndex:1];
     } else {
     
     //make the background of the spinner
     UIImage *loaderBackgroundImage = [UIImage imageNamed:@"BlankFancyBackIphone@2x.png"];
     UIImageView *loaderBackground = [[UIImageView alloc] initWithImage:loaderBackgroundImage];
     [loaderBackground setFrame:CGRectMake(0, 0, screenDimensions.width,screenDimensions.height)];
-    loaderBackground.alpha = 0.0;
-    [superView insertSubview:loaderBackground atIndex:numViews+1];
+    [loaderView insertSubview:loaderBackground atIndex:0];
     
     //create the spinning indicator//
     UIImage *loaderImage = [UIImage imageNamed:@"loader_sayonaria_version_05_A10000.png"];
@@ -101,50 +101,38 @@
     UIViewAutoresizingFlexibleBottomMargin |
     UIViewAutoresizingFlexibleLeftMargin;
     // Place it in the middle of the view
-    activityImageView.frame = CGRectMake(superView.frame.size.width/2,superView.frame.size.height/2, screenDimensions.width/2.5, screenDimensions.width/2.5);
-    activityImageView.center = superView.center;
+    activityImageView.frame = CGRectMake(superView.frame.size.width/2,superView.frame.size.height/2, screenDimensions.width/2, screenDimensions.width/2);
+    UIImageView *blankView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, screenDimensions.width,screenDimensions.height)];
+
+    activityImageView.center = blankView.center;
 	// Add it into the spinnerView
-    [loaderView addSubview:activityImageView];
+    [loaderView insertSubview:activityImageView atIndex:1];
 	// Start it spinning! Don't miss this step
 	[activityImageView startAnimating];
-    activityImageView.alpha = 0.0;
-        
-    [superView insertSubview:loaderView atIndex:numViews+2];
 
+    //set up the fade in
+    loaderView.alpha = 0.0;
     NSTimeInterval animationDuration = 0.0;
     if(withFade == YES) { animationDuration = 0.75;}
         
     [UIImageView animateWithDuration:animationDuration
-                              animations:^{activityImageView.alpha = 1.0;}
-                              completion:^(BOOL finished){}];
-
-    [UIImageView animateWithDuration:animationDuration
-                              animations:^{loaderBackground.alpha = 1.0;}
+                              animations:^{loaderView.alpha = 1.0;}
                               completion:^(BOOL finished){
                                   if (withFade == YES) {
                                       [self.delegate loaderIsOnScreen];
                                   }
-                              }];
-
-        
+                              }]; 
     }
-    
+    [superView insertSubview:loaderView atIndex:[[superView subviews] count]+1];
     return loaderView;
 }
 
 -(void)removeLoader:(UIView *)superView {
     NSLog(@"Removing Loader...");
-    int numViews = [[superView subviews] count];
-    
-    UIView *viewOne = [[superView subviews] objectAtIndex:numViews-1];
-    UIView *viewTwo = [[superView subviews] objectAtIndex:numViews-2];
 
     [UIView animateWithDuration:0.75
-                     animations:^{viewOne.alpha = 0.0;}
-                     completion:^(BOOL finished){[viewOne removeFromSuperview];}];
-    [UIView animateWithDuration:0.75
-                     animations:^{viewTwo.alpha = 0.0;}
-                     completion:^(BOOL finished){[viewTwo removeFromSuperview];}];
+                     animations:^{self.alpha = 0.0;}
+                     completion:^(BOOL finished){[self removeFromSuperview];}];
 }
 
 @end

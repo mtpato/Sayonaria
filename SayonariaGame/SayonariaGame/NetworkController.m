@@ -67,11 +67,13 @@
                             output = [output substringToIndex:([output length]-1)];
                             //NSLog(@"Server Said in NC:%@",output);
                             
+                            //if the message is "done"
                             if([[output substringToIndex:4] isEqualToString:@"done"]){
-                                
+                                //NSLog(@"Connected to the Server");
                                 //if we have JUST connected, send the game type to the server
                                 if(self.currentServerState == (ServerState *)Connecting){
                                     self.currentServerState = (ServerState *)SendingGameType;
+                                    NSLog(@"Sending tileGame");
                                     [self sendMessageToServer:@"tileGame"];
                                     //if we have sent in the game type, try logging in with a pre existing auth key
                                 } else if(self.currentServerState == (ServerState *)SendingGameType){
@@ -81,7 +83,9 @@
                                 } else {
                                     [self.delegate messageRecieved:output];
                                 }
-                            } else {
+                            }
+                            //if the message isn't "done"
+                            else {
                                 [self.delegate messageRecieved:output];
                             }
 						}
@@ -119,6 +123,7 @@
                       forMode:NSDefaultRunLoopMode];
     self.inputStream = nil;
     self.outputStream = nil;
+    NSLog(@"Closing Communications");
 }
 
 #pragma mark - Network Communication
@@ -150,6 +155,12 @@
         self.currentServerState = (ServerState *)TryingAuthKeyLogin;
         NSString *loginString = [NSString stringWithFormat:@"%@%@%@%@", @"keyLogin:",[defaults objectForKey:USER_NAME], @",", [defaults objectForKey:AUTH_KEY]];
         [self sendMessageToServer:loginString];
+    }
+}
+
+-(void)checkConnection{
+    if(self.inputStream == nil){
+        [self initNetworkCommunication];
     }
 }
 

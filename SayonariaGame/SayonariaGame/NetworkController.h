@@ -46,5 +46,6 @@ typedef enum {
 -(void)initNetworkCommunication;
 -(void)closeNetworkCommunication;
 -(void)setCurrentServerState:(ServerState *)currentServerState;
+-(void)checkConnection;
 
 @end

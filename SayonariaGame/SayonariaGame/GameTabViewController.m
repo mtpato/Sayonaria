@@ -40,15 +40,21 @@
     NSLog(@"server said: %@", messageFromServer);
     //if the server says 'done' it can be connecting, confirming the game type, etc
     if([[messageFromServer substringToIndex:4] isEqualToString:@"done"]){
+        if(self.thisNetworkController.currentServerState == (ServerState *)TryingAuthKeyLogin){
+            //request the games list for the table
+            [self.thisNetworkController sendMessageToServer:@"getGames"];
+        }
         if([messageFromServer isEqualToString:@"done:gameCreated"]){
             [self showGameScreenNotAnimated:@"New Game"];
             //[self performSegueWithIdentifier:@"showGameScreen" sender:@"New Game"];
         }
     }
-    if([[messageFromServer substringToIndex:5] isEqualToString:@"games"]){
-        if([messageFromServer isEqualToString:@"games"]){}else{
-        [self parseGames:[messageFromServer substringFromIndex:6]];
-        [self.gameTableView reloadData];
+    if([messageFromServer length] > 4){
+        if([[messageFromServer substringToIndex:5] isEqualToString:@"games"]){
+            if([messageFromServer isEqualToString:@"games"]){}else{
+                [self parseGames:[messageFromServer substringFromIndex:6]];
+                [self.gameTableView reloadData];
+            }
         }
     }
 }
@@ -223,6 +229,16 @@
     self.tabBarController.tabBar.hidden = YES;
     
     [self.gameNewButton.titleLabel setFont:[UIFont fontWithName:@"Bauhaus 93" size:20]];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(checkConn:)
+                                                 name:UIApplicationDidBecomeActiveNotification
+                                               object:nil];
+
+}
+
+-(void)checkConn:(NSNotification *)notification {
+    [self.thisNetworkController checkConnection];
 }
 
 - (void)viewDidUnload
@@ -236,6 +252,9 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+-(void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 
 #pragma mark - segue
 

@@ -168,10 +168,38 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    //set the delegates for the input boxes
     self.UserName.delegate = self;
     self.Password.delegate = self;
-    [self.registerButton.titleLabel setFont:[UIFont fontWithName:@"Bauhaus 93" size:20]];
+    
+    //set up the buttons, texts, etc
+    
+    self.loginText.layer.shadowColor = [UIColor whiteColor].CGColor;
+    self.loginText.layer.shadowRadius = 4.0f;
+    self.loginText.layer.shadowOpacity = .9;
+    self.loginText.layer.shadowOffset = CGSizeZero;
+    self.loginText.layer.masksToBounds = NO;
+
+    self.registerText.layer.shadowColor = [UIColor whiteColor].CGColor;
+    self.registerText.layer.shadowRadius = 6.0f;
+    self.registerText.layer.shadowOpacity = .9;
+    self.registerText.layer.shadowOffset = CGSizeZero;
+    self.registerText.layer.masksToBounds = NO;
+    
+    //UIImage *fieldBGImage = [[UIImage imageNamed:@"Text_Box_Back.png"]stretchableImageWithLeftCapWidth:0 topCapHeight:0];
+    //[self.Password setBackground:fieldBGImage];
+    
+    [self.loginText setFont:[UIFont fontWithName:@"Bauhaus 93" size:30]];
+    [self.registerText setFont:[UIFont fontWithName:@"Bauhaus 93" size:17]];
+    [self.usernameText setFont:[UIFont fontWithName:@"Bauhaus 93" size:17]];
+    [self.passwordText setFont:[UIFont fontWithName:@"Bauhaus 93" size:17]];
     [self.loginButton.titleLabel setFont:[UIFont fontWithName:@"Bauhaus 93" size:20]];
+    //self.UserName.background = [UIImage imageNamed:@"Text_Box_Back.png"];
+    //self.Password.background = [[UIImage imageNamed:@"Text_Box_Back.png"] stretchableImageWithLeftCapWidth:0 topCapHeight:0];
+    [self.UserName setFont:[UIFont fontWithName:@"Bauhaus 93" size:17]];
+    [self.Password setFont:[UIFont fontWithName:@"Bauhaus 93" size:17]];
+    
+    //create the network controller
     NetworkController *tempController = [[NetworkController alloc] init];
     self.thisNetworkController = tempController;
 }

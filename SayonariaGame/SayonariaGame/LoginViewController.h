@@ -18,6 +18,10 @@
 @property (nonatomic,weak) IBOutlet UITextField *Password;
 @property (nonatomic,weak) IBOutlet UIButton *registerButton;
 @property (nonatomic,weak) IBOutlet UIButton *loginButton;
+@property (nonatomic,weak) IBOutlet UILabel *registerText;
+@property (nonatomic,weak) IBOutlet UILabel *usernameText;
+@property (nonatomic,weak) IBOutlet UILabel *passwordText;
+@property (nonatomic,weak) IBOutlet UILabel *loginText;
 @property (nonatomic,strong) NetworkController *thisNetworkController;
 @property (nonatomic, strong) LoadingView * loader;
 
