@@ -194,7 +194,6 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     cell = [tableView cellForRowAtIndexPath:indexPath];
     [self showGameScreenNotAnimated:cell];
-    //[self performSegueWithIdentifier:@"showGameScreen" sender:cell];
 }
 
 #pragma mark - loading and other
