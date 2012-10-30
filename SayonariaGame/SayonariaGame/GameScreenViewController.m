@@ -10,7 +10,6 @@
 
 @interface GameScreenViewController ()
 
-@property (nonatomic,weak) LoadingView * loader;
 @property (nonatomic) ServerState *currentServerState;
 
 @property (nonatomic) NSInteger TotalCellsNum;
@@ -59,8 +58,9 @@
 
 #pragma mark - server Communications and delegate methods
 
--(void)putLoaderInViewWithSplash:(BOOL)isSplash{
-    //self.loader = [LoadingView loadSpinnerIntoView:self.view withSplash:isSplash];
+-(void)putLoaderInViewWithSplash:(BOOL)isSplash withFade:(BOOL)isFade{
+    self.loader = [[LoadingView alloc] init];
+    self.loader = [self.loader loadSpinnerIntoView:self.view withSplash:isSplash withFade:isFade];
 }
 
 -(void)removeLoaderFromView{
@@ -251,11 +251,11 @@
 
 
 -(void)viewWillAppear:(BOOL)animated{
-    [self putLoaderInViewWithSplash:NO];
+    [self putLoaderInViewWithSplash:NO withFade:NO];
 }
 
 -(void)viewDidAppear:(BOOL)animated{
-    [self removeLoaderFromView]; //ANDREW, DO THIS AFTER YOU HAVE FULLY INITIALIZED THE VIEW, IT WILL HIDE ALL THE DRAWING PROPERLY
+    [self removeLoaderFromView]; //ANDREW, DO THIS AFTER YOU HAVE FULLY INITIALIZED THE VIEW, THE LOADER WILL HIDE EVERYTHING IN THE MEANTIME
 }
 
 - (void)viewDidUnload

@@ -11,7 +11,7 @@
 #import "NetworkStorageTabBarController.h"
 #import "GameScreenViewController.h"
 
-@interface GameTabViewController : UIViewController <NetworkControllerDelegate,UITableViewDataSource,UITableViewDelegate>
+@interface GameTabViewController : UIViewController <NetworkControllerDelegate,UITableViewDataSource,UITableViewDelegate,LoadingViewDelegate>
 @property (nonatomic,strong) NetworkController *thisNetworkController;
 @property (nonatomic,strong) LoadingView * loader;
 @property (nonatomic,weak) IBOutlet UIButton *gameNewButton;

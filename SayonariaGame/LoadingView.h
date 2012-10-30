@@ -12,6 +12,7 @@
 @class LoadingView;
 
 @protocol LoadingViewDelegate
+@optional
 -(void)loaderIsOnScreen;
 @end
 

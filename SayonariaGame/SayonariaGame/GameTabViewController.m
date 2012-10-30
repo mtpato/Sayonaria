@@ -19,15 +19,21 @@
 @property (nonatomic, strong) NSArray *thisUsersGames;
 @property (nonatomic, strong) NSString *createdGameOpponent;
 @property (nonatomic, strong) UIImageView *fadeImage;
+@property (nonatomic, strong) UITableViewCell *selectedCell;
 @end
 
 @implementation GameTabViewController
 
 #pragma mark - loader methods
 
--(void)putLoaderInViewWithSplash:(BOOL)isSplash{
+-(void)putLoaderInViewWithSplash:(BOOL)isSplash withFade:(BOOL)isFade{
     self.loader = [[LoadingView alloc] init];
-    self.loader = [self.loader loadSpinnerIntoView:self.view withSplash:isSplash withFade:NO];
+    self.loader.delegate = self;
+    self.loader = [self.loader loadSpinnerIntoView:self.view withSplash:isSplash withFade:isFade];
+}
+
+-(void)loaderIsOnScreen {
+    [self showGameScreenNotAnimated:self.selectedCell];
 }
 
 -(void)removeLoaderFromView{
@@ -193,8 +199,9 @@
     static NSString *CellIdentifier = @"GameCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     cell = [tableView cellForRowAtIndexPath:indexPath];
-    [self showGameScreenNotAnimated:cell];
-    //[self performSegueWithIdentifier:@"showGameScreen" sender:cell];
+    self.selectedCell = cell;
+    //put the Loader into the view
+    [self putLoaderInViewWithSplash:NO withFade:YES];
 }
 
 #pragma mark - loading and other
@@ -221,12 +228,12 @@
     
     if(self.thisNetworkController.currentServerState == (ServerState *)TryingAuthKeyLogin){
         //put in splash screen
-        [self putLoaderInViewWithSplash:YES];
+        [self putLoaderInViewWithSplash:YES withFade:NO];
         //tell the network we are going to be in the main views
         self.thisNetworkController.currentServerState = (ServerState *)InTabView;
     } else if(self.thisNetworkController.currentServerState == (ServerState *)ConnectedAwaitingLogon){
         //put in spinner
-        [self putLoaderInViewWithSplash:NO];
+        [self putLoaderInViewWithSplash:NO withFade:NO];
         //tell the network we are going to be in the main views
         self.thisNetworkController.currentServerState = (ServerState *)InTabView;
     } else if(self.thisNetworkController.currentServerState == (ServerState *)InTabView) {
@@ -296,8 +303,6 @@
 #pragma mark - segue
 
 -(void)showGameScreenNotAnimated:(id)cellOrString{
-    //put the Loader into the view? Figure this part out later
-
     
     //create the tabBarView from the storyboard
     GameScreenViewController *newGameScreen = [self.storyboard instantiateViewControllerWithIdentifier:@"gameScreen"];
@@ -306,15 +311,11 @@
     newGameScreen.thisNetworkController = self.thisNetworkController;
     
     //pass appropriate game information
-    if([cellOrString isKindOfClass: [NSString class]]){
-        newGameScreen.opponentName = self.createdGameOpponent;
-    } else {
-        static NSString *CellIdentifier = @"GameCell";
-        UITableViewCell *cell = [self.gameTableView dequeueReusableCellWithIdentifier:CellIdentifier];
-        cell = cellOrString;
-        newGameScreen.opponentName = cell.textLabel.text;
-        newGameScreen.gameID = cell.detailTextLabel.text;
-    }
+    static NSString *CellIdentifier = @"GameCell";
+    UITableViewCell *cell = [self.gameTableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    cell = cellOrString;
+    newGameScreen.opponentName = cell.textLabel.text;
+    newGameScreen.gameID = cell.detailTextLabel.text;
     
     //segue!
     [self.navigationController pushViewController:newGameScreen animated:NO];
