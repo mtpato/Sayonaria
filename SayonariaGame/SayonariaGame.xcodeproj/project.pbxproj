@@ -192,6 +192,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B100866F1643340B00385673 /* Views_Outside_Tabs */ = {
+			isa = PBXGroup;
+			children = (
+				B0CB261915F505A600CFC943 /* GameScreenViewController.h */,
+				B0CB261A15F505A600CFC943 /* GameScreenViewController.m */,
+			);
+			name = Views_Outside_Tabs;
+			sourceTree = "<group>";
+		};
 		B13B30E415D0C7BF003A4E89 = {
 			isa = PBXGroup;
 			children = (
@@ -236,8 +245,7 @@
 				B1FAD0A81602F27200D920F9 /* Sayonaria_Art */,
 				B13B310515D0C7BF003A4E89 /* MainStoryboard_iPhone.storyboard */,
 				B13B310815D0C7BF003A4E89 /* MainStoryboard_iPad.storyboard */,
-				B0CB261915F505A600CFC943 /* GameScreenViewController.h */,
-				B0CB261A15F505A600CFC943 /* GameScreenViewController.m */,
+				B100866F1643340B00385673 /* Views_Outside_Tabs */,
 				B1F6405815F2902200305D37 /* Login */,
 				B1F6405915F2903200305D37 /* TabView */,
 				B13B30FA15D0C7BF003A4E89 /* Supporting Files */,

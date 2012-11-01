@@ -10,10 +10,11 @@
 #import "NetworkController.h"
 #import "NetworkStorageTabBarController.h"
 
-@interface GameScreenViewController : UIViewController <NetworkControllerDelegate>
+@interface GameScreenViewController : UIViewController <NetworkControllerDelegate,LoadingViewDelegate>
 
 
 @property (weak, nonatomic) IBOutlet UIScrollView *GameBoardView;
+@property (nonatomic,strong) LoadingView * loader;
 @property (nonatomic, strong) NetworkController *thisNetworkController;
 @property (nonatomic, strong) NSString *opponentName;
 @property (nonatomic, strong) NSString *gameID;

@@ -10,7 +10,6 @@
 
 @interface GameScreenViewController ()
 
-@property (nonatomic,weak) LoadingView * loader;
 @property (nonatomic) ServerState *currentServerState;
 
 @property (nonatomic) NSInteger TotalCellsNum;
@@ -38,29 +37,34 @@
 
 @implementation GameScreenViewController
 /*@synthesize GameBoardView;
-@synthesize TotalCellsNum;
-@synthesize CellHeight;
-@synthesize CellWidth;
-@synthesize LengthCellsNum;
-@synthesize WidthCellsNum;
-@synthesize FrameDictionary;
-@synthesize PastMovesDictionary;
-@synthesize TouchTolerance;
-@synthesize Team1;
-@synthesize Team2;
-@synthesize Team1CellType;
-@synthesize Team2CellType;
-@synthesize TeamTurn;
-@synthesize BorderGrid;
-@synthesize NeutralTile;
-@synthesize NeutralGlow;*/
+ @synthesize TotalCellsNum;
+ @synthesize CellHeight;
+ @synthesize CellWidth;
+ @synthesize LengthCellsNum;
+ @synthesize WidthCellsNum;
+ @synthesize FrameDictionary;
+ @synthesize PastMovesDictionary;
+ @synthesize TouchTolerance;
+ @synthesize Team1;
+ @synthesize Team2;
+ @synthesize Team1CellType;
+ @synthesize Team2CellType;
+ @synthesize TeamTurn;
+ @synthesize BorderGrid;
+ @synthesize NeutralTile;
+ @synthesize NeutralGlow;*/
 
 
 
 #pragma mark - server Communications and delegate methods
 
--(void)putLoaderInViewWithSplash:(BOOL)isSplash{
-    //self.loader = [LoadingView loadSpinnerIntoView:self.view withSplash:isSplash];
+-(void)putLoaderInViewWithSplash:(BOOL)isSplash withFade:(BOOL)isFade{
+    self.loader = [[LoadingView alloc] init];
+    self.loader = [self.loader loadSpinnerIntoView:self.view withSplash:isSplash withFade:isFade];
+}
+
+-(void)loaderIsOnScreen{
+    [self removeLoaderFromView];
 }
 
 -(void)removeLoaderFromView{
@@ -125,13 +129,13 @@
             
             
             self.NeutralGlow.animationImages = [NSArray arrayWithObjects:
-                                           [UIImage imageNamed:@"neutral_to_inactive_glow_frames_01.png"],
-                                           [UIImage imageNamed:@"neutral_to_inactive_glow_frames_02.png"],
-                                           [UIImage imageNamed:@"neutral_to_inactive_glow_frames_03.png"],
-                                           [UIImage imageNamed:@"neutral_to_inactive_glow_frames_04.png"],
-                                           [UIImage imageNamed:@"neutral_to_inactive_glow_frames_05.png"],
-                                           [UIImage imageNamed:@"neutral_to_inactive_glow_frames_06.png"]
-                                           , nil];
+                                                [UIImage imageNamed:@"neutral_to_inactive_glow_frames_01.png"],
+                                                [UIImage imageNamed:@"neutral_to_inactive_glow_frames_02.png"],
+                                                [UIImage imageNamed:@"neutral_to_inactive_glow_frames_03.png"],
+                                                [UIImage imageNamed:@"neutral_to_inactive_glow_frames_04.png"],
+                                                [UIImage imageNamed:@"neutral_to_inactive_glow_frames_05.png"],
+                                                [UIImage imageNamed:@"neutral_to_inactive_glow_frames_06.png"]
+                                                , nil];
             
             
             self.NeutralGlow.animationDuration = 1.0;
@@ -236,7 +240,7 @@
     
     self.Team1=@"Diamond";
     self.Team2=@"Gold";
-    		
+    
     if(self.Team1==@"Coal"){self.Team1CellType=[UIImage imageNamed:@"epato_new_game_minimal_tiles_coal"];}
     if(self.Team1==@"Diamond"){self.Team1CellType=[UIImage imageNamed:@"epato_new_game_minimal_tiles_diamond.png"];}
     if(self.Team1==@"Gold"){self.Team1CellType=[UIImage imageNamed:@"epato_new_game_minimal_tiles_gold.png"];}
@@ -251,11 +255,11 @@
 
 
 -(void)viewWillAppear:(BOOL)animated{
-    [self putLoaderInViewWithSplash:NO];
+    [self putLoaderInViewWithSplash:NO withFade:NO];
 }
 
 -(void)viewDidAppear:(BOOL)animated{
-    [self removeLoaderFromView]; //ANDREW, DO THIS AFTER YOU HAVE FULLY INITIALIZED THE VIEW, IT WILL HIDE ALL THE DRAWING PROPERLY
+    [self removeLoaderFromView]; //ANDREW, DO THIS AFTER YOU HAVE FULLY INITIALIZED THE VIEW, THE LOADER WILL HIDE EVERYTHING IN THE MEANTIME
 }
 
 - (void)viewDidUnload
@@ -267,34 +271,3 @@
 
 
 @end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

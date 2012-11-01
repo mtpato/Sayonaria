@@ -19,20 +19,26 @@
 @property (nonatomic, strong) NSArray *thisUsersGames;
 @property (nonatomic, strong) NSString *createdGameOpponent;
 @property (nonatomic, strong) UIImageView *fadeImage;
+@property (nonatomic, strong) UITableViewCell *selectedCell;
 @end
 
 @implementation GameTabViewController
 
 #pragma mark - loader methods
 
--(void)putLoaderInViewWithSplash:(BOOL)isSplash{
+-(void)putLoaderInViewWithSplash:(BOOL)isSplash withFade:(BOOL)isFade{
     self.loader = [[LoadingView alloc] init];
-    self.loader = [self.loader loadSpinnerIntoView:self.view withSplash:isSplash withFade:NO];
+    self.loader.delegate = self;
+    self.loader = [self.loader loadSpinnerIntoView:self.view withSplash:isSplash withFade:isFade];
+}
+
+-(void)loaderIsOnScreen {
+    [self showGameScreenNotAnimated:self.selectedCell];
 }
 
 -(void)removeLoaderFromView{
-     [self.loader removeLoader:self.view];
-     self.loader = nil;
+    [self.loader removeLoader:self.view];
+    self.loader = nil;
 }
 
 -(void)addSmallFade:(NSUInteger)viewIndex {
@@ -152,7 +158,7 @@
     if(self.thisUsersGames == nil) {
         total = 1;
     }
-    return total;    
+    return total;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
@@ -169,23 +175,23 @@
     
     //set up the thumbnail image of the cell
     //cell.imageView.image = [UIImage imageNamed:@"THUMBNAILIMAGEHERE.png"];
-
+    
     opponentNameLabel.font = [UIFont fontWithName:@"Bauhaus 93" size:20];
     gameIDLabel.font = [UIFont fontWithName:@"Bauhaus 93" size:15];
 	// Extract the game informaton
-
+    
     if(self.thisUsersGames == nil){
         opponentNameLabel.text = @"No Games!";
         gameIDLabel.text = @"Some stuff about the game";
     } else
-    if(indexPath.row <=[self.thisUsersGames count]) {
-        NSDictionary *gameDictionary = [self.thisUsersGames objectAtIndex:(indexPath.row)];
-        //NSString *gameID = [gameDictionary objectForKey:GAME_ID];
-        NSString *opponentName = [gameDictionary objectForKey:OPPONENT_NAME];
-    
-        opponentNameLabel.text = opponentName;
-        gameIDLabel.text = @"Some stuff about the game";
-    }
+        if(indexPath.row <=[self.thisUsersGames count]) {
+            NSDictionary *gameDictionary = [self.thisUsersGames objectAtIndex:(indexPath.row)];
+            //NSString *gameID = [gameDictionary objectForKey:GAME_ID];
+            NSString *opponentName = [gameDictionary objectForKey:OPPONENT_NAME];
+            
+            opponentNameLabel.text = opponentName;
+            gameIDLabel.text = @"Some stuff about the game";
+        }
     return cell;
 }
 
@@ -193,7 +199,9 @@
     static NSString *CellIdentifier = @"GameCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     cell = [tableView cellForRowAtIndexPath:indexPath];
-    [self showGameScreenNotAnimated:cell];
+    self.selectedCell = cell;
+    //put the Loader into the view
+    [self putLoaderInViewWithSplash:NO withFade:YES];
 }
 
 #pragma mark - loading and other
@@ -220,12 +228,12 @@
     
     if(self.thisNetworkController.currentServerState == (ServerState *)TryingAuthKeyLogin){
         //put in splash screen
-        [self putLoaderInViewWithSplash:YES];
+        [self putLoaderInViewWithSplash:YES withFade:NO];
         //tell the network we are going to be in the main views
         self.thisNetworkController.currentServerState = (ServerState *)InTabView;
     } else if(self.thisNetworkController.currentServerState == (ServerState *)ConnectedAwaitingLogon){
         //put in spinner
-        [self putLoaderInViewWithSplash:NO];
+        [self putLoaderInViewWithSplash:NO withFade:NO];
         //tell the network we are going to be in the main views
         self.thisNetworkController.currentServerState = (ServerState *)InTabView;
     } else if(self.thisNetworkController.currentServerState == (ServerState *)InTabView) {
@@ -242,7 +250,7 @@
                               animations:^{self.fadeImage.alpha = 0.0;}
                               completion:^(BOOL finished){}];
     }
-
+    
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -253,7 +261,7 @@
     self.gameTableView.dataSource = self;
     self.gameTableView.delegate = self;
     [self.gameTableView reloadData];
-
+    
     //request the games list for the table
     [self.thisNetworkController sendMessageToServer:@"getGames"];
 }
@@ -270,7 +278,7 @@
                                              selector:@selector(checkConn:)
                                                  name:UIApplicationDidBecomeActiveNotification
                                                object:nil];
-
+    
 }
 
 -(void)checkConn:(NSNotification *)notification {
@@ -295,8 +303,6 @@
 #pragma mark - segue
 
 -(void)showGameScreenNotAnimated:(id)cellOrString{
-    //put the Loader into the view? Figure this part out later
-
     
     //create the tabBarView from the storyboard
     GameScreenViewController *newGameScreen = [self.storyboard instantiateViewControllerWithIdentifier:@"gameScreen"];
@@ -305,15 +311,11 @@
     newGameScreen.thisNetworkController = self.thisNetworkController;
     
     //pass appropriate game information
-    if([cellOrString isKindOfClass: [NSString class]]){
-        newGameScreen.opponentName = self.createdGameOpponent;
-    } else {
-        static NSString *CellIdentifier = @"GameCell";
-        UITableViewCell *cell = [self.gameTableView dequeueReusableCellWithIdentifier:CellIdentifier];
-        cell = cellOrString;
-        newGameScreen.opponentName = cell.textLabel.text;
-        newGameScreen.gameID = cell.detailTextLabel.text;
-    }
+    static NSString *CellIdentifier = @"GameCell";
+    UITableViewCell *cell = [self.gameTableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    cell = cellOrString;
+    newGameScreen.opponentName = cell.textLabel.text;
+    newGameScreen.gameID = cell.detailTextLabel.text;
     
     //segue!
     [self.navigationController pushViewController:newGameScreen animated:NO];
