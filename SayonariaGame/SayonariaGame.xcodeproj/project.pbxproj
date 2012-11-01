@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B0CB261B15F505A600CFC943 /* GameScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0CB261A15F505A600CFC943 /* GameScreenViewController.m */; };
+		B10086731643346400385673 /* NewGameOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B10086721643346400385673 /* NewGameOptionsViewController.m */; };
 		B13B30F415D0C7BF003A4E89 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B13B30F315D0C7BF003A4E89 /* UIKit.framework */; };
 		B13B30F615D0C7BF003A4E89 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B13B30F515D0C7BF003A4E89 /* Foundation.framework */; };
 		B13B30F815D0C7BF003A4E89 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B13B30F715D0C7BF003A4E89 /* CoreGraphics.framework */; };
@@ -88,6 +89,8 @@
 /* Begin PBXFileReference section */
 		B0CB261915F505A600CFC943 /* GameScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScreenViewController.h; sourceTree = "<group>"; };
 		B0CB261A15F505A600CFC943 /* GameScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameScreenViewController.m; sourceTree = "<group>"; };
+		B10086711643346400385673 /* NewGameOptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewGameOptionsViewController.h; sourceTree = "<group>"; };
+		B10086721643346400385673 /* NewGameOptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewGameOptionsViewController.m; sourceTree = "<group>"; };
 		B13B30EF15D0C7BF003A4E89 /* SayonariaGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SayonariaGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B13B30F315D0C7BF003A4E89 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B13B30F515D0C7BF003A4E89 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -197,6 +200,8 @@
 			children = (
 				B0CB261915F505A600CFC943 /* GameScreenViewController.h */,
 				B0CB261A15F505A600CFC943 /* GameScreenViewController.m */,
+				B10086711643346400385673 /* NewGameOptionsViewController.h */,
+				B10086721643346400385673 /* NewGameOptionsViewController.m */,
 			);
 			name = Views_Outside_Tabs;
 			sourceTree = "<group>";
@@ -525,6 +530,7 @@
 				B0CB261B15F505A600CFC943 /* GameScreenViewController.m in Sources */,
 				B1CEE036160517110057A30C /* ShopTabViewController.m in Sources */,
 				B1CEE0391605179A0057A30C /* OptionsTabViewController.m in Sources */,
+				B10086731643346400385673 /* NewGameOptionsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
