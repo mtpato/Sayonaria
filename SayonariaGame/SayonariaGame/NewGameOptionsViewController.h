@@ -7,7 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NetworkController.h"
+#import "NetworkStorageTabBarController.h"
+#import "GameScreenViewController.h"
 
-@interface NewGameOptionsViewController : UIViewController
+@interface NewGameOptionsViewController : UIViewController<NetworkControllerDelegate,LoadingViewDelegate,UITextFieldDelegate>
+
+@property (nonatomic, strong) NetworkController *thisNetworkController;
+@property (nonatomic,strong) LoadingView * loader;
+@property (nonatomic,weak) IBOutlet UIButton *background;
+@property (nonatomic,weak) IBOutlet UITextField *opponentNameBox;
+@property (nonatomic,weak) IBOutlet UIButton *opponentButton;
+@property (nonatomic,weak) IBOutlet UIButton *randomButton;
+@property (nonatomic, weak) IBOutlet UILabel *orLabel;
+@property (nonatomic, weak) IBOutlet UILabel *opponentTypeLabel;
 
 @end

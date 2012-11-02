@@ -61,7 +61,11 @@
 }
 
 -(void)removeFade:(NSUInteger)viewIndex{
+    if (viewIndex == 1000) {
+        [self showNewGameOptions];
+    } else {
     self.tabBarController.selectedIndex = viewIndex;
+    }
     [self.fadeImage removeFromSuperview];
     self.fadeImage = nil;
 }
@@ -131,10 +135,7 @@
 #pragma mark - actions and tab bar navigation
 
 - (IBAction)newGamePressed:(id)sender {
-    NSString *messageForServer = @"newGame:";
-    messageForServer = [messageForServer stringByAppendingString:self.OpponentName.text];
-    self.createdGameOpponent = self.OpponentName.text;
-    [self.thisNetworkController sendMessageToServer:messageForServer];
+    [self addSmallFade:1000];
 }
 
 - (IBAction)shopPressed {
@@ -302,9 +303,20 @@
 
 #pragma mark - segue
 
+-(void)showNewGameOptions{
+    //create the screen from the storyboard
+    NewGameOptionsViewController *newGameOptionsScreen = [self.storyboard instantiateViewControllerWithIdentifier:@"newGameOptionsScreen"];
+    
+    //transfer the networking controls
+    newGameOptionsScreen.thisNetworkController = self.thisNetworkController;
+    
+    //segue!
+    [self.navigationController pushViewController:newGameOptionsScreen animated:NO];
+}
+
 -(void)showGameScreenNotAnimated:(id)cellOrString{
     
-    //create the tabBarView from the storyboard
+    //create the game screen from the storyboard
     GameScreenViewController *newGameScreen = [self.storyboard instantiateViewControllerWithIdentifier:@"gameScreen"];
     
     //transfer the networking controls

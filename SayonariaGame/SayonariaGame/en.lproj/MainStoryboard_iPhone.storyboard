@@ -407,12 +407,6 @@
                                     <action selector="newGamePressed:" destination="9om-ep-sOX" eventType="touchUpInside" id="LhH-8o-Vxa"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="slH-vQ-eJr">
-                                <rect key="frame" x="0.0" y="0.0" width="27" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="101" sectionHeaderHeight="22" sectionFooterHeight="22" id="pgC-MT-Vjb">
                                 <rect key="frame" x="91" y="113" width="229" height="273"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -487,13 +481,13 @@
                     </view>
                     <tabBarItem key="tabBarItem" enabled="NO" title="Games" id="XBk-Su-PJ6"/>
                     <connections>
-                        <outlet property="OpponentName" destination="slH-vQ-eJr" id="5ez-tO-KZW"/>
                         <outlet property="gameNewButton" destination="dKV-CP-jzo" id="8EE-Ub-bLO"/>
                         <outlet property="gameTableView" destination="pgC-MT-Vjb" id="gVu-ui-S3x"/>
                         <outlet property="gamesBackground" destination="6PU-u5-14Q" id="cfi-MJ-QQp"/>
                         <outlet property="optionsButton" destination="fQl-kx-WcI" id="igX-tZ-CaY"/>
                         <outlet property="shopButton" destination="JzI-l5-Oei" id="wzF-Gm-Wmn"/>
                         <segue destination="BS0-Cj-qeR" kind="push" identifier="showGameScreen" id="kUX-72-zr7"/>
+                        <segue destination="itA-kF-Sst" kind="push" identifier="showNewGameOptions" id="AbA-O2-ztc"/>
                     </connections>
                 </viewController>
             </objects>
@@ -508,8 +502,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="431"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="816b8630631e7b357474cb7b3330b6f1_large.png" id="qBe-UU-jAr">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="431"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="BlankFancyBackIphone@2x.png" id="qBe-UU-jAr">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="481"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Xtb-gw-zFa">
@@ -535,7 +529,97 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="684" y="-536"/>
+            <point key="canvasLocation" x="683" y="-858"/>
+        </scene>
+        <!--New Game Options View Controller-->
+        <scene sceneID="ofc-iN-94E">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GwH-PJ-I9Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="newGameOptionsScreen" id="itA-kF-Sst" customClass="NewGameOptionsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QCd-ZY-W3c">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="431"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="b1H-cb-ZLX">
+                                <rect key="frame" x="-2" y="0.0" width="325" height="480"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" backgroundImage="BlankFancyBackIphone@2x.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="BackgroundClicked:" destination="2" eventType="touchUpInside" id="Ot6-qb-5pG"/>
+                                    <action selector="backgroundPressed" destination="itA-kF-Sst" eventType="touchUpInside" id="ry3-i7-zZ7"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Choose Opponent Type:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="fC9-Ca-Ic7">
+                                <rect key="frame" x="82" y="51" width="156" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="or" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="Ocq-yN-zOD">
+                                <rect key="frame" x="118" y="185" width="84" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="lRx-kH-H76">
+                                <rect key="frame" x="65" y="236" width="190" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="With Opponent:" backgroundImage="Generic_Button.png">
+                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                    <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="opponentPressed" destination="itA-kF-Sst" eventType="touchUpInside" id="gqw-2z-UAV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="dBm-nM-zZr">
+                                <rect key="frame" x="65" y="131" width="190" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Random!" backgroundImage="Generic_Button.png">
+                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                    <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="slH-vQ-eJr">
+                                <rect key="frame" x="46" y="274" width="229" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="NLX-2c-gTt"/>
+                    <connections>
+                        <outlet property="background" destination="b1H-cb-ZLX" id="6Wp-bG-VLa"/>
+                        <outlet property="opponentButton" destination="lRx-kH-H76" id="mUm-YC-GhZ"/>
+                        <outlet property="opponentNameBox" destination="slH-vQ-eJr" id="hNZ-Vh-bn1"/>
+                        <outlet property="opponentTypeLabel" destination="fC9-Ca-Ic7" id="KE6-Oy-o0i"/>
+                        <outlet property="orLabel" destination="Ocq-yN-zOD" id="v8h-Ng-orb"/>
+                        <outlet property="randomButton" destination="dBm-nM-zZr" id="hgF-zv-aVc"/>
+                        <segue destination="BS0-Cj-qeR" kind="push" id="ZgY-AQ-ck0"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="683" y="-299"/>
         </scene>
         <!--Network Storage Tab Bar Controller-->
         <scene sceneID="Q4j-P7-u0D">
@@ -578,7 +662,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="816b8630631e7b357474cb7b3330b6f1_large.png" width="1920" height="1080"/>
         <image name="BlankFancyBackIphone@2x.png" width="640" height="960"/>
         <image name="GamesBackIphone@2x.png" width="640" height="960"/>
         <image name="Generic_Button.png" width="386" height="304"/>
@@ -595,6 +678,7 @@
         <class className="GameScreenViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/GameScreenViewController.h"/>
             <relationships>
+                <relationship kind="action" name="LayTile:" candidateClass="UITapGestureRecognizer"/>
                 <relationship kind="outlet" name="GameBoardView" candidateClass="UIScrollView"/>
                 <relationship kind="outlet" name="tapRecognizer" candidateClass="UIGestureRecognizer"/>
             </relationships>
@@ -631,9 +715,23 @@
         <class className="NetworkStorageTabBarController" superclassName="UITabBarController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NetworkStorageTabBarController.h"/>
         </class>
+        <class className="NewGameOptionsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NewGameOptionsViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="background" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="opponentButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="opponentNameBox" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="opponentTypeLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="orLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="randomButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
         <class className="NewUserViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NewUserViewController.h"/>
             <relationships>
+                <relationship kind="action" name="backgroundPressed:"/>
+                <relationship kind="action" name="cancelPressed:"/>
+                <relationship kind="action" name="createPressed:"/>
                 <relationship kind="outlet" name="confirmPassword" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="email" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="password" candidateClass="UITextField"/>
@@ -655,4 +753,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="ZgY-AQ-ck0"/>
+    </inferredMetricsTieBreakers>
 </document>
