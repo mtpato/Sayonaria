@@ -40,9 +40,18 @@
 }
 
 - (IBAction)opponentPressed {
-     NSString *messageForServer = @"newGame:";
-     messageForServer = [messageForServer stringByAppendingString:self.opponentNameBox.text];
-     [self.thisNetworkController sendMessageToServer:messageForServer];
+    //figure out who the current user is
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *currentUser = [defaults objectForKey:USER_NAME];
+    
+    if([[currentUser uppercaseString] isEqualToString:[self.opponentNameBox.text uppercaseString]]){
+        //error! can't make a game with yourself!
+        [self badOpponentAlert];
+    } else {
+        NSString *messageForServer = @"newGame:";
+        messageForServer = [messageForServer stringByAppendingString:self.opponentNameBox.text];
+        [self.thisNetworkController sendMessageToServer:messageForServer];
+    }
 }
 
 -(void)messageRecieved:(NSString *)messageFromServer{
@@ -130,5 +139,16 @@
         return NO;
     }
 }
+
+-(void) badOpponentAlert {
+    UIAlertView *badOpponentAlert = [[UIAlertView alloc]
+                                       initWithTitle: @"Invalid Opponent"
+                                       message: @"The Username Does Not Exist"
+                                       delegate: self
+                                       cancelButtonTitle:@"OK"
+                                       otherButtonTitles:nil];
+    [badOpponentAlert show];
+}
+
 
 @end

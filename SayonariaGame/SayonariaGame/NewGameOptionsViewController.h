@@ -11,7 +11,7 @@
 #import "NetworkStorageTabBarController.h"
 #import "GameScreenViewController.h"
 
-@interface NewGameOptionsViewController : UIViewController<NetworkControllerDelegate,LoadingViewDelegate,UITextFieldDelegate>
+@interface NewGameOptionsViewController : UIViewController<NetworkControllerDelegate,LoadingViewDelegate,UITextFieldDelegate,UIAlertViewDelegate>
 
 @property (nonatomic, strong) NetworkController *thisNetworkController;
 @property (nonatomic,strong) LoadingView * loader;
