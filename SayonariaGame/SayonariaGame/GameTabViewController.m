@@ -117,7 +117,7 @@
         
         //set up the dictionary object for the game
         [tempGameDict setObject:[partsOfGameString objectAtIndex:0] forKey:GAME_ID];
-        if([currentUser isEqualToString:userName1]){
+        if([[currentUser uppercaseString] isEqualToString:[userName1 uppercaseString]]){
             [tempGameDict setObject:userName2 forKey:OPPONENT_NAME];
         } else {
             [tempGameDict setObject:userName1 forKey:OPPONENT_NAME];
