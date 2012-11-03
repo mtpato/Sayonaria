@@ -615,7 +615,7 @@
                         <outlet property="opponentTypeLabel" destination="fC9-Ca-Ic7" id="KE6-Oy-o0i"/>
                         <outlet property="orLabel" destination="Ocq-yN-zOD" id="v8h-Ng-orb"/>
                         <outlet property="randomButton" destination="dBm-nM-zZr" id="hgF-zv-aVc"/>
-                        <segue destination="BS0-Cj-qeR" kind="push" id="ZgY-AQ-ck0"/>
+                        <segue destination="BS0-Cj-qeR" kind="push" identifier="showNewGameScreen" id="ZgY-AQ-ck0"/>
                     </connections>
                 </viewController>
             </objects>
@@ -686,8 +686,6 @@
         <class className="GameTabViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/GameTabViewController.h"/>
             <relationships>
-                <relationship kind="action" name="newGamePressed:"/>
-                <relationship kind="action" name="optionsPressed:"/>
                 <relationship kind="outlet" name="OpponentName" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="gameNewButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="gameTableView" candidateClass="UITableView"/>
@@ -699,9 +697,6 @@
         <class className="LoginViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginViewController.h"/>
             <relationships>
-                <relationship kind="action" name="BackgroundClicked:"/>
-                <relationship kind="action" name="didPressLogin:"/>
-                <relationship kind="action" name="didPressNewUser:"/>
                 <relationship kind="outlet" name="Password" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="UserName" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="loginButton" candidateClass="UIButton"/>
