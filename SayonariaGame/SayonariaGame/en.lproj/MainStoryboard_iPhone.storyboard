@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2549" systemVersion="11E53" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="GFX-P2-OZ8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="11E53" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="GFX-P2-OZ8">
     <dependencies>
-        <deployment defaultVersion="1296" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1498"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
     <scenes>
         <!--Login View Controller-->
         <scene sceneID="5">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
                 <viewController id="2" customClass="LoginViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
@@ -123,16 +121,16 @@
                         <segue destination="sKZ-UP-zGh" kind="push" identifier="showTabView" id="P3F-rr-d8h"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-628" y="-31"/>
         </scene>
         <!--New User View Controller-->
         <scene sceneID="q9D-NL-wYW">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Rmb-YT-pHn" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="yHq-qU-8zY" customClass="NewUserViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="P0v-ia-EmQ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="x4r-la-qHG">
@@ -256,13 +254,13 @@
                         <outlet property="userName" destination="Kt8-sk-jHo" id="vfr-Te-fan"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rmb-YT-pHn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-259" y="527"/>
         </scene>
         <!--Options Tab View Controller - Options-->
         <scene sceneID="lfB-XU-qTG">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hEU-Wj-kSh" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController title="Options" id="bW0-qm-YMa" customClass="OptionsTabViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YBV-Wu-cCN">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="431"/>
@@ -325,13 +323,13 @@
                         <outlet property="signOutButton" destination="RfR-QZ-Ivz" id="VBq-Uo-bW2"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hEU-Wj-kSh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="227" y="672"/>
         </scene>
         <!--Shop Tab View Controller - Store-->
         <scene sceneID="Lkk-YZ-wt6">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="awI-Rx-ULx" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController title="Store" id="W6S-mj-1R2" customClass="ShopTabViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UsF-He-JGp">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="431"/>
@@ -376,13 +374,13 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Store" id="j6H-N0-Amt"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="awI-Rx-ULx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="227" y="55"/>
         </scene>
         <!--Game Tab View Controller - Games-->
         <scene sceneID="0rv-ai-Q3f">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VTo-dW-7Mo" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="gameTab" title="Games" id="9om-ep-sOX" customClass="GameTabViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pch-Ml-ynt">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="431"/>
@@ -490,13 +488,13 @@
                         <segue destination="itA-kF-Sst" kind="push" identifier="showNewGameOptions" id="AbA-O2-ztc"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VTo-dW-7Mo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="235" y="-536"/>
         </scene>
         <!--Game Screen View Controller-->
         <scene sceneID="xCO-23-gVE">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0t0-I8-ptI" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="gameScreen" id="BS0-Cj-qeR" customClass="GameScreenViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="foF-33-xkb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="431"/>
@@ -523,6 +521,7 @@
                         <outlet property="tapRecognizer" destination="z4H-K1-kOI" id="FwU-DE-ldv"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0t0-I8-ptI" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="z4H-K1-kOI">
                     <connections>
                         <action selector="LayTile:" destination="BS0-Cj-qeR" id="UF2-KG-AhQ"/>
@@ -534,7 +533,6 @@
         <!--New Game Options View Controller-->
         <scene sceneID="ofc-iN-94E">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GwH-PJ-I9Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="newGameOptionsScreen" id="itA-kF-Sst" customClass="NewGameOptionsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QCd-ZY-W3c">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="431"/>
@@ -615,16 +613,16 @@
                         <outlet property="opponentTypeLabel" destination="fC9-Ca-Ic7" id="KE6-Oy-o0i"/>
                         <outlet property="orLabel" destination="Ocq-yN-zOD" id="v8h-Ng-orb"/>
                         <outlet property="randomButton" destination="dBm-nM-zZr" id="hgF-zv-aVc"/>
-                        <segue destination="BS0-Cj-qeR" kind="push" identifier="showNewGameScreen" id="ZgY-AQ-ck0"/>
+                        <segue destination="BS0-Cj-qeR" kind="push" identifier="showGameScreenfromNewGame" id="ZgY-AQ-ck0"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GwH-PJ-I9Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="683" y="-299"/>
         </scene>
         <!--Network Storage Tab Bar Controller-->
         <scene sceneID="Q4j-P7-u0D">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="I6j-qd-e3O" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tabBarController storyboardIdentifier="tabBarView" definesPresentationContext="YES" id="sKZ-UP-zGh" customClass="NetworkStorageTabBarController" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="952-4t-lS1"/>
                     <nil key="simulatedBottomBarMetrics"/>
@@ -639,13 +637,13 @@
                         <segue destination="bW0-qm-YMa" kind="relationship" relationship="viewControllers" id="dbs-fs-Gbe"/>
                     </connections>
                 </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I6j-qd-e3O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-225" y="-31"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="uxh-a0-plo">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="l8k-0O-s5d" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController definesPresentationContext="YES" navigationBarHidden="YES" id="GFX-P2-OZ8" sceneMemberID="viewController">
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
@@ -657,6 +655,7 @@
                         <segue destination="2" kind="relationship" relationship="rootViewController" id="iNM-7Z-0og"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l8k-0O-s5d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1123" y="-31"/>
         </scene>
@@ -678,7 +677,6 @@
         <class className="GameScreenViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/GameScreenViewController.h"/>
             <relationships>
-                <relationship kind="action" name="LayTile:" candidateClass="UITapGestureRecognizer"/>
                 <relationship kind="outlet" name="GameBoardView" candidateClass="UIScrollView"/>
                 <relationship kind="outlet" name="tapRecognizer" candidateClass="UIGestureRecognizer"/>
             </relationships>
@@ -724,9 +722,6 @@
         <class className="NewUserViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NewUserViewController.h"/>
             <relationships>
-                <relationship kind="action" name="backgroundPressed:"/>
-                <relationship kind="action" name="cancelPressed:"/>
-                <relationship kind="action" name="createPressed:"/>
                 <relationship kind="outlet" name="confirmPassword" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="email" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="password" candidateClass="UITextField"/>
