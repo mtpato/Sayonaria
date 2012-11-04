@@ -21,5 +21,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *password;
 @property (weak, nonatomic) IBOutlet UITextField *confirmPassword;
 @property (weak, nonatomic) IBOutlet UITextField *email;
+@property (weak, nonatomic) IBOutlet UIButton *registerUserButton;
+@property (weak, nonatomic) IBOutlet UIButton *cancelButton;
+
 @property (nonatomic, weak) id<NewUserViewControllerDelegate> delegate;
 @end

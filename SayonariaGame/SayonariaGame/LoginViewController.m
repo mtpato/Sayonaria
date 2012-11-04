@@ -213,6 +213,7 @@
 -(void)checkConn:(NSNotification *)notification {
     [self.thisNetworkController checkConnection];
 }
+
 -(void)viewWillAppear:(BOOL)animated{
     self.UserName.text = @"";
     self.Password.text = @"";

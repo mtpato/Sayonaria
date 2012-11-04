@@ -63,6 +63,7 @@
 					len = [(NSInputStream *) theStream read:buffer maxLength:sizeof(buffer)];
 					if (len > 0) {
 						NSString *output = [[NSString alloc] initWithBytes:buffer length:len encoding:NSASCIIStringEncoding];
+                        NSLog(@"%@%@",@"Server said:",output);
 						if (nil != output) {
                             output = [output substringToIndex:([output length]-1)];
                             //NSLog(@"Server Said in NC:%@",output);
@@ -73,7 +74,6 @@
                                 //if we have JUST connected, send the game type to the server
                                 if(self.currentServerState == (ServerState *)Connecting){
                                     self.currentServerState = (ServerState *)SendingGameType;
-                                    NSLog(@"Sending tileGame");
                                     [self sendMessageToServer:@"tileGame"];
                                     //if we have sent in the game type, try logging in with a pre existing auth key
                                 } else if(self.currentServerState == (ServerState *)SendingGameType){
@@ -155,6 +155,8 @@
         self.currentServerState = (ServerState *)TryingAuthKeyLogin;
         NSString *loginString = [NSString stringWithFormat:@"%@%@%@%@", @"keyLogin:",[defaults objectForKey:USER_NAME], @",", [defaults objectForKey:AUTH_KEY]];
         [self sendMessageToServer:loginString];
+    } else{
+        [self sendMessageToServer:@"keyLogin:Blahhhhh,xxxxxxxxx"];
     }
 }
 
