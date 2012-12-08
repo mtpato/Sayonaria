@@ -289,6 +289,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B0F534361673BD71005DA217 /* Game Screen Art */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Game Screen Art";
+			sourceTree = "<group>";
+		};
 		B100866F1643340B00385673 /* Views_Outside_Tabs */ = {
 			isa = PBXGroup;
 			children = (
@@ -430,6 +437,7 @@
 		B1FAD0A81602F27200D920F9 /* Sayonaria_Art */ = {
 			isa = PBXGroup;
 			children = (
+				B0F534361673BD71005DA217 /* Game Screen Art */,
 				B1FB3B801609696C00E5053B /* Buttons_Misc_Fixed */,
 				B1CEE04216051E550057A30C /* Games_Table_Assets */,
 				B1F1269E16050167000C34ED /* Backgrounds */,

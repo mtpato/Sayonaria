@@ -14,7 +14,7 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *BackgroundView;
 
-@property (weak, nonatomic) IBOutlet UIScrollView *GameBoardView;
+@property (weak, nonatomic) IBOutlet UIScrollView *gameBoardView;
 @property (nonatomic,strong) LoadingView * loader;
 @property (nonatomic, strong) NetworkController *thisNetworkController;
 @property (nonatomic, strong) NSString *opponentName;

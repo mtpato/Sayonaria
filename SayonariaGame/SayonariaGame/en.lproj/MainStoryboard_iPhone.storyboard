@@ -504,20 +504,6 @@
             </objects>
             <point key="canvasLocation" x="235" y="-536"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="wVX-mQ-qvX">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="La5-w4-JqV" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="x0s-bl-0Mw" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ZF2-pW-G5t">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-            </objects>
-            <point key="canvasLocation" x="747" y="-313"/>
-        </scene>
         <!--Game Screen View Controller-->
         <scene sceneID="xCO-23-gVE">
             <objects>
@@ -543,7 +529,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="gV0-Df-Bgw"/>
                     <connections>
-                        <outlet property="BackgroundView" destination="d7N-o9-REU" id="Psk-aD-PrW"/>
                         <outlet property="gameBoardView" destination="dwM-g7-7dD" id="OcV-OT-pq6"/>
                         <outlet property="tapRecognizer" destination="z4H-K1-kOI" id="FwU-DE-ldv"/>
                     </connections>
@@ -704,7 +689,6 @@
         <class className="GameScreenViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/GameScreenViewController.h"/>
             <relationships>
-                <relationship kind="action" name="LayTile:" candidateClass="UITapGestureRecognizer"/>
                 <relationship kind="outlet" name="BackgroundView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="gameBoardView" candidateClass="UIScrollView"/>
                 <relationship kind="outlet" name="tapRecognizer" candidateClass="UIGestureRecognizer"/>
@@ -752,9 +736,6 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NewUserViewController.h"/>
             <relationships>
                 <relationship kind="outlet" name="cancelButton" candidateClass="UIButton"/>
-                <relationship kind="action" name="backgroundPressed:"/>
-                <relationship kind="action" name="cancelPressed:"/>
-                <relationship kind="action" name="createPressed:"/>
                 <relationship kind="outlet" name="confirmPassword" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="confirmPasswordLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="email" candidateClass="UITextField"/>
