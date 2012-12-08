@@ -12,6 +12,7 @@
 
 @interface GameScreenViewController : UIViewController <NetworkControllerDelegate,LoadingViewDelegate>
 
+@property (weak, nonatomic) IBOutlet UIImageView *BackgroundView;
 
 @property (weak, nonatomic) IBOutlet UIScrollView *GameBoardView;
 @property (nonatomic,strong) LoadingView * loader;

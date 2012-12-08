@@ -17,7 +17,7 @@
 #pragma mark - Network Communication
 
 -(void)messageRecieved:(NSString *)messageFromServer{
-    NSLog(@"Server Said:%@",messageFromServer);
+   // NSLog(@"Server Said:%@",messageFromServer);
     if(self.thisNetworkController.currentServerState = (ServerState *)SigningOut){
         [self.thisNetworkController closeNetworkCommunication];
         LoginViewController *ourRootView = [self.navigationController.viewControllers objectAtIndex:0];

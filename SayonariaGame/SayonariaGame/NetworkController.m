@@ -66,7 +66,7 @@
                         NSLog(@"%@%@",@"Server said:",output);
 						if (nil != output) {
                             output = [output substringToIndex:([output length]-1)];
-                            //NSLog(@"Server Said in NC:%@",output);
+                           // NSLog(@"Server Said in NC:%@",output);
                             
                             //if the message is "done"
                             if([[output substringToIndex:4] isEqualToString:@"done"]){
@@ -74,11 +74,12 @@
                                 //if we have JUST connected, send the game type to the server
                                 if(self.currentServerState == (ServerState *)Connecting){
                                     self.currentServerState = (ServerState *)SendingGameType;
+                                  //  NSLog(@"Sending tileGame");
                                     [self sendMessageToServer:@"tileGame"];
                                     //if we have sent in the game type, try logging in with a pre existing auth key
                                 } else if(self.currentServerState == (ServerState *)SendingGameType){
                                     self.currentServerState = (ServerState *)ConnectedAwaitingLogon;
-                                    
+                                   // NSLog(@"blah");
                                     [self loginToServerWithAuthkey];
                                 } else {
                                     [self.delegate messageRecieved:output];
@@ -123,7 +124,7 @@
                       forMode:NSDefaultRunLoopMode];
     self.inputStream = nil;
     self.outputStream = nil;
-    NSLog(@"Closing Communications");
+    //NSLog(@"Closing Communications");
 }
 
 #pragma mark - Network Communication
