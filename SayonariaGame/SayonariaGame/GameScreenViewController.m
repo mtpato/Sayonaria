@@ -97,13 +97,12 @@
 -(void)putLoaderInViewWithSplash:(BOOL)isSplash withFade:(BOOL)isFade{
     self.loader = [[LoadingView alloc] init];
     self.loader = [self.loader loadSpinnerIntoView:self.view withSplash:isSplash withFade:isFade];
-<<<<<<< HEAD
+
 }
 
 -(void)loaderIsOnScreen{
     [self removeLoaderFromView];
-=======
->>>>>>> IanBranchWorking
+
 }
 
 -(void)removeLoaderFromView{
@@ -378,19 +377,7 @@
 
 - (void)viewDidUnload {
     
-    self.Team1=@"Diamond";
-    self.Team2=@"Gold";
-    
-    if(self.Team1==@"Coal"){self.Team1CellType=[UIImage imageNamed:@"epato_new_game_minimal_tiles_coal"];}
-    if(self.Team1==@"Diamond"){self.Team1CellType=[UIImage imageNamed:@"epato_new_game_minimal_tiles_diamond.png"];}
-    if(self.Team1==@"Gold"){self.Team1CellType=[UIImage imageNamed:@"epato_new_game_minimal_tiles_gold.png"];}
-    if(self.Team1==@"Silica"){self.Team1CellType=[UIImage imageNamed:@"epato_new_game_minimal_tiles_silica.png"];}
-    
-    
-    if(self.Team2==@"Coal"){self.Team2CellType=[UIImage imageNamed:@"epato_new_game_minimal_tiles_coal"];}
-    if(self.Team2==@"Diamond"){self.Team2CellType=[UIImage imageNamed:@"epato_new_game_minimal_tiles_diamond.png"];}
-    if(self.Team2==@"Gold"){self.Team2CellType=[UIImage imageNamed:@"epato_new_game_minimal_tiles_gold.png"];}
-    if(self.Team2==@"Silica"){self.Team2CellType=[UIImage imageNamed:@"epato_new_game_minimal_tiles_silica.png"];}
+
 }
 
 
@@ -402,11 +389,7 @@
     [self removeLoaderFromView]; //ANDREW, DO THIS AFTER YOU HAVE FULLY INITIALIZED THE VIEW, THE LOADER WILL HIDE EVERYTHING IN THE MEANTIME
 }
 
-- (void)viewDidUnload
-{
-    
-    
-}
+
 
 
 

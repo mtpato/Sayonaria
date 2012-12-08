@@ -167,42 +167,42 @@
                                 <rect key="frame" x="105" y="261" width="61" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="User Name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="ZQp-S5-3Ih">
                                 <rect key="frame" x="75" y="100" width="98" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Password:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="azU-5C-FTU">
                                 <rect key="frame" x="80" y="158" width="98" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Confirm Password:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="FHP-9R-p6j">
                                 <rect key="frame" x="12" y="212" width="146" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Enter Desired User" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="AiZ-r6-O5p">
                                 <rect key="frame" x="92" y="12" width="154" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Name and Password:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="Y0N-Vy-t0m">
                                 <rect key="frame" x="87" y="43" width="164" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="PBs-4f-ezH">
@@ -223,28 +223,24 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="Bv0-x8-31S">
                                 <rect key="frame" x="174" y="213" width="129" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="A0V-LK-mCM">
                                 <rect key="frame" x="174" y="263" width="129" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="1ag-Sr-0hV">
                                 <rect key="frame" x="174" y="158" width="129" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="Kt8-sk-jHo">
                                 <rect key="frame" x="174" y="102" width="129" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -252,18 +248,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="cancelButton" destination="PBs-4f-ezH" id="awK-Gz-mlW"/>
                         <outlet property="confirmPassword" destination="Bv0-x8-31S" id="BTW-IQ-uEG"/>
-                        <outlet property="confirmPasswordLabel" destination="FHP-9R-p6j" id="dky-Om-vIg"/>
                         <outlet property="email" destination="A0V-LK-mCM" id="sh9-Bu-D0L"/>
-                        <outlet property="emailLabel" destination="OE1-HO-lJ1" id="qWe-3e-fjY"/>
                         <outlet property="password" destination="1ag-Sr-0hV" id="SO7-sc-R77"/>
-                        <outlet property="passwordLabel" destination="azU-5C-FTU" id="onh-4C-dSe"/>
-                        <outlet property="registerUserButton" destination="8s8-FY-lH4" id="bXJ-kJ-2H4"/>
-                        <outlet property="titlePartOne" destination="AiZ-r6-O5p" id="CWX-76-d5K"/>
-                        <outlet property="titlePartTwo" destination="Y0N-Vy-t0m" id="bXa-tN-CmK"/>
                         <outlet property="userName" destination="Kt8-sk-jHo" id="vfr-Te-fan"/>
-                        <outlet property="userNameLabel" destination="ZQp-S5-3Ih" id="nV4-gQ-qCN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rmb-YT-pHn" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -283,7 +271,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="sMI-rc-kyo">
-                                <rect key="frame" x="221" y="393" width="97" height="81"/>
+                                <rect key="frame" x="228" y="340" width="84" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" backgroundImage="Shop_Button.png">
@@ -298,7 +286,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="bkp-o9-DW2">
-                                <rect key="frame" x="130" y="393" width="97" height="81"/>
+                                <rect key="frame" x="129" y="340" width="91" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" backgroundImage="Start_Button.png">
@@ -313,7 +301,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="RfR-QZ-Ivz">
-                                <rect key="frame" x="53" y="269" width="214" height="76"/>
+                                <rect key="frame" x="53" y="171" width="214" height="76"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Sign Out" backgroundImage="Generic_Button_4.png">
@@ -348,11 +336,11 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="ShopBackIphone@2x.png" id="j2p-WN-QzC">
-                                <rect key="frame" x="0.0" y="-5" width="320" height="480"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="pph-A3-9cs">
-                                <rect key="frame" x="215" y="394" width="97" height="81"/>
+                                <rect key="frame" x="222" y="368" width="90" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" backgroundImage="Options_Button.png">
@@ -367,7 +355,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="O7K-Sj-i3T">
-                                <rect key="frame" x="123" y="394" width="97" height="81"/>
+                                <rect key="frame" x="124" y="368" width="90" height="67"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" backgroundImage="Start_Button.png">
@@ -407,7 +395,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="+ new game" backgroundImage="Generic_Button.png">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                     <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <state key="highlighted">
@@ -417,6 +405,12 @@
                                     <action selector="newGamePressed:" destination="9om-ep-sOX" eventType="touchUpInside" id="LhH-8o-Vxa"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="slH-vQ-eJr">
+                                <rect key="frame" x="0.0" y="0.0" width="27" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="101" sectionHeaderHeight="22" sectionFooterHeight="22" id="pgC-MT-Vjb">
                                 <rect key="frame" x="91" y="113" width="229" height="273"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -457,7 +451,7 @@
                                 <sections/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="JzI-l5-Oei">
-                                <rect key="frame" x="121" y="394" width="97" height="80"/>
+                                <rect key="frame" x="116" y="394" width="102" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" image="Shop_Button.png">
@@ -491,13 +485,13 @@
                     </view>
                     <tabBarItem key="tabBarItem" enabled="NO" title="Games" id="XBk-Su-PJ6"/>
                     <connections>
+                        <outlet property="OpponentName" destination="slH-vQ-eJr" id="5ez-tO-KZW"/>
                         <outlet property="gameNewButton" destination="dKV-CP-jzo" id="8EE-Ub-bLO"/>
                         <outlet property="gameTableView" destination="pgC-MT-Vjb" id="gVu-ui-S3x"/>
                         <outlet property="gamesBackground" destination="6PU-u5-14Q" id="cfi-MJ-QQp"/>
                         <outlet property="optionsButton" destination="fQl-kx-WcI" id="igX-tZ-CaY"/>
                         <outlet property="shopButton" destination="JzI-l5-Oei" id="wzF-Gm-Wmn"/>
                         <segue destination="BS0-Cj-qeR" kind="push" identifier="showGameScreen" id="kUX-72-zr7"/>
-                        <segue destination="itA-kF-Sst" kind="push" identifier="showNewGameOptions" id="AbA-O2-ztc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VTo-dW-7Mo" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -512,8 +506,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="431"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="BlankFancyBackIphone@2x.png" id="qBe-UU-jAr">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="481"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="d7N-o9-REU">
+                                <rect key="frame" x="0.0" y="-42" width="320" height="473"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="dwM-g7-7dD">
@@ -529,6 +523,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="gV0-Df-Bgw"/>
                     <connections>
+                        <outlet property="BackgroundView" destination="d7N-o9-REU" id="Psk-aD-PrW"/>
                         <outlet property="gameBoardView" destination="dwM-g7-7dD" id="OcV-OT-pq6"/>
                         <outlet property="tapRecognizer" destination="z4H-K1-kOI" id="FwU-DE-ldv"/>
                     </connections>
@@ -540,97 +535,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="683" y="-858"/>
-        </scene>
-        <!--New Game Options View Controller-->
-        <scene sceneID="ofc-iN-94E">
-            <objects>
-                <viewController storyboardIdentifier="newGameOptionsScreen" id="itA-kF-Sst" customClass="NewGameOptionsViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="QCd-ZY-W3c">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="431"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="b1H-cb-ZLX">
-                                <rect key="frame" x="-2" y="0.0" width="325" height="480"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" backgroundImage="BlankFancyBackIphone@2x.png">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="BackgroundClicked:" destination="2" eventType="touchUpInside" id="Ot6-qb-5pG"/>
-                                    <action selector="backgroundPressed" destination="itA-kF-Sst" eventType="touchUpInside" id="ry3-i7-zZ7"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Choose Opponent Type:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="fC9-Ca-Ic7">
-                                <rect key="frame" x="82" y="51" width="156" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="or" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="Ocq-yN-zOD">
-                                <rect key="frame" x="118" y="185" width="84" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="lRx-kH-H76">
-                                <rect key="frame" x="65" y="236" width="190" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="With Opponent:" backgroundImage="Generic_Button.png">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="opponentPressed" destination="itA-kF-Sst" eventType="touchUpInside" id="gqw-2z-UAV"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="dBm-nM-zZr">
-                                <rect key="frame" x="65" y="131" width="190" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Random!" backgroundImage="Generic_Button.png">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="slH-vQ-eJr">
-                                <rect key="frame" x="46" y="274" width="229" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="NLX-2c-gTt"/>
-                    <connections>
-                        <outlet property="background" destination="b1H-cb-ZLX" id="6Wp-bG-VLa"/>
-                        <outlet property="opponentButton" destination="lRx-kH-H76" id="mUm-YC-GhZ"/>
-                        <outlet property="opponentNameBox" destination="slH-vQ-eJr" id="hNZ-Vh-bn1"/>
-                        <outlet property="opponentTypeLabel" destination="fC9-Ca-Ic7" id="KE6-Oy-o0i"/>
-                        <outlet property="orLabel" destination="Ocq-yN-zOD" id="v8h-Ng-orb"/>
-                        <outlet property="randomButton" destination="dBm-nM-zZr" id="hgF-zv-aVc"/>
-                        <segue destination="BS0-Cj-qeR" kind="push" identifier="showGameScreenfromNewGame" id="ZgY-AQ-ck0"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GwH-PJ-I9Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="683" y="-299"/>
+            <point key="canvasLocation" x="684" y="-536"/>
         </scene>
         <!--Network Storage Tab Bar Controller-->
         <scene sceneID="Q4j-P7-u0D">
@@ -685,8 +590,6 @@
         <image name="Start_Button.png" width="437" height="318"/>
         <image name="Website_Button.png" width="438" height="438"/>
     </resources>
-<<<<<<< HEAD
-=======
     <classes>
         <class className="GameScreenViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/GameScreenViewController.h"/>
@@ -699,6 +602,8 @@
         <class className="GameTabViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/GameTabViewController.h"/>
             <relationships>
+                <relationship kind="action" name="newGamePressed:"/>
+                <relationship kind="action" name="optionsPressed:"/>
                 <relationship kind="outlet" name="OpponentName" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="gameNewButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="gameTableView" candidateClass="UITableView"/>
@@ -723,32 +628,13 @@
         <class className="NetworkStorageTabBarController" superclassName="UITabBarController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NetworkStorageTabBarController.h"/>
         </class>
-        <class className="NewGameOptionsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NewGameOptionsViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="background" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="opponentButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="opponentNameBox" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="opponentTypeLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="orLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="randomButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
         <class className="NewUserViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NewUserViewController.h"/>
             <relationships>
-                <relationship kind="outlet" name="cancelButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="confirmPassword" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="confirmPasswordLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="email" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="emailLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="password" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="passwordLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="registerUserButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="titlePartOne" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="titlePartTwo" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="userName" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="userNameLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="OptionsTabViewController" superclassName="UIViewController">
@@ -761,13 +647,9 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ShopTabViewController.h"/>
         </class>
     </classes>
->>>>>>> 1e194e60d1c217678f44d13284a48b66c0436434
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
-    <inferredMetricsTieBreakers>
-        <segue reference="kUX-72-zr7"/>
-    </inferredMetricsTieBreakers>
 </document>
