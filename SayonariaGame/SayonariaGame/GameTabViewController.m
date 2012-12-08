@@ -14,6 +14,7 @@
 
 @interface GameTabViewController ()
 @property (nonatomic) ServerState *currentServerState;
+@property (nonatomic,weak) IBOutlet UITextField *OpponentName;
 @property (nonatomic) IBOutlet UITableView *gameTableView;
 @property (nonatomic, strong) NSArray *thisUsersGames;
 @property (nonatomic, strong) NSString *createdGameOpponent;

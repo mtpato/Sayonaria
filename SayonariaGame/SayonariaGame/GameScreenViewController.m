@@ -61,10 +61,13 @@
 -(void)putLoaderInViewWithSplash:(BOOL)isSplash withFade:(BOOL)isFade{
     self.loader = [[LoadingView alloc] init];
     self.loader = [self.loader loadSpinnerIntoView:self.view withSplash:isSplash withFade:isFade];
+<<<<<<< HEAD
 }
 
 -(void)loaderIsOnScreen{
     [self removeLoaderFromView];
+=======
+>>>>>>> IanBranchWorking
 }
 
 -(void)removeLoaderFromView{
