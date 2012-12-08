@@ -9,3 +9,14 @@ build/
 *.perspectivev3
 
 xcuserdata
+
+SayonariaGame/SayonariaGame.xcodeproj/project.pbxproj.BACKUP.3865.pbxproj
+SayonariaGame/SayonariaGame.xcodeproj/project.pbxproj.BASE.3865.pbxproj
+SayonariaGame/SayonariaGame.xcodeproj/project.pbxproj.LOCAL.3865.pbxproj
+SayonariaGame/SayonariaGame.xcodeproj/project.pbxproj.REMOTE.3865.pbxproj
+SayonariaGame/SayonariaGame.xcodeproj/project.pbxproj.orig
+SayonariaGame/SayonariaGame/GameScreenViewController.h.orig
+SayonariaGame/SayonariaGame/GameScreenViewController.m.orig
+SayonariaGame/SayonariaGame/GameTabViewController.m.orig
+SayonariaGame/SayonariaGame/NetworkController.m.orig
+SayonariaGame/SayonariaGame/en.lproj/MainStoryboard_iPhone.storyboard.orig
