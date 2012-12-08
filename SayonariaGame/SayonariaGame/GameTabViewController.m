@@ -63,7 +63,7 @@
 #pragma mark - network communications
 
 -(void)messageRecieved:(NSString *)messageFromServer{
-    NSLog(@"server said: %@", messageFromServer);
+   // NSLog(@"server said: %@", messageFromServer);
     //if the server says 'done' it can be connecting, confirming the game type, etc
     if([[messageFromServer substringToIndex:4] isEqualToString:@"done"]){
         if(self.thisNetworkController.currentServerState == (ServerState *)TryingAuthKeyLogin){

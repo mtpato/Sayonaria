@@ -38,7 +38,7 @@
 }
 - (IBAction)backgroundPressed:(id)sender {
     [self.userName resignFirstResponder];
-    [self.password resignFirstResponder];
+    [self.password resignFirstResponder]; 
     [self.confirmPassword resignFirstResponder];
     [self.email resignFirstResponder];
 }

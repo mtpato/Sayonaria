@@ -508,16 +508,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="431"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="816b8630631e7b357474cb7b3330b6f1_large.png" id="qBe-UU-jAr">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="431"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="d7N-o9-REU">
+                                <rect key="frame" x="0.0" y="-42" width="320" height="473"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Xtb-gw-zFa">
-                                <rect key="frame" x="33" y="-9" width="254" height="385"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="dwM-g7-7dD">
+                                <rect key="frame" x="13" y="9" width="231" height="371"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <gestureRecognizers/>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="z4H-K1-kOI" appends="YES" id="cCZ-ln-DR4"/>
+                                    <outletCollection property="gestureRecognizers" destination="z4H-K1-kOI" appends="YES" id="aLU-EW-kpD"/>
                                 </connections>
                             </scrollView>
                         </subviews>
@@ -525,13 +525,14 @@
                     </view>
                     <navigationItem key="navigationItem" id="gV0-Df-Bgw"/>
                     <connections>
-                        <outlet property="GameBoardView" destination="Xtb-gw-zFa" id="wdw-li-hjO"/>
+                        <outlet property="BackgroundView" destination="d7N-o9-REU" id="Psk-aD-PrW"/>
+                        <outlet property="gameBoardView" destination="dwM-g7-7dD" id="OcV-OT-pq6"/>
                         <outlet property="tapRecognizer" destination="z4H-K1-kOI" id="FwU-DE-ldv"/>
                     </connections>
                 </viewController>
                 <tapGestureRecognizer id="z4H-K1-kOI">
                     <connections>
-                        <action selector="LayTile:" destination="BS0-Cj-qeR" id="UF2-KG-AhQ"/>
+                        <action selector="LayTile:" destination="BS0-Cj-qeR" id="aja-xB-it7"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -578,7 +579,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="816b8630631e7b357474cb7b3330b6f1_large.png" width="1920" height="1080"/>
         <image name="BlankFancyBackIphone@2x.png" width="640" height="960"/>
         <image name="GamesBackIphone@2x.png" width="640" height="960"/>
         <image name="Generic_Button.png" width="386" height="304"/>
@@ -595,7 +595,9 @@
         <class className="GameScreenViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/GameScreenViewController.h"/>
             <relationships>
-                <relationship kind="outlet" name="GameBoardView" candidateClass="UIScrollView"/>
+                <relationship kind="action" name="LayTile:" candidateClass="UITapGestureRecognizer"/>
+                <relationship kind="outlet" name="BackgroundView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="gameBoardView" candidateClass="UIScrollView"/>
                 <relationship kind="outlet" name="tapRecognizer" candidateClass="UIGestureRecognizer"/>
             </relationships>
         </class>
@@ -634,6 +636,9 @@
         <class className="NewUserViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NewUserViewController.h"/>
             <relationships>
+                <relationship kind="action" name="backgroundPressed:"/>
+                <relationship kind="action" name="cancelPressed:"/>
+                <relationship kind="action" name="createPressed:"/>
                 <relationship kind="outlet" name="confirmPassword" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="email" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="password" candidateClass="UITextField"/>

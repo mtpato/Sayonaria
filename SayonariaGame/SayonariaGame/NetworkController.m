@@ -65,7 +65,7 @@
 						NSString *output = [[NSString alloc] initWithBytes:buffer length:len encoding:NSASCIIStringEncoding];
 						if (nil != output) {
                             output = [output substringToIndex:([output length]-1)];
-                            //NSLog(@"Server Said in NC:%@",output);
+                           // NSLog(@"Server Said in NC:%@",output);
                             
                             //if the message is "done"
                             if([[output substringToIndex:4] isEqualToString:@"done"]){
@@ -73,12 +73,12 @@
                                 //if we have JUST connected, send the game type to the server
                                 if(self.currentServerState == (ServerState *)Connecting){
                                     self.currentServerState = (ServerState *)SendingGameType;
-                                    NSLog(@"Sending tileGame");
+                                  //  NSLog(@"Sending tileGame");
                                     [self sendMessageToServer:@"tileGame"];
                                     //if we have sent in the game type, try logging in with a pre existing auth key
                                 } else if(self.currentServerState == (ServerState *)SendingGameType){
                                     self.currentServerState = (ServerState *)ConnectedAwaitingLogon;
-                                    
+                                   // NSLog(@"blah");
                                     [self loginToServerWithAuthkey];
                                 } else {
                                     [self.delegate messageRecieved:output];
@@ -123,7 +123,7 @@
                       forMode:NSDefaultRunLoopMode];
     self.inputStream = nil;
     self.outputStream = nil;
-    NSLog(@"Closing Communications");
+    //NSLog(@"Closing Communications");
 }
 
 #pragma mark - Network Communication
@@ -143,7 +143,8 @@
 
 //public class method to send a message to the server
 -(void)sendMessageToServer: (NSString *)message{
-    NSLog(@"Saying To Server:%@",message);
+    
+   // NSLog(@"Saying To Server:%@",message);
     NSData *dataToSend = [[NSData alloc] initWithData:[[message stringByAppendingString:@"\n"] dataUsingEncoding:NSASCIIStringEncoding]];
 	[self.outputStream write:[dataToSend bytes] maxLength:[dataToSend length]];
 }
@@ -156,6 +157,15 @@
         NSString *loginString = [NSString stringWithFormat:@"%@%@%@%@", @"keyLogin:",[defaults objectForKey:USER_NAME], @",", [defaults objectForKey:AUTH_KEY]];
         [self sendMessageToServer:loginString];
     }
+    
+    else{
+        
+        self.currentServerState = (ServerState *)TryingAuthKeyLogin;
+        NSString *loginString = [NSString stringWithFormat:@"%@%@%@%@", @"keyLogin:",@"xxx", @",", @"xxx"];
+        [self sendMessageToServer:loginString];
+        
+    }
+    
 }
 
 -(void)checkConnection{

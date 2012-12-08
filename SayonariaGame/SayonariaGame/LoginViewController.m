@@ -28,7 +28,7 @@
 
 //figures out what to do with the message received from the server
 -(void)messageRecieved:(NSString *)messageFromServer {
-    NSLog(@"server said: %@", messageFromServer);
+    //NSLog(@"server said: %@", messageFromServer);
     
     //grab the defaults
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
