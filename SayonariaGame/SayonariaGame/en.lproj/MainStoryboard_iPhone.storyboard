@@ -696,7 +696,6 @@
         <class className="GameTabViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/GameTabViewController.h"/>
             <relationships>
-                <relationship kind="outlet" name="OpponentName" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="gameNewButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="gameTableView" candidateClass="UITableView"/>
                 <relationship kind="outlet" name="gamesBackground" candidateClass="UIImageView"/>
@@ -736,10 +735,16 @@
             <relationships>
                 <relationship kind="outlet" name="cancelButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="confirmPassword" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="confirmPasswordLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="email" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="emailLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="password" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="passwordLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="registerUserButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="titlePartOne" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="titlePartTwo" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="userName" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="userNameLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="OptionsTabViewController" superclassName="UIViewController">
