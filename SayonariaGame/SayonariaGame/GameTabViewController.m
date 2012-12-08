@@ -187,11 +187,11 @@
     } else
         if(indexPath.row <=[self.thisUsersGames count]) {
             NSDictionary *gameDictionary = [self.thisUsersGames objectAtIndex:(indexPath.row)];
-            //NSString *gameID = [gameDictionary objectForKey:GAME_ID];
+            NSString *gameID = [gameDictionary objectForKey:GAME_ID];
             NSString *opponentName = [gameDictionary objectForKey:OPPONENT_NAME];
             
             opponentNameLabel.text = opponentName;
-            gameIDLabel.text = @"Some stuff about the game";
+            gameIDLabel.text = gameID;
         }
     return cell;
 }
@@ -326,8 +326,9 @@
     static NSString *CellIdentifier = @"GameCell";
     UITableViewCell *cell = [self.gameTableView dequeueReusableCellWithIdentifier:CellIdentifier];
     cell = cellOrString;
+    UILabel *gameIDLabel = (UILabel *)[cell viewWithTag:2];
     newGameScreen.opponentName = cell.textLabel.text;
-    newGameScreen.gameID = cell.detailTextLabel.text;
+    newGameScreen.gameID = gameIDLabel.text;
     
     //segue!
     [self.navigationController pushViewController:newGameScreen animated:NO];

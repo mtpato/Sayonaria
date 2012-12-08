@@ -529,6 +529,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="gV0-Df-Bgw"/>
                     <connections>
+                        <outlet property="BackgroundView" destination="qBe-UU-jAr" id="1FK-EU-ne6"/>
                         <outlet property="gameBoardView" destination="dwM-g7-7dD" id="OcV-OT-pq6"/>
                         <outlet property="tapRecognizer" destination="z4H-K1-kOI" id="FwU-DE-ldv"/>
                     </connections>
@@ -689,6 +690,7 @@
         <class className="GameScreenViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/GameScreenViewController.h"/>
             <relationships>
+                <relationship kind="action" name="LayTile:" candidateClass="UITapGestureRecognizer"/>
                 <relationship kind="outlet" name="BackgroundView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="gameBoardView" candidateClass="UIScrollView"/>
                 <relationship kind="outlet" name="tapRecognizer" candidateClass="UIGestureRecognizer"/>

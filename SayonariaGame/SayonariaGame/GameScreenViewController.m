@@ -48,7 +48,7 @@
 
 /* (non-Javadoc)
  * the string looks like this:
- * players=username!userID!score|username!userID!score...,h=height,w=width,board=node|node|node|node...,over=0or1,turn=userID
+ * players=userID!score|userID!score...,h=height,w=width,board=node|node|node|node...,over=0or1,turn=userID
  *
  * a node looks like this:
  * nodeID!x!y!owner!active!adjList
@@ -97,7 +97,6 @@
 -(void)putLoaderInViewWithSplash:(BOOL)isSplash withFade:(BOOL)isFade{
     self.loader = [[LoadingView alloc] init];
     self.loader = [self.loader loadSpinnerIntoView:self.view withSplash:isSplash withFade:isFade];
-
 }
 
 -(void)loaderIsOnScreen{
@@ -106,7 +105,8 @@
 }
 
 -(void)removeLoaderFromView{
-
+    [self.loader removeLoader:self.view];
+    self.loader = nil;
 }
 
 
@@ -116,17 +116,30 @@
     if([[messageFromServer substringToIndex:5] isEqualToString:@"state"])
     {
         GameState1=messageFromServer;
-        GameState2=@"A";
+        GameState2=@"";
     }
        
     else{
-        GameState2=messageFromServer;
-    }
         
-  GameState=[GameState1 stringByAppendingString:GameState2];
+        GameState2=messageFromServer;
+        
+        GameState=[GameState1 stringByAppendingString:GameState2];
+        
+        [self parseGameState];
+        
+        [self SetArtAssets];
+        
+        [self RecordCellFrames];
+        
+        [self InitialDrawScreen];
+        
+        [self removeLoaderFromView];
+        
+    }
+    
 
-    [self parseGameState];
-   
+
+    
 }
 
 
@@ -134,15 +147,7 @@
 {
    
     
-    
-    self.thisNetworkController.delegate = self;
-    [self.thisNetworkController sendMessageToServer:@"gameState:1"];
-    
-    [self parseGameState];
-    [self SetArtAssets];
-    [self RecordCellFrames];
-    [self InitialDrawScreen];
-    
+
     
     
 }
@@ -178,6 +183,9 @@
 
 -(void)SetArtAssets{
     
+    
+    //Set inactive art assets
+    
     if( TeamID1==@"Coal"){InactiveCellTeam1=[UIImage imageNamed:@"Inactive Coal.png"];}
     if( TeamID1==@"Diamond"){InactiveCellTeam1=[UIImage imageNamed:@"Inactive Diamond.png"];}
     if( TeamID1==@"Gold"){InactiveCellTeam1=[UIImage imageNamed:@"Inactive Gold.png"];}
@@ -189,23 +197,25 @@
     if( TeamID2==@"Silica"){InactiveCellTeam2=[UIImage imageNamed:@"Inactive Silica.png"];}
     
     
+    //Set active art assets
     
     if( TeamID1==@"Coal"){ActiveCellTeam1=[UIImage imageNamed:@"Active Coal.png"];}
-    if( TeamID1==@"Diamond"){ActiveCellTeam1=[UIImage imageNamed:@"Inactive Diamond.png"];}
-    if( TeamID1==@"Gold"){ActiveCellTeam1=[UIImage imageNamed:@"Inactive Gold.png"];}
-    if( TeamID1==@"Silica"){ActiveCellTeam1=[UIImage imageNamed:@"Inactive Silica.png"];}
+    if( TeamID1==@"Diamond"){ActiveCellTeam1=[UIImage imageNamed:@"Active Diamond.png"];}
+    if( TeamID1==@"Gold"){ActiveCellTeam1=[UIImage imageNamed:@"Active Gold.png"];}
+    if( TeamID1==@"Silica"){ActiveCellTeam1=[UIImage imageNamed:@"Active Silica.png"];}
     
-    if( TeamID2==@"Coal"){ActiveCellTeam2=[UIImage imageNamed:@"Inactive Coal.png"];}
-    if( TeamID2==@"Diamond"){ActiveCellTeam2=[UIImage imageNamed:@"Inactive Diamond.png"];}
-    if( TeamID2==@"Gold"){ActiveCellTeam2=[UIImage imageNamed:@"Inactive Gold.png"];}
-    if( TeamID2==@"Silica"){ActiveCellTeam2=[UIImage imageNamed:@"Inactive Silica.png"];}
+    if( TeamID2==@"Coal"){ActiveCellTeam2=[UIImage imageNamed:@"Active Coal.png"];}
+    if( TeamID2==@"Diamond"){ActiveCellTeam2=[UIImage imageNamed:@"Active Diamond.png"];}
+    if( TeamID2==@"Gold"){ActiveCellTeam2=[UIImage imageNamed:@"Active Gold.png"];}
+    if( TeamID2==@"Silica"){ActiveCellTeam2=[UIImage imageNamed:@"Active Silica.png"];}
     
-    if( TeamID2==@"Coal"){InactiveCellTeam2=[UIImage imageNamed:@"Inactive Coal.png"];}
-    if( TeamID2==@"Diamond"){InactiveCellTeam2=[UIImage imageNamed:@"Inactive Diamond.png"];}
-    if( TeamID2==@"Gold"){InactiveCellTeam2=[UIImage imageNamed:@"Inactive Gold.png"];}
-    if( TeamID2==@"Silica"){InactiveCellTeam2=[UIImage imageNamed:@"Inactive Silica.png"];}
+    
+    //Set neutral tile assets
     
     NeutralTile=[UIImage imageNamed:@"Inactive Neutral.png"];
+    
+    
+    //Set background type
     
     if( TeamID1==@"Coal"){TeamBackground=[UIImage imageNamed:@"Coal Background.png"];}
     if( TeamID1==@"Diamond"){TeamBackground=[UIImage imageNamed:@"Diamond Background.png"];}
@@ -254,34 +264,96 @@
     
     NSLog(@"Value of string is %@", GameState);
     
-    //NSInteger boardHeightIndex=[GameState rangeOfString:@"h"].location+2;
-    //NSInteger boardWidthIndex=[GameState rangeOfString:@"w"].location+2;
-    
-    //boardHeight=[GameState substringWithRange: NSMakeRange (boardHeightIndex, 2)];
-   // boardWidth=[GameState substringWithRange: NSMakeRange (boardWidthIndex, 1)];
-    
-    boardHeight=8;
+
+    boardHeight=11;
     boardWidth=6;
     
     TotalCellsNum=boardHeight*boardWidth;
     
-    
     TeamID1=@"Coal";
     TeamID2=@"Gold";
     
+    //figure out way to get user ID
     Turn=@"1";
     
-    GameOver=@"0";
+    //pulls the gameover number from the game state
+    GameOver = [GameState substringWithRange:NSMakeRange([GameState rangeOfString:@"over"].location+5,1)];
     
-    Score1=@"0";
-    Score2=@"0";
+    
+    //Get the current score for each player
+    
+    NSUInteger index1=[self substringOfString:GameState untilNthOccurrence:1 ofString:@"!"];
+    NSUInteger index2=[self substringOfString:GameState untilNthOccurrence:1 ofString:@"|"];
+    
+    Score1=[GameState substringWithRange:NSMakeRange(index1,index2-index1-1)];
+    
+        index1=[self substringOfString:GameState untilNthOccurrence:2 ofString:@"!"];
+        index2=[self substringOfString:GameState untilNthOccurrence:2 ofString:@"|"];
+    
+    Score2=[GameState substringWithRange:NSMakeRange(index1+1,index2-index1-1)];
+    
     
     CellSize=42;
     
     TouchTolerance=20;
     
     
+       //    NSLog(@"%@",Score1);
+
+    
+    
+    
+    
 }
+
+
+- (NSUInteger )substringOfString:(NSString *)base untilNthOccurrence:(NSInteger)n ofString:(NSString *)delim
+{
+    NSScanner *scanner = [NSScanner scannerWithString:base];
+    NSInteger i;
+    for (i = 0; i < n; i++)
+    {
+        [scanner scanUpToString:delim intoString:NULL];
+        [scanner scanString:delim intoString:NULL];
+    }
+    return [scanner scanLocation];
+}
+
+
+
+-(void) drawCellwithWidth:(NSUInteger)i withHeight:(NSUInteger)j tileType:(NSString*)tileToDraw teamID:(NSString*)teamNumber
+{
+    
+    int IncrementalLength=i*(CellSize-10)*1.06;
+    int IncrementalWidth=j*(CellSize-2)*1.06;
+    int moduloResult = i % 2;
+    int WidthModifier;
+    if(moduloResult==1){WidthModifier=0;} else {WidthModifier=(CellSize-2)/2;}
+    IncrementalWidth=IncrementalWidth+WidthModifier;
+    
+    CGRect frame = CGRectMake(IncrementalLength,IncrementalWidth,CellSize,CellSize);
+    
+    UIImageView *BorderGrid;
+    
+    BorderGrid=[[UIImageView alloc] initWithFrame:frame];
+    
+     if( teamNumber==@"1" && tileToDraw==@"Active"){BorderGrid.image=ActiveCellTeam1;}
+    
+     else{
+     if( teamNumber==@"1" && tileToDraw==@"Inactive"){BorderGrid.image=InactiveCellTeam1;}
+     
+     else{
+     if( teamNumber==@"2" && tileToDraw==@"Active"){BorderGrid.image=ActiveCellTeam2;}
+         
+     else{
+     if( teamNumber==@"2" && tileToDraw==@"Inactive"){BorderGrid.image=InactiveCellTeam1;}
+         
+     }}}
+    
+    [gameBoardView addSubview:BorderGrid];
+    
+}
+
 
 
 
@@ -385,8 +457,17 @@
     [self putLoaderInViewWithSplash:NO withFade:NO];
 }
 
+
+#pragma mark - view loading and appearing
+
 -(void)viewDidAppear:(BOOL)animated{
-    [self removeLoaderFromView]; //ANDREW, DO THIS AFTER YOU HAVE FULLY INITIALIZED THE VIEW, THE LOADER WILL HIDE EVERYTHING IN THE MEANTIME
+    
+    self.thisNetworkController.delegate = self;
+    
+    [self.thisNetworkController sendMessageToServer:  [NSString stringWithFormat:@"%@%@", @"gameState:",self.gameID]];
+    
+        
+ 
 }
 
 
