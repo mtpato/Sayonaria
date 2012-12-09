@@ -53,7 +53,7 @@
 			//NSLog(@"Stream opened");
 			break;
         case NSStreamEventHasSpaceAvailable:
-            NSLog(@"Space available on the output stream");
+            //NSLog(@"Space available on the output stream");
             if (self.dataQueue != nil) {
                 NSString *stringToSend = [[NSString alloc] initWithData:self.dataQueue encoding:NSASCIIStringEncoding];
                 self.dataQueue = nil;
