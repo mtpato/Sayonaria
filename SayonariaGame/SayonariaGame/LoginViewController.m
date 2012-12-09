@@ -90,6 +90,12 @@
     }
 }
 
+
+
+
+
+
+
 -(void) cannotConnectError {
     UIAlertView *cannotConnectAlert = [[UIAlertView alloc]
                   initWithTitle: @"Cannot Access Server"
@@ -99,6 +105,11 @@
                   otherButtonTitles:nil];
     [cannotConnectAlert show];
 }
+
+
+
+
+
 
 -(void) cannotLoginError {
     UIAlertView *cannotConnectAlert = [[UIAlertView alloc]
