@@ -46,20 +46,6 @@
 
 @end
 
-/* (non-Javadoc)
- * the string looks like this:
- * players=userID!score|userID!score...,h=height,w=width,board=node|node|node|node...,over=0or1,turn=userID
- *
- * a node looks like this:
- * nodeID!x!y!owner!active!adjList
- *
- * an adjList looks like this:
- * nodeID.nodeID.nodeID.nodeID...
- *
- * example:
- * players=1-100|2-20,h=9,w=7,board=10-1-1-1-0-20.21.32.40|11-1-2-2-1-21.22.33.49....,over=0
- *
- */
 
 
 @implementation GameScreenViewController
@@ -125,15 +111,14 @@
         
         GameState=[GameState1 stringByAppendingString:GameState2];
         
-        [self parseGameState];
-        
         [self SetArtAssets];
         
-        [self RecordCellFrames];
+        [self parseGameState];
         
-        [self InitialDrawScreen];
         
         [self removeLoaderFromView];
+        
+        
         
     }
     
@@ -282,28 +267,57 @@
     
     //Get the current score for each player
     
-    NSUInteger index1=[self substringOfString:GameState untilNthOccurrence:1 ofString:@"!"];
-    NSUInteger index2=[self substringOfString:GameState untilNthOccurrence:1 ofString:@"|"];
+    NSUInteger index1;
+    NSUInteger index2;
+    
+    index1=[self substringOfString:GameState untilNthOccurrence:1 ofString:@"!"];
+    index2=[self substringOfString:GameState untilNthOccurrence:1 ofString:@"|"];
     
     Score1=[GameState substringWithRange:NSMakeRange(index1,index2-index1-1)];
     
-        index1=[self substringOfString:GameState untilNthOccurrence:2 ofString:@"!"];
-        index2=[self substringOfString:GameState untilNthOccurrence:2 ofString:@"|"];
+    index1=[self substringOfString:GameState untilNthOccurrence:2 ofString:@"!"];
+    index2=[self substringOfString:GameState untilNthOccurrence:2 ofString:@"|"];
     
     Score2=[GameState substringWithRange:NSMakeRange(index1+1,index2-index1-1)];
     
     
-    CellSize=42;
+    // Set the size of the cells on the screen
+    
+    CellSize=20;
+    
+    // Set the sensitivity for touching the center of the square
     
     TouchTolerance=20;
     
     
-       //    NSLog(@"%@",Score1);
+    
+    
+    index1=[self substringOfString:GameState untilNthOccurrence:1 ofString:@"board="];
+  
 
+    NSString *BoardState=[GameState substringWithRange:NSMakeRange(index1,GameState.length-index1)];
+
+    NSArray *GameNodeData = [BoardState componentsSeparatedByString: @"|"];
+    NSArray *ThisNodeData = [GameNodeData[3] componentsSeparatedByString: @"!"];
+    
+    
+    [self drawCellwithX:[ThisNodeData[1] intValue] withY:[ThisNodeData[2] intValue] Image:NeutralTile];
     
     
     
     
+/*
+    NSLog(@"%@",GameNodeData[3]);
+    NSLog(@"%@",ThisNodeData[0]);
+    NSLog(@"%@",ThisNodeData[1]);
+    NSLog(@"%@",ThisNodeData[2]);
+    NSLog(@"%@",ThisNodeData[3]);
+    NSLog(@"%@",ThisNodeData[4]);
+    NSLog(@"%@",ThisNodeData[5]);
+    
+*/
+    
+
 }
 
 
@@ -321,7 +335,7 @@
 
 
 
--(void) drawCellwithWidth:(NSUInteger)i withHeight:(NSUInteger)j tileType:(NSString*)tileToDraw teamID:(NSString*)teamNumber
+-(void) drawCellwithX:(NSUInteger)i withY:(NSUInteger)j Image:(UIImage*)ImageToDraw
 {
     
     int IncrementalLength=i*(CellSize-10)*1.06;
@@ -333,26 +347,30 @@
     
     CGRect frame = CGRectMake(IncrementalLength,IncrementalWidth,CellSize,CellSize);
     
-    UIImageView *BorderGrid;
+    UIImageView *ImageToDrawView;
     
-    BorderGrid=[[UIImageView alloc] initWithFrame:frame];
+    ImageToDrawView=[[UIImageView alloc] initWithFrame:frame];
+    ImageToDrawView.image=ImageToDraw;
     
-     if( teamNumber==@"1" && tileToDraw==@"Active"){BorderGrid.image=ActiveCellTeam1;}
-    
-     else{
-     if( teamNumber==@"1" && tileToDraw==@"Inactive"){BorderGrid.image=InactiveCellTeam1;}
-     
-     else{
-     if( teamNumber==@"2" && tileToDraw==@"Active"){BorderGrid.image=ActiveCellTeam2;}
-         
-     else{
-     if( teamNumber==@"2" && tileToDraw==@"Inactive"){BorderGrid.image=InactiveCellTeam1;}
-         
-     }}}
-    
-    [gameBoardView addSubview:BorderGrid];
+    [gameBoardView addSubview:ImageToDrawView];
     
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
