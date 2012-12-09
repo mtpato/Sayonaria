@@ -186,6 +186,12 @@
 }
 
 
+
+
+
+
+
+
 -(void)InitialDrawScreen{
     
     BackgroundView.image=TeamBackground;
@@ -218,25 +224,29 @@
 }
 
 
+
+
+
+
+
+
+
+
+
+
 -(void)parseGameState{
     
     
     self.thisNetworkController.delegate = self;
     
-    NSLog(@"Value of string is %@", GameState);
-    
-    
-    UserID1=@"5";
-    UserID2=@"6";
-    
-    
-    boardHeight=11;
-    boardWidth=6;
-    
 
+    BackgroundView.image=TeamBackground;
     
     //figure out way to get user ID
-    Turn=@"1";
+    Turn=[GameState substringWithRange:NSMakeRange([GameState rangeOfString:@"turn="].location+5,1)];
+    
+    UserID1=@"6";
+    UserID2=@"5";
     
     //pulls the gameover number from the game state
     GameOver = [GameState substringWithRange:NSMakeRange([GameState rangeOfString:@"over"].location+5,1)];
@@ -297,15 +307,19 @@
     
     [self AssignFrameToDictionarywithX:[ThisNodeData[1] intValue] withY:[ThisNodeData[2] intValue]];
     
-        NSLog(@"%@",ThisNodeData[3]);
-        NSLog(@"%@",ThisNodeData[4]);
-            
+
         }
+    
+    NSLog(@"%@",Turn);
     
         
     }
     
-    
+
+
+
+
+
 
 
 
@@ -321,6 +335,12 @@
     }
     return [scanner scanLocation];
 }
+
+
+
+
+
+
 
 
 
@@ -350,6 +370,14 @@
     [gameBoardView addSubview:ImageToDrawView];
     
 }
+
+
+
+
+
+
+
+
 
 -(void) AssignFrameToDictionarywithX:(NSUInteger)i withY:(NSUInteger)j
 {
@@ -391,93 +419,52 @@
 
 
 
-
-
-
-
 - (IBAction)LayTile:(UITapGestureRecognizer *)sender {
     
 
-    
-    if(Turn==@"1"){
+if([Turn isEqualToString:UserID2])
+{
         
     CGPoint location=[sender locationInView:self.gameBoardView];
     
+    int i=0;
+    
     for(id key in self.FrameDictionary)
     {
-
+        
     
     CGRect CurrentFrame=CGRectFromString( [self.FrameDictionary objectForKey:key]);
-    NSString *frameString=NSStringFromCGRect(CurrentFrame);
     
     double distance = sqrt(pow(( (CurrentFrame.origin.x+self.CellSize/2) - location.x), 2.0) + pow(( (CurrentFrame.origin.y+self.CellSize/2) - location.y), 2.0));
     //NSLog(@"Value of string is %f", distance);
     
-        if(distance<TouchTolerance && [self.PastMovesDictionary objectForKey:frameString]==nil){
+        if(distance<TouchTolerance)
+        {
+            NSArray *ThisNodeData = [GameNodeData[i] componentsSeparatedByString: @"!"];
+            
+            [self.thisNetworkController sendMessageToServer:  [NSString stringWithFormat:@"%@%@%@%@", @"makeMove:",self.gameID,@",",ThisNodeData[0]]];
+            [self parseGameState];
+            NSLog(@"%@",@"move was made");
+        }
         
-            UIImageView *PlaceView;
-            PlaceView = [[UIImageView alloc] initWithFrame:CurrentFrame];
-            PlaceView.image = ActiveCellTeam1;
-            [PastMovesDictionary setObject:frameString forKey:frameString];
-            
-            
-            
-            if(TeamID1==@"Coal"){
-                
-                PlaceView.animationImages=[NSArray arrayWithObjects:
-                                           [UIImage imageNamed:@"simpsoci_coal_tile_apear_anim_v001000.png"],
-                                           [UIImage imageNamed:@"simpsoci_coal_tile_apear_anim_v001001.png"],
-                                           [UIImage imageNamed:@"simpsoci_coal_tile_apear_anim_v001002.png"],
-                                           [UIImage imageNamed:@"simpsoci_coal_tile_apear_anim_v001003.png"],
-                                           [UIImage imageNamed:@"simpsoci_coal_tile_apear_anim_v001004.png"],
-                                           [UIImage imageNamed:@"simpsoci_coal_tile_apear_anim_v001005.png"],
-                                           [UIImage imageNamed:@"simpsoci_coal_tile_apear_anim_v001006.png"],
-                                           [UIImage imageNamed:@"simpsoci_coal_tile_apear_anim_v001007.png"],
-                                           [UIImage imageNamed:@"simpsoci_coal_tile_apear_anim_v001008.png"],
-                                           [UIImage imageNamed:@"simpsoci_coal_tile_apear_anim_v001009.png"],
-                                           [UIImage imageNamed:@"simpsoci_coal_tile_apear_anim_v001010.png"],
-                                           [UIImage imageNamed:@"simpsoci_coal_tile_apear_anim_v001011.png"],
-                                           [UIImage imageNamed:@"simpsoci_coal_tile_apear_anim_v001012.png"],
-                                           [UIImage imageNamed:@"simpsoci_coal_tile_apear_anim_v001013.png"],
-                                           [UIImage imageNamed:@"simpsoci_coal_tile_apear_anim_v01_000.png"],
-                                           [UIImage imageNamed:@"simpsoci_coal_tile_apear_anim_v01_001.png"],
-                                           [UIImage imageNamed:@"simpsoci_coal_tile_apear_anim_v01_002.png"],
-                                           [UIImage imageNamed:@"simpsoci_coal_tile_apear_anim_v01_003.png"],
-                                           [UIImage imageNamed:@"simpsoci_coal_tile_apear_anim_v01_004.png"],
-                                           [UIImage imageNamed:@"simpsoci_coal_tile_apear_anim_v01_005.png"],
-                                           [UIImage imageNamed:@"simpsoci_coal_tile_apear_anim_v01_006.png"],
-                                           [UIImage imageNamed:@"simpsoci_coal_tile_apear_anim_v01_007.png"],
-                                           [UIImage imageNamed:@"simpsoci_coal_tile_apear_anim_v01_008.png"],
-                                           [UIImage imageNamed:@"simpsoci_coal_tile_apear_anim_v01_009.png"],
-                                           [UIImage imageNamed:@"simpsoci_coal_tile_apear_anim_v01_010.png"],
-                                           [UIImage imageNamed:@"simpsoci_coal_tile_apear_anim_v01_011.png"],
-                                           [UIImage imageNamed:@"simpsoci_coal_tile_apear_anim_v01_012.png"],
-                                           [UIImage imageNamed:@"simpsoci_coal_tile_apear_anim_v01_013.png"],
-                                           [UIImage imageNamed:@"simpsoci_coal_tile_apear_anim_v01_014.png"],
-                                           [UIImage imageNamed:@"simpsoci_coal_tile_apear_anim_v01_015.png"],
-                                           [UIImage imageNamed:@"simpsoci_coal_tile_apear_anim_v01_016.png"],
-                                           [UIImage imageNamed:@"simpsoci_coal_tile_apear_anim_v01_017.png"],
-                                           [UIImage imageNamed:@"simpsoci_coal_tile_apear_anim_v01_018.png"],
-                                           [UIImage imageNamed:@"simpsoci_coal_tile_apear_anim_v01_019.png"],
-                                           [UIImage imageNamed:@"simpsoci_coal_tile_apear_anim_v01_020.png"],
-                                           [UIImage imageNamed:@"simpsoci_coal_tile_apear_anim_v01_021.png"],
-                                           [UIImage imageNamed:@"simpsoci_coal_tile_apear_anim_v01_022.png"]
-                                           , nil];
-                
-                
-                PlaceView.animationDuration = 2.0;
-                PlaceView.animationRepeatCount = 1;
-                [PlaceView startAnimating];
-                [gameBoardView addSubview:PlaceView];
-                
+        i=i+1;
+        
     }
-    }
-    }
-    }
-    
-   // Turn=@"2";
-
 }
+   // NSLog(@"%@",Turn);
+
+
+
+
+    
+}
+
+
+
+
+
+
+
 
 
 
@@ -490,9 +477,19 @@
 }
 
 
+
+
+
+
+
 -(void)viewWillAppear:(BOOL)animated{
     [self putLoaderInViewWithSplash:NO withFade:NO];
 }
+
+
+
+
+
 
 
 #pragma mark - view loading and appearing
@@ -504,7 +501,6 @@
     [self.thisNetworkController sendMessageToServer:  [NSString stringWithFormat:@"%@%@", @"gameState:",self.gameID]];
     
         
- 
 }
 
 

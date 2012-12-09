@@ -201,7 +201,9 @@
     
     //create the network controller
     NetworkController *tempController = [[NetworkController alloc] init];
+    SSIGameAppDelegate *appDelegate = (SSIGameAppDelegate *)[[UIApplication sharedApplication] delegate];
     self.thisNetworkController = tempController;
+    appDelegate.currentNetworkController = self.thisNetworkController;
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(checkConn:)
