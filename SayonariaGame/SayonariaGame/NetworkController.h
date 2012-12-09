@@ -33,6 +33,7 @@ typedef enum {
 @property (nonatomic,strong) NSOutputStream *outputStream;
 @property (nonatomic,weak) id<NetworkControllerDelegate> delegate;
 @property (nonatomic) ServerState *currentServerState;
+@property (nonatomic, strong) NSData *dataQueue;
 
 #pragma mark - definitions of default keys
 

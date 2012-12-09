@@ -41,6 +41,7 @@
     //open the socket
     [self.inputStream open];
     [self.outputStream open];
+    self.dataQueue = nil;
 }
 
 
@@ -52,7 +53,12 @@
 			//NSLog(@"Stream opened");
 			break;
         case NSStreamEventHasSpaceAvailable:
-            
+            NSLog(@"Space available on the output stream");
+            if (self.dataQueue != nil) {
+                NSString *stringToSend = [[NSString alloc] initWithData:self.dataQueue encoding:NSASCIIStringEncoding];
+                self.dataQueue = nil;
+                [self sendMessageToServer:stringToSend];
+            }
             break;
 		case NSStreamEventHasBytesAvailable:
             //this will read in input bytes, convert to a string and pass it to the handler
@@ -74,7 +80,6 @@
                                 //if we have JUST connected, send the game type to the server
                                 if(self.currentServerState == (ServerState *)Connecting){
                                     self.currentServerState = (ServerState *)SendingGameType;
-                                  //  NSLog(@"Sending tileGame");
                                     [self sendMessageToServer:@"tileGame"];
                                     //if we have sent in the game type, try logging in with a pre existing auth key
                                 } else if(self.currentServerState == (ServerState *)SendingGameType){
@@ -116,6 +121,7 @@
 }
 
 -(void)closeNetworkCommunication{
+    [self sendMessageToServer:@"quit"];
     [self.inputStream close];
     [self.outputStream close];
     [self.inputStream removeFromRunLoop:[NSRunLoop currentRunLoop]
@@ -144,9 +150,15 @@
 
 //public class method to send a message to the server
 -(void)sendMessageToServer: (NSString *)message{
-    NSLog(@"Saying To Server:%@",message);
     NSData *dataToSend = [[NSData alloc] initWithData:[[message stringByAppendingString:@"\n"] dataUsingEncoding:NSASCIIStringEncoding]];
-	[self.outputStream write:[dataToSend bytes] maxLength:[dataToSend length]];
+
+    if (self.outputStream.hasSpaceAvailable == TRUE) {
+        NSLog(@"Saying To Server:%@",message);
+        [self.outputStream write:[dataToSend bytes] maxLength:[dataToSend length]];
+        self.dataQueue = nil;
+    } else {
+        self.dataQueue = dataToSend;
+    }
 }
 
 //check if the user has a stored username and authkey. if they do, login
@@ -162,7 +174,7 @@
 }
 
 -(void)checkConnection{
-    if(self.inputStream == nil){
+    if(self.inputStream == nil || self.outputStream == nil){
         [self initNetworkCommunication];
     }
 }
