@@ -685,8 +685,6 @@
         <image name="Start_Button.png" width="437" height="318"/>
         <image name="Website_Button.png" width="438" height="438"/>
     </resources>
-<<<<<<< HEAD
-=======
     <classes>
         <class className="GameScreenViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/GameScreenViewController.h"/>
@@ -761,7 +759,6 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ShopTabViewController.h"/>
         </class>
     </classes>
->>>>>>> 1e194e60d1c217678f44d13284a48b66c0436434
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
