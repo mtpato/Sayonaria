@@ -15,7 +15,7 @@
 @property (nonatomic) NSString *GameState1;
 @property (nonatomic) NSString *GameState2;
 @property (nonatomic) NSString *GameState;
-
+@property (nonatomic) NSArray *GameNodeData;
 @property (nonatomic) NSInteger boardHeight;
 @property (nonatomic) NSInteger boardWidth;
 @property (nonatomic) NSString *UserID1;
@@ -26,7 +26,6 @@
 @property (nonatomic) NSString *GameOver;
 @property (nonatomic) NSString *TeamID1;
 @property (nonatomic) NSString *TeamID2;
-
 @property (nonatomic) NSInteger CellSize;
 
 @property (nonatomic) UIImage *InactiveCellTeam1;
@@ -54,6 +53,7 @@
 @synthesize GameState;
 @synthesize GameState1;
 @synthesize GameState2;
+@synthesize GameNodeData;
 @synthesize boardHeight;
 @synthesize boardWidth;
 @synthesize UserID1;
@@ -71,7 +71,6 @@
 @synthesize NeutralTile;
 @synthesize TeamBackground;
 @synthesize CellSize;
-
 @synthesize FrameDictionary;
 @synthesize PastMovesDictionary;
 
@@ -139,35 +138,12 @@
 
 
 
--(void)RecordCellFrames{
-    
-    self.FrameDictionary= [[NSMutableDictionary alloc]initWithCapacity:TotalCellsNum];
-    self.PastMovesDictionary= [[NSMutableDictionary alloc]initWithCapacity:TotalCellsNum];
-    
-    for(int i = 0; i < boardWidth; i++) {
-        for(int j = 0; j < boardHeight; j++) {
-    
-            int IncrementalLength=i*(CellSize-10)*1.06;
-            int IncrementalWidth=j*(CellSize-2)*1.06;
-            int moduloResult = i % 2;
-            int WidthModifier;
-            if(moduloResult==1){WidthModifier=0;} else {WidthModifier=(CellSize-2)/2;}
-            IncrementalWidth=IncrementalWidth+WidthModifier;
-            
-            CGRect frame = CGRectMake(IncrementalLength,IncrementalWidth,CellSize,CellSize);
-            
-            NSString *frameString=NSStringFromCGRect(frame);
-            [self.FrameDictionary setObject:frameString forKey:frameString];
-            
-        }
-    }
-    
-    
-    
-}
 
 -(void)SetArtAssets{
     
+    
+    TeamID1=@"Coal";
+    TeamID2=@"Diamond";
     
     //Set inactive art assets
     
@@ -249,14 +225,15 @@
     
     NSLog(@"Value of string is %@", GameState);
     
-
+    
+    UserID1=@"5";
+    UserID2=@"6";
+    
+    
     boardHeight=11;
     boardWidth=6;
     
-    TotalCellsNum=boardHeight*boardWidth;
-    
-    TeamID1=@"Coal";
-    TeamID2=@"Gold";
+
     
     //figure out way to get user ID
     Turn=@"1";
@@ -283,42 +260,54 @@
     
     // Set the size of the cells on the screen
     
-    CellSize=20;
+    CellSize=40;
     
     // Set the sensitivity for touching the center of the square
     
     TouchTolerance=20;
     
+    NSString *BoardState=[GameState substringWithRange:NSMakeRange(index1,GameState.length-index1)];
+    
+    GameNodeData = [BoardState componentsSeparatedByString: @"|"];
+    
+    self.FrameDictionary= [[NSMutableDictionary alloc]initWithCapacity:[GameNodeData count]];
     
     
     
+    
+    for(int i = 0; i <[GameNodeData count] ; i++) {
+        
     index1=[self substringOfString:GameState untilNthOccurrence:1 ofString:@"board="];
   
+    UIImage *CellImage;
+        
+    NSArray *ThisNodeData = [GameNodeData[i] componentsSeparatedByString: @"!"];
+    
+       
+    if([ThisNodeData[3] isEqualToString:@"-1"]){CellImage=NeutralTile;}
+    
+        
+    if([ThisNodeData[3] isEqualToString:UserID1] && [ThisNodeData[4] isEqualToString:@"1"]){CellImage=ActiveCellTeam1;}
+    if([ThisNodeData[3] isEqualToString:UserID1] && [ThisNodeData[4] isEqualToString:@"0"]){CellImage=InactiveCellTeam1;}
+    if([ThisNodeData[3] isEqualToString:UserID2] && [ThisNodeData[4] isEqualToString:@"1"]){CellImage=ActiveCellTeam2;}
+    if([ThisNodeData[3] isEqualToString:UserID2] && [ThisNodeData[4] isEqualToString:@"0"]){CellImage=InactiveCellTeam2;}
+        
+    
+    [self drawCellwithX:[ThisNodeData[1] intValue] withY:[ThisNodeData[2] intValue] Image:CellImage];
+    
+    [self AssignFrameToDictionarywithX:[ThisNodeData[1] intValue] withY:[ThisNodeData[2] intValue]];
+    
+        NSLog(@"%@",ThisNodeData[3]);
+        NSLog(@"%@",ThisNodeData[4]);
+            
+        }
+    
+        
+    }
+    
+    
 
-    NSString *BoardState=[GameState substringWithRange:NSMakeRange(index1,GameState.length-index1)];
 
-    NSArray *GameNodeData = [BoardState componentsSeparatedByString: @"|"];
-    NSArray *ThisNodeData = [GameNodeData[3] componentsSeparatedByString: @"!"];
-    
-    
-    [self drawCellwithX:[ThisNodeData[1] intValue] withY:[ThisNodeData[2] intValue] Image:NeutralTile];
-    
-    
-    
-    
-/*
-    NSLog(@"%@",GameNodeData[3]);
-    NSLog(@"%@",ThisNodeData[0]);
-    NSLog(@"%@",ThisNodeData[1]);
-    NSLog(@"%@",ThisNodeData[2]);
-    NSLog(@"%@",ThisNodeData[3]);
-    NSLog(@"%@",ThisNodeData[4]);
-    NSLog(@"%@",ThisNodeData[5]);
-    
-*/
-    
-
-}
 
 
 - (NSUInteger )substringOfString:(NSString *)base untilNthOccurrence:(NSInteger)n ofString:(NSString *)delim
@@ -338,14 +327,20 @@
 -(void) drawCellwithX:(NSUInteger)i withY:(NSUInteger)j Image:(UIImage*)ImageToDraw
 {
     
-    int IncrementalLength=i*(CellSize-10)*1.06;
-    int IncrementalWidth=j*(CellSize-2)*1.06;
-    int moduloResult = i % 2;
-    int WidthModifier;
-    if(moduloResult==1){WidthModifier=0;} else {WidthModifier=(CellSize-2)/2;}
-    IncrementalWidth=IncrementalWidth+WidthModifier;
     
-    CGRect frame = CGRectMake(IncrementalLength,IncrementalWidth,CellSize,CellSize);
+    float hStep = 20;
+    float vStep = 30;
+    float topBuffer = 0 ;
+    float buffer = 0;
+    
+    float x1=j*hStep-buffer;
+    float x2=j*hStep+hStep+buffer;
+    float y1=i*vStep+buffer+topBuffer;
+    float y2=i*vStep+vStep-buffer+topBuffer;
+    
+
+    CGRect frame = CGRectMake((y1+y2)/2,(x1+x2)/2,CellSize,CellSize);
+   
     
     UIImageView *ImageToDrawView;
     
@@ -355,6 +350,30 @@
     [gameBoardView addSubview:ImageToDrawView];
     
 }
+
+-(void) AssignFrameToDictionarywithX:(NSUInteger)i withY:(NSUInteger)j
+{
+    
+    
+    float hStep = 20;
+    float vStep = 30;
+    float topBuffer = 0 ;
+    float buffer = 0;
+    
+    float x1=j*hStep-buffer;
+    float x2=j*hStep+hStep+buffer;
+    float y1=i*vStep+buffer+topBuffer;
+    float y2=i*vStep+vStep-buffer+topBuffer;
+    
+    
+    CGRect frame = CGRectMake((y1+y2)/2,(x1+x2)/2,CellSize,CellSize);
+    
+    NSString *frameString=NSStringFromCGRect(frame);
+    [self.FrameDictionary setObject:frameString forKey:frameString];
+
+    
+}
+
 
 
 
