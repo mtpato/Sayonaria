@@ -26,6 +26,15 @@
     self.loader = nil;
 }
 
+
+
+
+
+
+
+
+
+
 //figures out what to do with the message received from the server
 -(void)messageRecieved:(NSString *)messageFromServer {
     //NSLog(@"server said: %@", messageFromServer);
@@ -102,6 +111,8 @@
 }
 
 #pragma mark - user interface for logon screen
+
+
 
 //if a user is on a keyboard, this will make the keyboard go away if they click off the keyboard
 - (IBAction)BackgroundClicked:(id)sender {
