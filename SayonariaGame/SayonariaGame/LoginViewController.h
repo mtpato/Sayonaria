@@ -12,6 +12,7 @@
 #import "NetworkController.h"
 #import "GameTabViewController.h"
 #import "NetworkStorageTabBarController.h"
+#import "SSIGameAppDelegate.h"
 
 @interface LoginViewController : UIViewController <NSStreamDelegate,UIAlertViewDelegate,UITextFieldDelegate,NewUserViewControllerDelegate,NetworkControllerDelegate,LoadingViewDelegate>
 @property (nonatomic,weak) IBOutlet UITextField *UserName;
