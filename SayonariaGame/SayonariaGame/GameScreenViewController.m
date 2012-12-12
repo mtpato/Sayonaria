@@ -95,6 +95,8 @@
 }
 
 
+
+
 //MESSAGES RECIEVED FROM THE SERVER WILL BE SENT HERE
 -(void)messageRecieved:(NSString *)messageFromServer{
     
@@ -114,10 +116,7 @@
         
         [self parseGameState];
         
-        
         [self removeLoaderFromView];
-        
-        
         
     }
     
@@ -139,89 +138,9 @@
 
 
 
--(void)SetArtAssets{
-    
-    
-    TeamID1=@"Coal";
-    TeamID2=@"Diamond";
-    
-    //Set inactive art assets
-    
-    if( TeamID1==@"Coal"){InactiveCellTeam1=[UIImage imageNamed:@"Inactive Coal.png"];}
-    if( TeamID1==@"Diamond"){InactiveCellTeam1=[UIImage imageNamed:@"Inactive Diamond.png"];}
-    if( TeamID1==@"Gold"){InactiveCellTeam1=[UIImage imageNamed:@"Inactive Gold.png"];}
-    if( TeamID1==@"Silica"){InactiveCellTeam1=[UIImage imageNamed:@"Inactive Silica.png"];}
-    
-    if( TeamID2==@"Coal"){InactiveCellTeam2=[UIImage imageNamed:@"Inactive Coal.png"];}
-    if( TeamID2==@"Diamond"){InactiveCellTeam2=[UIImage imageNamed:@"Inactive Diamond.png"];}
-    if( TeamID2==@"Gold"){InactiveCellTeam2=[UIImage imageNamed:@"Inactive Gold.png"];}
-    if( TeamID2==@"Silica"){InactiveCellTeam2=[UIImage imageNamed:@"Inactive Silica.png"];}
-    
-    
-    //Set active art assets
-    
-    if( TeamID1==@"Coal"){ActiveCellTeam1=[UIImage imageNamed:@"Active Coal.png"];}
-    if( TeamID1==@"Diamond"){ActiveCellTeam1=[UIImage imageNamed:@"Active Diamond.png"];}
-    if( TeamID1==@"Gold"){ActiveCellTeam1=[UIImage imageNamed:@"Active Gold.png"];}
-    if( TeamID1==@"Silica"){ActiveCellTeam1=[UIImage imageNamed:@"Active Silica.png"];}
-    
-    if( TeamID2==@"Coal"){ActiveCellTeam2=[UIImage imageNamed:@"Active Coal.png"];}
-    if( TeamID2==@"Diamond"){ActiveCellTeam2=[UIImage imageNamed:@"Active Diamond.png"];}
-    if( TeamID2==@"Gold"){ActiveCellTeam2=[UIImage imageNamed:@"Active Gold.png"];}
-    if( TeamID2==@"Silica"){ActiveCellTeam2=[UIImage imageNamed:@"Active Silica.png"];}
-    
-    
-    //Set neutral tile assets
-    
-    NeutralTile=[UIImage imageNamed:@"Inactive Neutral.png"];
-    
-    
-    //Set background type
-    
-    if( TeamID1==@"Coal"){TeamBackground=[UIImage imageNamed:@"Coal Background.png"];}
-    if( TeamID1==@"Diamond"){TeamBackground=[UIImage imageNamed:@"Diamond Background.png"];}
-    if( TeamID1==@"Gold"){TeamBackground=[UIImage imageNamed:@"Gold Background.png"];}
-    if( TeamID1==@"Silica"){TeamBackground=[UIImage imageNamed:@"Inactive Silica.png"];}
-    
-}
 
 
 
-
-
-
-
-
--(void)InitialDrawScreen{
-    
-    BackgroundView.image=TeamBackground;
-    
-
-    for(int i = 0; i < boardWidth; i++) {
-        for(int j = 0; j < boardHeight; j++) {
-
-            
-            int IncrementalLength=i*(CellSize-10)*1.06;
-            int IncrementalWidth=j*(CellSize-2)*1.06;
-            int moduloResult = i % 2;
-            int WidthModifier;
-            if(moduloResult==1){WidthModifier=0;} else {WidthModifier=(CellSize-2)/2;}
-            IncrementalWidth=IncrementalWidth+WidthModifier;
-            
-            CGRect frame = CGRectMake(IncrementalLength,IncrementalWidth,CellSize,CellSize);
-            
-            
-            UIImageView *BorderGrid;
-            
-            BorderGrid=[[UIImageView alloc] initWithFrame:frame];
-            BorderGrid.image=NeutralTile;
-            [gameBoardView addSubview:BorderGrid];
-            
-                }
-            }
-    
-    
-}
 
 
 
@@ -239,23 +158,29 @@
     
     self.thisNetworkController.delegate = self;
     
+    NSUInteger index1 = 0;
+    NSUInteger index2 = 0;
 
     BackgroundView.image=TeamBackground;
     
-    //figure out way to get user ID
+    
+    //Check the user ID of the currentplayer
+    
     Turn=[GameState substringWithRange:NSMakeRange([GameState rangeOfString:@"turn="].location+5,1)];
+    
+    
+    NSUserDefaults *defaults= [NSUserDefaults standardUserDefaults];
+    
     
     UserID1=@"6";
     UserID2=@"5";
     
     //pulls the gameover number from the game state
+    
     GameOver = [GameState substringWithRange:NSMakeRange([GameState rangeOfString:@"over"].location+5,1)];
     
     
     //Get the current score for each player
-    
-    NSUInteger index1;
-    NSUInteger index2;
     
     index1=[self substringOfString:GameState untilNthOccurrence:1 ofString:@"!"];
     index2=[self substringOfString:GameState untilNthOccurrence:1 ofString:@"|"];
@@ -283,8 +208,6 @@
     self.FrameDictionary= [[NSMutableDictionary alloc]initWithCapacity:[GameNodeData count]];
     
     
-    
-    
     for(int i = 0; i <[GameNodeData count] ; i++) {
         
     index1=[self substringOfString:GameState untilNthOccurrence:1 ofString:@"board="];
@@ -310,7 +233,7 @@
 
         }
     
-    NSLog(@"%@",Turn);
+    NSLog(@"%@",UserID1);
     
         
     }
@@ -502,6 +425,56 @@ if([Turn isEqualToString:UserID2])
     
         
 }
+
+
+
+
+-(void)SetArtAssets{
+    
+    
+    TeamID1=@"Coal";
+    TeamID2=@"Diamond";
+    
+    //Set inactive art assets
+    
+    if( TeamID1==@"Coal"){InactiveCellTeam1=[UIImage imageNamed:@"Inactive Coal.png"];}
+    if( TeamID1==@"Diamond"){InactiveCellTeam1=[UIImage imageNamed:@"Inactive Diamond.png"];}
+    if( TeamID1==@"Gold"){InactiveCellTeam1=[UIImage imageNamed:@"Inactive Gold.png"];}
+    if( TeamID1==@"Silica"){InactiveCellTeam1=[UIImage imageNamed:@"Inactive Silica.png"];}
+    
+    if( TeamID2==@"Coal"){InactiveCellTeam2=[UIImage imageNamed:@"Inactive Coal.png"];}
+    if( TeamID2==@"Diamond"){InactiveCellTeam2=[UIImage imageNamed:@"Inactive Diamond.png"];}
+    if( TeamID2==@"Gold"){InactiveCellTeam2=[UIImage imageNamed:@"Inactive Gold.png"];}
+    if( TeamID2==@"Silica"){InactiveCellTeam2=[UIImage imageNamed:@"Inactive Silica.png"];}
+    
+    
+    //Set active art assets
+    
+    if( TeamID1==@"Coal"){ActiveCellTeam1=[UIImage imageNamed:@"Active Coal.png"];}
+    if( TeamID1==@"Diamond"){ActiveCellTeam1=[UIImage imageNamed:@"Active Diamond.png"];}
+    if( TeamID1==@"Gold"){ActiveCellTeam1=[UIImage imageNamed:@"Active Gold.png"];}
+    if( TeamID1==@"Silica"){ActiveCellTeam1=[UIImage imageNamed:@"Active Silica.png"];}
+    
+    if( TeamID2==@"Coal"){ActiveCellTeam2=[UIImage imageNamed:@"Active Coal.png"];}
+    if( TeamID2==@"Diamond"){ActiveCellTeam2=[UIImage imageNamed:@"Active Diamond.png"];}
+    if( TeamID2==@"Gold"){ActiveCellTeam2=[UIImage imageNamed:@"Active Gold.png"];}
+    if( TeamID2==@"Silica"){ActiveCellTeam2=[UIImage imageNamed:@"Active Silica.png"];}
+    
+    
+    //Set neutral tile assets
+    
+    NeutralTile=[UIImage imageNamed:@"Inactive Neutral.png"];
+    
+    
+    //Set background type
+    
+    if( TeamID1==@"Coal"){TeamBackground=[UIImage imageNamed:@"Coal Background.png"];}
+    if( TeamID1==@"Diamond"){TeamBackground=[UIImage imageNamed:@"Diamond Background.png"];}
+    if( TeamID1==@"Gold"){TeamBackground=[UIImage imageNamed:@"Gold Background.png"];}
+    if( TeamID1==@"Silica"){TeamBackground=[UIImage imageNamed:@"Inactive Silica.png"];}
+    
+}
+
 
 
 

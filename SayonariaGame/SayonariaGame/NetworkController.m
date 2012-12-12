@@ -28,7 +28,7 @@
     CFReadStreamRef readStream;
     CFWriteStreamRef writeStream;
     //create the socket: 98.204.99.45 is real IP
-    CFStreamCreatePairWithSocketToHost(NULL, (CFStringRef)@"localhost", 4356, &readStream, &writeStream);
+    CFStreamCreatePairWithSocketToHost(NULL, (CFStringRef)@"98.204.95.21", 4356, &readStream, &writeStream);
     //cast the CFStreams as NSStreams
     self.inputStream = (__bridge NSInputStream *)readStream;
     self.outputStream = (__bridge NSOutputStream *)writeStream;
@@ -53,7 +53,7 @@
 			//NSLog(@"Stream opened");
 			break;
         case NSStreamEventHasSpaceAvailable:
-            NSLog(@"Space available on the output stream");
+            //NSLog(@"Space available on the output stream");
             if (self.dataQueue != nil) {
                 NSString *stringToSend = [[NSString alloc] initWithData:self.dataQueue encoding:NSASCIIStringEncoding];
                 self.dataQueue = nil;

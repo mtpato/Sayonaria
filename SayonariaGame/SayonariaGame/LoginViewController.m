@@ -45,20 +45,26 @@
     //if the server says 'done' it can be connecting, confirming the game type, etc
     if([[messageFromServer substringToIndex:4] isEqualToString:@"done"]){
 
-        if (self.thisNetworkController.currentServerState == (ServerState *)ConnectedAwaitingLogon){
+        if (self.thisNetworkController.currentServerState == (ServerState *)ConnectedAwaitingLogon || self.thisNetworkController.currentServerState == (ServerState *)TryingAuthKeyLogin){
             //if we get an auth key back (done, >4 chars), the save it and log in
             //this means we have logged in with a user/pass
             if([messageFromServer length] > 4){
-                NSLog(@"Logged in with Password!");
-                [defaults setObject:[messageFromServer substringFromIndex:5] forKey:AUTH_KEY];
+                NSArray *partsOfMessage = [messageFromServer componentsSeparatedByString:@":"];
+                [defaults setObject:[partsOfMessage objectAtIndex:1] forKey:USER_ID];
+                if(self.thisNetworkController.currentServerState == (ServerState *)TryingAuthKeyLogin) {
+                    NSLog(@"Logged in with Auth Key!");
+                    [self showTabViewNotAnimated];
+                } else {
+                NSLog(@"Logged in with password!");
+                [defaults setObject:[partsOfMessage objectAtIndex:2] forKey:AUTH_KEY];
                 [defaults synchronize];
                 [self putLoaderInViewWithSplash:NO withFade:YES];
+                }
             } else {
                 NSLog(@"New User Created Successfully");
             }
         } else if(self.thisNetworkController.currentServerState == (ServerState *)TryingAuthKeyLogin) {
-            NSLog(@"Logged in with Auth Key!");
-            [self showTabViewNotAnimated];
+            NSLog(@"YOU SHOULD NEVER SEE THIS!!!!!!");
         } else{
             NSLog(@"Server 'done' message not interpreted");
         }

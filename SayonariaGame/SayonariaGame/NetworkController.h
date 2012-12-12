@@ -40,6 +40,7 @@ typedef enum {
 #define NETWORK_CONTROLLER_KEY @"currentNetworkController"
 #define USER_NAME @"UserName"
 #define AUTH_KEY @"AuthKey"
+#define USER_ID @"UserID"
 
 #pragma mark - public API
 
