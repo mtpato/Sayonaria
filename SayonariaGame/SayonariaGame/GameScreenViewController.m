@@ -110,12 +110,10 @@
         
         GameState2=messageFromServer;
         
+        
         GameState=[GameState1 stringByAppendingString:GameState2];
-        
         [self SetArtAssets];
-        
         [self parseGameState];
-        
         [self removeLoaderFromView];
         
     }
@@ -124,6 +122,10 @@
 
     
 }
+
+
+
+
 
 
 -(void)viewDidLoad
@@ -171,9 +173,37 @@
     
     NSUserDefaults *defaults= [NSUserDefaults standardUserDefaults];
     
+    [defaults objectForKey:USER_ID];
     
-    UserID1=@"6";
-    UserID2=@"5";
+    
+    //Find Player IDs in the Game String:
+    
+    index1=[self substringOfString:GameState untilNthOccurrence:1 ofString:@"="];
+    index2=[self substringOfString:GameState untilNthOccurrence:1 ofString:@"!"];
+    
+    UserID1=[GameState substringWithRange:NSMakeRange(index1,index2-index1-1)];
+    
+    index1=[self substringOfString:GameState untilNthOccurrence:1 ofString:@"|"];
+    index2=[self substringOfString:GameState untilNthOccurrence:2 ofString:@"!"];
+    
+    UserID2=[GameState substringWithRange:NSMakeRange(index1,index2-index1-1)];
+    
+    
+
+    
+    //Always set the client to UserID1 !!!!!
+    
+    if([UserID1 isEqualToString:[defaults objectForKey:USER_ID]]){UserID1=UserID1;}
+    
+    else{
+        
+        UserID2=UserID1;
+        UserID1=[defaults objectForKey:USER_ID];
+        
+    }
+    
+
+    
     
     //pulls the gameover number from the game state
     
@@ -187,11 +217,14 @@
     
     Score1=[GameState substringWithRange:NSMakeRange(index1,index2-index1-1)];
     
+    _Score1Label.text=Score1;
+    
     index1=[self substringOfString:GameState untilNthOccurrence:2 ofString:@"!"];
-    index2=[self substringOfString:GameState untilNthOccurrence:2 ofString:@"|"];
+    index2=[self substringOfString:GameState untilNthOccurrence:1 ofString:@","];
     
-    Score2=[GameState substringWithRange:NSMakeRange(index1+1,index2-index1-1)];
+    Score2=[GameState substringWithRange:NSMakeRange(index1,index2-index1-1)];
     
+    _Score2Label.text=Score2;
     
     // Set the size of the cells on the screen
     
@@ -233,9 +266,13 @@
 
         }
     
-    NSLog(@"%@",UserID1);
+    //[self parseGameState];
     
-        
+    NSLog(@"%@",GameState);
+    NSLog(@"%@",UserID1);
+    NSLog(@"%@",UserID2);
+    
+    
     }
     
 
@@ -345,7 +382,7 @@
 - (IBAction)LayTile:(UITapGestureRecognizer *)sender {
     
 
-if([Turn isEqualToString:UserID2])
+if([Turn isEqualToString:UserID1])
 {
         
     CGPoint location=[sender locationInView:self.gameBoardView];
@@ -364,8 +401,9 @@ if([Turn isEqualToString:UserID2])
         if(distance<TouchTolerance)
         {
             NSArray *ThisNodeData = [GameNodeData[i] componentsSeparatedByString: @"!"];
-            
+           
             [self.thisNetworkController sendMessageToServer:  [NSString stringWithFormat:@"%@%@%@%@", @"makeMove:",self.gameID,@",",ThisNodeData[0]]];
+             NSLog(@"%@",ThisNodeData[0]);
             [self parseGameState];
             NSLog(@"%@",@"move was made");
         }
@@ -374,7 +412,6 @@ if([Turn isEqualToString:UserID2])
         
     }
 }
-   // NSLog(@"%@",Turn);
 
 
 
@@ -395,6 +432,10 @@ if([Turn isEqualToString:UserID2])
 
 
 - (void)viewDidUnload {
+    
+    [self setScore2Label:nil];
+    [self setScore1Label:nil];
+    [self setTestLabel:nil];
     
 
 }

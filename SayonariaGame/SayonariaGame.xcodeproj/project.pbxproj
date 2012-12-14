@@ -54,6 +54,7 @@
 		B088B23A16209B6B00A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_021.png in Resources */ = {isa = PBXBuildFile; fileRef = B088B22316209B6900A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_021.png */; };
 		B088B23B16209B6B00A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_022.png in Resources */ = {isa = PBXBuildFile; fileRef = B088B22416209B6A00A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_022.png */; };
 		B0CB261B15F505A600CFC943 /* GameScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0CB261A15F505A600CFC943 /* GameScreenViewController.m */; };
+		B0E17B03167ABBFB0089B742 /* Active Diamond.png in Resources */ = {isa = PBXBuildFile; fileRef = B0E17B02167ABBFB0089B742 /* Active Diamond.png */; };
 		B10086731643346400385673 /* NewGameOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B10086721643346400385673 /* NewGameOptionsViewController.m */; };
 		B13B30F415D0C7BF003A4E89 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B13B30F315D0C7BF003A4E89 /* UIKit.framework */; };
 		B13B30F615D0C7BF003A4E89 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B13B30F515D0C7BF003A4E89 /* Foundation.framework */; };
@@ -182,6 +183,7 @@
 		B088B22416209B6A00A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_022.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = simpsoci_coal_tile_apear_anim_v01_022.png; sourceTree = "<group>"; };
 		B0CB261915F505A600CFC943 /* GameScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScreenViewController.h; sourceTree = "<group>"; };
 		B0CB261A15F505A600CFC943 /* GameScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameScreenViewController.m; sourceTree = "<group>"; };
+		B0E17B02167ABBFB0089B742 /* Active Diamond.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Active Diamond.png"; sourceTree = "<group>"; };
 		B10086711643346400385673 /* NewGameOptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewGameOptionsViewController.h; sourceTree = "<group>"; };
 		B10086721643346400385673 /* NewGameOptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewGameOptionsViewController.m; sourceTree = "<group>"; };
 		B13B30EF15D0C7BF003A4E89 /* SayonariaGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SayonariaGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -292,6 +294,7 @@
 		B0F534361673BD71005DA217 /* Game Screen Art */ = {
 			isa = PBXGroup;
 			children = (
+				B0E17B02167ABBFB0089B742 /* Active Diamond.png */,
 			);
 			name = "Game Screen Art";
 			sourceTree = "<group>";
@@ -659,6 +662,7 @@
 				B088B23916209B6B00A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_020.png in Resources */,
 				B088B23A16209B6B00A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_021.png in Resources */,
 				B088B23B16209B6B00A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_022.png in Resources */,
+				B0E17B03167ABBFB0089B742 /* Active Diamond.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

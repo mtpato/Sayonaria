@@ -20,4 +20,12 @@
 @property (nonatomic, strong) NSString *opponentName;
 @property (nonatomic, strong) NSString *gameID;
 
+@property (weak, nonatomic) IBOutlet UILabel *TestLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *Score1Label;
+
+
+@property (weak, nonatomic) IBOutlet UILabel *Score2Label;
+
+
 @end
