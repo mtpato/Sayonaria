@@ -16,8 +16,11 @@
 
 @property (weak, nonatomic) IBOutlet UIScrollView *gameBoardView;
 @property (nonatomic,strong) LoadingView * loader;
+
 @property (nonatomic, strong) NetworkController *thisNetworkController;
+
 @property (nonatomic, strong) NSString *opponentName;
+
 @property (nonatomic, strong) NSString *gameID;
 
 @property (weak, nonatomic) IBOutlet UILabel *TestLabel;
