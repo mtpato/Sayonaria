@@ -511,15 +511,17 @@
         <!--Game Screen View Controller-->
         <scene sceneID="xCO-23-gVE">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0t0-I8-ptI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="z4H-K1-kOI">
+                    <connections>
+                        <action selector="LayTile:" destination="BS0-Cj-qeR" id="jsw-g2-AHJ"/>
+                    </connections>
+                </tapGestureRecognizer>
                 <viewController storyboardIdentifier="gameScreen" id="BS0-Cj-qeR" customClass="GameScreenViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="foF-33-xkb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="431"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="BlankFancyBackIphone@2x.png" id="qBe-UU-jAr">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="481"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="dwM-g7-7dD">
                                 <rect key="frame" x="0.0" y="0.0" width="279" height="411"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -553,7 +555,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="gV0-Df-Bgw"/>
                     <connections>
-                        <outlet property="BackgroundView" destination="qBe-UU-jAr" id="1FK-EU-ne6"/>
                         <outlet property="Score1Label" destination="Ofc-11-eBm" id="7Uq-Vr-XjE"/>
                         <outlet property="Score2Label" destination="4HR-R0-dE9" id="YqS-pC-pQO"/>
                         <outlet property="TestLabel" destination="TMm-hN-Ddx" id="zYe-4S-b4Q"/>
@@ -561,12 +562,6 @@
                         <outlet property="tapRecognizer" destination="z4H-K1-kOI" id="FwU-DE-ldv"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0t0-I8-ptI" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="z4H-K1-kOI">
-                    <connections>
-                        <action selector="LayTile:" destination="BS0-Cj-qeR" id="aja-xB-it7"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="683" y="-858"/>
         </scene>
@@ -717,6 +712,7 @@
         <class className="GameScreenViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/GameScreenViewController.h"/>
             <relationships>
+                <relationship kind="action" name="LayTile:" candidateClass="UITapGestureRecognizer"/>
                 <relationship kind="outlet" name="BackgroundView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="Score1Label" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="Score2Label" candidateClass="UILabel"/>
@@ -739,6 +735,9 @@
         <class className="LoginViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginViewController.h"/>
             <relationships>
+                <relationship kind="action" name="BackgroundClicked:"/>
+                <relationship kind="action" name="didPressLogin:"/>
+                <relationship kind="action" name="didPressNewUser:"/>
                 <relationship kind="outlet" name="Password" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="UserName" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="loginButton" candidateClass="UIButton"/>
@@ -766,6 +765,9 @@
         <class className="NewUserViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NewUserViewController.h"/>
             <relationships>
+                <relationship kind="action" name="backgroundPressed:"/>
+                <relationship kind="action" name="cancelPressed:"/>
+                <relationship kind="action" name="createPressed:"/>
                 <relationship kind="outlet" name="cancelButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="confirmPassword" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="confirmPasswordLabel" candidateClass="UILabel"/>
@@ -796,6 +798,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="kUX-72-zr7"/>
+        <segue reference="ZgY-AQ-ck0"/>
     </inferredMetricsTieBreakers>
 </document>
