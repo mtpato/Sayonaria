@@ -12,7 +12,8 @@
 #import "GameScreenViewController.h"
 #import "NewGameOptionsViewController.h"
 
-@interface GameTabViewController : UIViewController <NetworkControllerDelegate,UITableViewDataSource,UITableViewDelegate,LoadingViewDelegate>
+@interface GameTabViewController : UIViewController <NetworkControllerDelegate,UITableViewDataSource,UITableViewDelegate,LoadingViewDelegate,UINavigationControllerDelegate>
+@property (nonatomic,strong) UINavigationController *thisNavigationController;
 @property (nonatomic,strong) NetworkController *thisNetworkController;
 @property (nonatomic,strong) LoadingView * loader;
 @property (nonatomic,weak) IBOutlet UIButton *gameNewButton;

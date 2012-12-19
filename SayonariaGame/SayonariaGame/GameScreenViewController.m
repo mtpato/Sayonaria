@@ -42,7 +42,12 @@
 
 @property (nonatomic) NSInteger TotalCellsNum;
 
+<<<<<<< HEAD
 @property (nonatomic) NSTimer *UpdateMoveTimer;
+=======
+@property (nonatomic) IBOutlet UIButton *backButton;
+@property (nonatomic, strong) NSString *isGoingBack;
+>>>>>>> newbranch120812
 
 @end
 
@@ -83,12 +88,17 @@
 
 -(void)putLoaderInViewWithSplash:(BOOL)isSplash withFade:(BOOL)isFade{
     self.loader = [[LoadingView alloc] init];
+    self.loader.delegate = self;
     self.loader = [self.loader loadSpinnerIntoView:self.view withSplash:isSplash withFade:isFade];
 }
 
 -(void)loaderIsOnScreen{
-    [self removeLoaderFromView];
-
+    if (self.isGoingBack = @"YES") {
+        [self.navigationController popViewControllerAnimated:NO];
+        NSLog(@"Going back...");
+    } else {
+        [self removeLoaderFromView];
+    }
 }
 
 -(void)removeLoaderFromView{
@@ -552,6 +562,13 @@
 
 
 #pragma mark - view loading and appearing
+
+- (IBAction)backButtonPressed {
+    self.isGoingBack = @"YES";
+    [self putLoaderInViewWithSplash:NO withFade:YES];
+
+}
+
 
 -(void)viewDidAppear:(BOOL)animated{
     
