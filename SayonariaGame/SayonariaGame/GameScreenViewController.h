@@ -23,7 +23,7 @@
 
 @property (nonatomic, strong) NSString *gameID;
 
-@property (weak, nonatomic) IBOutlet UILabel *TestLabel;
+@property (weak, nonatomic) IBOutlet UILabel *Score1TeamLabel;
 
 @property (weak, nonatomic) IBOutlet UILabel *Score1Label;
 

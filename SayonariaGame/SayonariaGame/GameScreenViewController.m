@@ -42,6 +42,7 @@
 
 @property (nonatomic) NSInteger TotalCellsNum;
 
+@property (nonatomic) NSTimer *UpdateMoveTimer;
 
 @end
 
@@ -76,6 +77,7 @@
 
 @synthesize TouchTolerance;
 @synthesize TotalCellsNum;
+@synthesize UpdateMoveTimer;
 
 #pragma mark - server Communications and delegate methods
 
@@ -138,6 +140,7 @@
     //remove the loadingScreen
     [self removeLoaderFromView];
     
+    
 }
 
 
@@ -159,7 +162,7 @@
     
     Turn= [GameState  substringWithRange:NSMakeRange(index1,index2-index1)];
     
-    _TestLabel.text=Turn;
+
 }
 
 
@@ -477,7 +480,11 @@
                 [self.thisNetworkController sendMessageToServer:  [NSString stringWithFormat:@"%@%@%@%@", @"makeMove:",self.gameID,@",",ThisNodeData[0]]];
                    // Turn=UserID2;
                    //NSLog(@"does this output?");
+                    
+                    
+                    
                 [self.thisNetworkController sendMessageToServer:  [NSString stringWithFormat:@"%@%@", @"gameState:",self.gameID]];
+                [self createTimer];
                     
                 }
         
@@ -490,8 +497,29 @@
 
 
 
+-(void)createTimer
+{
+
+    NSTimer *t = [NSTimer scheduledTimerWithTimeInterval: 5.0
+                                        target: self
+                                        selector:@selector(onTick:)
+                                        userInfo: nil repeats:NO];
+    
+    UpdateMoveTimer=t;
+    
+    
+    
+}
 
 
+-(void)onTick:(NSTimer *)timer {
+    
+
+    [self.thisNetworkController sendMessageToServer:  [NSString stringWithFormat:@"%@%@", @"gameState:",self.gameID]];
+
+    
+    
+}
 
 
 
@@ -504,8 +532,7 @@
     
     [self setScore2Label:nil];
     [self setScore1Label:nil];
-    [self setTestLabel:nil];
-    
+        
 }
 
 
@@ -531,6 +558,7 @@
     self.thisNetworkController.delegate = self;
     
     [self.thisNetworkController sendMessageToServer:  [NSString stringWithFormat:@"%@%@", @"gameState:",self.gameID]];
+    
     
         
 }
