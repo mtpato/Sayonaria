@@ -10,6 +10,7 @@
 
 @interface NewGameOptionsViewController ()
 @property (nonatomic, strong) UIImageView *fadeImage;
+@property (nonatomic, strong) NSString *gameID;
 @end
 
 @implementation NewGameOptionsViewController
@@ -57,6 +58,12 @@
 -(void)messageRecieved:(NSString *)messageFromServer{
     if([messageFromServer isEqualToString:@"done:gameCreated"]){
         [self putLoaderInViewWithSplash:NO withFade:YES];
+        NSLog(@"Loading game screen...");
+    } else if([[messageFromServer substringToIndex:7] isEqualToString:@"gameID:"]){
+        self.gameID = [messageFromServer substringFromIndex:7];
+        NSLog(@"Game ID set");
+    } else {
+        [self badOpponentAlert];
     }
 }
 
@@ -71,8 +78,9 @@
     //pass appropriate game information
 /*
     newGameScreen.opponentName = cell.textLabel.text;
-    newGameScreen.gameID = cell.detailTextLabel.text;
-*/
+ */
+    newGameScreen.gameID = self.gameID;
+ 
     //segue!
     [self.navigationController pushViewController:newGameScreen animated:NO];
 }
@@ -108,7 +116,7 @@
     [self.randomButton.titleLabel setFont:[UIFont fontWithName:@"Bauhaus 93" size:20]];
 }
 
--(void)viewWillAppear
+-(void)viewWillAppear:(BOOL)animated
 {
     CGRect screenBounds =[[UIScreen mainScreen] bounds];
     CGSize screenDimensions = screenBounds.size;

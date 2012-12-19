@@ -81,10 +81,10 @@
             //request the games list for the table
             [self.thisNetworkController sendMessageToServer:@"getGames"];
         }
-        if([messageFromServer isEqualToString:@"done:gameCreated"]){
-            [self showGameScreenNotAnimated:@"New Game"];
+        //if([messageFromServer isEqualToString:@"done:gameCreated"]){
+          //  [self showGameScreenNotAnimated:@"New Game"];
             //[self performSegueWithIdentifier:@"showGameScreen" sender:@"New Game"];
-        }
+        //}
     }
     if([messageFromServer length] > 4){
         if([[messageFromServer substringToIndex:5] isEqualToString:@"games"]){
@@ -272,6 +272,8 @@
     [super viewDidLoad];
     //the first time the view is loaded, we are probably coming from the login screen, so hide the tabbar for a smoother transition
     self.tabBarController.tabBar.hidden = YES;
+    
+    self.thisNavigationController = self.navigationController;
     
     [self.gameNewButton.titleLabel setFont:[UIFont fontWithName:@"Bauhaus 93" size:20]];
     
