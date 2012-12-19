@@ -34,6 +34,7 @@ typedef enum {
 @property (nonatomic,weak) id<NetworkControllerDelegate> delegate;
 @property (nonatomic) ServerState *currentServerState;
 @property (nonatomic, strong) NSData *dataQueue;
+@property (nonatomic, strong) NSString *currentRecievedMessage;
 
 #pragma mark - definitions of default keys
 
