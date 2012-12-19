@@ -3,7 +3,7 @@
 //  SayonariaGame
 //
 //  Created by Andrew Mueller on 8/24/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 SimplySocialInteractive. All rights reserved.
 //
 
 #import "GameScreenViewController.h"
@@ -97,27 +97,35 @@
 
 
 
+#pragma mark - message received here
 //MESSAGES RECIEVED FROM THE SERVER WILL BE SENT HERE
 -(void)messageRecieved:(NSString *)messageFromServer{
+
     
+
     if([[messageFromServer substringToIndex:5] isEqualToString:@"state"])
     {
         GameState1=messageFromServer;
         GameState2=@"";
     }
-       
+    
     else
+        
     {
         GameState2=messageFromServer;
         //Combine server messages into single gamestate
         GameState=[GameState1 stringByAppendingString:GameState2];
-        
-        [self CycleGameStateOperations];
+        [self CycleScreenOperations];
     }
+    
+
 }
 
 
--(void)CycleGameStateOperations{
+
+# pragma mark - this recycles game state and updates screen
+
+-(void)CycleScreenOperations{
     
     //set the proper art assets for this gamestate
     [self SetArtAssets];
@@ -152,8 +160,6 @@
 
 -(void)setTurn
 {
-    
-
     int index1=0;
     index1=[self substringOfString:GameState untilNthOccurrence:1 ofString:@"turn="];
     int index2=0;
@@ -161,8 +167,7 @@
     
     Turn= [GameState  substringWithRange:NSMakeRange(index1,index2-index1)];
     
-        _TestLabel.text=Turn;
-    
+    _TestLabel.text=Turn;
 }
 
 
@@ -175,15 +180,11 @@
 {
  
     BackgroundView.image=TeamBackground;
-    
     CellSize=40;
-    
     TouchTolerance=20;
     
     for(int i = 0; i <[GameNodeData count] ; i++)
     {
-        
-        
         UIImage *CellImage;
         
         NSArray *ThisNodeData = [GameNodeData[i] componentsSeparatedByString: @"!"];
@@ -193,10 +194,7 @@
         if([ThisNodeData[3] isEqualToString:UserID1] && [ThisNodeData[4] isEqualToString:@"0"]){CellImage=InactiveCellTeam1;}
         if([ThisNodeData[3] isEqualToString:UserID2] && [ThisNodeData[4] isEqualToString:@"1"]){CellImage=ActiveCellTeam2;}
         if([ThisNodeData[3] isEqualToString:UserID2] && [ThisNodeData[4] isEqualToString:@"0"]){CellImage=InactiveCellTeam2;}
-        
         [self drawCellwithX:[ThisNodeData[1] intValue] withY:[ThisNodeData[2] intValue] Image:CellImage];
-        
-        
     }
     
 }
@@ -274,6 +272,10 @@
 
 
 
+
+
+
+
 -(void)setScores
 {
     Score1=[self getStringBetweenIndices:GameState firststring:@"!" secondstring:@"|" firstInteger:1 secondInteger:1];
@@ -288,11 +290,18 @@
 
 
 
+
+
+
 -(void) testGameOver
 {
     GameOver=[self getStringBetweenIndices:GameState firststring:@"over=" secondstring:@",turn=" firstInteger:1 secondInteger:1];
-    NSLog(@"%@",GameOver);
+   // NSLog(@"%@",GameOver);
 }
+
+
+
+
 
 
 
@@ -301,15 +310,22 @@
 -(void) getGameData
 {
     NSString *BoardState=[self getStringBetweenIndices:GameState firststring:@"board=" secondstring:@",over=" firstInteger:1 secondInteger:1];
-    NSLog(@"%@",BoardState);
+   // NSLog(@"%@",BoardState);
     GameNodeData = [BoardState componentsSeparatedByString: @"|"];
 }
 
 
 
 
+
+
+
+
+
 -(void)SetArtAssets{
     
+    
+    // for now the active client will always be coal and the enemy is diamond
     
     TeamID1=@"Coal";
     TeamID2=@"Diamond";
@@ -356,6 +372,11 @@
 
 
 
+
+
+
+
+
 #pragma mark - string methods
 
 - (NSUInteger )substringOfString:(NSString *)base untilNthOccurrence:(NSInteger)n ofString:(NSString *)delim
@@ -369,10 +390,6 @@
     }
     return [scanner scanLocation];
 }
-
-
-
-
 
 
 
@@ -396,8 +413,15 @@
 
 
 
-#pragma mark - drawing methods
 
+
+
+
+
+
+
+
+#pragma mark - drawing methods
 
 -(void) drawCellwithX:(NSUInteger)i withY:(NSUInteger)j Image:(UIImage*)ImageToDraw
 {
@@ -439,7 +463,6 @@
 
 # pragma mark - tap method
 
-
 - (IBAction)LayTile:(UITapGestureRecognizer *)sender
 {
     if([Turn isEqualToString:UserID1])
@@ -460,7 +483,9 @@
                 [self drawCellwithX:[ThisNodeData[1] intValue] withY:[ThisNodeData[2] intValue] Image:ActiveCellTeam1];
             
                 [self.thisNetworkController sendMessageToServer:  [NSString stringWithFormat:@"%@%@%@%@", @"makeMove:",self.gameID,@",",ThisNodeData[0]]];
-              //  [self.thisNetworkController sendMessageToServer:  [NSString stringWithFormat:@"%@%@", @"gameState:",self.gameID]];
+                   // Turn=UserID2;
+                   //NSLog(@"does this output?");
+
                 }
         
         }

@@ -536,14 +536,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="y1L-C9-8Fh">
-                                <rect key="frame" x="258" y="146" width="42" height="21"/>
+                                <rect key="frame" x="258" y="50" width="42" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Hvq-fY-eiH">
-                                <rect key="frame" x="258" y="199" width="42" height="21"/>
+                                <rect key="frame" x="258" y="86" width="42" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -718,7 +718,6 @@
         <class className="GameScreenViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/GameScreenViewController.h"/>
             <relationships>
-                <relationship kind="action" name="LayTile:" candidateClass="UITapGestureRecognizer"/>
                 <relationship kind="outlet" name="BackgroundView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="Score1Label" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="Score2Label" candidateClass="UILabel"/>
