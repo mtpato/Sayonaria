@@ -105,16 +105,8 @@
 
     if([[messageFromServer substringToIndex:5] isEqualToString:@"state"])
     {
-        GameState1=messageFromServer;
-        GameState2=@"";
-    }
-    
-    else
         
-    {
-        GameState2=messageFromServer;
-        //Combine server messages into single gamestate
-        GameState=[GameState1 stringByAppendingString:GameState2];
+        GameState=messageFromServer;
         [self CycleScreenOperations];
     }
     
@@ -485,7 +477,8 @@
                 [self.thisNetworkController sendMessageToServer:  [NSString stringWithFormat:@"%@%@%@%@", @"makeMove:",self.gameID,@",",ThisNodeData[0]]];
                    // Turn=UserID2;
                    //NSLog(@"does this output?");
-
+                [self.thisNetworkController sendMessageToServer:  [NSString stringWithFormat:@"%@%@", @"gameState:",self.gameID]];
+                    
                 }
         
         }
