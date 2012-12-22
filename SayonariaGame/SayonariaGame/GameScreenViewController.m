@@ -42,12 +42,10 @@
 
 @property (nonatomic) NSInteger TotalCellsNum;
 
-<<<<<<< HEAD
 @property (nonatomic) NSTimer *UpdateMoveTimer;
-=======
 @property (nonatomic) IBOutlet UIButton *backButton;
 @property (nonatomic, strong) NSString *isGoingBack;
->>>>>>> newbranch120812
+
 
 @end
 
