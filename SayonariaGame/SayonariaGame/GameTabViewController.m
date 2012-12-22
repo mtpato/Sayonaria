@@ -73,7 +73,7 @@
 #pragma mark - network communications
 
 -(void)messageRecieved:(NSString *)messageFromServer{
-   // NSLog(@"server said: %@", messageFromServer);
+    //HANDLE COMING BACK FROM BEING AWAY
     //if the server says 'done' it can be connecting, confirming the game type, etc
     if([[messageFromServer substringToIndex:4] isEqualToString:@"done"]){
         if(self.thisNetworkController.currentServerState == (ServerState *)TryingAuthKeyLogin){
@@ -81,11 +81,12 @@
             //request the games list for the table
             [self.thisNetworkController sendMessageToServer:@"getGames"];
         }
-        //if([messageFromServer isEqualToString:@"done:gameCreated"]){
-          //  [self showGameScreenNotAnimated:@"New Game"];
-            //[self performSegueWithIdentifier:@"showGameScreen" sender:@"New Game"];
-        //}
+    } else if([messageFromServer isEqualToString:@"SOCKETS CLOSED"] || [messageFromServer isEqualToString:@"error"] || [messageFromServer isEqualToString:@"CANNOT CONNECT"]){
+        self.thisNetworkController.currentServerState = (ServerState *)Connecting;
+        [self.navigationController popToRootViewControllerAnimated:NO];
     }
+
+    //DO NORMAL SCREEN MESSAGE HANDLING
     if([messageFromServer length] > 4){
         if([[messageFromServer substringToIndex:5] isEqualToString:@"games"]){
             if([messageFromServer isEqualToString:@"games"]){}else{

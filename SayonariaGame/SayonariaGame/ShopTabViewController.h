@@ -11,5 +11,5 @@
 #import "NetworkStorageTabBarController.h"
 
 @interface ShopTabViewController : UIViewController <NetworkControllerDelegate>
-
+@property (nonatomic,strong) NetworkController *thisNetworkController;
 @end

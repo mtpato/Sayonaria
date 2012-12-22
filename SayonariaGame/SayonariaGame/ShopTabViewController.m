@@ -15,7 +15,18 @@
 @implementation ShopTabViewController
 
 -(void)messageRecieved:(NSString *)messageFromServer{
-    
+    //HANDLE COMING BACK FROM BEING AWAY
+    //if the server says 'done' it can be connecting, confirming the game type, etc
+    if([[messageFromServer substringToIndex:4] isEqualToString:@"done"]){
+        if(self.thisNetworkController.currentServerState == (ServerState *)TryingAuthKeyLogin){
+            self.thisNetworkController.currentServerState = (ServerState *)InTabView;
+            //request...store stuff!
+        }
+    } else if([messageFromServer isEqualToString:@"SOCKETS CLOSED"] || [messageFromServer isEqualToString:@"error"] || [messageFromServer isEqualToString:@"CANNOT CONNECT"]){
+        self.thisNetworkController.currentServerState = (ServerState *)Connecting;
+        [self.navigationController popToRootViewControllerAnimated:NO];
+    }
+    //DO NORMAL SCREEN MESSAGE HANDLING
 }
 -(void)putLoaderInView{
     
@@ -34,6 +45,11 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated{
+    //set up networking
+    NetworkStorageTabBarController *thisTabBar = (NetworkStorageTabBarController *) self.tabBarController;
+    self.thisNetworkController = thisTabBar.thisNetworkController;
+    self.thisNetworkController.delegate = self;
+
     CGRect screenBounds =[[UIScreen mainScreen] bounds];
     CGSize screenDimensions = screenBounds.size;
     

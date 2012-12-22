@@ -110,17 +110,23 @@
 #pragma mark - message received here
 //MESSAGES RECIEVED FROM THE SERVER WILL BE SENT HERE
 -(void)messageRecieved:(NSString *)messageFromServer{
-
-    
-
+    //HANDLE COMING BACK FROM BEING AWAY
+    //if the server says 'done' it can be connecting, confirming the game type, etc
+    if([[messageFromServer substringToIndex:4] isEqualToString:@"done"]){
+        if(self.thisNetworkController.currentServerState == (ServerState *)TryingAuthKeyLogin){
+            self.thisNetworkController.currentServerState = (ServerState *)InTabView;
+            //request...store stuff!
+        }
+    } else if([messageFromServer isEqualToString:@"SOCKETS CLOSED"] || [messageFromServer isEqualToString:@"error"] || [messageFromServer isEqualToString:@"CANNOT CONNECT"]){
+        self.thisNetworkController.currentServerState = (ServerState *)Connecting;
+        [self.navigationController popToRootViewControllerAnimated:NO];
+    }
+    //DO NORMAL SCREEN MESSAGE HANDLING
     if([[messageFromServer substringToIndex:5] isEqualToString:@"state"])
     {
-        
         GameState=messageFromServer;
         [self CycleScreenOperations];
     }
-    
-
 }
 
 
