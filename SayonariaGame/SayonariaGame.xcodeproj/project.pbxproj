@@ -116,6 +116,8 @@
 		B1F126A51605017F000C34ED /* OptionsBackIphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B1F126A11605017F000C34ED /* OptionsBackIphone@2x.png */; };
 		B1F126A61605017F000C34ED /* ShopBackIphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B1F126A21605017F000C34ED /* ShopBackIphone@2x.png */; };
 		B1F6405615F2900C00305D37 /* GameTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1F6405515F2900C00305D37 /* GameTabViewController.m */; };
+		B1F9A4911691F792002715F9 /* Active Gold.png in Resources */ = {isa = PBXBuildFile; fileRef = B1F9A4901691F792002715F9 /* Active Gold.png */; };
+		B1F9A4941691F7BC002715F9 /* Active Silica.png in Resources */ = {isa = PBXBuildFile; fileRef = B1F9A4931691F7BC002715F9 /* Active Silica.png */; };
 		B1FACDFB1602EEA600D920F9 /* SayonariaIphoneIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = B1FACDFA1602EEA600D920F9 /* SayonariaIphoneIcon.png */; };
 		B1FACDFE1602EECE00D920F9 /* SayonariaIphoneIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B1FACDFD1602EECE00D920F9 /* SayonariaIphoneIcon@2x.png */; };
 		B1FACE001602EF5E00D920F9 /* SayonariaIpadIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = B1FACDFF1602EF5E00D920F9 /* SayonariaIpadIcon.png */; };
@@ -258,6 +260,8 @@
 		B1F126A21605017F000C34ED /* ShopBackIphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ShopBackIphone@2x.png"; sourceTree = "<group>"; };
 		B1F6405415F2900C00305D37 /* GameTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameTabViewController.h; sourceTree = "<group>"; };
 		B1F6405515F2900C00305D37 /* GameTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameTabViewController.m; sourceTree = "<group>"; };
+		B1F9A4901691F792002715F9 /* Active Gold.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Active Gold.png"; sourceTree = "<group>"; };
+		B1F9A4931691F7BC002715F9 /* Active Silica.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Active Silica.png"; sourceTree = "<group>"; };
 		B1FACDFA1602EEA600D920F9 /* SayonariaIphoneIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SayonariaIphoneIcon.png; sourceTree = "<group>"; };
 		B1FACDFD1602EECE00D920F9 /* SayonariaIphoneIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SayonariaIphoneIcon@2x.png"; sourceTree = "<group>"; };
 		B1FACDFF1602EF5E00D920F9 /* SayonariaIpadIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SayonariaIpadIcon.png; sourceTree = "<group>"; };
@@ -295,6 +299,8 @@
 			isa = PBXGroup;
 			children = (
 				B0E17B02167ABBFB0089B742 /* Active Diamond.png */,
+				B1F9A4931691F7BC002715F9 /* Active Silica.png */,
+				B1F9A4901691F792002715F9 /* Active Gold.png */,
 			);
 			name = "Game Screen Art";
 			sourceTree = "<group>";
@@ -663,6 +669,8 @@
 				B088B23A16209B6B00A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_021.png in Resources */,
 				B088B23B16209B6B00A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_022.png in Resources */,
 				B0E17B03167ABBFB0089B742 /* Active Diamond.png in Resources */,
+				B1F9A4911691F792002715F9 /* Active Gold.png in Resources */,
+				B1F9A4941691F7BC002715F9 /* Active Silica.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
