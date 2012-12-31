@@ -7,52 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B088B1E41620784100A8F7C8 /* Inactive Coal.png in Resources */ = {isa = PBXBuildFile; fileRef = B088B1DF1620784100A8F7C8 /* Inactive Coal.png */; };
-		B088B1E51620784100A8F7C8 /* Inactive Diamond.png in Resources */ = {isa = PBXBuildFile; fileRef = B088B1E01620784100A8F7C8 /* Inactive Diamond.png */; };
-		B088B1E61620784100A8F7C8 /* Inactive Gold.png in Resources */ = {isa = PBXBuildFile; fileRef = B088B1E11620784100A8F7C8 /* Inactive Gold.png */; };
-		B088B1E71620784100A8F7C8 /* Inactive Neutral.png in Resources */ = {isa = PBXBuildFile; fileRef = B088B1E21620784100A8F7C8 /* Inactive Neutral.png */; };
-		B088B1E81620784100A8F7C8 /* Inactive Silica.png in Resources */ = {isa = PBXBuildFile; fileRef = B088B1E31620784100A8F7C8 /* Inactive Silica.png */; };
-		B088B1EC16207BE100A8F7C8 /* Diamond Background.png in Resources */ = {isa = PBXBuildFile; fileRef = B088B1E916207BE100A8F7C8 /* Diamond Background.png */; };
-		B088B1ED16207BE100A8F7C8 /* Gold Background.png in Resources */ = {isa = PBXBuildFile; fileRef = B088B1EA16207BE100A8F7C8 /* Gold Background.png */; };
-		B088B1EE16207BE100A8F7C8 /* Coal Background.png in Resources */ = {isa = PBXBuildFile; fileRef = B088B1EB16207BE100A8F7C8 /* Coal Background.png */; };
-		B088B1F01620930800A8F7C8 /* Active Coal.png in Resources */ = {isa = PBXBuildFile; fileRef = B088B1EF1620930800A8F7C8 /* Active Coal.png */; };
-		B088B200162099BD00A8F7C8 /* simpsoci_coal_tile_apear_anim_v001013.png in Resources */ = {isa = PBXBuildFile; fileRef = B088B1F2162099BD00A8F7C8 /* simpsoci_coal_tile_apear_anim_v001013.png */; };
-		B088B201162099BD00A8F7C8 /* simpsoci_coal_tile_apear_anim_v001000.png in Resources */ = {isa = PBXBuildFile; fileRef = B088B1F3162099BD00A8F7C8 /* simpsoci_coal_tile_apear_anim_v001000.png */; };
-		B088B202162099BD00A8F7C8 /* simpsoci_coal_tile_apear_anim_v001001.png in Resources */ = {isa = PBXBuildFile; fileRef = B088B1F4162099BD00A8F7C8 /* simpsoci_coal_tile_apear_anim_v001001.png */; };
-		B088B203162099BD00A8F7C8 /* simpsoci_coal_tile_apear_anim_v001002.png in Resources */ = {isa = PBXBuildFile; fileRef = B088B1F5162099BD00A8F7C8 /* simpsoci_coal_tile_apear_anim_v001002.png */; };
-		B088B204162099BD00A8F7C8 /* simpsoci_coal_tile_apear_anim_v001003.png in Resources */ = {isa = PBXBuildFile; fileRef = B088B1F6162099BD00A8F7C8 /* simpsoci_coal_tile_apear_anim_v001003.png */; };
-		B088B205162099BD00A8F7C8 /* simpsoci_coal_tile_apear_anim_v001004.png in Resources */ = {isa = PBXBuildFile; fileRef = B088B1F7162099BD00A8F7C8 /* simpsoci_coal_tile_apear_anim_v001004.png */; };
-		B088B206162099BD00A8F7C8 /* simpsoci_coal_tile_apear_anim_v001005.png in Resources */ = {isa = PBXBuildFile; fileRef = B088B1F8162099BD00A8F7C8 /* simpsoci_coal_tile_apear_anim_v001005.png */; };
-		B088B207162099BD00A8F7C8 /* simpsoci_coal_tile_apear_anim_v001006.png in Resources */ = {isa = PBXBuildFile; fileRef = B088B1F9162099BD00A8F7C8 /* simpsoci_coal_tile_apear_anim_v001006.png */; };
-		B088B208162099BD00A8F7C8 /* simpsoci_coal_tile_apear_anim_v001007.png in Resources */ = {isa = PBXBuildFile; fileRef = B088B1FA162099BD00A8F7C8 /* simpsoci_coal_tile_apear_anim_v001007.png */; };
-		B088B209162099BD00A8F7C8 /* simpsoci_coal_tile_apear_anim_v001008.png in Resources */ = {isa = PBXBuildFile; fileRef = B088B1FB162099BD00A8F7C8 /* simpsoci_coal_tile_apear_anim_v001008.png */; };
-		B088B20A162099BD00A8F7C8 /* simpsoci_coal_tile_apear_anim_v001009.png in Resources */ = {isa = PBXBuildFile; fileRef = B088B1FC162099BD00A8F7C8 /* simpsoci_coal_tile_apear_anim_v001009.png */; };
-		B088B20B162099BD00A8F7C8 /* simpsoci_coal_tile_apear_anim_v001010.png in Resources */ = {isa = PBXBuildFile; fileRef = B088B1FD162099BD00A8F7C8 /* simpsoci_coal_tile_apear_anim_v001010.png */; };
-		B088B20C162099BD00A8F7C8 /* simpsoci_coal_tile_apear_anim_v001011.png in Resources */ = {isa = PBXBuildFile; fileRef = B088B1FE162099BD00A8F7C8 /* simpsoci_coal_tile_apear_anim_v001011.png */; };
-		B088B20D162099BD00A8F7C8 /* simpsoci_coal_tile_apear_anim_v001012.png in Resources */ = {isa = PBXBuildFile; fileRef = B088B1FF162099BD00A8F7C8 /* simpsoci_coal_tile_apear_anim_v001012.png */; };
-		B088B22516209B6B00A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_000.png in Resources */ = {isa = PBXBuildFile; fileRef = B088B20E16209B5F00A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_000.png */; };
-		B088B22616209B6B00A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_001.png in Resources */ = {isa = PBXBuildFile; fileRef = B088B20F16209B5F00A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_001.png */; };
-		B088B22716209B6B00A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_002.png in Resources */ = {isa = PBXBuildFile; fileRef = B088B21016209B6000A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_002.png */; };
-		B088B22816209B6B00A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_003.png in Resources */ = {isa = PBXBuildFile; fileRef = B088B21116209B6100A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_003.png */; };
-		B088B22916209B6B00A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_004.png in Resources */ = {isa = PBXBuildFile; fileRef = B088B21216209B6100A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_004.png */; };
-		B088B22A16209B6B00A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_005.png in Resources */ = {isa = PBXBuildFile; fileRef = B088B21316209B6200A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_005.png */; };
-		B088B22B16209B6B00A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_006.png in Resources */ = {isa = PBXBuildFile; fileRef = B088B21416209B6200A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_006.png */; };
-		B088B22C16209B6B00A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_007.png in Resources */ = {isa = PBXBuildFile; fileRef = B088B21516209B6300A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_007.png */; };
-		B088B22D16209B6B00A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_008.png in Resources */ = {isa = PBXBuildFile; fileRef = B088B21616209B6300A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_008.png */; };
-		B088B22E16209B6B00A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_009.png in Resources */ = {isa = PBXBuildFile; fileRef = B088B21716209B6400A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_009.png */; };
-		B088B22F16209B6B00A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_010.png in Resources */ = {isa = PBXBuildFile; fileRef = B088B21816209B6500A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_010.png */; };
-		B088B23016209B6B00A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_011.png in Resources */ = {isa = PBXBuildFile; fileRef = B088B21916209B6500A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_011.png */; };
-		B088B23116209B6B00A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_012.png in Resources */ = {isa = PBXBuildFile; fileRef = B088B21A16209B6600A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_012.png */; };
-		B088B23216209B6B00A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_013.png in Resources */ = {isa = PBXBuildFile; fileRef = B088B21B16209B6600A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_013.png */; };
-		B088B23316209B6B00A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_014.png in Resources */ = {isa = PBXBuildFile; fileRef = B088B21C16209B6700A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_014.png */; };
-		B088B23416209B6B00A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_015.png in Resources */ = {isa = PBXBuildFile; fileRef = B088B21D16209B6700A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_015.png */; };
-		B088B23516209B6B00A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_016.png in Resources */ = {isa = PBXBuildFile; fileRef = B088B21E16209B6800A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_016.png */; };
-		B088B23616209B6B00A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_017.png in Resources */ = {isa = PBXBuildFile; fileRef = B088B21F16209B6800A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_017.png */; };
-		B088B23716209B6B00A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_018.png in Resources */ = {isa = PBXBuildFile; fileRef = B088B22016209B6800A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_018.png */; };
-		B088B23816209B6B00A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_019.png in Resources */ = {isa = PBXBuildFile; fileRef = B088B22116209B6900A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_019.png */; };
-		B088B23916209B6B00A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_020.png in Resources */ = {isa = PBXBuildFile; fileRef = B088B22216209B6900A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_020.png */; };
-		B088B23A16209B6B00A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_021.png in Resources */ = {isa = PBXBuildFile; fileRef = B088B22316209B6900A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_021.png */; };
-		B088B23B16209B6B00A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_022.png in Resources */ = {isa = PBXBuildFile; fileRef = B088B22416209B6A00A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_022.png */; };
 		B0CB261B15F505A600CFC943 /* GameScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0CB261A15F505A600CFC943 /* GameScreenViewController.m */; };
 		B0E17B03167ABBFB0089B742 /* Active Diamond.png in Resources */ = {isa = PBXBuildFile; fileRef = B0E17B02167ABBFB0089B742 /* Active Diamond.png */; };
 		B10086731643346400385673 /* NewGameOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B10086721643346400385673 /* NewGameOptionsViewController.m */; };
@@ -64,7 +18,6 @@
 		B13B310415D0C7BF003A4E89 /* SSIGameAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B13B310315D0C7BF003A4E89 /* SSIGameAppDelegate.m */; };
 		B13B310715D0C7BF003A4E89 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B13B310515D0C7BF003A4E89 /* MainStoryboard_iPhone.storyboard */; };
 		B13B310A15D0C7BF003A4E89 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B13B310815D0C7BF003A4E89 /* MainStoryboard_iPad.storyboard */; };
-		B1C02ADC1646D8700099802E /* SplashArtIphone-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B1C02ADB1646D8700099802E /* SplashArtIphone-568h@2x.png */; };
 		B1C7F43515DB322D002C541D /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C7F43415DB322D002C541D /* LoginViewController.m */; };
 		B1C7F43815DB3CC3002C541D /* LoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C7F43715DB3CC3002C541D /* LoadingView.m */; };
 		B1C7F43F15DB47B9002C541D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1C7F43E15DB47B9002C541D /* QuartzCore.framework */; };
@@ -118,6 +71,52 @@
 		B1F6405615F2900C00305D37 /* GameTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1F6405515F2900C00305D37 /* GameTabViewController.m */; };
 		B1F9A4911691F792002715F9 /* Active Gold.png in Resources */ = {isa = PBXBuildFile; fileRef = B1F9A4901691F792002715F9 /* Active Gold.png */; };
 		B1F9A4941691F7BC002715F9 /* Active Silica.png in Resources */ = {isa = PBXBuildFile; fileRef = B1F9A4931691F7BC002715F9 /* Active Silica.png */; };
+		B1F9A4C31691FA02002715F9 /* Active Coal.png in Resources */ = {isa = PBXBuildFile; fileRef = B1F9A4951691FA02002715F9 /* Active Coal.png */; };
+		B1F9A4C41691FA02002715F9 /* Coal Background.png in Resources */ = {isa = PBXBuildFile; fileRef = B1F9A4961691FA02002715F9 /* Coal Background.png */; };
+		B1F9A4C51691FA02002715F9 /* Diamond Background.png in Resources */ = {isa = PBXBuildFile; fileRef = B1F9A4971691FA02002715F9 /* Diamond Background.png */; };
+		B1F9A4C61691FA02002715F9 /* Gold Background.png in Resources */ = {isa = PBXBuildFile; fileRef = B1F9A4981691FA02002715F9 /* Gold Background.png */; };
+		B1F9A4C71691FA02002715F9 /* Inactive Coal.png in Resources */ = {isa = PBXBuildFile; fileRef = B1F9A4991691FA02002715F9 /* Inactive Coal.png */; };
+		B1F9A4C81691FA02002715F9 /* Inactive Diamond.png in Resources */ = {isa = PBXBuildFile; fileRef = B1F9A49A1691FA02002715F9 /* Inactive Diamond.png */; };
+		B1F9A4C91691FA02002715F9 /* Inactive Gold.png in Resources */ = {isa = PBXBuildFile; fileRef = B1F9A49B1691FA02002715F9 /* Inactive Gold.png */; };
+		B1F9A4CA1691FA02002715F9 /* Inactive Neutral.png in Resources */ = {isa = PBXBuildFile; fileRef = B1F9A49C1691FA02002715F9 /* Inactive Neutral.png */; };
+		B1F9A4CB1691FA02002715F9 /* Inactive Silica.png in Resources */ = {isa = PBXBuildFile; fileRef = B1F9A49D1691FA02002715F9 /* Inactive Silica.png */; };
+		B1F9A4CC1691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_000.png in Resources */ = {isa = PBXBuildFile; fileRef = B1F9A49E1691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_000.png */; };
+		B1F9A4CD1691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_001.png in Resources */ = {isa = PBXBuildFile; fileRef = B1F9A49F1691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_001.png */; };
+		B1F9A4CE1691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_002.png in Resources */ = {isa = PBXBuildFile; fileRef = B1F9A4A01691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_002.png */; };
+		B1F9A4CF1691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_003.png in Resources */ = {isa = PBXBuildFile; fileRef = B1F9A4A11691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_003.png */; };
+		B1F9A4D01691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_004.png in Resources */ = {isa = PBXBuildFile; fileRef = B1F9A4A21691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_004.png */; };
+		B1F9A4D11691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_005.png in Resources */ = {isa = PBXBuildFile; fileRef = B1F9A4A31691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_005.png */; };
+		B1F9A4D21691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_006.png in Resources */ = {isa = PBXBuildFile; fileRef = B1F9A4A41691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_006.png */; };
+		B1F9A4D31691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_007.png in Resources */ = {isa = PBXBuildFile; fileRef = B1F9A4A51691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_007.png */; };
+		B1F9A4D41691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_008.png in Resources */ = {isa = PBXBuildFile; fileRef = B1F9A4A61691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_008.png */; };
+		B1F9A4D51691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_009.png in Resources */ = {isa = PBXBuildFile; fileRef = B1F9A4A71691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_009.png */; };
+		B1F9A4D61691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_010.png in Resources */ = {isa = PBXBuildFile; fileRef = B1F9A4A81691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_010.png */; };
+		B1F9A4D71691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_011.png in Resources */ = {isa = PBXBuildFile; fileRef = B1F9A4A91691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_011.png */; };
+		B1F9A4D81691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_012.png in Resources */ = {isa = PBXBuildFile; fileRef = B1F9A4AA1691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_012.png */; };
+		B1F9A4D91691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_013.png in Resources */ = {isa = PBXBuildFile; fileRef = B1F9A4AB1691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_013.png */; };
+		B1F9A4DA1691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_014.png in Resources */ = {isa = PBXBuildFile; fileRef = B1F9A4AC1691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_014.png */; };
+		B1F9A4DB1691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_015.png in Resources */ = {isa = PBXBuildFile; fileRef = B1F9A4AD1691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_015.png */; };
+		B1F9A4DC1691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_016.png in Resources */ = {isa = PBXBuildFile; fileRef = B1F9A4AE1691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_016.png */; };
+		B1F9A4DD1691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_017.png in Resources */ = {isa = PBXBuildFile; fileRef = B1F9A4AF1691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_017.png */; };
+		B1F9A4DE1691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_018.png in Resources */ = {isa = PBXBuildFile; fileRef = B1F9A4B01691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_018.png */; };
+		B1F9A4DF1691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_019.png in Resources */ = {isa = PBXBuildFile; fileRef = B1F9A4B11691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_019.png */; };
+		B1F9A4E01691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_020.png in Resources */ = {isa = PBXBuildFile; fileRef = B1F9A4B21691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_020.png */; };
+		B1F9A4E11691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_021.png in Resources */ = {isa = PBXBuildFile; fileRef = B1F9A4B31691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_021.png */; };
+		B1F9A4E21691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_022.png in Resources */ = {isa = PBXBuildFile; fileRef = B1F9A4B41691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_022.png */; };
+		B1F9A4E31691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v001000.png in Resources */ = {isa = PBXBuildFile; fileRef = B1F9A4B51691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v001000.png */; };
+		B1F9A4E41691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v001001.png in Resources */ = {isa = PBXBuildFile; fileRef = B1F9A4B61691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v001001.png */; };
+		B1F9A4E51691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v001002.png in Resources */ = {isa = PBXBuildFile; fileRef = B1F9A4B71691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v001002.png */; };
+		B1F9A4E61691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v001003.png in Resources */ = {isa = PBXBuildFile; fileRef = B1F9A4B81691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v001003.png */; };
+		B1F9A4E71691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v001004.png in Resources */ = {isa = PBXBuildFile; fileRef = B1F9A4B91691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v001004.png */; };
+		B1F9A4E81691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v001005.png in Resources */ = {isa = PBXBuildFile; fileRef = B1F9A4BA1691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v001005.png */; };
+		B1F9A4E91691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v001006.png in Resources */ = {isa = PBXBuildFile; fileRef = B1F9A4BB1691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v001006.png */; };
+		B1F9A4EA1691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v001007.png in Resources */ = {isa = PBXBuildFile; fileRef = B1F9A4BC1691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v001007.png */; };
+		B1F9A4EB1691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v001008.png in Resources */ = {isa = PBXBuildFile; fileRef = B1F9A4BD1691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v001008.png */; };
+		B1F9A4EC1691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v001009.png in Resources */ = {isa = PBXBuildFile; fileRef = B1F9A4BE1691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v001009.png */; };
+		B1F9A4ED1691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v001010.png in Resources */ = {isa = PBXBuildFile; fileRef = B1F9A4BF1691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v001010.png */; };
+		B1F9A4EE1691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v001011.png in Resources */ = {isa = PBXBuildFile; fileRef = B1F9A4C01691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v001011.png */; };
+		B1F9A4EF1691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v001012.png in Resources */ = {isa = PBXBuildFile; fileRef = B1F9A4C11691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v001012.png */; };
+		B1F9A4F01691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v001013.png in Resources */ = {isa = PBXBuildFile; fileRef = B1F9A4C21691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v001013.png */; };
 		B1FACDFB1602EEA600D920F9 /* SayonariaIphoneIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = B1FACDFA1602EEA600D920F9 /* SayonariaIphoneIcon.png */; };
 		B1FACDFE1602EECE00D920F9 /* SayonariaIphoneIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B1FACDFD1602EECE00D920F9 /* SayonariaIphoneIcon@2x.png */; };
 		B1FACE001602EF5E00D920F9 /* SayonariaIpadIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = B1FACDFF1602EF5E00D920F9 /* SayonariaIpadIcon.png */; };
@@ -137,52 +136,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		B088B1DF1620784100A8F7C8 /* Inactive Coal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Inactive Coal.png"; sourceTree = "<group>"; };
-		B088B1E01620784100A8F7C8 /* Inactive Diamond.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Inactive Diamond.png"; sourceTree = "<group>"; };
-		B088B1E11620784100A8F7C8 /* Inactive Gold.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Inactive Gold.png"; sourceTree = "<group>"; };
-		B088B1E21620784100A8F7C8 /* Inactive Neutral.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Inactive Neutral.png"; sourceTree = "<group>"; };
-		B088B1E31620784100A8F7C8 /* Inactive Silica.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Inactive Silica.png"; sourceTree = "<group>"; };
-		B088B1E916207BE100A8F7C8 /* Diamond Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Diamond Background.png"; sourceTree = "<group>"; };
-		B088B1EA16207BE100A8F7C8 /* Gold Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Gold Background.png"; sourceTree = "<group>"; };
-		B088B1EB16207BE100A8F7C8 /* Coal Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Coal Background.png"; sourceTree = "<group>"; };
-		B088B1EF1620930800A8F7C8 /* Active Coal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Active Coal.png"; sourceTree = "<group>"; };
-		B088B1F2162099BD00A8F7C8 /* simpsoci_coal_tile_apear_anim_v001013.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = simpsoci_coal_tile_apear_anim_v001013.png; sourceTree = "<group>"; };
-		B088B1F3162099BD00A8F7C8 /* simpsoci_coal_tile_apear_anim_v001000.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = simpsoci_coal_tile_apear_anim_v001000.png; sourceTree = "<group>"; };
-		B088B1F4162099BD00A8F7C8 /* simpsoci_coal_tile_apear_anim_v001001.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = simpsoci_coal_tile_apear_anim_v001001.png; sourceTree = "<group>"; };
-		B088B1F5162099BD00A8F7C8 /* simpsoci_coal_tile_apear_anim_v001002.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = simpsoci_coal_tile_apear_anim_v001002.png; sourceTree = "<group>"; };
-		B088B1F6162099BD00A8F7C8 /* simpsoci_coal_tile_apear_anim_v001003.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = simpsoci_coal_tile_apear_anim_v001003.png; sourceTree = "<group>"; };
-		B088B1F7162099BD00A8F7C8 /* simpsoci_coal_tile_apear_anim_v001004.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = simpsoci_coal_tile_apear_anim_v001004.png; sourceTree = "<group>"; };
-		B088B1F8162099BD00A8F7C8 /* simpsoci_coal_tile_apear_anim_v001005.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = simpsoci_coal_tile_apear_anim_v001005.png; sourceTree = "<group>"; };
-		B088B1F9162099BD00A8F7C8 /* simpsoci_coal_tile_apear_anim_v001006.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = simpsoci_coal_tile_apear_anim_v001006.png; sourceTree = "<group>"; };
-		B088B1FA162099BD00A8F7C8 /* simpsoci_coal_tile_apear_anim_v001007.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = simpsoci_coal_tile_apear_anim_v001007.png; sourceTree = "<group>"; };
-		B088B1FB162099BD00A8F7C8 /* simpsoci_coal_tile_apear_anim_v001008.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = simpsoci_coal_tile_apear_anim_v001008.png; sourceTree = "<group>"; };
-		B088B1FC162099BD00A8F7C8 /* simpsoci_coal_tile_apear_anim_v001009.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = simpsoci_coal_tile_apear_anim_v001009.png; sourceTree = "<group>"; };
-		B088B1FD162099BD00A8F7C8 /* simpsoci_coal_tile_apear_anim_v001010.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = simpsoci_coal_tile_apear_anim_v001010.png; sourceTree = "<group>"; };
-		B088B1FE162099BD00A8F7C8 /* simpsoci_coal_tile_apear_anim_v001011.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = simpsoci_coal_tile_apear_anim_v001011.png; sourceTree = "<group>"; };
-		B088B1FF162099BD00A8F7C8 /* simpsoci_coal_tile_apear_anim_v001012.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = simpsoci_coal_tile_apear_anim_v001012.png; sourceTree = "<group>"; };
-		B088B20E16209B5F00A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_000.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = simpsoci_coal_tile_apear_anim_v01_000.png; sourceTree = "<group>"; };
-		B088B20F16209B5F00A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_001.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = simpsoci_coal_tile_apear_anim_v01_001.png; sourceTree = "<group>"; };
-		B088B21016209B6000A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_002.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = simpsoci_coal_tile_apear_anim_v01_002.png; sourceTree = "<group>"; };
-		B088B21116209B6100A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_003.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = simpsoci_coal_tile_apear_anim_v01_003.png; sourceTree = "<group>"; };
-		B088B21216209B6100A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_004.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = simpsoci_coal_tile_apear_anim_v01_004.png; sourceTree = "<group>"; };
-		B088B21316209B6200A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_005.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = simpsoci_coal_tile_apear_anim_v01_005.png; sourceTree = "<group>"; };
-		B088B21416209B6200A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_006.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = simpsoci_coal_tile_apear_anim_v01_006.png; sourceTree = "<group>"; };
-		B088B21516209B6300A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_007.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = simpsoci_coal_tile_apear_anim_v01_007.png; sourceTree = "<group>"; };
-		B088B21616209B6300A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_008.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = simpsoci_coal_tile_apear_anim_v01_008.png; sourceTree = "<group>"; };
-		B088B21716209B6400A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_009.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = simpsoci_coal_tile_apear_anim_v01_009.png; sourceTree = "<group>"; };
-		B088B21816209B6500A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_010.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = simpsoci_coal_tile_apear_anim_v01_010.png; sourceTree = "<group>"; };
-		B088B21916209B6500A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_011.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = simpsoci_coal_tile_apear_anim_v01_011.png; sourceTree = "<group>"; };
-		B088B21A16209B6600A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_012.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = simpsoci_coal_tile_apear_anim_v01_012.png; sourceTree = "<group>"; };
-		B088B21B16209B6600A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_013.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = simpsoci_coal_tile_apear_anim_v01_013.png; sourceTree = "<group>"; };
-		B088B21C16209B6700A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_014.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = simpsoci_coal_tile_apear_anim_v01_014.png; sourceTree = "<group>"; };
-		B088B21D16209B6700A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_015.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = simpsoci_coal_tile_apear_anim_v01_015.png; sourceTree = "<group>"; };
-		B088B21E16209B6800A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_016.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = simpsoci_coal_tile_apear_anim_v01_016.png; sourceTree = "<group>"; };
-		B088B21F16209B6800A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_017.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = simpsoci_coal_tile_apear_anim_v01_017.png; sourceTree = "<group>"; };
-		B088B22016209B6800A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_018.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = simpsoci_coal_tile_apear_anim_v01_018.png; sourceTree = "<group>"; };
-		B088B22116209B6900A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_019.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = simpsoci_coal_tile_apear_anim_v01_019.png; sourceTree = "<group>"; };
-		B088B22216209B6900A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_020.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = simpsoci_coal_tile_apear_anim_v01_020.png; sourceTree = "<group>"; };
-		B088B22316209B6900A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_021.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = simpsoci_coal_tile_apear_anim_v01_021.png; sourceTree = "<group>"; };
-		B088B22416209B6A00A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_022.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = simpsoci_coal_tile_apear_anim_v01_022.png; sourceTree = "<group>"; };
 		B0CB261915F505A600CFC943 /* GameScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScreenViewController.h; sourceTree = "<group>"; };
 		B0CB261A15F505A600CFC943 /* GameScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameScreenViewController.m; sourceTree = "<group>"; };
 		B0E17B02167ABBFB0089B742 /* Active Diamond.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Active Diamond.png"; sourceTree = "<group>"; };
@@ -200,7 +153,6 @@
 		B13B310315D0C7BF003A4E89 /* SSIGameAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSIGameAppDelegate.m; sourceTree = "<group>"; };
 		B13B310615D0C7BF003A4E89 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		B13B310915D0C7BF003A4E89 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
-		B1C02ADB1646D8700099802E /* SplashArtIphone-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SplashArtIphone-568h@2x.png"; sourceTree = "<group>"; };
 		B1C7F43315DB322D002C541D /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		B1C7F43415DB322D002C541D /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		B1C7F43615DB3CC3002C541D /* LoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingView.h; sourceTree = "<group>"; };
@@ -262,6 +214,52 @@
 		B1F6405515F2900C00305D37 /* GameTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameTabViewController.m; sourceTree = "<group>"; };
 		B1F9A4901691F792002715F9 /* Active Gold.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Active Gold.png"; sourceTree = "<group>"; };
 		B1F9A4931691F7BC002715F9 /* Active Silica.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Active Silica.png"; sourceTree = "<group>"; };
+		B1F9A4951691FA02002715F9 /* Active Coal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Active Coal.png"; path = "../../Active Coal.png"; sourceTree = "<group>"; };
+		B1F9A4961691FA02002715F9 /* Coal Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Coal Background.png"; path = "../../Coal Background.png"; sourceTree = "<group>"; };
+		B1F9A4971691FA02002715F9 /* Diamond Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Diamond Background.png"; path = "../../Diamond Background.png"; sourceTree = "<group>"; };
+		B1F9A4981691FA02002715F9 /* Gold Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Gold Background.png"; path = "../../Gold Background.png"; sourceTree = "<group>"; };
+		B1F9A4991691FA02002715F9 /* Inactive Coal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Inactive Coal.png"; path = "../../Inactive Coal.png"; sourceTree = "<group>"; };
+		B1F9A49A1691FA02002715F9 /* Inactive Diamond.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Inactive Diamond.png"; path = "../../Inactive Diamond.png"; sourceTree = "<group>"; };
+		B1F9A49B1691FA02002715F9 /* Inactive Gold.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Inactive Gold.png"; path = "../../Inactive Gold.png"; sourceTree = "<group>"; };
+		B1F9A49C1691FA02002715F9 /* Inactive Neutral.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Inactive Neutral.png"; path = "../../Inactive Neutral.png"; sourceTree = "<group>"; };
+		B1F9A49D1691FA02002715F9 /* Inactive Silica.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Inactive Silica.png"; path = "../../Inactive Silica.png"; sourceTree = "<group>"; };
+		B1F9A49E1691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_000.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = simpsoci_coal_tile_apear_anim_v01_000.png; path = ../../simpsoci_coal_tile_apear_anim_v01_000.png; sourceTree = "<group>"; };
+		B1F9A49F1691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_001.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = simpsoci_coal_tile_apear_anim_v01_001.png; path = ../../simpsoci_coal_tile_apear_anim_v01_001.png; sourceTree = "<group>"; };
+		B1F9A4A01691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_002.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = simpsoci_coal_tile_apear_anim_v01_002.png; path = ../../simpsoci_coal_tile_apear_anim_v01_002.png; sourceTree = "<group>"; };
+		B1F9A4A11691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_003.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = simpsoci_coal_tile_apear_anim_v01_003.png; path = ../../simpsoci_coal_tile_apear_anim_v01_003.png; sourceTree = "<group>"; };
+		B1F9A4A21691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_004.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = simpsoci_coal_tile_apear_anim_v01_004.png; path = ../../simpsoci_coal_tile_apear_anim_v01_004.png; sourceTree = "<group>"; };
+		B1F9A4A31691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_005.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = simpsoci_coal_tile_apear_anim_v01_005.png; path = ../../simpsoci_coal_tile_apear_anim_v01_005.png; sourceTree = "<group>"; };
+		B1F9A4A41691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_006.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = simpsoci_coal_tile_apear_anim_v01_006.png; path = ../../simpsoci_coal_tile_apear_anim_v01_006.png; sourceTree = "<group>"; };
+		B1F9A4A51691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_007.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = simpsoci_coal_tile_apear_anim_v01_007.png; path = ../../simpsoci_coal_tile_apear_anim_v01_007.png; sourceTree = "<group>"; };
+		B1F9A4A61691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_008.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = simpsoci_coal_tile_apear_anim_v01_008.png; path = ../../simpsoci_coal_tile_apear_anim_v01_008.png; sourceTree = "<group>"; };
+		B1F9A4A71691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_009.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = simpsoci_coal_tile_apear_anim_v01_009.png; path = ../../simpsoci_coal_tile_apear_anim_v01_009.png; sourceTree = "<group>"; };
+		B1F9A4A81691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_010.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = simpsoci_coal_tile_apear_anim_v01_010.png; path = ../../simpsoci_coal_tile_apear_anim_v01_010.png; sourceTree = "<group>"; };
+		B1F9A4A91691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_011.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = simpsoci_coal_tile_apear_anim_v01_011.png; path = ../../simpsoci_coal_tile_apear_anim_v01_011.png; sourceTree = "<group>"; };
+		B1F9A4AA1691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_012.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = simpsoci_coal_tile_apear_anim_v01_012.png; path = ../../simpsoci_coal_tile_apear_anim_v01_012.png; sourceTree = "<group>"; };
+		B1F9A4AB1691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_013.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = simpsoci_coal_tile_apear_anim_v01_013.png; path = ../../simpsoci_coal_tile_apear_anim_v01_013.png; sourceTree = "<group>"; };
+		B1F9A4AC1691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_014.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = simpsoci_coal_tile_apear_anim_v01_014.png; path = ../../simpsoci_coal_tile_apear_anim_v01_014.png; sourceTree = "<group>"; };
+		B1F9A4AD1691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_015.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = simpsoci_coal_tile_apear_anim_v01_015.png; path = ../../simpsoci_coal_tile_apear_anim_v01_015.png; sourceTree = "<group>"; };
+		B1F9A4AE1691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_016.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = simpsoci_coal_tile_apear_anim_v01_016.png; path = ../../simpsoci_coal_tile_apear_anim_v01_016.png; sourceTree = "<group>"; };
+		B1F9A4AF1691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_017.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = simpsoci_coal_tile_apear_anim_v01_017.png; path = ../../simpsoci_coal_tile_apear_anim_v01_017.png; sourceTree = "<group>"; };
+		B1F9A4B01691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_018.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = simpsoci_coal_tile_apear_anim_v01_018.png; path = ../../simpsoci_coal_tile_apear_anim_v01_018.png; sourceTree = "<group>"; };
+		B1F9A4B11691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_019.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = simpsoci_coal_tile_apear_anim_v01_019.png; path = ../../simpsoci_coal_tile_apear_anim_v01_019.png; sourceTree = "<group>"; };
+		B1F9A4B21691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_020.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = simpsoci_coal_tile_apear_anim_v01_020.png; path = ../../simpsoci_coal_tile_apear_anim_v01_020.png; sourceTree = "<group>"; };
+		B1F9A4B31691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_021.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = simpsoci_coal_tile_apear_anim_v01_021.png; path = ../../simpsoci_coal_tile_apear_anim_v01_021.png; sourceTree = "<group>"; };
+		B1F9A4B41691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_022.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = simpsoci_coal_tile_apear_anim_v01_022.png; path = ../../simpsoci_coal_tile_apear_anim_v01_022.png; sourceTree = "<group>"; };
+		B1F9A4B51691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v001000.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = simpsoci_coal_tile_apear_anim_v001000.png; path = ../../simpsoci_coal_tile_apear_anim_v001000.png; sourceTree = "<group>"; };
+		B1F9A4B61691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v001001.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = simpsoci_coal_tile_apear_anim_v001001.png; path = ../../simpsoci_coal_tile_apear_anim_v001001.png; sourceTree = "<group>"; };
+		B1F9A4B71691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v001002.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = simpsoci_coal_tile_apear_anim_v001002.png; path = ../../simpsoci_coal_tile_apear_anim_v001002.png; sourceTree = "<group>"; };
+		B1F9A4B81691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v001003.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = simpsoci_coal_tile_apear_anim_v001003.png; path = ../../simpsoci_coal_tile_apear_anim_v001003.png; sourceTree = "<group>"; };
+		B1F9A4B91691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v001004.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = simpsoci_coal_tile_apear_anim_v001004.png; path = ../../simpsoci_coal_tile_apear_anim_v001004.png; sourceTree = "<group>"; };
+		B1F9A4BA1691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v001005.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = simpsoci_coal_tile_apear_anim_v001005.png; path = ../../simpsoci_coal_tile_apear_anim_v001005.png; sourceTree = "<group>"; };
+		B1F9A4BB1691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v001006.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = simpsoci_coal_tile_apear_anim_v001006.png; path = ../../simpsoci_coal_tile_apear_anim_v001006.png; sourceTree = "<group>"; };
+		B1F9A4BC1691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v001007.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = simpsoci_coal_tile_apear_anim_v001007.png; path = ../../simpsoci_coal_tile_apear_anim_v001007.png; sourceTree = "<group>"; };
+		B1F9A4BD1691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v001008.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = simpsoci_coal_tile_apear_anim_v001008.png; path = ../../simpsoci_coal_tile_apear_anim_v001008.png; sourceTree = "<group>"; };
+		B1F9A4BE1691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v001009.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = simpsoci_coal_tile_apear_anim_v001009.png; path = ../../simpsoci_coal_tile_apear_anim_v001009.png; sourceTree = "<group>"; };
+		B1F9A4BF1691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v001010.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = simpsoci_coal_tile_apear_anim_v001010.png; path = ../../simpsoci_coal_tile_apear_anim_v001010.png; sourceTree = "<group>"; };
+		B1F9A4C01691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v001011.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = simpsoci_coal_tile_apear_anim_v001011.png; path = ../../simpsoci_coal_tile_apear_anim_v001011.png; sourceTree = "<group>"; };
+		B1F9A4C11691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v001012.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = simpsoci_coal_tile_apear_anim_v001012.png; path = ../../simpsoci_coal_tile_apear_anim_v001012.png; sourceTree = "<group>"; };
+		B1F9A4C21691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v001013.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = simpsoci_coal_tile_apear_anim_v001013.png; path = ../../simpsoci_coal_tile_apear_anim_v001013.png; sourceTree = "<group>"; };
 		B1FACDFA1602EEA600D920F9 /* SayonariaIphoneIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SayonariaIphoneIcon.png; sourceTree = "<group>"; };
 		B1FACDFD1602EECE00D920F9 /* SayonariaIphoneIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SayonariaIphoneIcon@2x.png"; sourceTree = "<group>"; };
 		B1FACDFF1602EF5E00D920F9 /* SayonariaIpadIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SayonariaIpadIcon.png; sourceTree = "<group>"; };
@@ -298,7 +296,17 @@
 		B0F534361673BD71005DA217 /* Game Screen Art */ = {
 			isa = PBXGroup;
 			children = (
+				B1F9A4F11691FAB3002715F9 /* Animations */,
 				B0E17B02167ABBFB0089B742 /* Active Diamond.png */,
+				B1F9A4991691FA02002715F9 /* Inactive Coal.png */,
+				B1F9A49A1691FA02002715F9 /* Inactive Diamond.png */,
+				B1F9A4951691FA02002715F9 /* Active Coal.png */,
+				B1F9A4961691FA02002715F9 /* Coal Background.png */,
+				B1F9A4971691FA02002715F9 /* Diamond Background.png */,
+				B1F9A4981691FA02002715F9 /* Gold Background.png */,
+				B1F9A49B1691FA02002715F9 /* Inactive Gold.png */,
+				B1F9A49C1691FA02002715F9 /* Inactive Neutral.png */,
+				B1F9A49D1691FA02002715F9 /* Inactive Silica.png */,
 				B1F9A4931691F7BC002715F9 /* Active Silica.png */,
 				B1F9A4901691F792002715F9 /* Active Gold.png */,
 			);
@@ -319,7 +327,6 @@
 		B13B30E415D0C7BF003A4E89 = {
 			isa = PBXGroup;
 			children = (
-				B1C02ADB1646D8700099802E /* SplashArtIphone-568h@2x.png */,
 				B1CEE031160504360057A30C /* BAUHS93.TTF */,
 				B1CEE0451605323E0057A30C /* SplashArtIphone@2x.png */,
 				B1FACE011602EF7000D920F9 /* SayonariaIpadIcon@2x.png */,
@@ -441,6 +448,50 @@
 				B1EF851E15F3E851006FB520 /* NetworkStorageTabBarController.m */,
 			);
 			name = TabView;
+			sourceTree = "<group>";
+		};
+		B1F9A4F11691FAB3002715F9 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				B1F9A49E1691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_000.png */,
+				B1F9A49F1691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_001.png */,
+				B1F9A4A01691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_002.png */,
+				B1F9A4A11691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_003.png */,
+				B1F9A4A21691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_004.png */,
+				B1F9A4A31691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_005.png */,
+				B1F9A4A41691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_006.png */,
+				B1F9A4A51691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_007.png */,
+				B1F9A4A61691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_008.png */,
+				B1F9A4A71691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_009.png */,
+				B1F9A4A81691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_010.png */,
+				B1F9A4A91691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_011.png */,
+				B1F9A4AA1691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_012.png */,
+				B1F9A4AB1691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_013.png */,
+				B1F9A4AC1691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_014.png */,
+				B1F9A4AD1691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_015.png */,
+				B1F9A4AE1691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_016.png */,
+				B1F9A4AF1691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_017.png */,
+				B1F9A4B01691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_018.png */,
+				B1F9A4B11691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_019.png */,
+				B1F9A4B21691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_020.png */,
+				B1F9A4B31691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_021.png */,
+				B1F9A4B41691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_022.png */,
+				B1F9A4B51691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v001000.png */,
+				B1F9A4B61691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v001001.png */,
+				B1F9A4B71691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v001002.png */,
+				B1F9A4B81691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v001003.png */,
+				B1F9A4B91691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v001004.png */,
+				B1F9A4BA1691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v001005.png */,
+				B1F9A4BB1691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v001006.png */,
+				B1F9A4BC1691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v001007.png */,
+				B1F9A4BD1691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v001008.png */,
+				B1F9A4BE1691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v001009.png */,
+				B1F9A4BF1691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v001010.png */,
+				B1F9A4C01691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v001011.png */,
+				B1F9A4C11691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v001012.png */,
+				B1F9A4C21691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v001013.png */,
+			);
+			name = Animations;
 			sourceTree = "<group>";
 		};
 		B1FAD0A81602F27200D920F9 /* Sayonaria_Art */ = {
@@ -621,56 +672,55 @@
 				B1FB3B9416096B3900E5053B /* Medium_Button_3.png in Resources */,
 				B1FB3B9616096B4A00E5053B /* Shop_Button_FIX.png in Resources */,
 				B1FB3B9816096B8000E5053B /* Text_Box_Back.png in Resources */,
-				B1C02ADC1646D8700099802E /* SplashArtIphone-568h@2x.png in Resources */,
-				B088B1E41620784100A8F7C8 /* Inactive Coal.png in Resources */,
-				B088B1E51620784100A8F7C8 /* Inactive Diamond.png in Resources */,
-				B088B1E61620784100A8F7C8 /* Inactive Gold.png in Resources */,
-				B088B1E71620784100A8F7C8 /* Inactive Neutral.png in Resources */,
-				B088B1E81620784100A8F7C8 /* Inactive Silica.png in Resources */,
-				B088B1EC16207BE100A8F7C8 /* Diamond Background.png in Resources */,
-				B088B1ED16207BE100A8F7C8 /* Gold Background.png in Resources */,
-				B088B1EE16207BE100A8F7C8 /* Coal Background.png in Resources */,
-				B088B1F01620930800A8F7C8 /* Active Coal.png in Resources */,
-				B088B200162099BD00A8F7C8 /* simpsoci_coal_tile_apear_anim_v001013.png in Resources */,
-				B088B201162099BD00A8F7C8 /* simpsoci_coal_tile_apear_anim_v001000.png in Resources */,
-				B088B202162099BD00A8F7C8 /* simpsoci_coal_tile_apear_anim_v001001.png in Resources */,
-				B088B203162099BD00A8F7C8 /* simpsoci_coal_tile_apear_anim_v001002.png in Resources */,
-				B088B204162099BD00A8F7C8 /* simpsoci_coal_tile_apear_anim_v001003.png in Resources */,
-				B088B205162099BD00A8F7C8 /* simpsoci_coal_tile_apear_anim_v001004.png in Resources */,
-				B088B206162099BD00A8F7C8 /* simpsoci_coal_tile_apear_anim_v001005.png in Resources */,
-				B088B207162099BD00A8F7C8 /* simpsoci_coal_tile_apear_anim_v001006.png in Resources */,
-				B088B208162099BD00A8F7C8 /* simpsoci_coal_tile_apear_anim_v001007.png in Resources */,
-				B088B209162099BD00A8F7C8 /* simpsoci_coal_tile_apear_anim_v001008.png in Resources */,
-				B088B20A162099BD00A8F7C8 /* simpsoci_coal_tile_apear_anim_v001009.png in Resources */,
-				B088B20B162099BD00A8F7C8 /* simpsoci_coal_tile_apear_anim_v001010.png in Resources */,
-				B088B20C162099BD00A8F7C8 /* simpsoci_coal_tile_apear_anim_v001011.png in Resources */,
-				B088B20D162099BD00A8F7C8 /* simpsoci_coal_tile_apear_anim_v001012.png in Resources */,
-				B088B22516209B6B00A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_000.png in Resources */,
-				B088B22616209B6B00A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_001.png in Resources */,
-				B088B22716209B6B00A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_002.png in Resources */,
-				B088B22816209B6B00A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_003.png in Resources */,
-				B088B22916209B6B00A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_004.png in Resources */,
-				B088B22A16209B6B00A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_005.png in Resources */,
-				B088B22B16209B6B00A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_006.png in Resources */,
-				B088B22C16209B6B00A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_007.png in Resources */,
-				B088B22D16209B6B00A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_008.png in Resources */,
-				B088B22E16209B6B00A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_009.png in Resources */,
-				B088B22F16209B6B00A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_010.png in Resources */,
-				B088B23016209B6B00A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_011.png in Resources */,
-				B088B23116209B6B00A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_012.png in Resources */,
-				B088B23216209B6B00A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_013.png in Resources */,
-				B088B23316209B6B00A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_014.png in Resources */,
-				B088B23416209B6B00A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_015.png in Resources */,
-				B088B23516209B6B00A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_016.png in Resources */,
-				B088B23616209B6B00A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_017.png in Resources */,
-				B088B23716209B6B00A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_018.png in Resources */,
-				B088B23816209B6B00A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_019.png in Resources */,
-				B088B23916209B6B00A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_020.png in Resources */,
-				B088B23A16209B6B00A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_021.png in Resources */,
-				B088B23B16209B6B00A8F7C8 /* simpsoci_coal_tile_apear_anim_v01_022.png in Resources */,
 				B0E17B03167ABBFB0089B742 /* Active Diamond.png in Resources */,
 				B1F9A4911691F792002715F9 /* Active Gold.png in Resources */,
 				B1F9A4941691F7BC002715F9 /* Active Silica.png in Resources */,
+				B1F9A4C31691FA02002715F9 /* Active Coal.png in Resources */,
+				B1F9A4C41691FA02002715F9 /* Coal Background.png in Resources */,
+				B1F9A4C51691FA02002715F9 /* Diamond Background.png in Resources */,
+				B1F9A4C61691FA02002715F9 /* Gold Background.png in Resources */,
+				B1F9A4C71691FA02002715F9 /* Inactive Coal.png in Resources */,
+				B1F9A4C81691FA02002715F9 /* Inactive Diamond.png in Resources */,
+				B1F9A4C91691FA02002715F9 /* Inactive Gold.png in Resources */,
+				B1F9A4CA1691FA02002715F9 /* Inactive Neutral.png in Resources */,
+				B1F9A4CB1691FA02002715F9 /* Inactive Silica.png in Resources */,
+				B1F9A4CC1691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_000.png in Resources */,
+				B1F9A4CD1691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_001.png in Resources */,
+				B1F9A4CE1691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_002.png in Resources */,
+				B1F9A4CF1691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_003.png in Resources */,
+				B1F9A4D01691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_004.png in Resources */,
+				B1F9A4D11691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_005.png in Resources */,
+				B1F9A4D21691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_006.png in Resources */,
+				B1F9A4D31691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_007.png in Resources */,
+				B1F9A4D41691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_008.png in Resources */,
+				B1F9A4D51691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_009.png in Resources */,
+				B1F9A4D61691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_010.png in Resources */,
+				B1F9A4D71691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_011.png in Resources */,
+				B1F9A4D81691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_012.png in Resources */,
+				B1F9A4D91691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_013.png in Resources */,
+				B1F9A4DA1691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_014.png in Resources */,
+				B1F9A4DB1691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_015.png in Resources */,
+				B1F9A4DC1691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_016.png in Resources */,
+				B1F9A4DD1691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_017.png in Resources */,
+				B1F9A4DE1691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_018.png in Resources */,
+				B1F9A4DF1691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_019.png in Resources */,
+				B1F9A4E01691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_020.png in Resources */,
+				B1F9A4E11691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_021.png in Resources */,
+				B1F9A4E21691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v01_022.png in Resources */,
+				B1F9A4E31691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v001000.png in Resources */,
+				B1F9A4E41691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v001001.png in Resources */,
+				B1F9A4E51691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v001002.png in Resources */,
+				B1F9A4E61691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v001003.png in Resources */,
+				B1F9A4E71691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v001004.png in Resources */,
+				B1F9A4E81691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v001005.png in Resources */,
+				B1F9A4E91691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v001006.png in Resources */,
+				B1F9A4EA1691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v001007.png in Resources */,
+				B1F9A4EB1691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v001008.png in Resources */,
+				B1F9A4EC1691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v001009.png in Resources */,
+				B1F9A4ED1691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v001010.png in Resources */,
+				B1F9A4EE1691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v001011.png in Resources */,
+				B1F9A4EF1691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v001012.png in Resources */,
+				B1F9A4F01691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v001013.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
