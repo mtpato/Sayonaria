@@ -117,6 +117,7 @@
 		B1F9A4EE1691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v001011.png in Resources */ = {isa = PBXBuildFile; fileRef = B1F9A4C01691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v001011.png */; };
 		B1F9A4EF1691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v001012.png in Resources */ = {isa = PBXBuildFile; fileRef = B1F9A4C11691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v001012.png */; };
 		B1F9A4F01691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v001013.png in Resources */ = {isa = PBXBuildFile; fileRef = B1F9A4C21691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v001013.png */; };
+		B1F9A4F31691FCEC002715F9 /* SplashArtIphone-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B1F9A4F21691FCEC002715F9 /* SplashArtIphone-568h@2x.png */; };
 		B1FACDFB1602EEA600D920F9 /* SayonariaIphoneIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = B1FACDFA1602EEA600D920F9 /* SayonariaIphoneIcon.png */; };
 		B1FACDFE1602EECE00D920F9 /* SayonariaIphoneIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B1FACDFD1602EECE00D920F9 /* SayonariaIphoneIcon@2x.png */; };
 		B1FACE001602EF5E00D920F9 /* SayonariaIpadIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = B1FACDFF1602EF5E00D920F9 /* SayonariaIpadIcon.png */; };
@@ -260,6 +261,7 @@
 		B1F9A4C01691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v001011.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = simpsoci_coal_tile_apear_anim_v001011.png; path = ../../simpsoci_coal_tile_apear_anim_v001011.png; sourceTree = "<group>"; };
 		B1F9A4C11691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v001012.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = simpsoci_coal_tile_apear_anim_v001012.png; path = ../../simpsoci_coal_tile_apear_anim_v001012.png; sourceTree = "<group>"; };
 		B1F9A4C21691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v001013.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = simpsoci_coal_tile_apear_anim_v001013.png; path = ../../simpsoci_coal_tile_apear_anim_v001013.png; sourceTree = "<group>"; };
+		B1F9A4F21691FCEC002715F9 /* SplashArtIphone-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SplashArtIphone-568h@2x.png"; sourceTree = "<group>"; };
 		B1FACDFA1602EEA600D920F9 /* SayonariaIphoneIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SayonariaIphoneIcon.png; sourceTree = "<group>"; };
 		B1FACDFD1602EECE00D920F9 /* SayonariaIphoneIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SayonariaIphoneIcon@2x.png"; sourceTree = "<group>"; };
 		B1FACDFF1602EF5E00D920F9 /* SayonariaIpadIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SayonariaIpadIcon.png; sourceTree = "<group>"; };
@@ -327,6 +329,7 @@
 		B13B30E415D0C7BF003A4E89 = {
 			isa = PBXGroup;
 			children = (
+				B1F9A4F21691FCEC002715F9 /* SplashArtIphone-568h@2x.png */,
 				B1CEE031160504360057A30C /* BAUHS93.TTF */,
 				B1CEE0451605323E0057A30C /* SplashArtIphone@2x.png */,
 				B1FACE011602EF7000D920F9 /* SayonariaIpadIcon@2x.png */,
@@ -721,6 +724,7 @@
 				B1F9A4EE1691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v001011.png in Resources */,
 				B1F9A4EF1691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v001012.png in Resources */,
 				B1F9A4F01691FA02002715F9 /* simpsoci_coal_tile_apear_anim_v001013.png in Resources */,
+				B1F9A4F31691FCEC002715F9 /* SplashArtIphone-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
